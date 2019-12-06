@@ -32,8 +32,7 @@ const NBiiif = ({onClose, onSelect}) => {
     return instance.get(`/${searchType}`, {
       params: {
         q: debounced,
-        digitalAccessibleOnly: true,
-        limit: 24,
+        digitalAccessibleOnly: true,        
         ...params
       }
     }).then(response => response.data).then(data => data._embedded.items)
@@ -79,7 +78,7 @@ const NBiiif = ({onClose, onSelect}) => {
     <Dialog title={"Select a document from NB.no"} onClose={onClose} isOpen>
       {isSearching && <Spinner fullscreen/>}
 
-      <p>Search for documents in the National Library of Norway. Add a thumbnail and a url to the IIIF Manifest to Sanity.</p>
+      <p>Search for documents in the National Library of Norway. Adds a thumbnail and a url to the IIIF Manifest to Sanity. For e better search go to <a href="https://www.nb.no/search">NB search</a></p>
       
       <Input placeholder={"Type phrase here"} id={"searchInput"} onChange={handleChange} value={searchTerm}
               isClearable
