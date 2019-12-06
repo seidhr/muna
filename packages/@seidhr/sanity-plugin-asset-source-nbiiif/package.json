@@ -1,0 +1,53 @@
+{
+  "name": "sanity-plugin-asset-source-nbiiif",
+  "version": "0.0.1",
+  "description": "Get thumbnail and url to a IIIF manifest from NB.no in Sanity",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "repository": "https://github.com/tarjelavik/sanity-plugin-asset-source-nbiiif",
+  "author": {
+    "email": "tarje.lavik@gmail.com",
+    "name": "Tarje Sælen Lavik",
+    "url": "https://github.com/tarje.lavik"
+  },
+  "dependencies": {
+    "@sanity/components": "^0.146.3",
+    "@sanity/core": "^0.146.0",
+    "@sanity/default-layout": "^0.146.3",
+    "@sanity/default-login": "^0.146.0",
+    "@sanity/desk-tool": "^0.146.3",
+    "axios": "^0.19.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "files": [
+    "lib",
+    "src",
+    "sanity.json",
+    "README.md"
+  ],
+  "keywords": [
+    "sanity",
+    "plugin",
+    "images",
+    "iiif",
+    "assets",
+    "nb.no"
+  ],
+  "scripts": {
+    "build": "babel src -d lib",
+    "build:watch": "nodemon --watch src/ --exec \"babel src -d lib\"",
+    "prepare": "yarn build"
+  }
+}
