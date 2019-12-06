@@ -104,7 +104,8 @@ const Grid = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: stretch;
   width: 100%;
 `
 

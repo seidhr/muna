@@ -15,9 +15,10 @@ const Preview = ({src, item, onClick}) => {
 
         <ButtonGroup>
           <Button inverted onClick={() => onClick(item)}>
-            Choose
+            Select
           </Button>
         </ButtonGroup>
+        <a href={'https://www.nb.no/items/' + item.id} target="_blank">View at nb.no</a>
       </Card>
     </Container>
   )
@@ -34,9 +35,10 @@ const FadeIn = keyframes`
 
 const Container = styled.div`
   display: flex;
-  flex-flow: column wrap;
-  max-width: 300px;
+  flex-flow: column;
+  width: 300px;
   padding: 6px 0;
+  margin: 6px;
   animation: ${FadeIn} 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 `
 
