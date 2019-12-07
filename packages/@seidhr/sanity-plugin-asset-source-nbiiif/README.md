@@ -16,7 +16,7 @@ sanity install asset-source-nbiiif
 
 The National Library of Norway have great APIs and a huge collection of digitized documents. Amazing stuff!
 
-Checkout https://api.nb.no/. 
+Check out [api.nb.no](https://api.nb.no/)!
 
 ## IIIF.io
 
