@@ -24,7 +24,7 @@ Check out [api.nb.no](https://api.nb.no/)!
 
 > ...a set of shared application programming interface (API) specifications for interoperable functionality in digital image repositories. The IIIF is comprised of and driven by a community of libraries, museums, archives, software companies, and other organizations working together to create, test, refine, implement and promote the IIIF specifications. Using JSON-LD, linked data, and standard W3C web protocols such as Web Annotation, IIIF makes it easy to parse and share digital image data, migrate across technology systems, and provide enhanced image access for scholars and researchers.
 
-This plugin makes it easy to get link to IIIF manifest that you can use with the [Mirador](https://projectmirador.org/) IIIF viewer.
+This plugin makes it easy to get a link to a IIIF manifest that you can use with the [Mirador](https://projectmirador.org/) IIIF viewer. Or [one of the other ones](https://github.com/IIIF/awesome-iiif#image-viewers) :-)
 
 ## Credit 
 
