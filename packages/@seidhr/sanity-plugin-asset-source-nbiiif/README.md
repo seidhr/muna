@@ -1,4 +1,4 @@
-![Logo](sanity_nb.png)
+![Logo](./src/public/sanity_nb.png)
 
 # sanity-plugin-asset-source-nbiiif
 
@@ -17,6 +17,14 @@ sanity install asset-source-nbiiif
 The National Library of Norway have great APIs and a huge collection of digitized documents. Amazing stuff!
 
 Checkout https://api.nb.no/. 
+
+## IIIF.io
+
+[International Image Interoperability Framework](https://iiif.io) (IIIF) is just brilliant 💯.
+
+> ...a set of shared application programming interface (API) specifications for interoperable functionality in digital image repositories. The IIIF is comprised of and driven by a community of libraries, museums, archives, software companies, and other organizations working together to create, test, refine, implement and promote the IIIF specifications. Using JSON-LD, linked data, and standard W3C web protocols such as Web Annotation, IIIF makes it easy to parse and share digital image data, migrate across technology systems, and provide enhanced image access for scholars and researchers.
+
+This plugin makes it easy to get link to IIIF manifest that you can use with the [Mirador](https://projectmirador.org/) IIIF viewer.
 
 ## Credit 
 
