@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-asset-source-nbiiif",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Get thumbnail and url to a IIIF manifest from NB.no in Sanity",
   "main": "lib/index.js",
   "license": "MIT",
