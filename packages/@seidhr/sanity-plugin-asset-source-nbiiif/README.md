@@ -2,7 +2,10 @@
 
 # sanity-plugin-asset-source-nbiiif
 
-Plugin for [Sanity Studio](https://www.sanity.io) providing a [NB.no](https://nb.no) (National Library of Norway) asset source. Get a thumbnail of the document and a link to the [IIIF manifest](https://iiif.io/api/presentation/2.0/#introduction) in `asset.source.url`.
+Plugin for [Sanity Studio](https://www.sanity.io) providing a [NB.no](https://nb.no) (National Library of Norway) asset source. Get a thumbnail of the document and a link to the [IIIF manifest](https://iiif.io/api/presentation/2.0/#introduction) by querying for `asset.source.url`.
+
+![Logo](./src/public/example.png)
+
 
 ## Installation
 
