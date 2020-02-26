@@ -1,10 +1,10 @@
 {
-  "name": "sanity-plugin-asset-source-nbiiif",
-  "version": "0.0.7",
-  "description": "Get thumbnail and url to a IIIF manifest from NB.no in Sanity",
+  "name": "sanity-plugin-asset-source-marcus",
+  "version": "0.0.0",
+  "description": "Get thumbnail and url to a object from Marcus.uib.no in Sanity",
   "main": "lib/index.js",
   "license": "MIT",
-  "repository": "https://github.com/tarjelavik/sanity-plugin-asset-source-nbiiif",
+  "repository": "https://github.com/tarjelavik/sanity-plugin-asset-source-marcus",
   "author": {
     "email": "tarje.lavik@gmail.com",
     "name": "Tarje Sælen Lavik",

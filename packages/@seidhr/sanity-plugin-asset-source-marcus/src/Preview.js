@@ -9,7 +9,7 @@ const Preview = ({src, item, onClick}) => {
 
   return (
     <Container>
-      <Card title={item.metadata.title} media={() => 
+      <Card title={item.title} media={() => 
         <img src={src} />}
       >
 
@@ -18,7 +18,7 @@ const Preview = ({src, item, onClick}) => {
             Select
           </Button>
         </ButtonGroup>
-        <a href={'https://www.nb.no/items/' + item.id} target="_blank">View at marcus.uib.no</a>
+        {/* <a href={'https://marcus.uib.no/' + item.id} target="_blank">View at marcus.uib.no</a> */}
       </Card>
     </Container>
   )
