@@ -2,8 +2,7 @@
 
 Plugin for [Sanity Studio](https://www.sanity.io) providing a [marcus.uib.no](https://marcus.uib.no) asset source. Get a thumbnail of the document and a link to the post on `asset.source.url`.
 
-![Logo](./src/public/example.png)
-
+__WORK IN PROGRESS!__
 
 ## Installation
 
