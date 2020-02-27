@@ -9,7 +9,7 @@ const Preview = ({src, item, onClick}) => {
 
   return (
     <Container>
-      <Card title={item.title} media={() => 
+      <Card key={item.id} title={item.title} media={() => 
         <img src={src} />}
       >
 

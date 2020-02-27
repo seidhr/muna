@@ -7,8 +7,6 @@ import axios from "axios"
 import useDebounce from "./useDebounce"
 import Preview from "./Preview"
 
-var jsonrql = require('json-rql')
-
 const instance = axios.create({
   baseURL: "http://sparql.ub.uib.no/",
   headers: {
@@ -23,13 +21,11 @@ const Marcus = ({onClose, onSelect}) => {
   const [results, setResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
   const [text, setText] = useState("")
-  const [sparql, setSparql] = useState("")
 
   const debounced = useDebounce(searchTerm, 500)
 
   useEffect(() => {
     if (debounced && debounced.length >= 3) {
-      setSparqlQuery()
       handleSearch()
     } else {
       setResults([])
@@ -39,14 +35,26 @@ const Marcus = ({onClose, onSelect}) => {
   const search = (params = {}) => {
     return instance.get('sparql/sparql', {
       params: {
-        query: `DESCRIBE ?id WHERE { GRAPH ?g { ?id <http://purl.org/dc/terms/identifier> "${debounced}". }}`,
+        query: `DESCRIBE ?id WHERE { GRAPH ?g { ?id <http://purl.org/dc/terms/identifier> ?query; <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb.FILTER(strStarts(?query, "${debounced}"))}}LIMIT 10`,
         ...params
       }
     })
     .then(response => response.data)
-    .then(response => [response])
+    .then((response) => {
+      return JSON.parse(JSON.stringify(response).split('"@graph":').join('"graph":'));
+    })
     .then((response) => {
       return JSON.parse(JSON.stringify(response).split('"@id":').join('"id":'));
+    })
+    .then((response) => {
+      if (response.graph) {
+        response = response.graph
+        return response
+      }
+      else {
+        response = [response]
+        return response
+      }
     })
     //.then(data => data)
     .catch((error) => {
@@ -83,33 +91,9 @@ const Marcus = ({onClose, onSelect}) => {
     })
   }
 
-  function setQ() {
-    console.log('Debounced = ' + debounced)
-    return jsonrql.toSparql({
-      '@context': {
-        'dct': 'http://purl.org/dc/terms/'
-      },
-      '@describe': ['?id'],
-      '@where': {
-        '@id': '?id',
-        'dct:identifier': {
-          '@value': debounced
-        }
-      }
-    }, function (err, sparql) {
-      console.log(err || sparql);
-      return sparql
-    })
-  }
-
-  const setSparqlQuery = () => {
-    setSparql(setQ())
-  }
-  
   const handleChange = e => {
     setSearchTerm(e.target.value)
   }
-
 
   const chooseItem = (item) => {
     console.log(item)
@@ -139,7 +123,7 @@ const Marcus = ({onClose, onSelect}) => {
     <Dialog title={"Select a document from Marcus.uib.no"} onClose={onClose} isOpen>
       {isSearching && <Spinner fullscreen/>}
 
-      <p>Search for documents by ID in Marcus, the special collection site from the University library of Bergen. Adds a thumbnail and a url to Sanity. <strong>NB! Only exact matches on ID/signature for now</strong>. For a better search go to <a href="https://marcus.uib.no/search/" target="_blank">Marcus search</a></p>
+      <p>Search for documents by ID in Marcus, the special collection site from the University library of Bergen. Adds a thumbnail and a url to Sanity. <strong>NB! Only matches on ID/signature for now. Example: start with "ubb-kk-1318"</strong>. For a better search go to <a href="https://marcus.uib.no/search/" target="_blank">Marcus search</a></p>
       
       <Input placeholder={"Type phrase here"} id={"searchInput"} onChange={handleChange} value={searchTerm}
               isClearable
@@ -156,6 +140,8 @@ const Marcus = ({onClose, onSelect}) => {
           { !results ? <p>Whoops! Found nothing!</p> : ''}
 
         </Grid>
+
+        {/* <pre><code>{JSON.stringify(results, null, 2)}</code></pre> */}
       </div>
     </Dialog>
   )
