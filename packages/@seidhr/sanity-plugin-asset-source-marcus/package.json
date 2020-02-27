@@ -17,8 +17,6 @@
     "@sanity/default-login": "^0.147.0",
     "@sanity/desk-tool": "^0.147.1",
     "axios": "^0.19.2",
-    "json-rql": "^0.3.2",
-    "sparql-http-client": "^1.2.0",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
