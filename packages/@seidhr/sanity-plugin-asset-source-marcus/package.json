@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-asset-source-marcus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Get thumbnail and url to a object from Marcus.uib.no in Sanity",
   "main": "lib/index.js",
   "license": "MIT",
