@@ -48,7 +48,7 @@ const Marcus = ({onClose, onSelect}) => {
                         <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
                   OPTIONAL { {
                        ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> / <http://data.ub.uib.no/ontology/hasResource> ?img . 
-                       ?img <http://data.ub.uib.no/ontology/hasMDView ?imgMD.
+                       ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
                   } }
                   OPTIONAL { { 
                        ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> ?img . ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
