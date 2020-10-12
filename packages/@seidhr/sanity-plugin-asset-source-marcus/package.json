@@ -11,11 +11,11 @@
     "url": "https://github.com/tarje.lavik"
   },
   "dependencies": {
-    "@sanity/components": "^0.147.0",
-    "@sanity/core": "^0.147.0",
-    "@sanity/default-layout": "^0.147.0",
-    "@sanity/default-login": "^0.147.0",
-    "@sanity/desk-tool": "^0.147.1",
+    "@sanity/components": "^2.0.2",
+    "@sanity/core": "^2.0.1",
+    "@sanity/default-layout": "^2.0.2",
+    "@sanity/default-login": "^2.0.1",
+    "@sanity/desk-tool": "^2.0.2",
     "axios": "^0.19.2",
     "styled-components": "^4.4.1"
   },

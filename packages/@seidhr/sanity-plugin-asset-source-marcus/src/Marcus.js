@@ -35,7 +35,26 @@ const Marcus = ({onClose, onSelect}) => {
   const search = (params = {}) => {
     return instance.get('sparql/sparql', {
       params: {
-        query: `DESCRIBE ?id WHERE { GRAPH ?g { ?id <http://purl.org/dc/terms/identifier> ?query; <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb.FILTER(strStarts(?query, "${debounced}"))}}LIMIT 10`,
+        query: `CONSTRUCT {
+          ?id <http://purl.org/dc/terms/identifier> ?identifier;
+          <http://purl.org/dc/terms/title> ?title;
+            <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
+            <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
+        }  WHERE { 
+                  GRAPH ?g { 
+                    ?id <http://purl.org/dc/terms/identifier> ?query;
+                     <http://purl.org/dc/terms/identifier> ?identifier;
+                        <http://purl.org/dc/terms/title> ?title;
+                        <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
+                  OPTIONAL { {
+                       ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> / <http://data.ub.uib.no/ontology/hasResource> ?img . 
+                       ?img <http://data.ub.uib.no/ontology/hasMDView ?imgMD.
+                  } }
+                  OPTIONAL { { 
+                       ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> ?img . ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
+        
+                  }}
+            FILTER(strStarts(?query, "${debounced}"))}}LIMIT 10`,
         ...params
       }
     })
@@ -97,10 +116,13 @@ const Marcus = ({onClose, onSelect}) => {
 
   const chooseItem = (item) => {
     console.log(item)
+    if(!item.hasMDView) {
+      return null
+    }
 
     onSelect([{
       kind: "url",
-      value: item.hasThumbnail,
+      value: item.hasMDView,
       assetDocumentProps: {
         originalFilename: item.identifier, // Use this filename when the asset is saved as a file by someone.
         source: {
