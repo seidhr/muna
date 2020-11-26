@@ -17,8 +17,8 @@
   "homepage": "https://github.com/seidhr/react-muna-logo#readme",
   "main": "dist/index.js",
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": ">=12",
+    "npm": ">=6"
   },
   "scripts": {
     "build": "rollup -c",
