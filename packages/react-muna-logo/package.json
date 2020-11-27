@@ -23,6 +23,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
+    "prepublishOnly": "rollup -c",
     "generate:icons": "svgr --icon --typescript --svgo-config ./scripts/svgoConfig.json -d ./src ./resources/icons"
   },
   "peerDependencies": {
