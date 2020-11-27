@@ -47,4 +47,8 @@ typings/
 # generate output
 dist
 
+# App demo
+demo
+
+# Apple filesystem
 .DS_store
