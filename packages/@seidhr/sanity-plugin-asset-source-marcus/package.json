@@ -4,7 +4,11 @@
   "description": "Get thumbnail and url to a object from Marcus.uib.no in Sanity",
   "main": "lib/index.js",
   "license": "MIT",
-  "repository": "https://github.com/tarjelavik/sanity-plugin-asset-source-marcus",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/@seidhr/sanity-plugin-asset-source-marcus"
+  },
   "author": {
     "email": "tarje.lavik@gmail.com",
     "name": "Tarje Sælen Lavik",
