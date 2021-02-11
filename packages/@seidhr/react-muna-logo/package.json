@@ -9,12 +9,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/seidhr/react-muna-logo.git"
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/@seidhr/react-muna-logo"
   },
   "bugs": {
-    "url": "https://github.com/seidhr/react-muna-logo/issues"
+    "url": "https://github.com/seidhr/muna/issues"
   },
-  "homepage": "https://github.com/seidhr/react-muna-logo#readme",
+  "homepage": "https://github.com/seidhr/muna#readme",
   "main": "dist/index.js",
   "engines": {
     "node": ">=12",

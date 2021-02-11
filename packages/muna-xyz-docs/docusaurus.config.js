@@ -27,12 +27,12 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://www.sanity.io/create?template=tarjelavik/sanity-template-muna',
+          href: 'https://www.sanity.io/create?template=seidhr/sanity-template-muna',
           label: 'Create your Muna Studio',
           position: 'right',
         },
         {
-          href: 'https://github.com/tarjelavik/sanity-plugin-muna',
+          href: 'https://github.com/seidhr/muna',
           label: 'GitHub',
           position: 'right',
         },
@@ -69,9 +69,6 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/tarjelavik/sanity-plugin-muna/edit/master/docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

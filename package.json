@@ -1,5 +1,5 @@
 {
-  "name": "@seidhr/muna-xyz",
+  "name": "@seidhr/muna",
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
