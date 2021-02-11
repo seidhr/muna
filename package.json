@@ -1,6 +1,5 @@
 {
   "name": "@seidhr/muna-xyz",
-  "version": "0.0.0",
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
