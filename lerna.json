@@ -1,8 +1,7 @@
 {
   "npmClient": "yarn",
   "packages": [
-    "packages/@seidhr/*",
-    "packages/muna-docs"
+    "packages/@seidhr/*"
   ],
   "version": "independent"
 }
