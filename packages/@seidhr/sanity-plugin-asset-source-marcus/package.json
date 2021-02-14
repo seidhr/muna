@@ -53,5 +53,8 @@
     "build": "babel src -d lib",
     "build:watch": "nodemon --watch src/ --exec \"babel src -d lib\"",
     "prepare": "yarn build"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
