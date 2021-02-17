@@ -1,7 +1,8 @@
 {
   "npmClient": "yarn",
   "packages": [
-    "packages/@seidhr/*"
+    "packages/@seidhr/*",
+    "packages/examples/*"
   ],
   "version": "independent"
 }

@@ -1,0 +1,40 @@
+{
+  "root": true,
+  "project": {
+    "name": "seidhr-test-studio"
+  },
+  "api": {
+    "projectId": "0m1teisx",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/dashboard",
+    "@sanity/desk-tool",
+    "@seidhr/sanity-plugin-dashboard-widget-muna-docs"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input/image/asset-sources",
+      "path": "./src/parts/assetSources.js"
+    }
+  ]
+}
