@@ -22,6 +22,7 @@
     "@sanity/dashboard": "^2.2.6",
     "@sanity/desk-tool": "^2.3.6",
     "@sanity/vision": "^2.2.6",
+    "@seidhr/react-muna-logo": "^1.1.3",
     "@seidhr/sanity-plugin-asset-source-marcus": "^0.0.4",
     "@seidhr/sanity-plugin-asset-source-nbiiif": "^0.0.7",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "^1.0.0",

@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/dashboard",
     "@sanity/desk-tool",
-    "@seidhr/sanity-plugin-dashboard-widget-muna-docs"
+    "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
+    "muna-logo"
   ],
   "env": {
     "development": {
