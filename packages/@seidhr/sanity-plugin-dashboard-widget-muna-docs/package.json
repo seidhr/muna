@@ -1,0 +1,54 @@
+{
+  "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
+  "version": "1.0.0",
+  "description": "Just links to Muna documentation",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "sanipack build",
+    "watch": "sanipack build --watch",
+    "prepublishOnly": "sanipack build && sanipack verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seidhr/muna.git"
+  },
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@seidhr/react-muna-logo": "latest"
+  },
+  "devDependencies": {
+    "sanipack": "1.0.8",
+    "prettier": "2.2.1",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-sanity": "5.0.0",
+    "eslint-plugin-react": "7.22.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/seidhr/muna/issues"
+  },
+  "homepage": "https://github.com/seidhr/muna#readme",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "sanipack/babel/eslint-parser",
+    "extends": [
+      "sanity",
+      "sanity/react",
+      "prettier",
+      "prettier/react"
+    ]
+  }
+}
