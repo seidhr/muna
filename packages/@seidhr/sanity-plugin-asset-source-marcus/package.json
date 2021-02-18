@@ -1,60 +1,52 @@
 {
   "name": "@seidhr/sanity-plugin-asset-source-marcus",
   "version": "0.0.4",
-  "description": "Get thumbnail and url to a object from Marcus.uib.no in Sanity",
+  "description": "Plugin for Sanity Studio providing a marcus.uib.no asset source. Get a thumbnail of the document and a link to the post on `asset.source.url`.",
   "main": "lib/index.js",
-  "license": "MIT",
+  "scripts": {
+    "build": "sanipack build",
+    "watch": "sanipack build --watch",
+    "prepublishOnly": "sanipack build && sanipack verify"
+  },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/seidhr/muna.git",
-    "directory": "packages/@seidhr/sanity-plugin-asset-source-marcus"
+    "url": "git@github.com:seidhr/muna.git"
   },
-  "author": {
-    "email": "tarje.lavik@gmail.com",
-    "name": "Tarje Sælen Lavik",
-    "url": "https://github.com/tarje.lavik"
-  },
-  "dependencies": {
-    "@sanity/components": "^2.0.2",
-    "@sanity/core": "^2.0.1",
-    "@sanity/default-layout": "^2.0.2",
-    "@sanity/default-login": "^2.0.1",
-    "@sanity/desk-tool": "^2.0.2",
-    "axios": "^0.19.2",
-    "styled-components": "^4.4.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-external-helpers": "^7.2.0",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/plugin-proposal-export-default-from": "^7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0"
-  },
-  "files": [
-    "lib",
-    "src",
-    "sanity.json",
-    "README.md"
-  ],
   "keywords": [
     "sanity",
-    "plugin",
-    "images",
-    "iiif",
-    "assets",
-    "nb.no"
+    "sanity-plugin"
   ],
-  "scripts": {
-    "build": "babel src -d lib",
-    "build:watch": "nodemon --watch src/ --exec \"babel src -d lib\"",
-    "prepare": "yarn build"
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0"
   },
-  "publishConfig": {
-    "access": "public"
+  "dependencies": {
+    "@sanity/ui": "^0.33.4",
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "sanipack": "1.0.8",
+    "prettier": "2.2.1",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-config-sanity": "5.1.0",
+    "eslint-plugin-react": "7.22.0"
+  },
+  "homepage": "https://github.com/seidhr/muna#readme",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "sanipack/babel/eslint-parser",
+    "extends": [
+      "sanity",
+      "sanity/react",
+      "prettier",
+      "prettier/react"
+    ]
   }
 }

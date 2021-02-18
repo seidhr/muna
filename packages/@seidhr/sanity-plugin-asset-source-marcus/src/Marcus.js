@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import Dialog from "part:@sanity/components/dialogs/fullscreen"
-import Input from "part:@sanity/components/textinputs/default"
-import Spinner from "part:@sanity/components/loading/spinner"
+import { 
+  TextInput, 
+  Dialog, 
+  Spinner } from '@sanity/ui'
 import axios from "axios"
 import useDebounce from "./useDebounce"
 import Preview from "./Preview"
 
 const instance = axios.create({
-  baseURL: "http://sparql.ub.uib.no/",
+  baseURL: "https://sparql.ub.uib.no/",
   headers: {
     'Content-Type': 'application/ld+json',
     'Accept': 'application/ld+json'
   },
 })
 
-const Marcus = ({onClose, onSelect}) => {
+const Marcus = React.forwardRef(({onClose, onSelect}, ref) => {
 
   const [searchTerm, setSearchTerm] = useState("")
   const [results, setResults] = useState([])
@@ -147,35 +147,26 @@ const Marcus = ({onClose, onSelect}) => {
 
       <p>Search for documents by ID in Marcus, the special collection site from the University library of Bergen. Adds a thumbnail and a url to Sanity. <strong>NB! Only matches on ID/signature for now. Example: start with "ubb-kk-1318"</strong>. For a better search go to <a href="https://marcus.uib.no/search/" target="_blank">Marcus search</a></p>
       
-      <Input placeholder={"Type phrase here"} id={"searchInput"} onChange={handleChange} value={searchTerm}
+      <TextInput placeholder={"Type phrase here"} id={"searchInput"} onChange={handleChange} value={searchTerm}
               isClearable
               onClear={() => setSearchTerm("")}/>
 
       <div>
         <h3>{text}</h3>
-        <Grid>
+        <div>
           { results ? results.map(result => (
             <Preview src={result && result.hasThumbnail ? result.hasThumbnail : ''} item={result}
-                     onClick={chooseItem}/>
+                    onClick={chooseItem}/>
           )) : ''}
 
           { !results ? <p>Whoops! Found nothing!</p> : ''}
 
-        </Grid>
+        </div>
 
         {/* <pre><code>{JSON.stringify(results, null, 2)}</code></pre> */}
       </div>
     </Dialog>
   )
-}
-
-const Grid = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  justify-content: flex-start;
-  align-items: stretch;
-  width: 100%;
-`
+})
 
 export default Marcus

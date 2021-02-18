@@ -4,7 +4,7 @@ import Icon from './Icon'
 
 export default {
   title: 'Marcus',
-  name: 'marcus',
+  name: 'asset-source-marcus',
   icon: Icon,
   component: Marcus
 }
