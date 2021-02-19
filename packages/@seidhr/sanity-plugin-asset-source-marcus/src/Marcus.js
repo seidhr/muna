@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useCallback, useState } from "react"
 import { 
   TextInput, 
   Dialog, 
@@ -6,6 +6,8 @@ import {
 import axios from "axios"
 import useDebounce from "./useDebounce"
 import Preview from "./Preview"
+
+
 
 const instance = axios.create({
   baseURL: "https://sparql.ub.uib.no/",
@@ -15,13 +17,14 @@ const instance = axios.create({
   },
 })
 
-const Marcus = React.forwardRef(({onClose, onSelect}, ref) => {
-
+const Marcus = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [results, setResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
   const [text, setText] = useState("")
-
+  const [open, setOpen] = useState(false)
+  const onClose = useCallback(() => setOpen(false), [])
+  const onOpen = useCallback(() => setOpen(true), [])
   const debounced = useDebounce(searchTerm, 500)
 
   useEffect(() => {
@@ -35,26 +38,29 @@ const Marcus = React.forwardRef(({onClose, onSelect}, ref) => {
   const search = (params = {}) => {
     return instance.get('sparql/sparql', {
       params: {
-        query: `CONSTRUCT {
+        query: `
+        CONSTRUCT {
           ?id <http://purl.org/dc/terms/identifier> ?identifier;
-          <http://purl.org/dc/terms/title> ?title;
+            <http://purl.org/dc/terms/title> ?title;
             <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
             <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
-        }  WHERE { 
-                  GRAPH ?g { 
-                    ?id <http://purl.org/dc/terms/identifier> ?query;
-                     <http://purl.org/dc/terms/identifier> ?identifier;
-                        <http://purl.org/dc/terms/title> ?title;
-                        <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
-                  OPTIONAL { {
-                       ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> / <http://data.ub.uib.no/ontology/hasResource> ?img . 
-                       ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
-                  } }
-                  OPTIONAL { { 
-                       ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . ?x <http://purl.org/dc/terms/hasPart> ?img . ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
-        
-                  }}
-            FILTER(strStarts(?query, "${debounced}"))}}LIMIT 10`,
+        } WHERE { 
+          GRAPH ?g { 
+            ?id <http://purl.org/dc/terms/identifier> ?query;
+              <http://purl.org/dc/terms/identifier> ?identifier;
+              <http://purl.org/dc/terms/title> ?title;
+              <http://data.ub.uib.no/ontology/hasThumbnail> ?thumb;
+              OPTIONAL {
+                ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . 
+                ?x <http://purl.org/dc/terms/hasPart> / <http://data.ub.uib.no/ontology/hasResource> ?img . 
+                ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
+              }
+              OPTIONAL {
+                ?id <http://data.ub.uib.no/ontology/hasRepresentation> ?x . 
+                ?x <http://purl.org/dc/terms/hasPart> ?img . 
+                ?img <http://data.ub.uib.no/ontology/hasMDView> ?imgMD.
+              }
+        FILTER(strStarts(?query, "${debounced}"))}}LIMIT 10`,
         ...params
       }
     })
@@ -142,14 +148,24 @@ const Marcus = React.forwardRef(({onClose, onSelect}, ref) => {
   }
 
   return (
-    <Dialog title={"Select a document from Marcus.uib.no"} onClose={onClose} isOpen>
+    <Dialog 
+      title={"Select a document from Marcus.uib.no"} 
+      onClose={onClose} 
+      isOpen
+    >
+
       {isSearching && <Spinner fullscreen/>}
 
       <p>Search for documents by ID in Marcus, the special collection site from the University library of Bergen. Adds a thumbnail and a url to Sanity. <strong>NB! Only matches on ID/signature for now. Example: start with "ubb-kk-1318"</strong>. For a better search go to <a href="https://marcus.uib.no/search/" target="_blank">Marcus search</a></p>
       
-      <TextInput placeholder={"Type phrase here"} id={"searchInput"} onChange={handleChange} value={searchTerm}
-              isClearable
-              onClear={() => setSearchTerm("")}/>
+      <TextInput 
+        placeholder={"Type phrase here"} 
+        id={"searchInput"} 
+        onChange={handleChange} 
+        value={searchTerm}
+        isClearable
+        onClear={() => setSearchTerm("")}
+      />
 
       <div>
         <h3>{text}</h3>
@@ -167,6 +183,6 @@ const Marcus = React.forwardRef(({onClose, onSelect}, ref) => {
       </div>
     </Dialog>
   )
-})
+}
 
 export default Marcus
