@@ -1,6 +1,6 @@
 {
   "name": "@seidhr/sanity-plugin-asset-source-marcus",
-  "version": "0.0.4",
+  "version": "1.0.0-alpha.0",
   "description": "Plugin for Sanity Studio providing a marcus.uib.no asset source. Get a thumbnail of the document and a link to the post on `asset.source.url`.",
   "private": true,
   "main": "lib/index.js",
@@ -27,12 +27,12 @@
     "axios": "^0.19.2"
   },
   "devDependencies": {
-    "sanipack": "1.0.8",
-    "prettier": "2.2.1",
     "eslint": "7.20.0",
     "eslint-config-prettier": "7.2.0",
     "eslint-config-sanity": "5.1.0",
-    "eslint-plugin-react": "7.22.0"
+    "eslint-plugin-react": "7.22.0",
+    "prettier": "2.2.1",
+    "sanipack": "1.0.8"
   },
   "homepage": "https://github.com/seidhr/muna#readme",
   "prettier": {

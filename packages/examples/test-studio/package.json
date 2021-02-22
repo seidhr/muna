@@ -1,7 +1,7 @@
 {
   "name": "seidhr-test-studio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "package.json",
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
@@ -17,18 +17,17 @@
     "@sanity/base": "^2.3.8",
     "@sanity/components": "^2.2.6",
     "@sanity/core": "^2.3.8",
+    "@sanity/dashboard": "^2.2.6",
     "@sanity/default-layout": "^2.3.8",
     "@sanity/default-login": "^2.2.6",
-    "@sanity/dashboard": "^2.2.6",
     "@sanity/desk-tool": "^2.3.8",
     "@sanity/vision": "^2.2.6",
-    "@seidhr/react-muna-logo": "^1.1.3",
-    "@seidhr/sanity-plugin-asset-source-marcus": "^0.0.4",
-    "@seidhr/sanity-plugin-asset-source-nbiiif": "^0.0.7",
+    "@seidhr/react-muna-logo": "^1.1.4",
+    "@seidhr/sanity-plugin-asset-source-marcus": "^1.0.0-alpha.0",
+    "@seidhr/sanity-plugin-asset-source-nbiiif": "^1.0.0-alpha.0",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "^1.0.0",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0"
-  },
-  "devDependencies": {}
+  }
 }

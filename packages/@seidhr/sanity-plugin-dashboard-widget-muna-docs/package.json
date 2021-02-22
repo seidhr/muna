@@ -1,6 +1,6 @@
 {
   "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Just links to Muna documentation",
   "main": "./lib/index.js",
   "scripts": {
@@ -22,12 +22,12 @@
     "@seidhr/react-muna-logo": "latest"
   },
   "devDependencies": {
-    "sanipack": "1.0.8",
-    "prettier": "2.2.1",
     "eslint": "7.20.0",
     "eslint-config-prettier": "7.2.0",
     "eslint-config-sanity": "5.0.0",
-    "eslint-plugin-react": "7.22.0"
+    "eslint-plugin-react": "7.22.0",
+    "prettier": "2.2.1",
+    "sanipack": "1.0.8"
   },
   "peerDependencies": {
     "react": "^17.0.0"
