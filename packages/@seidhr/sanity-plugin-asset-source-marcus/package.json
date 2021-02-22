@@ -2,6 +2,7 @@
   "name": "@seidhr/sanity-plugin-asset-source-marcus",
   "version": "0.0.4",
   "description": "Plugin for Sanity Studio providing a marcus.uib.no asset source. Get a thumbnail of the document and a link to the post on `asset.source.url`.",
+  "private": true,
   "main": "lib/index.js",
   "scripts": {
     "build": "sanipack build",

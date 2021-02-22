@@ -1,6 +1,7 @@
 {
   "name": "@seidhr/sanity-plugin-muna-schemas",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "lib/YourPlugin.js",
   "scripts": {
