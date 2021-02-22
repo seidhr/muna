@@ -1,6 +1,6 @@
 {
   "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Just links to Muna documentation",
   "main": "./lib/index.js",
   "scripts": {

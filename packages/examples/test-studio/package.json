@@ -1,13 +1,13 @@
 {
-  "name": "seidhrteststudio",
+  "name": "seidhr-test-studio",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "package.json",
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
-    "start": "sanity start",
+    "start": "sanity start --port 3334",
     "build": "sanity build"
   },
   "keywords": [
