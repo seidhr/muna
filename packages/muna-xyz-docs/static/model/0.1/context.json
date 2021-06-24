@@ -3,9 +3,11 @@
     "@version": 1.1,
     "_id": "@id",
     "id": "@id",
+    "_ref": "@id",
     "_type": "@type",
     "type": "@type",
     "muna": "http://muna.xyz/model/0.1/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "@base": "http://data.muna.xyz/",
     "Acquisition": {
       "@id": "muna:Acquisition",
@@ -17,17 +19,16 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "subjectOf": {
           "@id": "muna:subjectOf",
@@ -41,30 +42,31 @@
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "transferredTitleOf": {
           "@id": "muna:transferredTitleOf",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "transferredTitleFrom": {
           "@id": "muna:transferredTitleFrom",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "transferredTitleTo": {
           "@id": "muna:transferredTitleTo",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "documentedIn": {
-          "@id": "muna:documentedIn",
-          "@container": "@list"
+          "@id": "muna:documentedIn"
         }
       }
     },
@@ -78,15 +80,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -100,17 +102,16 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -119,12 +120,13 @@
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "hadParticipant": {
           "@id": "muna:hadParticipant",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "target": {
           "@id": "muna:target",
@@ -132,11 +134,12 @@
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "consistsOf": {
@@ -146,52 +149,52 @@
         },
         "continued": {
           "@id": "muna:continued",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "wasContinuedBy": {
           "@id": "muna:wasContinuedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "influencedBy": {
           "@id": "muna:influencedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificTechnique": {
           "@id": "muna:usedSpecificTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedObjectOfType": {
           "@id": "muna:usedObjectOfType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificObject": {
           "@id": "muna:usedSpecificObject",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "generalPurpose": {
           "@id": "muna:generalPurpose",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "motivatedBy": {
           "@id": "muna:motivatedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "intendedUseOf": {
           "@id": "muna:intendedUseOf",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -206,15 +209,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -228,7 +231,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "homepage": {
@@ -236,12 +239,12 @@
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -249,11 +252,12 @@
           "@type": "@id"
         },
         "image": {
-          "@id": "muna:image"
+          "@id": "muna:image",
+          "@type": "@json"
         },
         "memberOf": {
           "@id": "muna:memberOf",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "activityStream": {
@@ -262,10 +266,12 @@
           "@type": "@id"
         },
         "inDataset": {
-          "@id": "muna:inDataset"
+          "@id": "muna:inDataset",
+          "@type": "@json"
         },
         "wasOutputOf": {
-          "@id": "muna:wasOutputOf"
+          "@id": "muna:wasOutputOf",
+          "@type": "@json"
         }
       }
     },
@@ -279,15 +285,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -318,15 +324,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -345,19 +351,22 @@
       "@id": "muna:BeginningOfExistence",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -377,26 +386,27 @@
       "@id": "muna:Birth",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -413,17 +423,16 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "subjectOf": {
           "@id": "muna:subjectOf",
@@ -432,7 +441,8 @@
         },
         "activityStream": {
           "@id": "muna:activityStream",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "composedOf": {
           "@id": "muna:composedOf",
@@ -451,29 +461,33 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         },
         "sameAs": {
-          "@id": "muna:sameAs",
-          "@container": "@list"
+          "@id": "http://www.w3.org/2002/07/owl#sameAs",
+          "@container": "@set",
+          "@type": "@id"
         },
         "inDataset": {
-          "@id": "muna:inDataset"
+          "@id": "muna:inDataset",
+          "@type": "@json"
         },
         "wasOutputOf": {
-          "@id": "muna:wasOutputOf"
+          "@id": "muna:wasOutputOf",
+          "@type": "@json"
         }
       }
     },
@@ -482,18 +496,16 @@
       "@context": {
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "@id"
+          "@type": "muna:hasType"
         },
         "value": {
           "@id": "muna:value"
         },
         "attributes": {
-          "@id": "muna:attributes",
-          "@container": "@list"
+          "@id": "muna:attributes"
         },
         "images": {
-          "@id": "muna:images",
-          "@container": "@list"
+          "@id": "muna:images"
         }
       }
     },
@@ -507,15 +519,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -524,12 +536,10 @@
       "@context": {
         "assignedActor": {
           "@id": "muna:assignedActor",
-          "@type": "@id"
+          "@type": "muna:assignedActor"
         },
         "assignedRole": {
-          "@id": "muna:assignedRole",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:assignedRole"
         },
         "usedName": {
           "@id": "muna:usedName"
@@ -540,19 +550,22 @@
       "@id": "muna:Creation",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -578,7 +591,7 @@
           "@id": "muna:homepage"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "preferredIdentifier": {
@@ -590,26 +603,27 @@
       "@id": "muna:Death",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -623,21 +637,20 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
-        },
-        "referredToBy": {
-          "@id": "muna:referredToBy",
           "@container": "@list",
           "@type": "@id"
         },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@type": "@json"
+        },
         "documentedIn": {
-          "@id": "muna:documentedIn",
-          "@container": "@list"
+          "@id": "muna:documentedIn"
         }
       }
     },
@@ -645,25 +658,25 @@
       "@id": "muna:Destruction",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -680,7 +693,7 @@
       "@id": "muna:DigitalFile",
       "@context": {
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "description": {
@@ -718,14 +731,14 @@
       "@context": {
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "@id"
+          "@type": "muna:hasType"
         },
         "value": {
           "@id": "muna:value"
         },
         "hasUnit": {
           "@id": "muna:hasUnit",
-          "@type": "@id"
+          "@type": "muna:hasUnit"
         }
       }
     },
@@ -739,15 +752,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -755,31 +768,30 @@
       "@id": "muna:Dissolution",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "motivatedBy": {
           "@id": "muna:motivatedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -810,21 +822,20 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "hasType": {
@@ -833,10 +844,12 @@
           "@type": "@id"
         },
         "media": {
-          "@id": "muna:media"
+          "@id": "muna:media",
+          "@type": "@json"
         },
         "location": {
-          "@id": "muna:location"
+          "@id": "muna:location",
+          "@type": "@json"
         }
       }
     },
@@ -850,15 +863,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -872,35 +885,36 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "language": {
           "@id": "muna:language",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "creator": {
           "@id": "muna:creator",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "activityStream": {
           "@id": "muna:activityStream",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -914,15 +928,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -953,36 +967,33 @@
       "@id": "muna:Formation",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "formedFrom": {
-          "@id": "muna:formedFrom",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:formedFrom"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "motivatedBy": {
           "@id": "muna:motivatedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -990,13 +1001,12 @@
       "@id": "muna:Geojson",
       "@context": {
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "data": {
           "@id": "muna:data"
@@ -1018,12 +1028,10 @@
       "@id": "muna:GeojsonFeatureCollection",
       "@context": {
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "muna:label"
         },
         "features": {
-          "@id": "muna:features",
-          "@container": "@list"
+          "@id": "muna:features"
         }
       }
     },
@@ -1059,8 +1067,7 @@
           "@id": "muna:columns"
         },
         "items": {
-          "@id": "muna:items",
-          "@container": "@list"
+          "@id": "muna:items"
         },
         "anchor": {
           "@id": "muna:anchor"
@@ -1074,8 +1081,7 @@
           "@id": "muna:disabled"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "muna:label"
         },
         "title": {
           "@id": "muna:title"
@@ -1101,7 +1107,7 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "homepage": {
@@ -1109,12 +1115,12 @@
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -1128,7 +1134,7 @@
         },
         "subject": {
           "@id": "muna:subject",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "subjectOf": {
@@ -1140,37 +1146,39 @@
           "@id": "muna:license"
         },
         "image": {
-          "@id": "muna:image"
+          "@id": "muna:image",
+          "@type": "@json"
         },
         "digitallyShownBy": {
           "@id": "muna:digitallyShownBy",
-          "@container": "@list"
+          "@type": "@json"
         },
         "subjectOfManifest": {
           "@id": "muna:subjectOfManifest"
         },
         "relation": {
           "@id": "muna:relation",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "presentAt": {
           "@id": "muna:presentAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "depicts": {
           "@id": "muna:depicts",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "showsVisualObject": {
           "@id": "muna:showsVisualObject",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "carries": {
           "@id": "muna:carries",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "composedOf": {
@@ -1180,7 +1188,8 @@
         },
         "measurement": {
           "@id": "muna:measurement",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
@@ -1198,7 +1207,8 @@
           "@type": "@id"
         },
         "wasOutputOf": {
-          "@id": "muna:wasOutputOf"
+          "@id": "muna:wasOutputOf",
+          "@type": "@json"
         }
       }
     },
@@ -1210,16 +1220,16 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "@id"
+          "@type": "muna:hasType"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -1233,15 +1243,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -1288,18 +1298,13 @@
       "@id": "muna:ImageCompare",
       "@context": {
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "before": {
-          "@id": "muna:before",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:before"
         },
         "after": {
-          "@id": "muna:after",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:after"
         },
         "caption": {
           "@id": "muna:caption"
@@ -1318,35 +1323,32 @@
       "@id": "muna:Joining",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "joinedWith": {
           "@id": "muna:joinedWith",
-          "@type": "@id"
+          "@type": "muna:joinedWith"
         },
         "joined": {
-          "@id": "muna:joined",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:joined"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -1357,11 +1359,12 @@
           "@id": "muna:identifiedByISO6393"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         }
       }
     },
@@ -1369,35 +1372,32 @@
       "@id": "muna:Leaving",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "separatedFrom": {
           "@id": "muna:separatedFrom",
-          "@type": "@id"
+          "@type": "muna:separatedFrom"
         },
         "separated": {
-          "@id": "muna:separated",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:separated"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -1411,20 +1411,21 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "creator": {
           "@id": "muna:creator",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "language": {
           "@id": "muna:language",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "hasType": {
@@ -1434,24 +1435,24 @@
         },
         "categories": {
           "@id": "muna:categories",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "publishedAt": {
-          "@id": "muna:publishedAt"
+          "@id": "muna:publishedAt",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "body": {
-          "@id": "muna:body"
+          "@id": "muna:body",
+          "@type": "@json"
         },
         "excerpt": {
-          "@id": "muna:excerpt"
+          "@id": "muna:excerpt",
+          "@type": "@json"
         },
         "image": {
-          "@id": "muna:image"
-        },
-        "documentedIn": {
-          "@id": "muna:documentedIn",
-          "@container": "@list"
+          "@id": "muna:image",
+          "@type": "@json"
         }
       }
     },
@@ -1465,27 +1466,23 @@
           "@id": "muna:accessState"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "body": {
           "@id": "muna:body"
         },
         "language": {
           "@id": "muna:language",
-          "@type": "@id"
+          "@type": "muna:language"
         },
         "creator": {
-          "@id": "muna:creator",
-          "@container": "@list"
+          "@id": "muna:creator"
         },
         "publishedAt": {
           "@id": "muna:publishedAt"
         },
         "documentedIn": {
-          "@id": "muna:documentedIn",
-          "@container": "@list"
+          "@id": "muna:documentedIn"
         }
       }
     },
@@ -1616,11 +1613,12 @@
       "@id": "muna:Material",
       "@context": {
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         }
       }
     },
@@ -1628,29 +1626,29 @@
       "@id": "muna:Measurement",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "observedDimension": {
-          "@id": "muna:observedDimension",
-          "@container": "@list"
+          "@id": "muna:observedDimension"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -1665,15 +1663,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -1707,8 +1705,7 @@
           "@id": "muna:disabled"
         },
         "items": {
-          "@id": "muna:items",
-          "@container": "@list"
+          "@id": "muna:items"
         },
         "title": {
           "@id": "muna:title"
@@ -1726,7 +1723,7 @@
         },
         "manifestRef": {
           "@id": "muna:manifestRef",
-          "@type": "@id"
+          "@type": "muna:manifestRef"
         },
         "manifestUrl": {
           "@id": "muna:manifestUrl"
@@ -1746,31 +1743,31 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "moved": {
           "@id": "muna:moved",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "movedFrom": {
@@ -1783,7 +1780,7 @@
         },
         "motivatedBy": {
           "@id": "muna:motivatedBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -1796,25 +1793,22 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "@id"
+          "@type": "muna:hasType"
         },
         "part": {
-          "@id": "muna:part",
-          "@container": "@list"
+          "@id": "muna:part"
         },
         "language": {
-          "@id": "muna:language",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:language"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -1822,16 +1816,14 @@
       "@id": "muna:NavigationItem",
       "@context": {
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "muna:label"
         },
         "landingPageRoute": {
           "@id": "muna:landingPageRoute",
-          "@type": "@id"
+          "@type": "muna:landingPageRoute"
         },
         "children": {
-          "@id": "muna:children",
-          "@container": "@list"
+          "@id": "muna:children"
         },
         "route": {
           "@id": "muna:route"
@@ -1848,17 +1840,15 @@
       "@id": "muna:NavigationMenu",
       "@context": {
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "muna:label"
         },
         "language": {
           "@id": "muna:language",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "items": {
-          "@id": "muna:items",
-          "@container": "@list"
+          "@id": "muna:items"
         }
       }
     },
@@ -1872,29 +1862,33 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         },
         "sameAs": {
-          "@id": "muna:sameAs",
-          "@container": "@list"
+          "@id": "http://www.w3.org/2002/07/owl#sameAs",
+          "@container": "@set",
+          "@type": "@id"
         },
         "inDataset": {
-          "@id": "muna:inDataset"
+          "@id": "muna:inDataset",
+          "@type": "@json"
         },
         "wasOutputOf": {
-          "@id": "muna:wasOutputOf"
+          "@id": "muna:wasOutputOf",
+          "@type": "@json"
         }
       }
     },
@@ -1920,11 +1914,10 @@
         },
         "navMenu": {
           "@id": "muna:navMenu",
-          "@type": "@id"
+          "@type": "muna:navMenu"
         },
         "content": {
-          "@id": "muna:content",
-          "@container": "@list"
+          "@id": "muna:content"
         }
       }
     },
@@ -1955,21 +1948,21 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "media": {
@@ -1977,11 +1970,12 @@
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "definingSTV": {
-          "@id": "muna:definingSTV"
+          "@id": "muna:definingSTV",
+          "@type": "@json"
         }
       }
     },
@@ -1995,12 +1989,13 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -2009,12 +2004,12 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2028,15 +2023,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2062,13 +2057,10 @@
           "@id": "muna:body"
         },
         "authors": {
-          "@id": "muna:authors",
-          "@container": "@list"
+          "@id": "muna:authors"
         },
         "categories": {
-          "@id": "muna:categories",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:categories"
         }
       }
     },
@@ -2076,24 +2068,22 @@
       "@id": "muna:Presence",
       "@context": {
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "description": {
           "@id": "muna:description"
         },
         "temporalProjection": {
-          "@id": "muna:temporalProjection",
-          "@container": "@list"
+          "@id": "muna:temporalProjection"
         },
         "spatialProjection": {
-          "@id": "muna:spatialProjection",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:spatialProjection"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2101,54 +2091,49 @@
       "@id": "muna:Production",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "consistsOf": {
-          "@id": "muna:consistsOf",
-          "@container": "@list"
+          "@id": "muna:consistsOf"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "hasModified": {
-          "@id": "muna:hasModified",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:hasModified"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificTechnique": {
           "@id": "muna:usedSpecificTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "employed": {
-          "@id": "muna:employed",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:employed"
         }
       }
     },
@@ -2162,37 +2147,36 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "active": {
-          "@id": "muna:active"
+          "@id": "muna:active",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
-        },
-        "referredToBy": {
-          "@id": "muna:referredToBy",
           "@container": "@list",
           "@type": "@id"
         },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@type": "@json"
+        },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "isAbout": {
           "@id": "muna:isAbout",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
-          "@container": "@list"
-        },
-        "documentedIn": {
-          "@id": "muna:documentedIn",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2220,12 +2204,12 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "concerned": {
           "@id": "muna:concerned",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "hasType": {
@@ -2235,41 +2219,47 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasIdentified": {
           "@id": "muna:hasIdentified",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "motivated": {
           "@id": "muna:motivated",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "activityStream": {
           "@id": "muna:activityStream",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "images": {
           "@id": "muna:images",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "files": {
           "@id": "muna:files",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2283,15 +2273,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2305,15 +2295,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2325,11 +2315,11 @@
         },
         "language": {
           "@id": "muna:language",
-          "@type": "@id"
+          "@type": "muna:language"
         },
         "page": {
           "@id": "muna:page",
-          "@type": "@id"
+          "@type": "muna:page"
         },
         "useSiteTitle": {
           "@id": "muna:useSiteTitle"
@@ -2350,41 +2340,41 @@
       "@context": {
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificTechnique": {
           "@id": "muna:usedSpecificTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedObjectOfType": {
           "@id": "muna:usedObjectOfType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificObject": {
           "@id": "muna:usedSpecificObject",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -2413,15 +2403,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2430,7 +2420,7 @@
       "@context": {
         "hasMember": {
           "@id": "muna:hasMember",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         }
       }
@@ -2445,8 +2435,7 @@
           "@id": "muna:type"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "caption": {
           "@id": "muna:caption"
@@ -2464,7 +2453,7 @@
         },
         "item": {
           "@id": "muna:item",
-          "@type": "@id"
+          "@type": "muna:item"
         },
         "title": {
           "@id": "muna:title"
@@ -2485,7 +2474,7 @@
         },
         "frontpage": {
           "@id": "muna:frontpage",
-          "@type": "@id"
+          "@type": "muna:frontpage"
         },
         "language": {
           "@id": "muna:language"
@@ -2495,23 +2484,20 @@
         },
         "mainNavigation": {
           "@id": "muna:mainNavigation",
-          "@type": "@id"
+          "@type": "muna:mainNavigation"
         },
         "footer": {
           "@id": "muna:footer",
-          "@type": "@id"
+          "@type": "muna:footer"
         },
         "openGraph": {
           "@id": "muna:openGraph"
         },
         "keywords": {
-          "@id": "muna:keywords",
-          "@container": "@list"
+          "@id": "muna:keywords"
         },
         "publisher": {
-          "@id": "muna:publisher",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:publisher"
         },
         "license": {
           "@id": "muna:license"
@@ -2542,8 +2528,7 @@
           "@id": "muna:disabled"
         },
         "items": {
-          "@id": "muna:items",
-          "@container": "@list"
+          "@id": "muna:items"
         }
       }
     },
@@ -2554,21 +2539,18 @@
           "@id": "muna:description"
         },
         "temporalProjection": {
-          "@id": "muna:temporalProjection",
-          "@container": "@list"
+          "@id": "muna:temporalProjection"
         },
         "spatialProjection": {
-          "@id": "muna:spatialProjection",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:spatialProjection"
         },
         "hadPresence": {
-          "@id": "muna:hadPresence",
-          "@container": "@list"
+          "@id": "muna:hadPresence"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2586,7 +2568,8 @@
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -2594,19 +2577,20 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "location": {
-          "@id": "muna:location"
+          "@id": "muna:location",
+          "@type": "@json"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "consistsOf": {
@@ -2626,15 +2610,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2645,8 +2629,7 @@
           "@id": "muna:disabled"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "muna:label"
         },
         "title": {
           "@id": "muna:title"
@@ -2686,15 +2669,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2708,15 +2691,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -2753,20 +2736,16 @@
           "@id": "muna:text"
         },
         "media": {
-          "@id": "muna:media",
-          "@container": "@list"
+          "@id": "muna:media"
         },
         "scale": {
           "@id": "muna:scale"
         },
         "eras": {
-          "@id": "muna:eras",
-          "@container": "@list"
+          "@id": "muna:eras"
         },
         "events": {
-          "@id": "muna:events",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:events"
         }
       }
     },
@@ -2778,7 +2757,7 @@
         },
         "item": {
           "@id": "muna:item",
-          "@type": "@id"
+          "@type": "muna:item"
         },
         "title": {
           "@id": "muna:title"
@@ -2798,16 +2777,14 @@
           "@id": "muna:text"
         },
         "media": {
-          "@id": "muna:media",
-          "@container": "@list",
-          "@type": "@id"
+          "@id": "muna:media"
         },
         "timespan": {
-          "@id": "muna:timespan"
+          "@id": "muna:timespan",
+          "@type": "@id"
         },
         "group": {
-          "@id": "muna:group",
-          "@container": "@list"
+          "@id": "muna:group"
         },
         "background": {
           "@id": "muna:background"
@@ -2847,8 +2824,7 @@
           "@id": "muna:title"
         },
         "sections": {
-          "@id": "muna:sections",
-          "@container": "@list"
+          "@id": "muna:sections"
         }
       }
     },
@@ -2860,11 +2836,10 @@
         },
         "target": {
           "@id": "muna:target",
-          "@type": "@id"
+          "@type": "muna:target"
         },
         "children": {
-          "@id": "muna:children",
-          "@container": "@list"
+          "@id": "muna:children"
         }
       }
     },
@@ -2876,11 +2851,10 @@
         },
         "target": {
           "@id": "muna:target",
-          "@type": "@id"
+          "@type": "muna:target"
         },
         "links": {
-          "@id": "muna:links",
-          "@container": "@list"
+          "@id": "muna:links"
         }
       }
     },
@@ -2888,31 +2862,30 @@
       "@id": "muna:Transformation",
       "@context": {
         "featured": {
-          "@id": "muna:featured"
+          "@id": "muna:featured",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType",
-          "@container": "@set",
-          "@type": "@id"
+          "@id": "muna:hasType"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -2921,46 +2894,47 @@
       "@context": {
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificTechnique": {
           "@id": "muna:usedSpecificTechnique",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedObjectOfType": {
           "@id": "muna:usedObjectOfType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "usedSpecificObject": {
           "@id": "muna:usedSpecificObject",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "assessedBy": {
           "@id": "muna:assessedBy",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2969,29 +2943,30 @@
       "@context": {
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         },
         "success": {
           "@id": "muna:success"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         },
         "images": {
           "@id": "muna:images",
-          "@container": "@list"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -3041,7 +3016,8 @@
         },
         "activityStream": {
           "@id": "muna:activityStream",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -3050,21 +3026,20 @@
       "@context": {
         "represents": {
           "@id": "muna:represents",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "digitallyShownBy": {
           "@id": "muna:digitallyShownBy",
-          "@container": "@list"
+          "@type": "@json"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@container": "@list",
-          "@type": "@id"
+          "@type": "@json"
         }
       }
     },
@@ -3083,16 +3058,17 @@
           "@type": "@id"
         },
         "label": {
-          "@id": "muna:label",
-          "@container": "@language"
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         },
         "activityStream": {
           "@id": "muna:activityStream",
-          "@container": "@list"
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -3106,15 +3082,15 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label",
+          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
           "@container": "@language"
         },
         "altLabel": {
-          "@id": "muna:altLabel"
+          "@id": "muna:altLabel",
+          "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list"
+          "@id": "muna:activityStream"
         }
       }
     },
@@ -3131,8 +3107,7 @@
           "@id": "muna:code"
         },
         "highlightedLines": {
-          "@id": "muna:highlightedLines",
-          "@container": "@list"
+          "@id": "muna:highlightedLines"
         }
       }
     },
