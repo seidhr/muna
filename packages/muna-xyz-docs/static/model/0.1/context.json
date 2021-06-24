@@ -17,7 +17,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -35,7 +36,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
@@ -77,7 +78,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -98,7 +100,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -111,7 +114,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "carriedOutBy": {
@@ -203,7 +206,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -224,7 +228,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "homepage": {
           "@id": "muna:homepage"
@@ -240,7 +245,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "image": {
@@ -274,7 +279,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -312,7 +318,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -406,7 +413,8 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -443,7 +451,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -498,7 +507,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -568,7 +578,8 @@
           "@id": "muna:homepage"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "preferredIdentifier": {
           "@id": "muna:preferredIdentifier"
@@ -612,7 +623,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -637,7 +649,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "carriedOutBy": {
@@ -668,7 +680,8 @@
       "@id": "muna:DigitalFile",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "description": {
           "@id": "muna:description"
@@ -726,7 +739,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -745,7 +759,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
@@ -796,7 +810,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
@@ -814,7 +829,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "media": {
@@ -835,7 +850,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -856,7 +872,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -897,7 +914,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -939,7 +957,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "formedFrom": {
@@ -972,7 +990,8 @@
       "@id": "muna:Geojson",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
@@ -999,7 +1018,8 @@
       "@id": "muna:GeojsonFeatureCollection",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "features": {
           "@id": "muna:features",
@@ -1054,7 +1074,8 @@
           "@id": "muna:disabled"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "title": {
           "@id": "muna:title"
@@ -1080,7 +1101,8 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "homepage": {
           "@id": "muna:homepage"
@@ -1096,7 +1118,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "activityStream": {
@@ -1211,7 +1233,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -1265,7 +1288,8 @@
       "@id": "muna:ImageCompare",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "before": {
           "@id": "muna:before",
@@ -1298,7 +1322,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
@@ -1333,7 +1357,8 @@
           "@id": "muna:identifiedByISO6393"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -1348,7 +1373,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "timespan": {
@@ -1386,7 +1411,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -1403,7 +1429,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "categories": {
@@ -1440,7 +1466,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "body": {
@@ -1590,7 +1616,8 @@
       "@id": "muna:Material",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -1638,7 +1665,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -1718,7 +1746,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -1793,7 +1822,8 @@
       "@id": "muna:NavigationItem",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "landingPageRoute": {
           "@id": "muna:landingPageRoute",
@@ -1818,7 +1848,8 @@
       "@id": "muna:NavigationMenu",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "language": {
           "@id": "muna:language",
@@ -1841,7 +1872,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -1923,7 +1955,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
@@ -1962,7 +1995,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -1970,7 +2004,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
@@ -1994,7 +2028,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2041,7 +2076,8 @@
       "@id": "muna:Presence",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "description": {
           "@id": "muna:description"
@@ -2073,7 +2109,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "contributionAssignedBy": {
@@ -2126,7 +2162,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "active": {
           "@id": "muna:active"
@@ -2183,7 +2220,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "concerned": {
           "@id": "muna:concerned",
@@ -2192,7 +2230,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "referredToBy": {
@@ -2245,7 +2283,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2266,7 +2305,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2373,7 +2413,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2404,7 +2445,8 @@
           "@id": "muna:type"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "caption": {
           "@id": "muna:caption"
@@ -2584,7 +2626,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2602,7 +2645,8 @@
           "@id": "muna:disabled"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "title": {
           "@id": "muna:title"
@@ -2642,7 +2686,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2663,7 +2708,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
@@ -2846,7 +2892,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "carriedOutBy": {
@@ -2990,7 +3036,8 @@
       "@id": "muna:VisualItem",
       "@context": {
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "activityStream": {
           "@id": "muna:activityStream",
@@ -3007,7 +3054,8 @@
           "@type": "@id"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "digitallyShownBy": {
           "@id": "muna:digitallyShownBy",
@@ -3031,11 +3079,12 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@container": "@list",
+          "@container": "@set",
           "@type": "@id"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -3057,7 +3106,8 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "muna:label"
+          "@id": "muna:label",
+          "@container": "@language"
         },
         "altLabel": {
           "@id": "muna:altLabel"
