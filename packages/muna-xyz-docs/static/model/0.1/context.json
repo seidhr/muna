@@ -88,7 +88,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -217,7 +219,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -267,7 +271,7 @@
         },
         "inDataset": {
           "@id": "muna:inDataset",
-          "@type": "@json"
+          "@type": "@id"
         },
         "wasOutputOf": {
           "@id": "muna:wasOutputOf",
@@ -293,7 +297,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -301,16 +307,20 @@
       "@id": "muna:Alert",
       "@context": {
         "content": {
-          "@id": "muna:content"
+          "@id": "muna:content",
+          "@type": "@json"
         },
         "showAlert": {
-          "@id": "muna:showAlert"
+          "@id": "muna:showAlert",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "validFrom": {
-          "@id": "muna:validFrom"
+          "@id": "muna:validFrom",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
         "validTo": {
-          "@id": "muna:validTo"
+          "@id": "muna:validTo",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         }
       }
     },
@@ -332,7 +342,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -368,17 +380,6 @@
           "@id": "muna:tookPlaceAt",
           "@container": "@set",
           "@type": "@id"
-        }
-      }
-    },
-    "BigText": {
-      "@id": "muna:BigText",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "content": {
-          "@id": "muna:content"
         }
       }
     },
@@ -474,7 +475,9 @@
           "@type": "@id"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         },
         "sameAs": {
           "@id": "http://www.w3.org/2002/07/owl#sameAs",
@@ -483,7 +486,7 @@
         },
         "inDataset": {
           "@id": "muna:inDataset",
-          "@type": "@json"
+          "@type": "@id"
         },
         "wasOutputOf": {
           "@id": "muna:wasOutputOf",
@@ -496,16 +499,19 @@
       "@context": {
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "muna:hasType"
+          "@type": "@id"
         },
         "value": {
           "@id": "muna:value"
         },
         "attributes": {
-          "@id": "muna:attributes"
+          "@id": "muna:attributes",
+          "@container": "@set"
         },
         "images": {
-          "@id": "muna:images"
+          "@id": "muna:images",
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -527,7 +533,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -536,10 +544,12 @@
       "@context": {
         "assignedActor": {
           "@id": "muna:assignedActor",
-          "@type": "muna:assignedActor"
+          "@type": "@id"
         },
         "assignedRole": {
-          "@id": "muna:assignedRole"
+          "@id": "muna:assignedRole",
+          "@container": "@set",
+          "@type": "@id"
         },
         "usedName": {
           "@id": "muna:usedName"
@@ -574,13 +584,16 @@
       "@id": "muna:DataTransferEvent",
       "@context": {
         "transferred": {
-          "@id": "muna:transferred"
+          "@id": "muna:transferred",
+          "@type": "@json"
         },
         "hasSender": {
-          "@id": "muna:hasSender"
+          "@id": "muna:hasSender",
+          "@type": "@json"
         },
         "timestamp": {
-          "@id": "muna:timestamp"
+          "@id": "muna:timestamp",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         }
       }
     },
@@ -662,7 +675,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -697,24 +712,14 @@
           "@container": "@language"
         },
         "description": {
-          "@id": "muna:description"
+          "@id": "muna:description",
+          "@type": "@json"
         },
         "license": {
           "@id": "muna:license"
         },
         "souce": {
           "@id": "muna:souce"
-        }
-      }
-    },
-    "DigitalImageObject": {
-      "@id": "muna:DigitalImageObject",
-      "@context": {
-        "caption": {
-          "@id": "muna:caption"
-        },
-        "alt": {
-          "@id": "muna:alt"
         }
       }
     },
@@ -731,10 +736,11 @@
       "@context": {
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "muna:hasType"
+          "@type": "@id"
         },
         "value": {
-          "@id": "muna:value"
+          "@id": "muna:value",
+          "@type": "http://www.w3.org/2001/XMLSchema#number"
         },
         "hasUnit": {
           "@id": "muna:hasUnit",
@@ -760,7 +766,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -772,7 +780,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -871,7 +881,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -936,7 +948,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -971,10 +985,14 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "formedFrom": {
-          "@id": "muna:formedFrom"
+          "@id": "muna:formedFrom",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -994,103 +1012,6 @@
         "referredToBy": {
           "@id": "muna:referredToBy",
           "@type": "@json"
-        }
-      }
-    },
-    "Geojson": {
-      "@id": "muna:Geojson",
-      "@context": {
-        "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-          "@container": "@language"
-        },
-        "referredToBy": {
-          "@id": "muna:referredToBy",
-          "@type": "@json"
-        },
-        "data": {
-          "@id": "muna:data"
-        }
-      }
-    },
-    "GeojsonFeature": {
-      "@id": "muna:GeojsonFeature",
-      "@context": {
-        "geometry": {
-          "@id": "muna:geometry"
-        },
-        "properties": {
-          "@id": "muna:properties"
-        }
-      }
-    },
-    "GeojsonFeatureCollection": {
-      "@id": "muna:GeojsonFeatureCollection",
-      "@context": {
-        "label": {
-          "@id": "muna:label"
-        },
-        "features": {
-          "@id": "muna:features"
-        }
-      }
-    },
-    "GeojsonPoint": {
-      "@id": "muna:GeojsonPoint",
-      "@context": {
-        "coordinates": {
-          "@id": "muna:coordinates"
-        }
-      }
-    },
-    "GeojsonProperties": {
-      "@id": "muna:GeojsonProperties",
-      "@context": {
-        "type": {
-          "@id": "muna:type"
-        }
-      }
-    },
-    "Grid": {
-      "@id": "muna:Grid",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "subtitle": {
-          "@id": "muna:subtitle"
-        },
-        "columns": {
-          "@id": "muna:columns"
-        },
-        "items": {
-          "@id": "muna:items"
-        },
-        "anchor": {
-          "@id": "muna:anchor"
-        }
-      }
-    },
-    "Hero": {
-      "@id": "muna:Hero",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "label": {
-          "@id": "muna:label"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "tagline": {
-          "@id": "muna:tagline"
-        },
-        "illustration": {
-          "@id": "muna:illustration"
         }
       }
     },
@@ -1220,7 +1141,7 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "muna:hasType"
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1251,63 +1172,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
-        }
-      }
-    },
-    "Iframe": {
-      "@id": "muna:Iframe",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "url": {
-          "@id": "muna:url"
-        }
-      }
-    },
-    "Illustration": {
-      "@id": "muna:Illustration",
-      "@context": {
-        "image": {
-          "@id": "muna:image"
-        }
-      }
-    },
-    "IllustrationWithCaption": {
-      "@id": "muna:IllustrationWithCaption",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "content": {
-          "@id": "muna:content"
-        },
-        "illustration": {
-          "@id": "muna:illustration"
-        }
-      }
-    },
-    "ImageCompare": {
-      "@id": "muna:ImageCompare",
-      "@context": {
-        "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
-        },
-        "before": {
-          "@id": "muna:before"
-        },
-        "after": {
-          "@id": "muna:after"
-        },
-        "caption": {
-          "@id": "muna:caption"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -1327,7 +1194,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1341,10 +1210,13 @@
         },
         "joinedWith": {
           "@id": "muna:joinedWith",
-          "@type": "muna:joinedWith"
+          "@container": "@set",
+          "@type": "@id"
         },
         "joined": {
-          "@id": "muna:joined"
+          "@id": "muna:joined",
+          "@container": "@set",
+          "@type": "@id"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
@@ -1376,7 +1248,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1390,7 +1264,8 @@
         },
         "separatedFrom": {
           "@id": "muna:separatedFrom",
-          "@type": "muna:separatedFrom"
+          "@container": "@set",
+          "@type": "@id"
         },
         "separated": {
           "@id": "muna:separated"
@@ -1466,138 +1341,29 @@
           "@id": "muna:accessState"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "body": {
-          "@id": "muna:body"
+          "@id": "muna:body",
+          "@type": "@json"
         },
         "language": {
           "@id": "muna:language",
-          "@type": "muna:language"
+          "@type": "@id"
         },
         "creator": {
-          "@id": "muna:creator"
+          "@id": "muna:creator",
+          "@container": "@set",
+          "@type": "@id"
         },
         "publishedAt": {
           "@id": "muna:publishedAt"
         },
         "documentedIn": {
-          "@id": "muna:documentedIn"
-        }
-      }
-    },
-    "LocaleBlock": {
-      "@id": "muna:LocaleBlock",
-      "@context": {
-        "no": {
-          "@id": "muna:no"
-        },
-        "en": {
-          "@id": "muna:en"
-        },
-        "smi": {
-          "@id": "muna:smi"
-        },
-        "sv": {
-          "@id": "muna:sv"
-        },
-        "de": {
-          "@id": "muna:de"
-        },
-        "none": {
-          "@id": "muna:none"
-        }
-      }
-    },
-    "LocaleBlockReport": {
-      "@id": "muna:LocaleBlockReport",
-      "@context": {
-        "no": {
-          "@id": "muna:no"
-        },
-        "en": {
-          "@id": "muna:en"
-        },
-        "smi": {
-          "@id": "muna:smi"
-        },
-        "sv": {
-          "@id": "muna:sv"
-        },
-        "de": {
-          "@id": "muna:de"
-        },
-        "none": {
-          "@id": "muna:none"
-        }
-      }
-    },
-    "LocaleBlockSimple": {
-      "@id": "muna:LocaleBlockSimple",
-      "@context": {
-        "no": {
-          "@id": "muna:no"
-        },
-        "en": {
-          "@id": "muna:en"
-        },
-        "smi": {
-          "@id": "muna:smi"
-        },
-        "sv": {
-          "@id": "muna:sv"
-        },
-        "de": {
-          "@id": "muna:de"
-        },
-        "none": {
-          "@id": "muna:none"
-        }
-      }
-    },
-    "LocaleSlug": {
-      "@id": "muna:LocaleSlug",
-      "@context": {
-        "no": {
-          "@id": "muna:no"
-        },
-        "en": {
-          "@id": "muna:en"
-        },
-        "smi": {
-          "@id": "muna:smi"
-        },
-        "sv": {
-          "@id": "muna:sv"
-        },
-        "de": {
-          "@id": "muna:de"
-        },
-        "none": {
-          "@id": "muna:none"
-        }
-      }
-    },
-    "LocaleString": {
-      "@id": "muna:LocaleString",
-      "@context": {
-        "no": {
-          "@id": "muna:no"
-        },
-        "en": {
-          "@id": "muna:en"
-        },
-        "smi": {
-          "@id": "muna:smi"
-        },
-        "sv": {
-          "@id": "muna:sv"
-        },
-        "de": {
-          "@id": "muna:de"
-        },
-        "none": {
-          "@id": "muna:none"
+          "@id": "muna:documentedIn",
+          "@type": "@json"
         }
       }
     },
@@ -1630,7 +1396,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "observedDimension": {
-          "@id": "muna:observedDimension"
+          "@id": "muna:observedDimension",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1669,9 +1437,6 @@
         "altLabel": {
           "@id": "muna:altLabel",
           "@container": "@language"
-        },
-        "activityStream": {
-          "@id": "muna:activityStream"
         }
       }
     },
@@ -1695,41 +1460,6 @@
         },
         "linkTarget": {
           "@id": "muna:linkTarget"
-        }
-      }
-    },
-    "MiradorGallery": {
-      "@id": "muna:MiradorGallery",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "items": {
-          "@id": "muna:items"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "description": {
-          "@id": "muna:description"
-        }
-      }
-    },
-    "MiradorGalleryWindow": {
-      "@id": "muna:MiradorGalleryWindow",
-      "@context": {
-        "view": {
-          "@id": "muna:view"
-        },
-        "manifestRef": {
-          "@id": "muna:manifestRef",
-          "@type": "muna:manifestRef"
-        },
-        "manifestUrl": {
-          "@id": "muna:manifestUrl"
-        },
-        "canvasUrl": {
-          "@id": "muna:canvasUrl"
         }
       }
     },
@@ -1793,13 +1523,17 @@
         },
         "hasType": {
           "@id": "muna:hasType",
-          "@type": "muna:hasType"
+          "@type": "@id"
         },
         "part": {
-          "@id": "muna:part"
+          "@id": "muna:part",
+          "@container": "@set",
+          "@type": "@id"
         },
         "language": {
-          "@id": "muna:language"
+          "@id": "muna:language",
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1820,10 +1554,12 @@
         },
         "landingPageRoute": {
           "@id": "muna:landingPageRoute",
-          "@type": "muna:landingPageRoute"
+          "@type": "@id"
         },
         "children": {
-          "@id": "muna:children"
+          "@id": "muna:children",
+          "@container": "@list",
+          "@type": "@id"
         },
         "route": {
           "@id": "muna:route"
@@ -1848,7 +1584,9 @@
           "@type": "@id"
         },
         "items": {
-          "@id": "muna:items"
+          "@id": "muna:items",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -1875,7 +1613,9 @@
           "@type": "@id"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         },
         "sameAs": {
           "@id": "http://www.w3.org/2002/07/owl#sameAs",
@@ -1884,7 +1624,7 @@
         },
         "inDataset": {
           "@id": "muna:inDataset",
-          "@type": "@json"
+          "@type": "@id"
         },
         "wasOutputOf": {
           "@id": "muna:wasOutputOf",
@@ -1902,7 +1642,8 @@
           "@id": "muna:description"
         },
         "image": {
-          "@id": "muna:image"
+          "@id": "muna:image",
+          "@type": "@json"
         }
       }
     },
@@ -1914,27 +1655,11 @@
         },
         "navMenu": {
           "@id": "muna:navMenu",
-          "@type": "muna:navMenu"
+          "@type": "@id"
         },
         "content": {
-          "@id": "muna:content"
-        }
-      }
-    },
-    "PageHeader": {
-      "@id": "muna:PageHeader",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "subtitle": {
-          "@id": "muna:subtitle"
-        },
-        "illustration": {
-          "@id": "muna:illustration"
+          "@id": "muna:content",
+          "@type": "@json"
         }
       }
     },
@@ -2031,7 +1756,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2045,22 +1772,30 @@
           "@id": "muna:slug"
         },
         "publishedAt": {
-          "@id": "muna:publishedAt"
+          "@id": "muna:publishedAt",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "excerpt": {
-          "@id": "muna:excerpt"
+          "@id": "muna:excerpt",
+          "@type": "@json"
         },
         "image": {
-          "@id": "muna:image"
+          "@id": "muna:image",
+          "@type": "@json"
         },
         "body": {
-          "@id": "muna:body"
+          "@id": "muna:body",
+          "@type": "@json"
         },
         "authors": {
-          "@id": "muna:authors"
+          "@id": "muna:authors",
+          "@container": "@list",
+          "@type": "@id"
         },
         "categories": {
-          "@id": "muna:categories"
+          "@id": "muna:categories",
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2072,13 +1807,18 @@
           "@container": "@language"
         },
         "description": {
-          "@id": "muna:description"
+          "@id": "muna:description",
+          "@type": "@json"
         },
         "temporalProjection": {
-          "@id": "muna:temporalProjection"
+          "@id": "muna:temporalProjection",
+          "@container": "@set",
+          "@type": "@id"
         },
         "spatialProjection": {
-          "@id": "muna:spatialProjection"
+          "@id": "muna:spatialProjection",
+          "@container": "@set",
+          "@type": "@id"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
@@ -2095,10 +1835,14 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "consistsOf": {
-          "@id": "muna:consistsOf"
+          "@id": "muna:consistsOf",
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
@@ -2120,7 +1864,9 @@
           "@type": "@json"
         },
         "hasModified": {
-          "@id": "muna:hasModified"
+          "@id": "muna:hasModified",
+          "@container": "@set",
+          "@type": "@id"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
@@ -2133,7 +1879,9 @@
           "@type": "@id"
         },
         "employed": {
-          "@id": "muna:employed"
+          "@id": "muna:employed",
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2177,20 +1925,6 @@
           "@id": "muna:consistsOf",
           "@container": "@set",
           "@type": "@id"
-        }
-      }
-    },
-    "Quote": {
-      "@id": "muna:Quote",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "content": {
-          "@id": "muna:content"
-        },
-        "credit": {
-          "@id": "muna:credit"
         }
       }
     },
@@ -2281,7 +2015,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2303,7 +2039,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2315,23 +2053,26 @@
         },
         "language": {
           "@id": "muna:language",
-          "@type": "muna:language"
+          "@type": "@id"
         },
         "page": {
           "@id": "muna:page",
-          "@type": "muna:page"
+          "@type": "@id"
         },
         "useSiteTitle": {
           "@id": "muna:useSiteTitle"
         },
         "openGraph": {
-          "@id": "muna:openGraph"
+          "@id": "muna:openGraph",
+          "@type": "@json"
         },
         "includeInSitemap": {
-          "@id": "muna:includeInSitemap"
+          "@id": "muna:includeInSitemap",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "disallowRobots": {
-          "@id": "muna:disallowRobots"
+          "@id": "muna:disallowRobots",
+          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         }
       }
     },
@@ -2379,20 +2120,6 @@
         }
       }
     },
-    "SectionText": {
-      "@id": "muna:SectionText",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "content": {
-          "@id": "muna:content"
-        }
-      }
-    },
     "SectionType": {
       "@id": "muna:SectionType",
       "@context": {
@@ -2411,7 +2138,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2425,47 +2154,6 @@
         }
       }
     },
-    "SingleLevelChart": {
-      "@id": "muna:SingleLevelChart",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "type": {
-          "@id": "muna:type"
-        },
-        "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
-        },
-        "caption": {
-          "@id": "muna:caption"
-        },
-        "data": {
-          "@id": "muna:data"
-        }
-      }
-    },
-    "SingleObject": {
-      "@id": "muna:SingleObject",
-      "@context": {
-        "view": {
-          "@id": "muna:view"
-        },
-        "item": {
-          "@id": "muna:item",
-          "@type": "muna:item"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "description": {
-          "@id": "muna:description"
-        },
-        "canvasUrl": {
-          "@id": "muna:canvasUrl"
-        }
-      }
-    },
     "SiteSettings": {
       "@id": "muna:SiteSettings",
       "@context": {
@@ -2474,61 +2162,38 @@
         },
         "frontpage": {
           "@id": "muna:frontpage",
-          "@type": "muna:frontpage"
+          "@type": "@id"
         },
         "language": {
           "@id": "muna:language"
         },
         "logo": {
-          "@id": "muna:logo"
+          "@id": "muna:logo",
+          "@type": "@json"
         },
         "mainNavigation": {
           "@id": "muna:mainNavigation",
-          "@type": "muna:mainNavigation"
+          "@type": "@id"
         },
         "footer": {
           "@id": "muna:footer",
-          "@type": "muna:footer"
+          "@type": "@id"
         },
         "openGraph": {
-          "@id": "muna:openGraph"
+          "@id": "muna:openGraph",
+          "@type": "@json"
         },
         "keywords": {
-          "@id": "muna:keywords"
+          "@id": "muna:keywords",
+          "@container": "@set"
         },
         "publisher": {
-          "@id": "muna:publisher"
+          "@id": "muna:publisher",
+          "@container": "@list",
+          "@type": "@id"
         },
         "license": {
           "@id": "muna:license"
-        }
-      }
-    },
-    "Social": {
-      "@id": "muna:Social",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "url": {
-          "@id": "muna:url"
-        },
-        "service": {
-          "@id": "muna:service"
-        }
-      }
-    },
-    "SocialCollection": {
-      "@id": "muna:SocialCollection",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "items": {
-          "@id": "muna:items"
         }
       }
     },
@@ -2536,16 +2201,23 @@
       "@id": "muna:SpacetimeVolume",
       "@context": {
         "description": {
-          "@id": "muna:description"
+          "@id": "muna:description",
+          "@type": "@json"
         },
         "temporalProjection": {
-          "@id": "muna:temporalProjection"
+          "@id": "muna:temporalProjection",
+          "@container": "@set",
+          "@type": "@id"
         },
         "spatialProjection": {
-          "@id": "muna:spatialProjection"
+          "@id": "muna:spatialProjection",
+          "@container": "@set",
+          "@type": "@id"
         },
         "hadPresence": {
-          "@id": "muna:hadPresence"
+          "@id": "muna:hadPresence",
+          "@container": "@set",
+          "@type": "@id"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
@@ -2618,44 +2290,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
-        }
-      }
-    },
-    "SubStory": {
-      "@id": "muna:SubStory",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "label": {
-          "@id": "muna:label"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "tagline": {
-          "@id": "muna:tagline"
-        },
-        "content": {
-          "@id": "muna:content"
-        },
-        "illustration": {
-          "@id": "muna:illustration"
-        }
-      }
-    },
-    "SvgTitle": {
-      "@id": "muna:SvgTitle",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "content": {
-          "@id": "muna:content"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2677,7 +2314,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2699,24 +2338,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
-        }
-      }
-    },
-    "TextWithIllustration": {
-      "@id": "muna:TextWithIllustration",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "content": {
-          "@id": "muna:content"
-        },
-        "illustration": {
-          "@id": "muna:illustration"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2749,24 +2373,6 @@
         }
       }
     },
-    "TimelineSection": {
-      "@id": "muna:TimelineSection",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "item": {
-          "@id": "muna:item",
-          "@type": "muna:item"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "description": {
-          "@id": "muna:description"
-        }
-      }
-    },
     "TimelineSlide": {
       "@id": "muna:TimelineSlide",
       "@context": {
@@ -2795,22 +2401,28 @@
       "@id": "muna:Timespan",
       "@context": {
         "beginOfTheBegin": {
-          "@id": "muna:beginOfTheBegin"
+          "@id": "muna:beginOfTheBegin",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
         "endOfTheBegin": {
-          "@id": "muna:endOfTheBegin"
+          "@id": "muna:endOfTheBegin",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
         "date": {
-          "@id": "muna:date"
+          "@id": "muna:date",
+          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
         },
         "beginOfTheEnd": {
-          "@id": "muna:beginOfTheEnd"
+          "@id": "muna:beginOfTheEnd",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
         "endOfTheEnd": {
-          "@id": "muna:endOfTheEnd"
+          "@id": "muna:endOfTheEnd",
+          "@type": "http://www.w3.org/2001/XMLSchema#date"
         },
         "description": {
-          "@id": "muna:description"
+          "@id": "muna:description",
+          "@type": "@json"
         }
       }
     },
@@ -2824,7 +2436,9 @@
           "@id": "muna:title"
         },
         "sections": {
-          "@id": "muna:sections"
+          "@id": "muna:sections",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2836,10 +2450,12 @@
         },
         "target": {
           "@id": "muna:target",
-          "@type": "muna:target"
+          "@type": "@id"
         },
         "children": {
-          "@id": "muna:children"
+          "@id": "muna:children",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2851,10 +2467,12 @@
         },
         "target": {
           "@id": "muna:target",
-          "@type": "muna:target"
+          "@type": "@id"
         },
         "links": {
-          "@id": "muna:links"
+          "@id": "muna:links",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -2866,7 +2484,9 @@
           "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "hasType": {
-          "@id": "muna:hasType"
+          "@id": "muna:hasType",
+          "@container": "@set",
+          "@type": "@id"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -2970,43 +2590,6 @@
         }
       }
     },
-    "TwoColumn": {
-      "@id": "muna:TwoColumn",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "subtitle": {
-          "@id": "muna:subtitle"
-        },
-        "firstColumn": {
-          "@id": "muna:firstColumn"
-        },
-        "secondColumn": {
-          "@id": "muna:secondColumn"
-        },
-        "anchor": {
-          "@id": "muna:anchor"
-        }
-      }
-    },
-    "Video": {
-      "@id": "muna:Video",
-      "@context": {
-        "disabled": {
-          "@id": "muna:disabled"
-        },
-        "title": {
-          "@id": "muna:title"
-        },
-        "url": {
-          "@id": "muna:url"
-        }
-      }
-    },
     "VisualItem": {
       "@id": "muna:VisualItem",
       "@context": {
@@ -3090,7 +2673,9 @@
           "@container": "@language"
         },
         "activityStream": {
-          "@id": "muna:activityStream"
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
         }
       }
     },
@@ -3173,14 +2758,6 @@
         }
       }
     },
-    "quoteBlock": {
-      "@id": "muna:quoteBlock",
-      "@context": null
-    },
-    "reportText": {
-      "@id": "muna:reportText",
-      "@context": null
-    },
     "rgbaColor": {
       "@id": "muna:rgbaColor",
       "@context": {
@@ -3197,10 +2774,6 @@
           "@id": "muna:a"
         }
       }
-    },
-    "simpleBlockContent": {
-      "@id": "muna:simpleBlockContent",
-      "@context": null
     }
   }
 }
