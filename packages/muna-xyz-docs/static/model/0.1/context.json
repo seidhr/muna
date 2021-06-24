@@ -1,6 +1,6 @@
 {
   "@context": {
-    "@version": 0.1,
+    "@version": 1.1,
     "_id": "@id",
     "_type": "@type",
     "muna": "http://muna.xyz/model/0.1/",
