@@ -1,0 +1,3179 @@
+{
+  "@context": {
+    "@version": 0.1,
+    "_id": "@id",
+    "_type": "@type",
+    "muna": "http://muna.xyz/model/0.1/",
+    "@base": "http://data.muna.xyz/",
+    "Acquisition": {
+      "@id": "muna:Acquisition",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "subjectOf": {
+          "@id": "muna:subjectOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "transferredTitleOf": {
+          "@id": "muna:transferredTitleOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "transferredTitleFrom": {
+          "@id": "muna:transferredTitleFrom",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "transferredTitleTo": {
+          "@id": "muna:transferredTitleTo",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list"
+        },
+        "documentedIn": {
+          "@id": "muna:documentedIn",
+          "@container": "@list"
+        }
+      }
+    },
+    "AcquisitionType": {
+      "@id": "muna:AcquisitionType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Activity": {
+      "@id": "muna:Activity",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hadParticipant": {
+          "@id": "muna:hadParticipant",
+          "@container": "@list"
+        },
+        "target": {
+          "@id": "muna:target",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "continued": {
+          "@id": "muna:continued",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "wasContinuedBy": {
+          "@id": "muna:wasContinuedBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "influencedBy": {
+          "@id": "muna:influencedBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedGeneralTechnique": {
+          "@id": "muna:usedGeneralTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificTechnique": {
+          "@id": "muna:usedSpecificTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedObjectOfType": {
+          "@id": "muna:usedObjectOfType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificObject": {
+          "@id": "muna:usedSpecificObject",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "generalPurpose": {
+          "@id": "muna:generalPurpose",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "motivatedBy": {
+          "@id": "muna:motivatedBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "intendedUseOf": {
+          "@id": "muna:intendedUseOf",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "ActivityType": {
+      "@id": "muna:ActivityType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Actor": {
+      "@id": "muna:Actor",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "homepage": {
+          "@id": "muna:homepage"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "image": {
+          "@id": "muna:image"
+        },
+        "memberOf": {
+          "@id": "muna:memberOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "inDataset": {
+          "@id": "muna:inDataset"
+        },
+        "wasOutputOf": {
+          "@id": "muna:wasOutputOf"
+        }
+      }
+    },
+    "ActorType": {
+      "@id": "muna:ActorType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Alert": {
+      "@id": "muna:Alert",
+      "@context": {
+        "content": {
+          "@id": "muna:content"
+        },
+        "showAlert": {
+          "@id": "muna:showAlert"
+        },
+        "validFrom": {
+          "@id": "muna:validFrom"
+        },
+        "validTo": {
+          "@id": "muna:validTo"
+        }
+      }
+    },
+    "AppelationType": {
+      "@id": "muna:AppelationType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Background": {
+      "@id": "muna:Background",
+      "@context": {
+        "url": {
+          "@id": "muna:url"
+        },
+        "color": {
+          "@id": "muna:color"
+        }
+      }
+    },
+    "BeginningOfExistence": {
+      "@id": "muna:BeginningOfExistence",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "contributionAssignedBy": {
+          "@id": "muna:contributionAssignedBy",
+          "@container": "@list"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "BigText": {
+      "@id": "muna:BigText",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "content": {
+          "@id": "muna:content"
+        }
+      }
+    },
+    "Birth": {
+      "@id": "muna:Birth",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Collection": {
+      "@id": "muna:Collection",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "preferredIdentifier": {
+          "@id": "muna:preferredIdentifier"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "subjectOf": {
+          "@id": "muna:subjectOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        },
+        "composedOf": {
+          "@id": "muna:composedOf",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Concept": {
+      "@id": "muna:Concept",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        },
+        "sameAs": {
+          "@id": "muna:sameAs",
+          "@container": "@list"
+        },
+        "inDataset": {
+          "@id": "muna:inDataset"
+        },
+        "wasOutputOf": {
+          "@id": "muna:wasOutputOf"
+        }
+      }
+    },
+    "ConditionState": {
+      "@id": "muna:ConditionState",
+      "@context": {
+        "hasType": {
+          "@id": "muna:hasType",
+          "@type": "@id"
+        },
+        "value": {
+          "@id": "muna:value"
+        },
+        "attributes": {
+          "@id": "muna:attributes",
+          "@container": "@list"
+        },
+        "images": {
+          "@id": "muna:images",
+          "@container": "@list"
+        }
+      }
+    },
+    "ConditionType": {
+      "@id": "muna:ConditionType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "ContributionAssignment": {
+      "@id": "muna:ContributionAssignment",
+      "@context": {
+        "assignedActor": {
+          "@id": "muna:assignedActor",
+          "@type": "@id"
+        },
+        "assignedRole": {
+          "@id": "muna:assignedRole",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedName": {
+          "@id": "muna:usedName"
+        }
+      }
+    },
+    "Creation": {
+      "@id": "muna:Creation",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "contributionAssignedBy": {
+          "@id": "muna:contributionAssignedBy",
+          "@container": "@list"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "DataTransferEvent": {
+      "@id": "muna:DataTransferEvent",
+      "@context": {
+        "transferred": {
+          "@id": "muna:transferred"
+        },
+        "hasSender": {
+          "@id": "muna:hasSender"
+        },
+        "timestamp": {
+          "@id": "muna:timestamp"
+        }
+      }
+    },
+    "Dataset": {
+      "@id": "muna:Dataset",
+      "@context": {
+        "homepage": {
+          "@id": "muna:homepage"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "preferredIdentifier": {
+          "@id": "muna:preferredIdentifier"
+        }
+      }
+    },
+    "Death": {
+      "@id": "muna:Death",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "DesignOrProcedure": {
+      "@id": "muna:DesignOrProcedure",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "documentedIn": {
+          "@id": "muna:documentedIn",
+          "@container": "@list"
+        }
+      }
+    },
+    "Destruction": {
+      "@id": "muna:Destruction",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "DigitalDevice": {
+      "@id": "muna:DigitalDevice",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        }
+      }
+    },
+    "DigitalFile": {
+      "@id": "muna:DigitalFile",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "description": {
+          "@id": "muna:description"
+        },
+        "license": {
+          "@id": "muna:license"
+        },
+        "souce": {
+          "@id": "muna:souce"
+        }
+      }
+    },
+    "DigitalImageObject": {
+      "@id": "muna:DigitalImageObject",
+      "@context": {
+        "caption": {
+          "@id": "muna:caption"
+        },
+        "alt": {
+          "@id": "muna:alt"
+        }
+      }
+    },
+    "DigitalObject": {
+      "@id": "muna:DigitalObject",
+      "@context": {
+        "value": {
+          "@id": "muna:value"
+        }
+      }
+    },
+    "Dimension": {
+      "@id": "muna:Dimension",
+      "@context": {
+        "hasType": {
+          "@id": "muna:hasType",
+          "@type": "@id"
+        },
+        "value": {
+          "@id": "muna:value"
+        },
+        "hasUnit": {
+          "@id": "muna:hasUnit",
+          "@type": "@id"
+        }
+      }
+    },
+    "DimensionType": {
+      "@id": "muna:DimensionType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Dissolution": {
+      "@id": "muna:Dissolution",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "motivatedBy": {
+          "@id": "muna:motivatedBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Era": {
+      "@id": "muna:Era",
+      "@context": {
+        "headline": {
+          "@id": "muna:headline"
+        },
+        "text": {
+          "@id": "muna:text"
+        },
+        "startDate": {
+          "@id": "muna:startDate"
+        },
+        "endDate": {
+          "@id": "muna:endDate"
+        }
+      }
+    },
+    "Event": {
+      "@id": "muna:Event",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "media": {
+          "@id": "muna:media"
+        },
+        "location": {
+          "@id": "muna:location"
+        }
+      }
+    },
+    "EventType": {
+      "@id": "muna:EventType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Exhibition": {
+      "@id": "muna:Exhibition",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "creator": {
+          "@id": "muna:creator",
+          "@container": "@list"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "ExhibitionType": {
+      "@id": "muna:ExhibitionType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "ExternalMediaObject": {
+      "@id": "muna:ExternalMediaObject",
+      "@context": {
+        "url": {
+          "@id": "muna:url"
+        },
+        "caption": {
+          "@id": "muna:caption"
+        },
+        "credit": {
+          "@id": "muna:credit"
+        },
+        "alt": {
+          "@id": "muna:alt"
+        },
+        "link": {
+          "@id": "muna:link"
+        },
+        "linkTarget": {
+          "@id": "muna:linkTarget"
+        }
+      }
+    },
+    "Formation": {
+      "@id": "muna:Formation",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "formedFrom": {
+          "@id": "muna:formedFrom",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "motivatedBy": {
+          "@id": "muna:motivatedBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Geojson": {
+      "@id": "muna:Geojson",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "data": {
+          "@id": "muna:data"
+        }
+      }
+    },
+    "GeojsonFeature": {
+      "@id": "muna:GeojsonFeature",
+      "@context": {
+        "geometry": {
+          "@id": "muna:geometry"
+        },
+        "properties": {
+          "@id": "muna:properties"
+        }
+      }
+    },
+    "GeojsonFeatureCollection": {
+      "@id": "muna:GeojsonFeatureCollection",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "features": {
+          "@id": "muna:features",
+          "@container": "@list"
+        }
+      }
+    },
+    "GeojsonPoint": {
+      "@id": "muna:GeojsonPoint",
+      "@context": {
+        "coordinates": {
+          "@id": "muna:coordinates"
+        }
+      }
+    },
+    "GeojsonProperties": {
+      "@id": "muna:GeojsonProperties",
+      "@context": {
+        "type": {
+          "@id": "muna:type"
+        }
+      }
+    },
+    "Grid": {
+      "@id": "muna:Grid",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "subtitle": {
+          "@id": "muna:subtitle"
+        },
+        "columns": {
+          "@id": "muna:columns"
+        },
+        "items": {
+          "@id": "muna:items",
+          "@container": "@list"
+        },
+        "anchor": {
+          "@id": "muna:anchor"
+        }
+      }
+    },
+    "Hero": {
+      "@id": "muna:Hero",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "tagline": {
+          "@id": "muna:tagline"
+        },
+        "illustration": {
+          "@id": "muna:illustration"
+        }
+      }
+    },
+    "HumanMadeObject": {
+      "@id": "muna:HumanMadeObject",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "preferredIdentifier": {
+          "@id": "muna:preferredIdentifier"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "homepage": {
+          "@id": "muna:homepage"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "subject": {
+          "@id": "muna:subject",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "subjectOf": {
+          "@id": "muna:subjectOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "license": {
+          "@id": "muna:license"
+        },
+        "image": {
+          "@id": "muna:image"
+        },
+        "digitallyShownBy": {
+          "@id": "muna:digitallyShownBy",
+          "@container": "@list"
+        },
+        "subjectOfManifest": {
+          "@id": "muna:subjectOfManifest"
+        },
+        "relation": {
+          "@id": "muna:relation",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "presentAt": {
+          "@id": "muna:presentAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "depicts": {
+          "@id": "muna:depicts",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "showsVisualObject": {
+          "@id": "muna:showsVisualObject",
+          "@container": "@list"
+        },
+        "carries": {
+          "@id": "muna:carries",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "composedOf": {
+          "@id": "muna:composedOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "measurement": {
+          "@id": "muna:measurement",
+          "@container": "@list"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasCurrentOwner": {
+          "@id": "muna:hasCurrentOwner",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasFormerOrCurrentOwner": {
+          "@id": "muna:hasFormerOrCurrentOwner",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "wasOutputOf": {
+          "@id": "muna:wasOutputOf"
+        }
+      }
+    },
+    "Identifier": {
+      "@id": "muna:Identifier",
+      "@context": {
+        "content": {
+          "@id": "muna:content"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "IdentifierType": {
+      "@id": "muna:IdentifierType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Iframe": {
+      "@id": "muna:Iframe",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "url": {
+          "@id": "muna:url"
+        }
+      }
+    },
+    "Illustration": {
+      "@id": "muna:Illustration",
+      "@context": {
+        "image": {
+          "@id": "muna:image"
+        }
+      }
+    },
+    "IllustrationWithCaption": {
+      "@id": "muna:IllustrationWithCaption",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "content": {
+          "@id": "muna:content"
+        },
+        "illustration": {
+          "@id": "muna:illustration"
+        }
+      }
+    },
+    "ImageCompare": {
+      "@id": "muna:ImageCompare",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "before": {
+          "@id": "muna:before",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "after": {
+          "@id": "muna:after",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "caption": {
+          "@id": "muna:caption"
+        }
+      }
+    },
+    "InstagramPost": {
+      "@id": "muna:InstagramPost",
+      "@context": {
+        "url": {
+          "@id": "muna:url"
+        }
+      }
+    },
+    "Joining": {
+      "@id": "muna:Joining",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "joinedWith": {
+          "@id": "muna:joinedWith",
+          "@type": "@id"
+        },
+        "joined": {
+          "@id": "muna:joined",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Language": {
+      "@id": "muna:Language",
+      "@context": {
+        "identifiedByISO6393": {
+          "@id": "muna:identifiedByISO6393"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        }
+      }
+    },
+    "Leaving": {
+      "@id": "muna:Leaving",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "separatedFrom": {
+          "@id": "muna:separatedFrom",
+          "@type": "@id"
+        },
+        "separated": {
+          "@id": "muna:separated",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "LinguisticDocument": {
+      "@id": "muna:LinguisticDocument",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "creator": {
+          "@id": "muna:creator",
+          "@container": "@list"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "categories": {
+          "@id": "muna:categories",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "publishedAt": {
+          "@id": "muna:publishedAt"
+        },
+        "body": {
+          "@id": "muna:body"
+        },
+        "excerpt": {
+          "@id": "muna:excerpt"
+        },
+        "image": {
+          "@id": "muna:image"
+        },
+        "documentedIn": {
+          "@id": "muna:documentedIn",
+          "@container": "@list"
+        }
+      }
+    },
+    "LinguisticObject": {
+      "@id": "muna:LinguisticObject",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "body": {
+          "@id": "muna:body"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@type": "@id"
+        },
+        "creator": {
+          "@id": "muna:creator",
+          "@container": "@list"
+        },
+        "publishedAt": {
+          "@id": "muna:publishedAt"
+        },
+        "documentedIn": {
+          "@id": "muna:documentedIn",
+          "@container": "@list"
+        }
+      }
+    },
+    "LocaleBlock": {
+      "@id": "muna:LocaleBlock",
+      "@context": {
+        "no": {
+          "@id": "muna:no"
+        },
+        "en": {
+          "@id": "muna:en"
+        },
+        "smi": {
+          "@id": "muna:smi"
+        },
+        "sv": {
+          "@id": "muna:sv"
+        },
+        "de": {
+          "@id": "muna:de"
+        },
+        "none": {
+          "@id": "muna:none"
+        }
+      }
+    },
+    "LocaleBlockReport": {
+      "@id": "muna:LocaleBlockReport",
+      "@context": {
+        "no": {
+          "@id": "muna:no"
+        },
+        "en": {
+          "@id": "muna:en"
+        },
+        "smi": {
+          "@id": "muna:smi"
+        },
+        "sv": {
+          "@id": "muna:sv"
+        },
+        "de": {
+          "@id": "muna:de"
+        },
+        "none": {
+          "@id": "muna:none"
+        }
+      }
+    },
+    "LocaleBlockSimple": {
+      "@id": "muna:LocaleBlockSimple",
+      "@context": {
+        "no": {
+          "@id": "muna:no"
+        },
+        "en": {
+          "@id": "muna:en"
+        },
+        "smi": {
+          "@id": "muna:smi"
+        },
+        "sv": {
+          "@id": "muna:sv"
+        },
+        "de": {
+          "@id": "muna:de"
+        },
+        "none": {
+          "@id": "muna:none"
+        }
+      }
+    },
+    "LocaleSlug": {
+      "@id": "muna:LocaleSlug",
+      "@context": {
+        "no": {
+          "@id": "muna:no"
+        },
+        "en": {
+          "@id": "muna:en"
+        },
+        "smi": {
+          "@id": "muna:smi"
+        },
+        "sv": {
+          "@id": "muna:sv"
+        },
+        "de": {
+          "@id": "muna:de"
+        },
+        "none": {
+          "@id": "muna:none"
+        }
+      }
+    },
+    "LocaleString": {
+      "@id": "muna:LocaleString",
+      "@context": {
+        "no": {
+          "@id": "muna:no"
+        },
+        "en": {
+          "@id": "muna:en"
+        },
+        "smi": {
+          "@id": "muna:smi"
+        },
+        "sv": {
+          "@id": "muna:sv"
+        },
+        "de": {
+          "@id": "muna:de"
+        },
+        "none": {
+          "@id": "muna:none"
+        }
+      }
+    },
+    "Manifest": {
+      "@id": "muna:Manifest",
+      "@context": {
+        "url": {
+          "@id": "muna:url"
+        }
+      }
+    },
+    "Material": {
+      "@id": "muna:Material",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        }
+      }
+    },
+    "Measurement": {
+      "@id": "muna:Measurement",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "observedDimension": {
+          "@id": "muna:observedDimension",
+          "@container": "@list"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "MeasurementUnit": {
+      "@id": "muna:MeasurementUnit",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "MediaObject": {
+      "@id": "muna:MediaObject",
+      "@context": {
+        "url": {
+          "@id": "muna:url"
+        },
+        "caption": {
+          "@id": "muna:caption"
+        },
+        "credit": {
+          "@id": "muna:credit"
+        },
+        "alt": {
+          "@id": "muna:alt"
+        },
+        "link": {
+          "@id": "muna:link"
+        },
+        "linkTarget": {
+          "@id": "muna:linkTarget"
+        }
+      }
+    },
+    "MiradorGallery": {
+      "@id": "muna:MiradorGallery",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "items": {
+          "@id": "muna:items",
+          "@container": "@list"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "description": {
+          "@id": "muna:description"
+        }
+      }
+    },
+    "MiradorGalleryWindow": {
+      "@id": "muna:MiradorGalleryWindow",
+      "@context": {
+        "view": {
+          "@id": "muna:view"
+        },
+        "manifestRef": {
+          "@id": "muna:manifestRef",
+          "@type": "@id"
+        },
+        "manifestUrl": {
+          "@id": "muna:manifestUrl"
+        },
+        "canvasUrl": {
+          "@id": "muna:canvasUrl"
+        }
+      }
+    },
+    "Move": {
+      "@id": "muna:Move",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "moved": {
+          "@id": "muna:moved",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "movedFrom": {
+          "@id": "muna:movedFrom",
+          "@type": "@id"
+        },
+        "movedTo": {
+          "@id": "muna:movedTo",
+          "@type": "@id"
+        },
+        "motivatedBy": {
+          "@id": "muna:motivatedBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Name": {
+      "@id": "muna:Name",
+      "@context": {
+        "content": {
+          "@id": "muna:content"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@type": "@id"
+        },
+        "part": {
+          "@id": "muna:part",
+          "@container": "@list"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "NavigationItem": {
+      "@id": "muna:NavigationItem",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "landingPageRoute": {
+          "@id": "muna:landingPageRoute",
+          "@type": "@id"
+        },
+        "children": {
+          "@id": "muna:children",
+          "@container": "@list"
+        },
+        "route": {
+          "@id": "muna:route"
+        },
+        "link": {
+          "@id": "muna:link"
+        },
+        "kind": {
+          "@id": "muna:kind"
+        }
+      }
+    },
+    "NavigationMenu": {
+      "@id": "muna:NavigationMenu",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "items": {
+          "@id": "muna:items",
+          "@container": "@list"
+        }
+      }
+    },
+    "ObjectType": {
+      "@id": "muna:ObjectType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        },
+        "sameAs": {
+          "@id": "muna:sameAs",
+          "@container": "@list"
+        },
+        "inDataset": {
+          "@id": "muna:inDataset"
+        },
+        "wasOutputOf": {
+          "@id": "muna:wasOutputOf"
+        }
+      }
+    },
+    "OpenGraph": {
+      "@id": "muna:OpenGraph",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "description": {
+          "@id": "muna:description"
+        },
+        "image": {
+          "@id": "muna:image"
+        }
+      }
+    },
+    "Page": {
+      "@id": "muna:Page",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "navMenu": {
+          "@id": "muna:navMenu",
+          "@type": "@id"
+        },
+        "content": {
+          "@id": "muna:content",
+          "@container": "@list"
+        }
+      }
+    },
+    "PageHeader": {
+      "@id": "muna:PageHeader",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "subtitle": {
+          "@id": "muna:subtitle"
+        },
+        "illustration": {
+          "@id": "muna:illustration"
+        }
+      }
+    },
+    "Period": {
+      "@id": "muna:Period",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "media": {
+          "@id": "muna:media"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "definingSTV": {
+          "@id": "muna:definingSTV"
+        }
+      }
+    },
+    "Place": {
+      "@id": "muna:Place",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "definedByGeoJSON": {
+          "@id": "muna:definedByGeoJSON",
+          "@container": "@list"
+        }
+      }
+    },
+    "PlaceType": {
+      "@id": "muna:PlaceType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Post": {
+      "@id": "muna:Post",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "slug": {
+          "@id": "muna:slug"
+        },
+        "publishedAt": {
+          "@id": "muna:publishedAt"
+        },
+        "excerpt": {
+          "@id": "muna:excerpt"
+        },
+        "image": {
+          "@id": "muna:image"
+        },
+        "body": {
+          "@id": "muna:body"
+        },
+        "authors": {
+          "@id": "muna:authors",
+          "@container": "@list"
+        },
+        "categories": {
+          "@id": "muna:categories",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Presence": {
+      "@id": "muna:Presence",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "description": {
+          "@id": "muna:description"
+        },
+        "temporalProjection": {
+          "@id": "muna:temporalProjection",
+          "@container": "@list"
+        },
+        "spatialProjection": {
+          "@id": "muna:spatialProjection",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "definedByGeoJSON": {
+          "@id": "muna:definedByGeoJSON",
+          "@container": "@list"
+        }
+      }
+    },
+    "Production": {
+      "@id": "muna:Production",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "contributionAssignedBy": {
+          "@id": "muna:contributionAssignedBy",
+          "@container": "@list"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasModified": {
+          "@id": "muna:hasModified",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedGeneralTechnique": {
+          "@id": "muna:usedGeneralTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificTechnique": {
+          "@id": "muna:usedSpecificTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "employed": {
+          "@id": "muna:employed",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Project": {
+      "@id": "muna:Project",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "active": {
+          "@id": "muna:active"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "isAbout": {
+          "@id": "muna:isAbout",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list"
+        },
+        "documentedIn": {
+          "@id": "muna:documentedIn",
+          "@container": "@list"
+        }
+      }
+    },
+    "Quote": {
+      "@id": "muna:Quote",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "content": {
+          "@id": "muna:content"
+        },
+        "credit": {
+          "@id": "muna:credit"
+        }
+      }
+    },
+    "Report": {
+      "@id": "muna:Report",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "concerned": {
+          "@id": "muna:concerned",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "hasIdentified": {
+          "@id": "muna:hasIdentified",
+          "@container": "@list"
+        },
+        "motivated": {
+          "@id": "muna:motivated",
+          "@container": "@list"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        },
+        "images": {
+          "@id": "muna:images",
+          "@container": "@list"
+        },
+        "files": {
+          "@id": "muna:files",
+          "@container": "@list"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list"
+        }
+      }
+    },
+    "ReportType": {
+      "@id": "muna:ReportType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Role": {
+      "@id": "muna:Role",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Route": {
+      "@id": "muna:Route",
+      "@context": {
+        "slug": {
+          "@id": "muna:slug"
+        },
+        "language": {
+          "@id": "muna:language",
+          "@type": "@id"
+        },
+        "page": {
+          "@id": "muna:page",
+          "@type": "@id"
+        },
+        "useSiteTitle": {
+          "@id": "muna:useSiteTitle"
+        },
+        "openGraph": {
+          "@id": "muna:openGraph"
+        },
+        "includeInSitemap": {
+          "@id": "muna:includeInSitemap"
+        },
+        "disallowRobots": {
+          "@id": "muna:disallowRobots"
+        }
+      }
+    },
+    "Sampling": {
+      "@id": "muna:Sampling",
+      "@context": {
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedGeneralTechnique": {
+          "@id": "muna:usedGeneralTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificTechnique": {
+          "@id": "muna:usedSpecificTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedObjectOfType": {
+          "@id": "muna:usedObjectOfType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificObject": {
+          "@id": "muna:usedSpecificObject",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "SectionText": {
+      "@id": "muna:SectionText",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "content": {
+          "@id": "muna:content"
+        }
+      }
+    },
+    "SectionType": {
+      "@id": "muna:SectionType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "Set": {
+      "@id": "muna:Set",
+      "@context": {
+        "hasMember": {
+          "@id": "muna:hasMember",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "SingleLevelChart": {
+      "@id": "muna:SingleLevelChart",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "type": {
+          "@id": "muna:type"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "caption": {
+          "@id": "muna:caption"
+        },
+        "data": {
+          "@id": "muna:data"
+        }
+      }
+    },
+    "SingleObject": {
+      "@id": "muna:SingleObject",
+      "@context": {
+        "view": {
+          "@id": "muna:view"
+        },
+        "item": {
+          "@id": "muna:item",
+          "@type": "@id"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "description": {
+          "@id": "muna:description"
+        },
+        "canvasUrl": {
+          "@id": "muna:canvasUrl"
+        }
+      }
+    },
+    "SiteSettings": {
+      "@id": "muna:SiteSettings",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "frontpage": {
+          "@id": "muna:frontpage",
+          "@type": "@id"
+        },
+        "language": {
+          "@id": "muna:language"
+        },
+        "logo": {
+          "@id": "muna:logo"
+        },
+        "mainNavigation": {
+          "@id": "muna:mainNavigation",
+          "@type": "@id"
+        },
+        "footer": {
+          "@id": "muna:footer",
+          "@type": "@id"
+        },
+        "openGraph": {
+          "@id": "muna:openGraph"
+        },
+        "keywords": {
+          "@id": "muna:keywords",
+          "@container": "@list"
+        },
+        "publisher": {
+          "@id": "muna:publisher",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "license": {
+          "@id": "muna:license"
+        }
+      }
+    },
+    "Social": {
+      "@id": "muna:Social",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "url": {
+          "@id": "muna:url"
+        },
+        "service": {
+          "@id": "muna:service"
+        }
+      }
+    },
+    "SocialCollection": {
+      "@id": "muna:SocialCollection",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "items": {
+          "@id": "muna:items",
+          "@container": "@list"
+        }
+      }
+    },
+    "SpacetimeVolume": {
+      "@id": "muna:SpacetimeVolume",
+      "@context": {
+        "description": {
+          "@id": "muna:description"
+        },
+        "temporalProjection": {
+          "@id": "muna:temporalProjection",
+          "@container": "@list"
+        },
+        "spatialProjection": {
+          "@id": "muna:spatialProjection",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "hadPresence": {
+          "@id": "muna:hadPresence",
+          "@container": "@list"
+        },
+        "definedByGeoJSON": {
+          "@id": "muna:definedByGeoJSON",
+          "@container": "@list"
+        }
+      }
+    },
+    "Storage": {
+      "@id": "muna:Storage",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "preferredIdentifier": {
+          "@id": "muna:preferredIdentifier"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "location": {
+          "@id": "muna:location"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "consistsOf": {
+          "@id": "muna:consistsOf",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "StorageType": {
+      "@id": "muna:StorageType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "SubStory": {
+      "@id": "muna:SubStory",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "tagline": {
+          "@id": "muna:tagline"
+        },
+        "content": {
+          "@id": "muna:content"
+        },
+        "illustration": {
+          "@id": "muna:illustration"
+        }
+      }
+    },
+    "SvgTitle": {
+      "@id": "muna:SvgTitle",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "content": {
+          "@id": "muna:content"
+        }
+      }
+    },
+    "Technique": {
+      "@id": "muna:Technique",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "TextType": {
+      "@id": "muna:TextType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "TextWithIllustration": {
+      "@id": "muna:TextWithIllustration",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "content": {
+          "@id": "muna:content"
+        },
+        "illustration": {
+          "@id": "muna:illustration"
+        }
+      }
+    },
+    "Timeline": {
+      "@id": "muna:Timeline",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "headline": {
+          "@id": "muna:headline"
+        },
+        "text": {
+          "@id": "muna:text"
+        },
+        "media": {
+          "@id": "muna:media",
+          "@container": "@list"
+        },
+        "scale": {
+          "@id": "muna:scale"
+        },
+        "eras": {
+          "@id": "muna:eras",
+          "@container": "@list"
+        },
+        "events": {
+          "@id": "muna:events",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "TimelineSection": {
+      "@id": "muna:TimelineSection",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "item": {
+          "@id": "muna:item",
+          "@type": "@id"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "description": {
+          "@id": "muna:description"
+        }
+      }
+    },
+    "TimelineSlide": {
+      "@id": "muna:TimelineSlide",
+      "@context": {
+        "headline": {
+          "@id": "muna:headline"
+        },
+        "text": {
+          "@id": "muna:text"
+        },
+        "media": {
+          "@id": "muna:media",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan"
+        },
+        "group": {
+          "@id": "muna:group",
+          "@container": "@list"
+        },
+        "background": {
+          "@id": "muna:background"
+        }
+      }
+    },
+    "Timespan": {
+      "@id": "muna:Timespan",
+      "@context": {
+        "beginOfTheBegin": {
+          "@id": "muna:beginOfTheBegin"
+        },
+        "endOfTheBegin": {
+          "@id": "muna:endOfTheBegin"
+        },
+        "date": {
+          "@id": "muna:date"
+        },
+        "beginOfTheEnd": {
+          "@id": "muna:beginOfTheEnd"
+        },
+        "endOfTheEnd": {
+          "@id": "muna:endOfTheEnd"
+        },
+        "description": {
+          "@id": "muna:description"
+        }
+      }
+    },
+    "Toc": {
+      "@id": "muna:Toc",
+      "@context": {
+        "name": {
+          "@id": "muna:name"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "sections": {
+          "@id": "muna:sections",
+          "@container": "@list"
+        }
+      }
+    },
+    "TocLink": {
+      "@id": "muna:TocLink",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "target": {
+          "@id": "muna:target",
+          "@type": "@id"
+        },
+        "children": {
+          "@id": "muna:children",
+          "@container": "@list"
+        }
+      }
+    },
+    "TocSection": {
+      "@id": "muna:TocSection",
+      "@context": {
+        "title": {
+          "@id": "muna:title"
+        },
+        "target": {
+          "@id": "muna:target",
+          "@type": "@id"
+        },
+        "links": {
+          "@id": "muna:links",
+          "@container": "@list"
+        }
+      }
+    },
+    "Transformation": {
+      "@id": "muna:Transformation",
+      "@context": {
+        "featured": {
+          "@id": "muna:featured"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Treatment": {
+      "@id": "muna:Treatment",
+      "@context": {
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedGeneralTechnique": {
+          "@id": "muna:usedGeneralTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificTechnique": {
+          "@id": "muna:usedSpecificTechnique",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedObjectOfType": {
+          "@id": "muna:usedObjectOfType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "usedSpecificObject": {
+          "@id": "muna:usedSpecificObject",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "assessedBy": {
+          "@id": "muna:assessedBy",
+          "@container": "@list"
+        }
+      }
+    },
+    "TreatmentAssessment": {
+      "@id": "muna:TreatmentAssessment",
+      "@context": {
+        "carriedOutBy": {
+          "@id": "muna:carriedOutBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "timespan": {
+          "@id": "muna:timespan",
+          "@container": "@list"
+        },
+        "success": {
+          "@id": "muna:success"
+        },
+        "tookPlaceAt": {
+          "@id": "muna:tookPlaceAt",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "images": {
+          "@id": "muna:images",
+          "@container": "@list"
+        }
+      }
+    },
+    "TwoColumn": {
+      "@id": "muna:TwoColumn",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "subtitle": {
+          "@id": "muna:subtitle"
+        },
+        "firstColumn": {
+          "@id": "muna:firstColumn"
+        },
+        "secondColumn": {
+          "@id": "muna:secondColumn"
+        },
+        "anchor": {
+          "@id": "muna:anchor"
+        }
+      }
+    },
+    "Video": {
+      "@id": "muna:Video",
+      "@context": {
+        "disabled": {
+          "@id": "muna:disabled"
+        },
+        "title": {
+          "@id": "muna:title"
+        },
+        "url": {
+          "@id": "muna:url"
+        }
+      }
+    },
+    "VisualItem": {
+      "@id": "muna:VisualItem",
+      "@context": {
+        "label": {
+          "@id": "muna:label"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "VisualObject": {
+      "@id": "muna:VisualObject",
+      "@context": {
+        "represents": {
+          "@id": "muna:represents",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "digitallyShownBy": {
+          "@id": "muna:digitallyShownBy",
+          "@container": "@list"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@list",
+          "@type": "@id"
+        }
+      }
+    },
+    "Work": {
+      "@id": "muna:Work",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "hasType": {
+          "@id": "muna:hasType",
+          "@container": "@list",
+          "@type": "@id"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "identifiedBy": {
+          "@id": "muna:identifiedBy",
+          "@container": "@list"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "WorkType": {
+      "@id": "muna:WorkType",
+      "@context": {
+        "editorialState": {
+          "@id": "muna:editorialState"
+        },
+        "accessState": {
+          "@id": "muna:accessState"
+        },
+        "label": {
+          "@id": "muna:label"
+        },
+        "altLabel": {
+          "@id": "muna:altLabel"
+        },
+        "activityStream": {
+          "@id": "muna:activityStream",
+          "@container": "@list"
+        }
+      }
+    },
+    "code": {
+      "@id": "muna:code",
+      "@context": {
+        "language": {
+          "@id": "muna:language"
+        },
+        "filename": {
+          "@id": "muna:filename"
+        },
+        "code": {
+          "@id": "muna:code"
+        },
+        "highlightedLines": {
+          "@id": "muna:highlightedLines",
+          "@container": "@list"
+        }
+      }
+    },
+    "color": {
+      "@id": "muna:color",
+      "@context": {
+        "hex": {
+          "@id": "muna:hex"
+        },
+        "alpha": {
+          "@id": "muna:alpha"
+        },
+        "hsl": {
+          "@id": "muna:hsl"
+        },
+        "hsv": {
+          "@id": "muna:hsv"
+        },
+        "rgb": {
+          "@id": "muna:rgb"
+        }
+      }
+    },
+    "hslaColor": {
+      "@id": "muna:hslaColor",
+      "@context": {
+        "h": {
+          "@id": "muna:h"
+        },
+        "s": {
+          "@id": "muna:s"
+        },
+        "l": {
+          "@id": "muna:l"
+        },
+        "a": {
+          "@id": "muna:a"
+        }
+      }
+    },
+    "hsvaColor": {
+      "@id": "muna:hsvaColor",
+      "@context": {
+        "h": {
+          "@id": "muna:h"
+        },
+        "s": {
+          "@id": "muna:s"
+        },
+        "v": {
+          "@id": "muna:v"
+        },
+        "a": {
+          "@id": "muna:a"
+        }
+      }
+    },
+    "media.tag": {
+      "@id": "muna:media.tag",
+      "@context": {
+        "name": {
+          "@id": "muna:name"
+        }
+      }
+    },
+    "quoteBlock": {
+      "@id": "muna:quoteBlock",
+      "@context": null
+    },
+    "reportText": {
+      "@id": "muna:reportText",
+      "@context": null
+    },
+    "rgbaColor": {
+      "@id": "muna:rgbaColor",
+      "@context": {
+        "r": {
+          "@id": "muna:r"
+        },
+        "g": {
+          "@id": "muna:g"
+        },
+        "b": {
+          "@id": "muna:b"
+        },
+        "a": {
+          "@id": "muna:a"
+        }
+      }
+    },
+    "simpleBlockContent": {
+      "@id": "muna:simpleBlockContent",
+      "@context": null
+    }
+  }
+}
