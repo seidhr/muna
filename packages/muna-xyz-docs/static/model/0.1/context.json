@@ -1,14 +1,17 @@
 {
   "@context": {
     "@version": 1.1,
+    "@base": "http://data.muna.xyz/",
+    "muna": "http://muna.xyz/model/0.1/",
+    "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "_id": "@id",
-    "id": "@id",
     "_ref": "@id",
+    "id": "@id",
     "_type": "@type",
     "type": "@type",
-    "muna": "http://muna.xyz/model/0.1/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "@base": "http://data.muna.xyz/",
+    "_rev": "http://muna.xyz/model/0.1/revisionId",
     "Acquisition": {
       "@id": "muna:Acquisition",
       "@context": {
@@ -19,7 +22,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -28,7 +31,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "subjectOf": {
           "@id": "muna:subjectOf",
@@ -80,7 +84,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -104,7 +108,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -113,7 +117,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -211,7 +216,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -235,7 +240,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "homepage": {
@@ -248,7 +253,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -289,7 +295,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -312,15 +318,15 @@
         },
         "showAlert": {
           "@id": "muna:showAlert",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "validFrom": {
           "@id": "muna:validFrom",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         },
         "validTo": {
           "@id": "muna:validTo",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         }
       }
     },
@@ -334,7 +340,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -364,7 +370,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
@@ -388,7 +394,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -407,7 +413,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -424,7 +431,7 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -433,7 +440,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "subjectOf": {
           "@id": "muna:subjectOf",
@@ -462,7 +470,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -525,7 +533,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -561,7 +569,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "contributionAssignedBy": {
           "@id": "muna:contributionAssignedBy",
@@ -593,7 +601,7 @@
         },
         "timestamp": {
           "@id": "muna:timestamp",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         }
       }
     },
@@ -604,7 +612,7 @@
           "@id": "muna:homepage"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "preferredIdentifier": {
@@ -617,7 +625,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -636,7 +644,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -650,7 +659,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "identifiedBy": {
@@ -660,7 +669,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "documentedIn": {
           "@id": "muna:documentedIn"
@@ -672,7 +682,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -708,7 +718,7 @@
       "@id": "muna:DigitalFile",
       "@context": {
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "description": {
@@ -740,7 +750,7 @@
         },
         "value": {
           "@id": "muna:value",
-          "@type": "http://www.w3.org/2001/XMLSchema#number"
+          "@type": "xsd:number"
         },
         "hasUnit": {
           "@id": "muna:hasUnit",
@@ -758,7 +768,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -777,7 +787,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -801,7 +811,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -832,11 +843,12 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -873,7 +885,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -888,7 +900,7 @@
       }
     },
     "Exhibition": {
-      "@id": "muna:Exhibition",
+      "@id": "crm:E89_Propositional_Object",
       "@context": {
         "editorialState": {
           "@id": "muna:editorialState"
@@ -897,11 +909,16 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
           "@container": "@list",
+          "@type": "@id"
+        },
+        "referredToBy": {
+          "@id": "muna:referredToBy",
+          "@container": "@set",
           "@type": "@id"
         },
         "language": {
@@ -923,10 +940,6 @@
           "@id": "muna:tookPlaceAt",
           "@container": "@set",
           "@type": "@id"
-        },
-        "referredToBy": {
-          "@id": "muna:referredToBy",
-          "@type": "@json"
         }
       }
     },
@@ -940,7 +953,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -982,7 +995,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -1011,7 +1024,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -1028,7 +1042,7 @@
           "@id": "muna:preferredIdentifier"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "homepage": {
@@ -1041,7 +1055,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -1150,7 +1165,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -1164,7 +1180,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1191,7 +1207,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -1220,7 +1236,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -1231,7 +1248,7 @@
           "@id": "muna:identifiedByISO6393"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1245,7 +1262,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -1272,7 +1289,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -1286,7 +1304,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -1315,7 +1333,7 @@
         },
         "publishedAt": {
           "@id": "muna:publishedAt",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "body": {
           "@id": "muna:body",
@@ -1379,7 +1397,7 @@
       "@id": "muna:Material",
       "@context": {
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1393,7 +1411,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "observedDimension": {
           "@id": "muna:observedDimension",
@@ -1412,7 +1430,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "tookPlaceAt": {
           "@id": "muna:tookPlaceAt",
@@ -1431,7 +1450,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1473,7 +1492,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "carriedOutBy": {
@@ -1493,7 +1512,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "moved": {
           "@id": "muna:moved",
@@ -1542,7 +1562,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -1600,7 +1621,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1673,12 +1694,13 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1714,7 +1736,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "identifiedBy": {
@@ -1729,7 +1751,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "definedByGeoJSON": {
           "@id": "muna:definedByGeoJSON",
@@ -1748,7 +1771,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -1773,7 +1796,7 @@
         },
         "publishedAt": {
           "@id": "muna:publishedAt",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "excerpt": {
           "@id": "muna:excerpt",
@@ -1803,7 +1826,7 @@
       "@id": "muna:Presence",
       "@context": {
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "description": {
@@ -1832,7 +1855,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "consistsOf": {
           "@id": "muna:consistsOf",
@@ -1861,7 +1884,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "hasModified": {
           "@id": "muna:hasModified",
@@ -1895,12 +1919,12 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "active": {
           "@id": "muna:active",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -1909,7 +1933,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -1938,7 +1963,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "concerned": {
@@ -1953,7 +1978,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "carriedOutBy": {
           "@id": "muna:carriedOutBy",
@@ -2007,7 +2033,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2031,7 +2057,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2068,11 +2094,11 @@
         },
         "includeInSitemap": {
           "@id": "muna:includeInSitemap",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "disallowRobots": {
           "@id": "muna:disallowRobots",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         }
       }
     },
@@ -2096,7 +2122,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
@@ -2130,7 +2157,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2249,7 +2276,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "timespan": {
           "@id": "muna:timespan",
@@ -2282,7 +2310,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2306,7 +2334,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2330,7 +2358,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
@@ -2402,23 +2430,23 @@
       "@context": {
         "beginOfTheBegin": {
           "@id": "muna:beginOfTheBegin",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         },
         "endOfTheBegin": {
           "@id": "muna:endOfTheBegin",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         },
         "date": {
           "@id": "muna:date",
-          "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+          "@type": "xsd:dateTime"
         },
         "beginOfTheEnd": {
           "@id": "muna:beginOfTheEnd",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         },
         "endOfTheEnd": {
           "@id": "muna:endOfTheEnd",
-          "@type": "http://www.w3.org/2001/XMLSchema#date"
+          "@type": "xsd:date"
         },
         "description": {
           "@id": "muna:description",
@@ -2481,7 +2509,7 @@
       "@context": {
         "featured": {
           "@id": "muna:featured",
-          "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+          "@type": "xsd:boolean"
         },
         "hasType": {
           "@id": "muna:hasType",
@@ -2505,7 +2533,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2529,7 +2558,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "usedGeneralTechnique": {
           "@id": "muna:usedGeneralTechnique",
@@ -2581,7 +2611,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         },
         "images": {
           "@id": "muna:images",
@@ -2613,7 +2644,7 @@
           "@type": "@id"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "digitallyShownBy": {
@@ -2622,7 +2653,8 @@
         },
         "referredToBy": {
           "@id": "muna:referredToBy",
-          "@type": "@json"
+          "@container": "@set",
+          "@type": "@id"
         }
       }
     },
@@ -2641,7 +2673,7 @@
           "@type": "@id"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label"
+          "@id": "rdfs:label"
         },
         "identifiedBy": {
           "@id": "muna:identifiedBy",
@@ -2665,7 +2697,7 @@
           "@id": "muna:accessState"
         },
         "label": {
-          "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+          "@id": "rdfs:label",
           "@container": "@language"
         },
         "altLabel": {
