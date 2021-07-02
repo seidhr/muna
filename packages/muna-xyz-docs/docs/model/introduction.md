@@ -4,24 +4,29 @@ title: Muna introduction
 sidebar_label: Introduction
 ---
 
-Sanity documenta are equivalent to classes. A property can refer to another document or create a nested object on the original document. Objects are sadly not directly queryable and can not be referred to by other documents. **Muna** nest data for quick editorial experience for the end user. Converting Sanity data to JSON-LD could easily convert *objects* to *documents* and poplate a rdf triplestore for detailed querying. A conversion of a dataset using **Muna** to rdf should treat document and object as equals.
+Sanity documenta are equivalent to classes. A property can refer to another document or create a nested object on the original document. Objects are sadly not directly queryable and can not be referred to by other documents. **Muna** nest data for quick editorial experience for the end user. Converting Sanity data to JSON-LD could easily convert _objects_ to _documents_ and poplate a rdf triplestore for detailed querying. A conversion of a dataset using **Muna** to rdf should treat document and object as equals.
+
+## Muna Ontology & JSON-LD Context
+
+- [Ontology](model/0.1/ontology.json) / [N Triples](model/0.1/ontology.nt)
+- [JSON-LD Context](model/0.1/context.json)
 
 ## Properties
 
-Common properties are described in `./src/props/index.js` as properties are reused extensivly. The same property name can still be reused in *document* or *object* for more spesific ranges.
+Common properties are described in `./src/props/index.js` as properties are reused extensivly. The same property name can still be reused in _document_ or _object_ for more spesific ranges.
 
 ```js title="./src/props/index.js"
 const hasType = {
-    name: "hasType",
-    title: "Classified as",
-    type: "array",
-    of: [
-        {
-            type: "reference",
-            to: [{ type: "someType" }],
-        },
-    ],
-    validation: (Rule) => Rule.required(),
+  name: "hasType",
+  title: "Classified as",
+  type: "array",
+  of: [
+    {
+      type: "reference",
+      to: [{ type: "someType" }],
+    },
+  ],
+  validation: (Rule) => Rule.required(),
 };
 ```
 
@@ -44,13 +49,13 @@ const hasType = {
 
 ## Documents are classes
 
-Getting the balance right between Sanity documents and objects is a bit tricky coming from the world of RDF. As of sept. 2020 creating a document when creating the reference is not user friendly. A CIDOC-CRM class such as Birth is an object in Sanity for a smoother user experience. 
+Getting the balance right between Sanity documents and objects is a bit tricky coming from the world of RDF. As of sept. 2020 creating a document when creating the reference is not user friendly. A CIDOC-CRM class such as Birth is an object in Sanity for a smoother user experience.
 
 Ideally one could query directly for objects with GROQ, but that is not possible. With GROQ you need to find all persons with a birth object and matching date and filter the results.
 
 ```js title="GROQ"
 *[
-    activityStream[]._type == "birth" 
+    activityStream[]._type == "birth"
     && activityStream[].timespan[].date == "1890-08-27T23:17:00.000Z"
 ]{
     label,
@@ -59,7 +64,7 @@ Ideally one could query directly for objects with GROQ, but that is not possible
         ...
     }
   }
-} 
+}
 ```
 
 A SPARQL would query for the class Birth with a relation to a timespan matching the date and return all matching persons.
@@ -75,4 +80,4 @@ DESCRIBE ?person WHERE {
 }
 ```
 
-The reasoning behind having few documents and many objects is user friendliness. **Muna** tries to strike a balance between expressivness and useability. The query example illustrates 
+The reasoning behind having few documents and many objects is user friendliness. **Muna** tries to strike a balance between expressivness and useability. The query example illustrates
