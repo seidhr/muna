@@ -30,9 +30,6 @@ const Home = ({ types }) => {
             <Text>
               Based on your settings your schemas has been converted to an OWL ontology and JSON-LD context. 
             </Text>
-            <Text>
-              Following schemas has been ignored: [TODO]
-            </Text>
             <Card
               padding={[3, 3, 4]}
               radius={2}
@@ -43,7 +40,7 @@ const Home = ({ types }) => {
             </Card>
           </Stack>
         </Card>
-        <Grid columns={[1, 2, 2, 2]} gap={[3, 3, 3, 6]} padding={5}>
+        <Grid columns={[1, 2, 2, 2]} gap={[3, 3, 3, 6]} paddingX={5}>
           <Ontology ontology={ontology} />
           <Context context={context} />
         </Grid>

@@ -8,9 +8,6 @@ const Context = ({ context }) => {
         <Heading as="h2" size={3}>
           JSON-LD Context
         </Heading>
-        <Text>
-          JSON-LD context that can be linked to when sharing data from Sanity to external semantic systems.
-        </Text>
       </Stack>
       <Card marginTop={4} padding={3} shadow={1}>
         <Code style={{maxHeight: '50vh', overflow: 'scroll'}} language="json" size={0}>

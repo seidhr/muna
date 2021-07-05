@@ -8,9 +8,6 @@ const Ontology = ({ ontology }) => {
         <Heading as="h2" size={3}>
           Ontology
         </Heading>
-        <Text>
-          Sanity Schemas as OWL ontology.
-        </Text>
       </Stack>
       <Card marginTop={4} padding={3} shadow={1}>
         <Code style={{maxHeight: '50vh', overflow: 'scroll'}} language="json" size={0}>

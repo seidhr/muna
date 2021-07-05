@@ -10,6 +10,7 @@ export const orderSchemas = (schema) => {
 }
 
 export const getConfig = () => {
+  const ontologyName = config.name
   const vocab = config.vocab?.prefix ? config.vocab.prefix : '@vocab';
   const vocabUri = config.vocab?.uri ? config.vocab.uri : 'http://example.org/model/0.1/';
   
@@ -17,7 +18,7 @@ export const getConfig = () => {
   const base = config.vocab?.prefix && config.vocab?.prefix != '@vocab' ? `${config.vocab.prefix}:` : ''
   const prefixes = config.prefixes
 
-  return {vocab, vocabUri, base, prefixes}
+  return {ontologyName, vocab, vocabUri, base, prefixes}
 }
 
 /**
@@ -116,7 +117,7 @@ export const datatypeMap = {
  * @returns 
  */
 export const getOntology = (source) => {
-  const {vocab, vocabUri, base, prefixes} = getConfig()
+  const {ontologyName, vocab, vocabUri, base, prefixes} = getConfig()
 
   const classes = source.map(type => {
     return {
@@ -281,7 +282,7 @@ export const getOntology = (source) => {
     },
       '@id': vocabUri,
       '@type': 'owl:Ontology',
-      'label': 'Muna ontology',
+      'label': ontologyName,
       'defines': [
         ...classes,
         ...properties
