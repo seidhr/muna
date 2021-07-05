@@ -15,13 +15,11 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-    "muna-logo"
+    "semantic-sanity"
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
@@ -32,10 +30,6 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
-    },
-    {
-      "implements": "part:@sanity/form-builder/input/image/asset-sources",
-      "path": "./src/parts/assetSources.js"
     }
   ]
 }
