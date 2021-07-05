@@ -1,0 +1,56 @@
+{
+  "name": "sanity-plugin-semantic-sanity",
+  "version": "1.0.0",
+  "description": "Convert Sanity Schemas to an OWL ontology and a JSON-LD Context",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "sanipack build",
+    "watch": "sanipack build --watch",
+    "prepublishOnly": "sanipack build && sanipack verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/@seidhr/sanity-plugin-semantic-saniy"
+  },
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/ui": "^0.34.4",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "7.30.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-sanity": "5.1.0",
+    "eslint-plugin-react": "7.24.0",
+    "prettier": "2.3.2",
+    "sanipack": "2.0.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/seidhr/muna/issues"
+  },
+  "homepage": "https://github.com/seidhr/muna#readme",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "sanipack/babel/eslint-parser",
+    "extends": [
+      "sanity",
+      "sanity/react",
+      "prettier",
+      "prettier/react"
+    ]
+  }
+}
