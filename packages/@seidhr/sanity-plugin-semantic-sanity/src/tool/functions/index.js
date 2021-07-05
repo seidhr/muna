@@ -15,8 +15,9 @@ export const getConfig = () => {
   
   // If vocab is set to '@vocab' then we do not add a prefix to '@id' values, because '@base' sets prefix for all
   const base = config.vocab?.prefix && config.vocab?.prefix != '@vocab' ? `${config.vocab.prefix}:` : ''
+  const prefixes = config.prefixes
 
-  return {vocab, vocabUri, base}
+  return {vocab, vocabUri, base, prefixes}
 }
 
 /**
@@ -24,7 +25,7 @@ export const getConfig = () => {
  * @returns {object}
  */
 export const getContext = () => {
-  const {vocab, vocabUri, base} = getConfig()
+  const {vocab, vocabUri, base, prefixes} = getConfig()
   
   // Default context
   const context = {
@@ -32,9 +33,7 @@ export const getContext = () => {
       '@version': 1.1,
       '@base': config.base ? config.base : undefined,
       [vocab]: vocabUri,
-      'crm': 'http://www.cidoc-crm.org/cidoc-crm/',
-      'xsd': 'http://www.w3.org/2001/XMLSchema#',
-      'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
+      ...prefixes,
       _id: '@id',
       _ref: '@id',
       id: '@id',
@@ -116,8 +115,8 @@ export const datatypeMap = {
  * @param {*} source 
  * @returns 
  */
-export const getOntolgy = (source) => {
-  const {vocab, vocabUri, base} = getConfig()
+export const getOntology = (source) => {
+  const {vocab, vocabUri, base, prefixes} = getConfig()
 
   const classes = source.map(type => {
     return {
@@ -260,11 +259,8 @@ export const getOntolgy = (source) => {
   const ontology = {
     '@context': {
       '@version': 1.1,
-      'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
-      'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
-      'owl': 'http://www.w3.org/2002/07/owl#',
-      'crm': 'http://www.cidoc-crm.org/cidoc-crm/',
       [vocab]: vocabUri,
+      ...prefixes,
       'defines': {
         '@reverse': 'rdfs:isDefinedBy'
       },

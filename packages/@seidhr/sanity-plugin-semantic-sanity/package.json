@@ -2,7 +2,7 @@
   "name": "sanity-plugin-semantic-sanity",
   "version": "1.0.0",
   "description": "Convert Sanity Schemas to an OWL ontology and a JSON-LD Context",
-  "main": "lib/index.js",
+  "main": "package.json",
   "scripts": {
     "build": "sanipack build",
     "watch": "sanipack build --watch",
@@ -21,7 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "@sanity/ui": "^0.34.4",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "eslint": "7.30.0",
