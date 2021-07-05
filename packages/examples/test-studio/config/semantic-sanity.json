@@ -1,4 +1,5 @@
 {
+  "name": "Example ontology",
   "base": "http://data.example.org/",
   "vocab": {
     "prefix": "ex",
