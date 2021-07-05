@@ -8,7 +8,7 @@ Sanity documenta are equivalent to classes. A property can refer to another docu
 
 ## Muna Ontology & JSON-LD Context
 
-- [Ontology](https://muna.xyz/model/0.1/ontology.json) / [N Triples](https://muna.xyz/model/0.1/ontology.nt)
+- [Ontology](https://muna.xyz/model/0.1/ontology.json) / [N Triples](https://muna.xyz/model/0.1/ontology.n3)
 - [JSON-LD Context](https://muna.xyz/model/0.1/context.json)
 
 ## Properties
