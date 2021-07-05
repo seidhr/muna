@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-semantic-sanity",
-  "version": "1.0.0-rc",
+  "version": "1.0.0-rc2",
   "description": "Convert Sanity Schemas to an OWL ontology and a JSON-LD Context",
   "main": "package.json",
   "scripts": {
