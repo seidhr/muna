@@ -245,7 +245,7 @@
       "label": "LinguisticDocument"
     },
     {
-      "@id": "muna:LinguisticObject",
+      "@id": "muna:LinguisticDocument",
       "@type": "owl:Class",
       "label": "LinguisticObject"
     },
@@ -532,7 +532,7 @@
         "muna:HumanMadeObject",
         "muna:IdentifierType",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:MeasurementUnit",
         "muna:Move",
         "muna:ObjectType",
@@ -551,7 +551,8 @@
         "muna:Timeline",
         "muna:Work",
         "muna:WorkType"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:accessState",
@@ -577,7 +578,7 @@
         "muna:HumanMadeObject",
         "muna:IdentifierType",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:MeasurementUnit",
         "muna:Move",
         "muna:ObjectType",
@@ -596,7 +597,8 @@
         "muna:Timeline",
         "muna:Work",
         "muna:WorkType"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "rdfs:label",
@@ -644,7 +646,8 @@
         "muna:VisualObject",
         "muna:Work",
         "muna:WorkType"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:identifiedBy",
@@ -666,7 +669,7 @@
         "muna:Storage",
         "muna:Work"
       ],
-      "range": []
+      "range": ["muna:Name", "muna:Identifier"]
     },
     {
       "@id": "muna:referredToBy",
@@ -703,7 +706,7 @@
         "muna:TreatmentAssessment",
         "muna:VisualObject"
       ],
-      "range": []
+      "range": ["muna:LinguisticDocument"]
     },
     {
       "@id": "muna:subjectOf",
@@ -731,7 +734,7 @@
         "muna:Joining",
         "muna:Leaving",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:Name",
         "muna:Place",
         "muna:Production",
@@ -744,11 +747,16 @@
         "muna:AcquisitionType",
         "muna:ActivityType",
         "muna:ActorType",
+        "muna:ConditionType",
         "muna:EventType",
+        "muna:DimensionType",
         "muna:ObjectType",
+        "muna:IdentifierType",
         "muna:TextType",
+        "muna:AppelationType",
         "muna:PlaceType",
         "muna:ReportType",
+        "muna:StorageType",
         "muna:WorkType"
       ]
     },
@@ -784,7 +792,7 @@
         "muna:Treatment",
         "muna:TreatmentAssessment"
       ],
-      "range": []
+      "range": ["muna:Timespan"]
     },
     {
       "@id": "muna:transferredTitleOf",
@@ -822,10 +830,14 @@
         "muna:Storage"
       ],
       "range": [
+        "muna:Acquisition",
         "muna:Activity",
         "muna:Material",
         "muna:Period",
         "muna:Event",
+        "muna:Production",
+        "muna:Project",
+        "muna:Report",
         "muna:Storage",
         "muna:HumanMadeObject",
         "muna:Collection"
@@ -839,7 +851,7 @@
         "muna:Acquisition",
         "muna:DesignOrProcedure",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:Project"
       ]
     },
@@ -904,7 +916,18 @@
         "muna:Work",
         "muna:WorkType"
       ],
-      "range": ["muna:Activity", "muna:Event", "muna:Acquisition"]
+      "range": [
+        "muna:Creation",
+        "muna:Activity",
+        "muna:Event",
+        "muna:Production",
+        "muna:Transformation",
+        "muna:Acquisition",
+        "muna:Move",
+        "muna:Destruction",
+        "muna:Measurement",
+        "muna:Sampling"
+      ]
     },
     {
       "@id": "muna:carriedOutBy",
@@ -930,14 +953,14 @@
       "@type": "owl:ObjectProperty",
       "label": "hadParticipant",
       "domain": ["muna:Activity"],
-      "range": []
+      "range": ["muna:ContributionAssignment"]
     },
     {
       "@id": "muna:target",
       "@type": "owl:ObjectProperty",
       "label": "target",
       "domain": ["muna:Activity", "muna:TocLink", "muna:TocSection"],
-      "range": []
+      "range": ["muna:Collection", "muna:Actor", "muna:Route"]
     },
     {
       "@id": "muna:tookPlaceAt",
@@ -1121,19 +1144,22 @@
       "@id": "muna:showAlert",
       "@type": "owl:DatatypeProperty",
       "label": "showAlert",
-      "domain": ["muna:Alert"]
+      "domain": ["muna:Alert"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:validFrom",
       "@type": "owl:DatatypeProperty",
       "label": "validFrom",
-      "domain": ["muna:Alert"]
+      "domain": ["muna:Alert"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:validTo",
       "@type": "owl:DatatypeProperty",
       "label": "validTo",
-      "domain": ["muna:Alert"]
+      "domain": ["muna:Alert"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:url",
@@ -1170,7 +1196,8 @@
         "muna:Measurement",
         "muna:Production",
         "muna:Transformation"
-      ]
+      ],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:contributionAssignedBy",
@@ -1181,7 +1208,7 @@
         "muna:Creation",
         "muna:Production"
       ],
-      "range": []
+      "range": ["muna:ContributionAssignment"]
     },
     {
       "@id": "muna:preferredIdentifier",
@@ -1192,7 +1219,8 @@
         "muna:Dataset",
         "muna:HumanMadeObject",
         "muna:Storage"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:composedOf",
@@ -1206,13 +1234,14 @@
       "@type": "owl:ObjectProperty",
       "label": "sameAs",
       "domain": ["muna:Concept", "muna:ObjectType"],
-      "range": []
+      "range": ["url"]
     },
     {
       "@id": "muna:value",
       "@type": "owl:DatatypeProperty",
       "label": "value",
-      "domain": ["muna:ConditionState", "muna:DigitalObject", "muna:Dimension"]
+      "domain": ["muna:ConditionState", "muna:DigitalObject", "muna:Dimension"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:attributes",
@@ -1229,14 +1258,14 @@
         "muna:Report",
         "muna:TreatmentAssessment"
       ],
-      "range": []
+      "range": ["DigitalImageObject"]
     },
     {
       "@id": "muna:assignedActor",
       "@type": "owl:ObjectProperty",
       "label": "assignedActor",
       "domain": ["muna:ContributionAssignment"],
-      "range": []
+      "range": ["muna:Actor"]
     },
     {
       "@id": "muna:assignedRole",
@@ -1267,7 +1296,8 @@
       "@id": "muna:timestamp",
       "@type": "owl:DatatypeProperty",
       "label": "timestamp",
-      "domain": ["muna:DataTransferEvent"]
+      "domain": ["muna:DataTransferEvent"],
+      "range": ["xsd:dateTime"]
     },
     {
       "@id": "muna:label",
@@ -1278,7 +1308,8 @@
         "muna:NavigationItem",
         "muna:NavigationMenu",
         "muna:VisualItem"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:description",
@@ -1300,7 +1331,8 @@
         "muna:DigitalFile",
         "muna:HumanMadeObject",
         "muna:SiteSettings"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:souce",
@@ -1318,7 +1350,8 @@
       "@id": "muna:headline",
       "@type": "owl:DatatypeProperty",
       "label": "headline",
-      "domain": ["muna:Era", "muna:Timeline", "muna:TimelineSlide"]
+      "domain": ["muna:Era", "muna:Timeline", "muna:TimelineSlide"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:text",
@@ -1330,13 +1363,15 @@
       "@id": "muna:startDate",
       "@type": "owl:DatatypeProperty",
       "label": "startDate",
-      "domain": ["muna:Era"]
+      "domain": ["muna:Era"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:endDate",
       "@type": "owl:DatatypeProperty",
       "label": "endDate",
-      "domain": ["muna:Era"]
+      "domain": ["muna:Era"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:media",
@@ -1362,7 +1397,7 @@
       "domain": [
         "crm:E89_Propositional_Object",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:Name",
         "muna:NavigationMenu",
         "muna:Route",
@@ -1378,27 +1413,30 @@
       "domain": [
         "crm:E89_Propositional_Object",
         "muna:LinguisticDocument",
-        "muna:LinguisticObject"
+        "muna:LinguisticDocument"
       ],
-      "range": []
+      "range": ["muna:ContributionAssignment"]
     },
     {
       "@id": "muna:caption",
       "@type": "owl:DatatypeProperty",
       "label": "caption",
-      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"]
+      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:credit",
       "@type": "owl:DatatypeProperty",
       "label": "credit",
-      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"]
+      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:alt",
       "@type": "owl:DatatypeProperty",
       "label": "alt",
-      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"]
+      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:link",
@@ -1414,7 +1452,8 @@
       "@id": "muna:linkTarget",
       "@type": "owl:DatatypeProperty",
       "label": "linkTarget",
-      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"]
+      "domain": ["muna:ExternalMediaObject", "muna:MediaObject"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:formedFrom",
@@ -1473,7 +1512,7 @@
       "@type": "owl:ObjectProperty",
       "label": "showsVisualObject",
       "domain": ["muna:HumanMadeObject"],
-      "range": []
+      "range": ["muna:VisualObject"]
     },
     {
       "@id": "muna:carries",
@@ -1487,7 +1526,7 @@
       "@type": "owl:ObjectProperty",
       "label": "measurement",
       "domain": ["muna:HumanMadeObject"],
-      "range": []
+      "range": ["muna:Measurement"]
     },
     {
       "@id": "muna:hasCurrentOwner",
@@ -1508,7 +1547,7 @@
       "@type": "owl:ObjectProperty",
       "label": "joinedWith",
       "domain": ["muna:Joining"],
-      "range": []
+      "range": ["muna:Actor"]
     },
     {
       "@id": "muna:joined",
@@ -1521,14 +1560,15 @@
       "@id": "muna:identifiedByISO6393",
       "@type": "owl:DatatypeProperty",
       "label": "identifiedByISO6393",
-      "domain": ["muna:Language"]
+      "domain": ["muna:Language"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:separatedFrom",
       "@type": "owl:ObjectProperty",
       "label": "separatedFrom",
       "domain": ["muna:Leaving"],
-      "range": []
+      "range": ["muna:Actor"]
     },
     {
       "@id": "muna:separated",
@@ -1549,9 +1589,10 @@
       "label": "publishedAt",
       "domain": [
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:Post"
-      ]
+      ],
+      "range": ["xsd:dateTime"]
     },
     {
       "@id": "muna:body",
@@ -1559,7 +1600,7 @@
       "label": "body",
       "domain": [
         "muna:LinguisticDocument",
-        "muna:LinguisticObject",
+        "muna:LinguisticDocument",
         "muna:Post"
       ]
     },
@@ -1574,7 +1615,7 @@
       "@type": "owl:ObjectProperty",
       "label": "observedDimension",
       "domain": ["muna:Measurement"],
-      "range": []
+      "range": ["muna:Dimension"]
     },
     {
       "@id": "muna:moved",
@@ -1592,54 +1633,56 @@
       "@type": "owl:ObjectProperty",
       "label": "movedFrom",
       "domain": ["muna:Move"],
-      "range": []
+      "range": ["muna:Place", "muna:Storage"]
     },
     {
       "@id": "muna:movedTo",
       "@type": "owl:ObjectProperty",
       "label": "movedTo",
       "domain": ["muna:Move"],
-      "range": []
+      "range": ["muna:Place", "muna:Storage"]
     },
     {
       "@id": "muna:part",
       "@type": "owl:ObjectProperty",
       "label": "part",
       "domain": ["muna:Name"],
-      "range": []
+      "range": ["muna:Name"]
     },
     {
       "@id": "muna:landingPageRoute",
       "@type": "owl:ObjectProperty",
       "label": "landingPageRoute",
       "domain": ["muna:NavigationItem"],
-      "range": []
+      "range": ["muna:Route"]
     },
     {
       "@id": "muna:children",
       "@type": "owl:ObjectProperty",
       "label": "children",
       "domain": ["muna:NavigationItem", "muna:TocLink"],
-      "range": []
+      "range": ["muna:NavigationItem", "muna:TocLink"]
     },
     {
       "@id": "muna:route",
       "@type": "owl:DatatypeProperty",
       "label": "route",
-      "domain": ["muna:NavigationItem"]
+      "domain": ["muna:NavigationItem"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:kind",
       "@type": "owl:DatatypeProperty",
       "label": "kind",
-      "domain": ["muna:NavigationItem"]
+      "domain": ["muna:NavigationItem"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:items",
       "@type": "owl:ObjectProperty",
       "label": "items",
       "domain": ["muna:NavigationMenu"],
-      "range": []
+      "range": ["muna:NavigationItem"]
     },
     {
       "@id": "muna:title",
@@ -1653,14 +1696,15 @@
         "muna:Toc",
         "muna:TocLink",
         "muna:TocSection"
-      ]
+      ],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:navMenu",
       "@type": "owl:ObjectProperty",
       "label": "navMenu",
       "domain": ["muna:Page"],
-      "range": []
+      "range": ["muna:NavigationMenu"]
     },
     {
       "@id": "muna:definingSTV",
@@ -1673,7 +1717,7 @@
       "@type": "owl:ObjectProperty",
       "label": "definedByGeoJSON",
       "domain": ["muna:Place", "muna:Presence", "muna:SpacetimeVolume"],
-      "range": []
+      "range": ["GeojsonFeatureCollection", "Geojson"]
     },
     {
       "@id": "muna:slug",
@@ -1686,14 +1730,14 @@
       "@type": "owl:ObjectProperty",
       "label": "authors",
       "domain": ["muna:Post"],
-      "range": []
+      "range": ["muna:ContributionAssignment"]
     },
     {
       "@id": "muna:temporalProjection",
       "@type": "owl:ObjectProperty",
       "label": "temporalProjection",
       "domain": ["muna:Presence", "muna:SpacetimeVolume"],
-      "range": []
+      "range": ["muna:Timespan"]
     },
     {
       "@id": "muna:spatialProjection",
@@ -1720,7 +1764,8 @@
       "@id": "muna:active",
       "@type": "owl:DatatypeProperty",
       "label": "active",
-      "domain": ["muna:Project"]
+      "domain": ["muna:Project"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:isAbout",
@@ -1741,34 +1786,35 @@
       "@type": "owl:ObjectProperty",
       "label": "hasIdentified",
       "domain": ["muna:Report"],
-      "range": []
+      "range": ["muna:ConditionState"]
     },
     {
       "@id": "muna:motivated",
       "@type": "owl:ObjectProperty",
       "label": "motivated",
       "domain": ["muna:Report"],
-      "range": []
+      "range": ["muna:Treatment"]
     },
     {
       "@id": "muna:files",
       "@type": "owl:ObjectProperty",
       "label": "files",
       "domain": ["muna:Report"],
-      "range": []
+      "range": ["file"]
     },
     {
       "@id": "muna:page",
       "@type": "owl:ObjectProperty",
       "label": "page",
       "domain": ["muna:Route"],
-      "range": []
+      "range": ["muna:Page", "muna:LinguisticDocument"]
     },
     {
       "@id": "muna:useSiteTitle",
       "@type": "owl:DatatypeProperty",
       "label": "useSiteTitle",
-      "domain": ["muna:Route"]
+      "domain": ["muna:Route"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:openGraph",
@@ -1780,13 +1826,15 @@
       "@id": "muna:includeInSitemap",
       "@type": "owl:DatatypeProperty",
       "label": "includeInSitemap",
-      "domain": ["muna:Route"]
+      "domain": ["muna:Route"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:disallowRobots",
       "@type": "owl:DatatypeProperty",
       "label": "disallowRobots",
-      "domain": ["muna:Route"]
+      "domain": ["muna:Route"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:hasMember",
@@ -1800,7 +1848,7 @@
       "@type": "owl:ObjectProperty",
       "label": "frontpage",
       "domain": ["muna:SiteSettings"],
-      "range": []
+      "range": ["muna:Page"]
     },
     {
       "@id": "muna:logo",
@@ -1813,14 +1861,14 @@
       "@type": "owl:ObjectProperty",
       "label": "mainNavigation",
       "domain": ["muna:SiteSettings"],
-      "range": []
+      "range": ["muna:NavigationMenu"]
     },
     {
       "@id": "muna:footer",
       "@type": "owl:ObjectProperty",
       "label": "footer",
       "domain": ["muna:SiteSettings"],
-      "range": []
+      "range": ["muna:Page"]
     },
     {
       "@id": "muna:keywords",
@@ -1840,13 +1888,14 @@
       "@type": "owl:ObjectProperty",
       "label": "hadPresence",
       "domain": ["muna:SpacetimeVolume"],
-      "range": []
+      "range": ["muna:Presence"]
     },
     {
       "@id": "muna:scale",
       "@type": "owl:DatatypeProperty",
       "label": "scale",
-      "domain": ["muna:Timeline"]
+      "domain": ["muna:Timeline"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:eras",
@@ -1876,64 +1925,71 @@
       "@id": "muna:beginOfTheBegin",
       "@type": "owl:DatatypeProperty",
       "label": "beginOfTheBegin",
-      "domain": ["muna:Timespan"]
+      "domain": ["muna:Timespan"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:endOfTheBegin",
       "@type": "owl:DatatypeProperty",
       "label": "endOfTheBegin",
-      "domain": ["muna:Timespan"]
+      "domain": ["muna:Timespan"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:date",
       "@type": "owl:DatatypeProperty",
       "label": "date",
-      "domain": ["muna:Timespan"]
+      "domain": ["muna:Timespan"],
+      "range": ["xsd:dateTime"]
     },
     {
       "@id": "muna:beginOfTheEnd",
       "@type": "owl:DatatypeProperty",
       "label": "beginOfTheEnd",
-      "domain": ["muna:Timespan"]
+      "domain": ["muna:Timespan"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:endOfTheEnd",
       "@type": "owl:DatatypeProperty",
       "label": "endOfTheEnd",
-      "domain": ["muna:Timespan"]
+      "domain": ["muna:Timespan"],
+      "range": ["xsd:date"]
     },
     {
       "@id": "muna:name",
       "@type": "owl:DatatypeProperty",
       "label": "name",
-      "domain": ["muna:Toc", "muna:media.tag"]
+      "domain": ["muna:Toc", "muna:media.tag"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:sections",
       "@type": "owl:ObjectProperty",
       "label": "sections",
       "domain": ["muna:Toc"],
-      "range": []
+      "range": ["muna:TocSection"]
     },
     {
       "@id": "muna:links",
       "@type": "owl:ObjectProperty",
       "label": "links",
       "domain": ["muna:TocSection"],
-      "range": []
+      "range": ["muna:TocLink"]
     },
     {
       "@id": "muna:assessedBy",
       "@type": "owl:ObjectProperty",
       "label": "assessedBy",
       "domain": ["muna:Treatment"],
-      "range": []
+      "range": ["muna:TreatmentAssessment"]
     },
     {
       "@id": "muna:success",
       "@type": "owl:DatatypeProperty",
       "label": "success",
-      "domain": ["muna:TreatmentAssessment"]
+      "domain": ["muna:TreatmentAssessment"],
+      "range": ["xsd:boolean"]
     },
     {
       "@id": "muna:represents",
@@ -1946,13 +2002,15 @@
       "@id": "muna:filename",
       "@type": "owl:DatatypeProperty",
       "label": "filename",
-      "domain": ["muna:code"]
+      "domain": ["muna:code"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:code",
       "@type": "owl:DatatypeProperty",
       "label": "code",
-      "domain": ["muna:code"]
+      "domain": ["muna:code"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:highlightedLines",
@@ -1964,13 +2022,15 @@
       "@id": "muna:hex",
       "@type": "owl:DatatypeProperty",
       "label": "hex",
-      "domain": ["muna:color"]
+      "domain": ["muna:color"],
+      "range": ["xsd:string"]
     },
     {
       "@id": "muna:alpha",
       "@type": "owl:DatatypeProperty",
       "label": "alpha",
-      "domain": ["muna:color"]
+      "domain": ["muna:color"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:hsl",
@@ -1994,49 +2054,57 @@
       "@id": "muna:h",
       "@type": "owl:DatatypeProperty",
       "label": "h",
-      "domain": ["muna:hslaColor", "muna:hsvaColor"]
+      "domain": ["muna:hslaColor", "muna:hsvaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:s",
       "@type": "owl:DatatypeProperty",
       "label": "s",
-      "domain": ["muna:hslaColor", "muna:hsvaColor"]
+      "domain": ["muna:hslaColor", "muna:hsvaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:l",
       "@type": "owl:DatatypeProperty",
       "label": "l",
-      "domain": ["muna:hslaColor"]
+      "domain": ["muna:hslaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:a",
       "@type": "owl:DatatypeProperty",
       "label": "a",
-      "domain": ["muna:hslaColor", "muna:hsvaColor", "muna:rgbaColor"]
+      "domain": ["muna:hslaColor", "muna:hsvaColor", "muna:rgbaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:v",
       "@type": "owl:DatatypeProperty",
       "label": "v",
-      "domain": ["muna:hsvaColor"]
+      "domain": ["muna:hsvaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:r",
       "@type": "owl:DatatypeProperty",
       "label": "r",
-      "domain": ["muna:rgbaColor"]
+      "domain": ["muna:rgbaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:g",
       "@type": "owl:DatatypeProperty",
       "label": "g",
-      "domain": ["muna:rgbaColor"]
+      "domain": ["muna:rgbaColor"],
+      "range": ["xsd:float"]
     },
     {
       "@id": "muna:b",
       "@type": "owl:DatatypeProperty",
       "label": "b",
-      "domain": ["muna:rgbaColor"]
+      "domain": ["muna:rgbaColor"],
+      "range": ["xsd:float"]
     }
   ]
 }
