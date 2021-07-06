@@ -1,6 +1,6 @@
 export default {
-  name: 'Person',
-  title: 'Person',
+  name: 'Alien',
+  title: 'Alien',
   type: 'document',
   options: {
     semanticSanity: {
@@ -20,7 +20,10 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'Person'}]
+          to: [
+            {type: 'Person'},
+            {type: 'Alien'}
+          ]
         }
       ],
       options: {
@@ -28,7 +31,7 @@ export default {
           '@container': '@set',
           '@type': '@id',
           '@id': 'http://schema.org/motherOf',
-          'domain': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject'],
+          'domain': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalFukker'],
           'range': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject'],
           'subPropertyOf': ['http://schema.org/parent'],
         }
