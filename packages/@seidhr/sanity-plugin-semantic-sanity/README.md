@@ -36,13 +36,17 @@ The plugin can be configured through `<your-studio-folder>/config/semantic-sanit
 Add `options` to documents, objects and propertis.
 
 ```
-options: {
-  exclude: false | true
-  jsonld: {
-    context: {
+{
+  options: {
+    semanticSanity: {
+      'exclude': false | true,
       '@container': '@set' | '@list',
       '@type': '@id' | '@json',
-      '@id': '[Some URL]'
+      '@id': 'Some URL',
+      'domain': ['Some URL'],
+      'range': ['Some URL]',
+      'subClassOf': ['Some URL]',
+      'subPropertyOf': ['Some URL']
     }
   }
 }
