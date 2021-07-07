@@ -101,7 +101,7 @@ export const getOntology = (source) => {
   })
 
   /**
-   * First get all fields and insert schema name as domain
+   * First get all fields from all documents
    */
   let allFields = []
   source.map(type => {
