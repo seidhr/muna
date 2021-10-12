@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/seidhr/muna.git",
-    "directory": "packages/@seidhr/sanity-plugin-semantic-saniy"
+    "directory": "packages/@seidhr/sanity-plugin-semantic-sanity"
   },
   "keywords": [
     "sanity",
