@@ -1,0 +1,57 @@
+{
+  "name": "@seidhr/sanity-plugin-muna-data-importer",
+  "version": "1.0.0",
+  "description": "Import cultural heritage objects from external APIs",
+  "main": "package.json",
+  "scripts": {
+    "build": "sanipack build",
+    "watch": "sanipack build --watch",
+    "prepublishOnly": "sanipack build && sanipack verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/@seidhr/sanity-plugin-muna-data-importer"
+  },
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sanity/ui": "^0.36.12",
+    "prop-types": "15.7.2",
+    "xstate": "^4.25.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-sanity": "5.1.0",
+    "eslint-plugin-react": "7.26.0",
+    "prettier": "2.4.1",
+    "sanipack": "2.0.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/seidhr/muna/issues"
+  },
+  "homepage": "https://github.com/seidhr/muna#readme",
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "parser": "sanipack/babel/eslint-parser",
+    "extends": [
+      "sanity",
+      "sanity/react",
+      "prettier",
+      "prettier/react"
+    ]
+  }
+}
