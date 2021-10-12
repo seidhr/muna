@@ -7,25 +7,26 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "sanity start --port 3334",
+    "dev": "sanity start --port 3334",
     "build": "sanity build"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.12.2",
-    "@sanity/components": "^2.2.6",
-    "@sanity/core": "^2.12.2",
-    "@sanity/dashboard": "^2.10.5",
-    "@sanity/default-layout": "^2.12.2",
-    "@sanity/default-login": "^2.11.1",
-    "@sanity/desk-tool": "^2.12.2",
-    "@sanity/vision": "^2.11.2",
+    "@sanity/base": "^2.21.2",
+    "@sanity/components": "^2.14.0",
+    "@sanity/core": "^2.21.0",
+    "@sanity/dashboard": "^2.21.2",
+    "@sanity/default-layout": "^2.21.2",
+    "@sanity/default-login": "^2.21.0",
+    "@sanity/desk-tool": "^2.21.2",
+    "@sanity/vision": "^2.21.2",
     "@seidhr/react-muna-logo": "^1.1.4",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "^1.0.0",
     "prop-types": "^15.7",
     "react": "^17.0",
-    "react-dom": "^17.0"
+    "react-dom": "^17.0",
+    "styled-components": "^5.2.0"
   }
 }

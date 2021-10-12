@@ -15,11 +15,14 @@
     "@sanity/dashboard",
     "@sanity/desk-tool",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-    "semantic-sanity"
+    "semantic-sanity",
+    "muna-data-importer"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
