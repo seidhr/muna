@@ -24,17 +24,14 @@ We want to be able to reimport, but not overwrite data. Diff patch should make i
 
 * https://github.com/SimeonGriggs/sanity-react-table
 
-
 ## APIs
 
 These should be created from a generic machin, or rather an elasticSearchMachine and a fetchMachine depending on the service.
-
 ### Kulturnav
 
 * https://kulturnav.org/info/api
 * https://kulturnav.org/info/api-core
 * [Fridtjof Nansen](https://kulturnav.org/37d98c32-e3cc-493c-ad49-051a407ff9f0.json)
-
 ### NB
 
 * https://api.nb.no/
@@ -42,3 +39,12 @@ These should be created from a generic machin, or rather an elasticSearchMachine
 ### Marcus
 
 * https://sparql.ub.uib.no/
+
+## Alternative approach
+
+Use the apis, maybe only Kulturnav, as custom input component:
+
+* https://www.sanity.io/schemas/populate-fields-with-data-from-a-file-upload-b5cccda5
+* https://gist.github.com/PetterRuud/9e96665c87592571a45f5d00b5eb0a0c
+* https://gist.github.com/bjoerge/c3a1aaa49dbd608bd341666ff70a128e
+* https://gist.github.com/georgebutter/2cc45dde23c5ba194c9c6038a3fca82e
