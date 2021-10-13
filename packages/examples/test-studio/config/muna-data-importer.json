@@ -1,3 +1,7 @@
 {
-  "add-config": "here"
+  "useAPIs": [
+    "marcus",
+    "kulturnav",
+    "nb"
+  ]
 }
