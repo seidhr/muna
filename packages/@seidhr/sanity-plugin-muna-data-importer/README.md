@@ -14,7 +14,11 @@ The plugin can be configured through `<your-studio-folder>/config/muna-data-impo
 
 ```json
 {
-  "add-config": "here"
+  "useAPIs": [
+    "marcus",
+    "kulturnav",
+    "nb"
+  ]
 }
 ```
 
