@@ -1,3 +1,4 @@
+import React from 'react'
 import { Card, Container, Heading, ThemeProvider, studioTheme } from '@sanity/ui';
 
 const Home = () => {
