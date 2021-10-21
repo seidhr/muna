@@ -1,0 +1,7 @@
+{
+  "useAPIs": [
+    "marcus",
+    "kulturnav",
+    "nb"
+  ]
+}

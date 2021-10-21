@@ -16,7 +16,8 @@
     "@sanity/desk-tool",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
     "semantic-sanity",
-    "muna-data-importer"
+    "@seidhr/sanity-plugin-muna-data-importer",
+    "@seidhr/sanity-plugin-timespan-input"
   ],
   "env": {
     "development": {
