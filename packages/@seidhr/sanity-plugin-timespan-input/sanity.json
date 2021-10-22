@@ -7,6 +7,10 @@
     {
       "implements": "part:@sanity/base/tool",
       "path": "index"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schema/TimeSpan"
     }
   ]
 }

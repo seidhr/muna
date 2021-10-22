@@ -22,6 +22,13 @@
   "license": "MIT",
   "dependencies": {
     "@sanity/ui": "^0.36.12",
+    "@visx/group": "^2.1.0",
+    "@visx/hierarchy": "^2.1.2",
+    "@visx/responsive": "^2.1.2",
+    "@visx/shape": "^2.1.2",
+    "d3-shape": "^3.0.1",
+    "date-fns": "^2.25.0",
+    "date-fns-tz": "^1.1.6",
     "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js",
     "prop-types": "^15.7.2"
   },
