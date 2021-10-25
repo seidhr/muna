@@ -3,5 +3,11 @@
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "scripts": {
+    "build-packages": "lerna exec yarn build",
+    "link-packages": "lerna exec --scope @seidhr/sanity-plugin-* yarn link",
+    "link-plugins": "lerna exec --scope *-studio yarn link-plugins",
+    "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins"
   }
 }
