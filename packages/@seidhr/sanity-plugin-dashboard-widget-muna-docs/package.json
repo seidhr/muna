@@ -27,7 +27,7 @@
     "eslint-config-sanity": "5.0.0",
     "eslint-plugin-react": "7.22.0",
     "prettier": "2.2.1",
-    "sanipack": "1.0.8"
+    "sanipack": "2.1.0"
   },
   "peerDependencies": {
     "react": "^17.0.0"
@@ -47,8 +47,10 @@
     "extends": [
       "sanity",
       "sanity/react",
-      "prettier",
-      "prettier/react"
+      "prettier"
+    ],
+    "ignorePatterns": [
+      "lib/**/"
     ]
   }
 }
