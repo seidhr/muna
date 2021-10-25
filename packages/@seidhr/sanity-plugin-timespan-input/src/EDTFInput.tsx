@@ -21,31 +21,31 @@ const EDTFinput = () => {
           <p>Initial tests of edtf.js.</p>
 
           <Heading as="h2">Input: 2021-11-11</Heading>
-          <div style={{ height: '100px' }}>
+          <div style={{ height: '150px' }}>
             <TimespanWrapper data={date} />
           </div>
           <pre>{JSON.stringify(date, null, 2)}</pre>
 
           <Heading as="h2">Input: 2021-11-11 20:00</Heading >
-          <div style={{ height: '100px' }}>
+          <div style={{ height: '150px' }}>
             <TimespanWrapper data={dateTime} />
           </div>
           <pre>{JSON.stringify(dateTime, null, 2)}</pre>
 
           <Heading as="h2">Input: 2016-0X-2X</Heading>
-          <div style={{ height: '100px' }}>
+          <div style={{ height: '150px' }}>
             <TimespanWrapper data={certainYear} />
           </div>
           <pre>{JSON.stringify(certainYear, null, 2)}</pre>
 
           <Heading as="h2">Input: /2016-0X-2X</Heading>
-          <div style={{ height: '100px' }}>
+          <div style={{ height: '150px' }}>
             <TimespanWrapper data={certainEndYear} />
           </div>
           <pre>{JSON.stringify(certainEndYear, null, 2)}</pre>
 
           <Heading as="h2">Input: 1979-1X-11/2016-0X-2X</Heading>
-          <div style={{ height: '100px' }}>
+          <div style={{ height: '150px' }}>
             <TimespanWrapper data={certainBeginAndEndYear} />
           </div>
           <pre>{JSON.stringify(certainBeginAndEndYear, null, 2)}</pre>

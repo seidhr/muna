@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Group } from '@visx/group';
-import { hierarchy, Tree } from '@visx/hierarchy';
-import { LinkVerticalStep } from '@visx/shape'
-import { pointRadial } from 'd3-shape';
-import useForceUpdate from './useForceUpdate';
+import React, { useState } from 'react'
+import { Group } from '@visx/group'
+import { hierarchy, Tree } from '@visx/hierarchy'
+import { LinkVerticalLine } from '@visx/shape'
+import { Text } from '@visx/text'
+import { pointRadial } from 'd3-shape'
+import useForceUpdate from './useForceUpdate'
 import { Timespan } from '../types';
 import { nb } from 'date-fns/locale'
 import { format } from 'date-fns'
 
 interface TreeNode {
   name: any;
-  isExpanded?: boolean;
   children?: TreeNode[];
 }
 
-const defaultMargin = { top: 20, left: 30, right: 30, bottom: 20 };
+const defaultMargin = { top: 30, left: 30, right: 30, bottom: 30 };
 
 export type LinkTypesProps = {
   data: Timespan;
@@ -43,10 +43,10 @@ export default function TimespanViz({
       let precise = {
         name: 'Date',
         children: [
-          { name: format(data.date, "PPPppp", { locale: nb }) }
+          { name: format(data.date, "PPpp", { locale: nb }) }
         ],
       }
-      treeData.children.push(precise)
+      return precise
     }
 
     if (data.begin) {
@@ -57,16 +57,22 @@ export default function TimespanViz({
 
       if (data.begin.beginOfTheBegin) {
         start.children.push(
-          { name: format(data.begin?.beginOfTheBegin, "PPPppp", { locale: nb }) }
+          { name: format(data.begin?.beginOfTheBegin, "PPpp", { locale: nb }) }
         )
       }
       if (data.begin.endOfTheBegin) {
         start.children.push(
-          { name: format(data.begin?.endOfTheBegin, "PPPppp", { locale: nb }) }
+          { name: format(data.begin?.endOfTheBegin, "PPpp", { locale: nb }) }
         )
       }
       treeData.children.push(start)
+    } else {
+      let start = {
+        name: 'Uncertain start',
+      }
+      treeData.children.push(start)
     }
+
     if (data.end) {
       let end = {
         name: 'End',
@@ -75,16 +81,22 @@ export default function TimespanViz({
 
       if (data.end.beginOfTheEnd) {
         end.children.push(
-          { name: format(data.end?.beginOfTheEnd, "PPPppp", { locale: nb }) }
+          { name: format(data.end?.beginOfTheEnd, "PPpp", { locale: nb }) }
         )
       }
       if (data.end.endOfTheEnd) {
         end.children.push(
-          { name: format(data.end?.endOfTheEnd, "PPPppp", { locale: nb }) }
+          { name: format(data.end?.endOfTheEnd, "PPpp", { locale: nb }) }
         )
       }
       treeData.children.push(end)
+    } else {
+      let end = {
+        name: 'Uncertain end',
+      }
+      treeData.children.push(end)
     }
+
     return treeData
   }
 
@@ -100,7 +112,7 @@ export default function TimespanViz({
   sizeWidth = innerWidth;
   sizeHeight = innerHeight;
 
-  const LinkComponent = LinkVerticalStep
+  const LinkComponent = LinkVerticalLine
 
   return totalWidth < 10 ? null : (
     <div>
@@ -108,7 +120,7 @@ export default function TimespanViz({
         <rect width={totalWidth} height={totalHeight} rx={14} fill="transparent" />
         <Group top={margin.top} left={margin.left}>
           <Tree
-            root={hierarchy(getTimeSpanAsTreeNodes(data), (d) => (d.isExpanded ? null : d.children))}
+            root={hierarchy(getTimeSpanAsTreeNodes(data), (d) => (d.children))}
             size={[sizeWidth, sizeHeight]}
             separation={(a, b) => (a.parent === b.parent ? 1 : 0.5) / a.depth}
           >
@@ -118,7 +130,7 @@ export default function TimespanViz({
                   <LinkComponent
                     key={i}
                     data={link}
-                    percent={stepPercent}
+                    // percent={stepPercent}
                     stroke="rgb(254,113,113)"
                     strokeWidth="1"
                     fill="none"
@@ -137,38 +149,19 @@ export default function TimespanViz({
 
                   return (
                     <Group top={top} left={left} key={key}>
-                      {/* {node.depth === 0 && (
+                      {node.data.children && (
                         <circle
-                          r={12}
-                          fill="url('#links-gradient')"
-                          onClick={() => {
-                            node.data.isExpanded = !node.data.isExpanded;
-                            console.log(node);
-                            forceUpdate();
-                          }}
+                          r={4}
+                        />
+                      )}
+                      {/* {node.depth === 1 && (
+                        <circle
+                          r={4}
                         />
                       )} */}
-                      {/* {node.depth !== 0 && (
-                        <rect
-                          height={height}
-                          width={width}
-                          y={-height / 2}
-                          x={-width / 2}
-                          fill="#000"
-                          stroke='#fff'
-                          strokeWidth={1}
-                          strokeDasharray={node.data.children ? '0' : '2,2'}
-                          strokeOpacity={node.data.children ? 1 : 0.6}
-                          rx={node.data.children ? 0 : 10}
-                          onClick={() => {
-                            node.data.isExpanded = !node.data.isExpanded;
-                            console.log(node);
-                            forceUpdate();
-                          }}
-                        />
-                      )} */}
-                      <text
-                        dy=".33em"
+                      {node.data.children && (<Text
+                        width={120}
+                        dy="-0.8em"
                         fontSize={14}
                         fontFamily="Arial"
                         textAnchor="middle"
@@ -176,7 +169,18 @@ export default function TimespanViz({
                         fill='#000'
                       >
                         {node.data.name}
-                      </text>
+                      </Text>)}
+                      {!node.data.children && (<Text
+                        width={120}
+                        dy="1em"
+                        fontSize={14}
+                        fontFamily="Arial"
+                        textAnchor="middle"
+                        style={{ pointerEvents: 'none' }}
+                        fill='#000'
+                      >
+                        {node.data.name}
+                      </Text>)}
                     </Group>
                   );
                 })}
