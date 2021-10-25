@@ -32,8 +32,8 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-config-sanity": "5.1.0",
     "eslint-plugin-react": "7.24.0",
-    "prettier": "2.3.2",
-    "sanipack": "2.0.1"
+    "prettier": "^2.4.1",
+    "sanipack": "^2.1.0"
   },
   "peerDependencies": {
     "react": "^17.0.0"

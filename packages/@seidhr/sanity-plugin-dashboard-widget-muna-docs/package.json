@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/seidhr/muna.git"
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/@seidhr/sanity-plugin-dashboard-widget-muna-docs"
   },
   "keywords": [
     "sanity",
@@ -26,7 +27,7 @@
     "eslint-config-prettier": "7.2.0",
     "eslint-config-sanity": "5.0.0",
     "eslint-plugin-react": "7.22.0",
-    "prettier": "2.2.1",
+    "prettier": "2.4.1",
     "sanipack": "2.1.0"
   },
   "peerDependencies": {

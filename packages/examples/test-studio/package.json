@@ -25,7 +25,6 @@
     "@sanity/desk-tool": "^2.21.6",
     "@sanity/vision": "^2.21.6",
     "@seidhr/react-muna-logo": "^1.1.4",
-    "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "^1.0.0",
     "global": "^4.4.0",
     "prop-types": "^15.7",
     "react": "^17.0",
