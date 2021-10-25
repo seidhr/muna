@@ -77,7 +77,7 @@ export default {
     },
     /* TODO Swap to referredToBy
      */
-    {
+    /* {
       name: 'description',
       title: 'Beskrivelse',
       titleEN: 'Description',
@@ -87,7 +87,7 @@ export default {
           '@type': '@json'
         }
       },
-    },
+    }, */
   ],
   inputComponent: EDTFInput,
   /* preview: {

@@ -3,28 +3,21 @@ import edtf from 'edtf'
 import isMatch from 'date-fns/isMatch'
 import parse from 'date-fns/parse'
 import zonedTimeToUtc from 'date-fns-tz/zonedTimeToUtc'
+import { Timespan } from '../types'
 
 /**
  * Remember to handle errors
  * @param date edtf string
- * @returns object
+ * @returns Timespan object
  */
 export const getTimespan = (date: string) => {
   if (!date) {
     return null
   }
 
-  let timespan = {
-    edtf: date,
-    date: undefined,
-    begin: {
-      beginOfTheBegin: undefined,
-      endOfTheBegin: undefined,
-    },
-    end: {
-      beginOfTheEnd: undefined,
-      endOfTheEnd: undefined,
-    }
+  let timespan: Timespan = {
+    _type: 'Timespan',
+    edtf: date
   }
 
   if (isMatch(date, 'yyyy-MM-dd HH:mm')) {
@@ -35,10 +28,16 @@ export const getTimespan = (date: string) => {
   if (date.includes('/')) {
     try {
       const [start, end] = date.split('/', 2)
-      timespan.begin.beginOfTheBegin = start ? new Date(edtf(start).min) : undefined
-      timespan.begin.endOfTheBegin = start ? new Date(edtf(start).max) : undefined
-      timespan.end.beginOfTheEnd = end ? new Date(edtf(end).min) : undefined
-      timespan.end.endOfTheEnd = end ? new Date(edtf(end).max) : undefined
+      if (start) {
+        timespan.begin = {}
+        timespan.begin.beginOfTheBegin = start ? new Date(edtf(start).min) : undefined
+        timespan.begin.endOfTheBegin = start ? new Date(edtf(start).max) : undefined
+      }
+      if (end) {
+        timespan.end = {}
+        timespan.end.beginOfTheEnd = end ? new Date(edtf(end).min) : undefined
+        timespan.end.endOfTheEnd = end ? new Date(edtf(end).max) : undefined
+      }
 
       return timespan
     } catch (e) {
@@ -50,6 +49,8 @@ export const getTimespan = (date: string) => {
     }
   } else {
     try {
+      timespan.begin = {}
+      timespan.end = {}
       timespan.begin.beginOfTheBegin = new Date(edtf(date).min)
       timespan.end.endOfTheEnd = new Date(edtf(date).max)
       return timespan

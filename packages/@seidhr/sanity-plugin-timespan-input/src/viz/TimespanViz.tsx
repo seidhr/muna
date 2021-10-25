@@ -4,9 +4,12 @@ import { hierarchy, Tree } from '@visx/hierarchy';
 import { LinkVerticalStep } from '@visx/shape'
 import { pointRadial } from 'd3-shape';
 import useForceUpdate from './useForceUpdate';
+import { Timespan } from '../types';
+import { nb } from 'date-fns/locale'
+import { format } from 'date-fns'
 
 interface TreeNode {
-  name: string;
+  name: any;
   isExpanded?: boolean;
   children?: TreeNode[];
 }
@@ -30,21 +33,61 @@ export default function TimespanViz({
   const [stepPercent, setStepPercent] = useState<number>(0.3);
   const forceUpdate = useForceUpdate();
 
-  const treeData: TreeNode = {
-    name: 'Timespan',
-    children: [
-      ...{
-        data.begin && {
-          name: 'Start',
-          children: [{ name: data.begin.beginOfTheBegin }, { name: data.begin.endOfTheBegin }],
-        }
-      },
-      {
+  const getTimeSpanAsTreeNodes = (input) => {
+    const treeData: TreeNode = {
+      name: 'Timespan',
+      children: [],
+    };
+
+    if (data.date) {
+      let precise = {
+        name: 'Date',
+        children: [
+          { name: format(data.date, "PPPppp", { locale: nb }) }
+        ],
+      }
+      treeData.children.push(precise)
+    }
+
+    if (data.begin) {
+      let start = {
+        name: 'Start',
+        children: [],
+      }
+
+      if (data.begin.beginOfTheBegin) {
+        start.children.push(
+          { name: format(data.begin?.beginOfTheBegin, "PPPppp", { locale: nb }) }
+        )
+      }
+      if (data.begin.endOfTheBegin) {
+        start.children.push(
+          { name: format(data.begin?.endOfTheBegin, "PPPppp", { locale: nb }) }
+        )
+      }
+      treeData.children.push(start)
+    }
+    if (data.end) {
+      let end = {
         name: 'End',
-        children: [{ name: '2016-01-20T00:00:00.000Z' }, { name: '2016-09-29T23:59:59.999Z' }],
-      },
-    ],
-  };
+        children: [],
+      }
+
+      if (data.end.beginOfTheEnd) {
+        end.children.push(
+          { name: format(data.end?.beginOfTheEnd, "PPPppp", { locale: nb }) }
+        )
+      }
+      if (data.end.endOfTheEnd) {
+        end.children.push(
+          { name: format(data.end?.endOfTheEnd, "PPPppp", { locale: nb }) }
+        )
+      }
+      treeData.children.push(end)
+    }
+    return treeData
+  }
+
   const innerWidth = totalWidth - margin.left - margin.right;
   const innerHeight = totalHeight - margin.top - margin.bottom;
 
@@ -65,7 +108,7 @@ export default function TimespanViz({
         <rect width={totalWidth} height={totalHeight} rx={14} fill="transparent" />
         <Group top={margin.top} left={margin.left}>
           <Tree
-            root={hierarchy(treeData, (d) => (d.isExpanded ? null : d.children))}
+            root={hierarchy(getTimeSpanAsTreeNodes(data), (d) => (d.isExpanded ? null : d.children))}
             size={[sizeWidth, sizeHeight]}
             separation={(a, b) => (a.parent === b.parent ? 1 : 0.5) / a.depth}
           >
@@ -76,8 +119,8 @@ export default function TimespanViz({
                     key={i}
                     data={link}
                     percent={stepPercent}
-                    stroke="rgb(254,3,3)"
-                    strokeWidth="2"
+                    stroke="rgb(254,113,113)"
+                    strokeWidth="1"
                     fill="none"
                   />
                 ))}

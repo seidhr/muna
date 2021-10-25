@@ -1,6 +1,6 @@
-interface Timespan {
+export interface Timespan {
   _type: string;
-  _key: string;
+  // _key: string;
   edtf: string;
   date?: Date;
   begin?: {
