@@ -5,10 +5,11 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "build-packages": "lerna exec yarn --scope @seidhr/* build",
+    "build-packages": "lerna exec --scope @seidhr/* yarn build",
     "link-packages": "lerna exec --scope @seidhr/* yarn link",
     "link-plugins": "lerna exec --scope *-studio yarn link-plugins",
-    "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins"
+    "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins",
+    "watch-packages": "lerna exec --scope @seidhr/* --no-bail --parallel yarn watch"
   },
   "dependencies": {
     "global": "^4.4.0"
