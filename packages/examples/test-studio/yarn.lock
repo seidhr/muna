@@ -1754,18 +1754,6 @@
     "@sanity/util" "2.21.6"
     loader-utils "1.1.0"
 
-"@seidhr/react-muna-logo@^1.1.4", "@seidhr/react-muna-logo@latest":
-  version "1.1.4"
-  resolved "https://registry.npmjs.org/@seidhr/react-muna-logo/-/react-muna-logo-1.1.4.tgz#17a7627bd9aa69c981aa4737246a9b3c2426a495"
-  integrity sha512-ZasS376qD5IrBGnGMrWLjfu69Mwrh45v47l+C1Y0uQgbtwlBE3TLaHsZ9hVlcsq8ElwlQSXVAU+lBJZ7IBqsdw==
-
-"@seidhr/sanity-plugin-dashboard-widget-muna-docs@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/@seidhr/sanity-plugin-dashboard-widget-muna-docs/-/sanity-plugin-dashboard-widget-muna-docs-1.0.0.tgz#1a75d9eeb019f41fafd907fc97f36de9ef650c98"
-  integrity sha512-+SJ++Q8WNpeZVa9aaUUGXeUIYyOoWRCUb0Sh9bGZJWmJcX0b0ZvFsEPr86ic1KO+K+84j4IeHb+7HN8gGWOP7w==
-  dependencies:
-    "@seidhr/react-muna-logo" latest
-
 "@types/diff-match-patch@^1.0.32":
   version "1.0.32"
   resolved "https://registry.npmjs.org/@types/diff-match-patch/-/diff-match-patch-1.0.32.tgz#d9c3b8c914aa8229485351db4865328337a3d09f"

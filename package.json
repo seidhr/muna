@@ -2,12 +2,15 @@
   "name": "@seidhr/muna",
   "private": true,
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^4.0.0"
   },
   "scripts": {
-    "build-packages": "lerna exec yarn build",
-    "link-packages": "lerna exec --scope @seidhr/sanity-plugin-* yarn link",
+    "build-packages": "lerna exec yarn --scope @seidhr/* build",
+    "link-packages": "lerna exec --scope @seidhr/* yarn link",
     "link-plugins": "lerna exec --scope *-studio yarn link-plugins",
     "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins"
+  },
+  "dependencies": {
+    "global": "^4.4.0"
   }
 }
