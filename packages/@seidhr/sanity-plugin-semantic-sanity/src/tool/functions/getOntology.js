@@ -20,6 +20,8 @@ export const datatypeMap = {
  * @returns 
  */
 export const getOntology = (source) => {
+  if (!source) return
+
   const { ontologyName, vocab, vocabUri, base, prefixes } = getConfig()
 
   const classes = source.filter(type => ['document', 'object'].includes(type.type)).map(type => {
@@ -36,7 +38,7 @@ export const getOntology = (source) => {
    * First get all fields from all documents
    */
   let allFields = []
-  source.map(type => {
+  source.filter(type => type.fields).map(type => {
     type.fields.filter(field => field.options?.semanticSanity?.exclude != true).forEach(field => {
       const data = {
         ...field,

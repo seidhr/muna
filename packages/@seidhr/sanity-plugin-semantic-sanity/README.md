@@ -2,13 +2,19 @@
 
 Convert Sanity Schemas to an OWL ontology and a JSON-LD Context. 
 
-Why is this useful? You could create an API endpoint and dump the content of Sanity with a JSON-LD Context, convert the result to RDF and feed the result along with the ontology into a Sparql endpoint! 
+Why is this useful? You could create an API endpoint and dump the content of Sanity with a JSON-LD Context, convert the result to RDF and feed the result along with the ontology into a Sparql endpoint!
+
+Mind! This tool only give you a starting point for manuall tweaking. Some can be done with `options.semanticSanity`, some in a more suitable tool like Protégé.
+
+Also mind! It is more of a PoC than anything else.
 
 ## Installation
 
 ```
 sanity install @seidhr/sanity-plugin-semantic-sanity
 ```
+
+Sanity moves the tools default config into `/config` based on the name used in the install step (i might be wrong). So either use `sanity install` the full name and scope or use yarn/npm and manual add it to the `sanity.json` file.
 
 ## Configuration
 
