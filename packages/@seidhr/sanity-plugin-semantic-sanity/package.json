@@ -23,9 +23,8 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@sanity/ui": "^0.34.4",
-    "lodash": "^4.17.21",
-    "styled-components": "^5.3.0"
+    "@sanity/ui": "^0.36.15",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "7.30.0",

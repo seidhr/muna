@@ -7,12 +7,12 @@ Why is this useful? You could create an API endpoint and dump the content of San
 ## Installation
 
 ```
-sanity install semantic-sanity
+sanity install @seidhr/sanity-plugin-semantic-sanity
 ```
 
 ## Configuration
 
-The plugin is configured with `<your-studio-folder>/config/semantic-sanity.json` with these defaults.
+The plugin is configured with `<your-studio-folder>/config/@seidhr/sanity-plugin-semantic-sanity.json` with these defaults.
 
 ```json
 {

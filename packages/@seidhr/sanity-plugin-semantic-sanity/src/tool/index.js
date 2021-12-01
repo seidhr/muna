@@ -1,11 +1,11 @@
 import React from 'react';
-import schema from 'part:@sanity/base/schema';
+import schemas from 'part:@sanity/base/schema';
 import Home from './Home';
 
 // eslint-disable-next-line no-underscore-dangle
-const { types } = schema._source;
+const { types } = schemas._source;
 
-const boundHome = <Home types={types} />;
+const boundHome = <Home sourceSchemas={types} />;
 
 export default {
   title: 'Semantic Sanity',
