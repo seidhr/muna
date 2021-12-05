@@ -15,20 +15,19 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/base": "^2.21.6",
-    "@sanity/cli": "^2.21.6",
+    "@sanity/base": "^2.22.3",
+    "@sanity/cli": "^2.22.3",
     "@sanity/components": "^2.14.0",
-    "@sanity/core": "^2.21.6",
-    "@sanity/dashboard": "^2.21.6",
-    "@sanity/default-layout": "^2.21.6",
-    "@sanity/default-login": "^2.21.6",
-    "@sanity/desk-tool": "^2.21.6",
-    "@sanity/vision": "^2.21.6",
+    "@sanity/core": "^2.22.3",
+    "@sanity/dashboard": "^2.22.3",
+    "@sanity/default-layout": "^2.22.4",
+    "@sanity/default-login": "^2.22.3",
+    "@sanity/desk-tool": "^2.22.3",
+    "@sanity/vision": "^2.22.3",
     "@seidhr/react-muna-logo": "^1.1.4",
-    "global": "^4.4.0",
-    "prop-types": "^15.7",
-    "react": "^17.0",
-    "react-dom": "^17.0",
+    "prop-types": "^15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "styled-components": "^5.2.0"
   }
 }

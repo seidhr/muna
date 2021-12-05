@@ -7,6 +7,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import Person from './Person'
 import Alien from './Alien'
+import Birth from './Birth'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,5 +18,6 @@ export default createSchema({
   types: schemaTypes.concat([
     Person,
     Alien,
+    Birth
   ]),
 })

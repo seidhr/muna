@@ -14,20 +14,25 @@ export default {
       type: 'string',
     },
     {
-      name: 'motherOf',
+      name: 'birth',
+      title: 'Birth',
+      type: 'Birth',
+    },
+    {
+      name: 'parentOf',
       title: 'Parent',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'Person'}]
+          to: [{ type: 'Person' }]
         }
       ],
       options: {
         semanticSanity: {
           '@container': '@set',
           '@type': '@id',
-          '@id': 'http://schema.org/motherOf',
+          '@id': 'http://schema.org/parentOf',
           'domain': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject'],
           'range': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject'],
           'subPropertyOf': ['http://schema.org/parent'],

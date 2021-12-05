@@ -14,15 +14,15 @@ export default {
       type: 'string',
     },
     {
-      name: 'motherOf',
+      name: 'parentOf',
       title: 'Parent',
       type: 'array',
       of: [
         {
           type: 'reference',
           to: [
-            {type: 'Person'},
-            {type: 'Alien'}
+            { type: 'Person' },
+            { type: 'Alien' }
           ]
         }
       ],
@@ -30,7 +30,7 @@ export default {
         semanticSanity: {
           '@container': '@set',
           '@type': '@id',
-          '@id': 'http://schema.org/motherOf',
+          '@id': 'http://schema.org/parentOf',
           'domain': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalFukker'],
           'range': ['http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject'],
           'subPropertyOf': ['http://schema.org/parent'],
