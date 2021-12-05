@@ -11,5 +11,8 @@ NPM packages are all scoped to `@seidhr`.
 lerna bootstrap
 
 # Build and Link all packages in packages/@seidhr and link plugins in studios
-lerna run quick-start
+yarn quick-start
+
+# In any studios in 'examples', link up need plugins
+yarn link-plugins
 ```
