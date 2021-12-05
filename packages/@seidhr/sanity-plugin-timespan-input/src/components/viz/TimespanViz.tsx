@@ -5,7 +5,7 @@ import { LinkVerticalLine } from '@visx/shape'
 import { Text } from '@visx/text'
 import { pointRadial } from 'd3-shape'
 import useForceUpdate from './useForceUpdate'
-import { Timespan } from '../types';
+import { Timespan } from '../../types';
 import { nb } from 'date-fns/locale'
 import { format } from 'date-fns'
 
@@ -43,26 +43,26 @@ export default function TimespanViz({
       let precise = {
         name: 'Date',
         children: [
-          { name: format(data.date, "PPpp", { locale: nb }) }
+          { name: format(new Date(data.date), "PPpp", { locale: nb }) }
         ],
       }
       return precise
     }
 
-    if (data.begin) {
+    if (data.beginOfTheBegin) {
       let start = {
         name: 'Start',
         children: [],
       }
 
-      if (data.begin.beginOfTheBegin) {
+      if (data.beginOfTheBegin) {
         start.children.push(
-          { name: format(data.begin?.beginOfTheBegin, "PPpp", { locale: nb }) }
+          { name: format(new Date(data.beginOfTheBegin), "PPpp", { locale: nb }) }
         )
       }
-      if (data.begin.endOfTheBegin) {
+      if (data.endOfTheBegin) {
         start.children.push(
-          { name: format(data.begin?.endOfTheBegin, "PPpp", { locale: nb }) }
+          { name: format(new Date(data.endOfTheBegin), "PPpp", { locale: nb }) }
         )
       }
       treeData.children.push(start)
@@ -73,20 +73,20 @@ export default function TimespanViz({
       treeData.children.push(start)
     }
 
-    if (data.end) {
+    if (data.endOfTheEnd) {
       let end = {
         name: 'End',
         children: [],
       }
 
-      if (data.end.beginOfTheEnd) {
+      if (data.beginOfTheEnd) {
         end.children.push(
-          { name: format(data.end?.beginOfTheEnd, "PPpp", { locale: nb }) }
+          { name: format(new Date(data.beginOfTheEnd), "PPpp", { locale: nb }) }
         )
       }
-      if (data.end.endOfTheEnd) {
+      if (data.endOfTheEnd) {
         end.children.push(
-          { name: format(data.end?.endOfTheEnd, "PPpp", { locale: nb }) }
+          { name: format(new Date(data.endOfTheEnd), "PPpp", { locale: nb }) }
         )
       }
       treeData.children.push(end)

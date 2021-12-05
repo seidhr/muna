@@ -2,7 +2,7 @@
   "name": "@seidhr/sanity-plugin-timespan-input",
   "version": "1.0.0",
   "description": "Make it easier to add timespan information with the help of Extended Date Time Format (EDTF).",
-  "main": "package.json",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "build": "sanipack build",
@@ -16,12 +16,16 @@
   },
   "keywords": [
     "sanity",
-    "sanity-plugin"
+    "sanity-plugin",
+    "edtf",
+    "cidoc-crm",
+    "timespan"
   ],
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@sanity/ui": "^0.36.12",
+    "@sanity/form-builder": "^2.21.0",
+    "@sanity/ui": "^0.36.15",
     "@visx/group": "^2.1.0",
     "@visx/hierarchy": "^2.1.2",
     "@visx/responsive": "^2.1.2",
@@ -31,10 +35,15 @@
     "date-fns": "^2.25.0",
     "date-fns-tz": "^1.1.6",
     "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.31",
+    "@sanity/base": "^2.22.3",
+    "@sanity/client": "^2.22.3",
+    "@sanity/types": "^2.22.3",
+    "@types/react": "^17",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-sanity": "^5.1.0",
@@ -44,7 +53,9 @@
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "@sanity/base": "^2.22.3",
+    "react": "^17",
+    "react-dom": "^17"
   },
   "bugs": {
     "url": "https://github.com/seidhr/muna/issues"
@@ -58,6 +69,16 @@
   },
   "eslintConfig": {
     "parser": "sanipack/babel/eslint-parser",
+    "rules": {
+      "import/no-unresolved": [
+        2,
+        {
+          "ignore": [
+            "^(all|part):"
+          ]
+        }
+      ]
+    },
     "extends": [
       "sanity",
       "sanity/react",

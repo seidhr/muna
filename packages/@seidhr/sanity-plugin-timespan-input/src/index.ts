@@ -1,12 +1,8 @@
 import React from 'react'
-import EDTFInput from './EDTFInput';
+import EDTFInput from './components/Input';
 
 export default {
   title: 'EDTF Input test',
   name: 'edtf-Input',
   component: EDTFInput,
 };
-
-
-/* export { default } from './EDTFInput'
-export { default as schema } from './schema' */
