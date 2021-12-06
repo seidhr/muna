@@ -24,7 +24,7 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@sanity/form-builder": "^2.21.0",
+    "@sanity/form-builder": "^2.22.3",
     "@sanity/ui": "^0.36.15",
     "@visx/group": "^2.1.0",
     "@visx/hierarchy": "^2.1.2",
