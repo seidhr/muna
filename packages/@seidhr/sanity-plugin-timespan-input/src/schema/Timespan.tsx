@@ -1,3 +1,5 @@
+import React from 'react'
+import { Link } from 'part:@sanity/base/router'
 import EDTFInput from '../components/Input'
 import edtf from 'edtf'
 
@@ -28,6 +30,7 @@ export default {
       name: 'edtf',
       title: 'EDTF',
       titleEN: 'EDTF',
+      description: (<span>Write Extended Date/Time Format (EDTF) and easily save timespans. Exact dates er easy too!. See documentation of <Link href="https://github.com/inukshuk/edtf.js">syntax</Link> and <Link href="https://www.loc.gov/standards/datetime/">specification</Link></span>),
       type: 'string',
       options: {
         semanticSanity: {

@@ -9,7 +9,7 @@ export const mapEDTF = (edtf: any): Timespan => {
   if (!edtf) {
     return null
   }
-  console.log(edtf)
+  //console.log(edtf)
 
   if (edtf.type == 'Interval') {
     const timespan: Timespan = {
@@ -24,11 +24,11 @@ export const mapEDTF = (edtf: any): Timespan => {
   }
 
   const timespan: Timespan = {
-    beginOfTheBegin: edtf.min ? new Date(edtf.min).toISOString() : '',
+    beginOfTheBegin: edtf.min && (edtf.min != edtf.max) ? new Date(edtf.min).toISOString() : '',
     endOfTheBegin: '',
-    date: '',
+    date: edtf.min === edtf.max ? new Date(edtf.min).toISOString() : '',
     beginOfTheEnd: '',
-    endOfTheEnd: edtf.max ? new Date(edtf.max).toISOString() : ''
+    endOfTheEnd: edtf.max && (edtf.min != edtf.max) ? new Date(edtf.max).toISOString() : ''
   }
   // console.log('returning', timespan)
   return timespan

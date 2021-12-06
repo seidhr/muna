@@ -23,7 +23,7 @@ export type LinkTypesProps = {
   margin?: { top: number; right: number; bottom: number; left: number };
 };
 
-export default function TimespanViz({
+export default function TreeNode({
   data,
   width: totalWidth,
   height: totalHeight,

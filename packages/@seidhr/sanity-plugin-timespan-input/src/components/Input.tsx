@@ -9,7 +9,7 @@ import { mapEDTF } from '../functions/mapEDTF'
 import { useId } from '@reach/auto-id'
 import TimespanWrapper from './preview'
 
-const EDTFinput = React.forwardRef((props, ref) => {
+const EDTFinput = React.forwardRef((props: any, ref) => {
   // destructure props for easier use
   const {
     compareValue,
@@ -90,45 +90,43 @@ const EDTFinput = React.forwardRef((props, ref) => {
       : markers.filter((item) => fieldNames.includes(item.path[0]))
 
   return (
-    <>
-      <Fieldset
-        legend={type.title} // schema title
-        description={type.description} // schema description
-        markers={childMarkers} // markers built above
-        presence={childPresence} // presence built above
-      >
-        {type.fields.filter(field => field.name === 'edtf').map((field, i) => {
-          const inputId = useId()
-          return (
-            // Delegate to the generic FormBuilderInput. It will resolve and insert the actual input component
-            // for the given field type
-            <FormBuilderInput
-              id={inputId}
-              level={level + 1}
-              ref={i === 0 ? ref : null}
-              key={field.name}
-              type={field.type}
-              value={value && value[field.name]}
-              onChange={(patchEvent) => handleFieldChange(field, patchEvent)}
-              path={[field.name]}
-              markers={markers}
-              focusPath={focusPath}
-              readOnly={field.readOnly}
-              presence={presence}
-              onFocus={onFocus}
-              onBlur={onBlur}
-              compareValue={compareValue}
-            />
-          )
-        })}
-        {/* <pre>{value && (JSON.stringify(value, null, 2))}</pre> */}
-        {value && (
-          <div style={{ height: '100px' }}>
-            <TimespanWrapper data={value} />
-          </div>
-        )}
-      </Fieldset>
-    </>
+    <Fieldset
+      legend={type.title} // schema title
+      description={type.description} // schema description
+      markers={childMarkers} // markers built above
+      presence={childPresence} // presence built above
+    >
+      {type.fields.filter(field => field.name === 'edtf').map((field, i) => {
+        const inputId = useId()
+        return (
+          // Delegate to the generic FormBuilderInput. It will resolve and insert the actual input component
+          // for the given field type
+          <FormBuilderInput
+            id={inputId}
+            level={level + 1}
+            ref={i === 0 ? ref : null}
+            key={field.name}
+            type={field.type}
+            value={value && value[field.name]}
+            onChange={(patchEvent) => handleFieldChange(field, patchEvent)}
+            path={[field.name]}
+            markers={markers}
+            focusPath={focusPath}
+            readOnly={field.readOnly}
+            presence={presence}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            compareValue={compareValue}
+          />
+        )
+      })}
+      {/* <pre>{value && (JSON.stringify(value, null, 2))}</pre> */}
+      {value && (
+        <div style={{ height: '100px' }}>
+          <TimespanWrapper data={value} />
+        </div>
+      )}
+    </Fieldset>
   )
 })
 

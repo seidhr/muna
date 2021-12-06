@@ -8,3 +8,4 @@
 .prettierrc
 .travis.yml
 .nyc_output
+tsconfig.json
