@@ -26,8 +26,8 @@
     "@sanity/vision": "^2.22.3",
     "@seidhr/react-muna-logo": "^1.1.4",
     "prop-types": "^15.7.2",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.2.0"
   }
 }
