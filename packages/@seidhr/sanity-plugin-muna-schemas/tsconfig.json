@@ -1,0 +1,18 @@
+{
+  "include": [
+    "./node_modules/@sanity/base/types/**/*.ts",
+    "./node_modules/@sanity/base/types/**/*.tsx",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "src/schema/Timespan.tss"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "ES2017"
+    ]
+  }
+}

@@ -97,12 +97,12 @@ const EDTFinput = React.forwardRef((props: any, ref) => {
       presence={childPresence} // presence built above
     >
       {type.fields.filter(field => field.name === 'edtf').map((field, i) => {
-        const inputId = useId()
+        //const inputId = useId()
         return (
           // Delegate to the generic FormBuilderInput. It will resolve and insert the actual input component
           // for the given field type
           <FormBuilderInput
-            id={inputId}
+            //id={inputId}
             level={level + 1}
             ref={i === 0 ? ref : null}
             key={field.name}

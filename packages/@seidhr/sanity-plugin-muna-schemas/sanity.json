@@ -1,0 +1,556 @@
+{
+  "paths": {
+    "source": "./src",
+    "compiled": "./lib"
+  },
+  "parts": [
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Acquisition.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Activity.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Actor.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Collection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/DesignOrProcedure.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Event.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Exhibition.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/HumanMadeObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/LinguisticDocument.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Move.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Period.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Place.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Project.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Storage.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/VisualItem.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/Work.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/ConditionState.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/ContributionAssignment.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/DataTransferEvent.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Dataset.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/DigitalDevice.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/DigitalFile.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/DigitalObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Dimension.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Geojson.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/GeojsonFeature.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/GeojsonFeatureCollection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/GeojsonPoint.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/GeojsonProperties.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Identifier.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/InstagramPost.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/LinguisticObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Manifest.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Name.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Presence.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Set.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/SpacetimeVolume.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/Timespan.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/VisualObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/report/Report.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/report/Sampling.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/report/Treatment.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/report/TreatmentAssessment.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/Alert.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/NavigationItem.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/NavigationMenu.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/OpenGraph.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/Page.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/Post.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/Route.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/SiteSettings.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/Toc.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/TocLink.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/TocSection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/Background.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/Era.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/ExternalMediaObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/MediaObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/Timeline.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/timeline/TimelineSlide.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/AcquisitionType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ActivityType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ActorType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/AppelationType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/Concept.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ConditionType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/DimensionType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/EventType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ExhibitionType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/IdentifierType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/Language.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/Material.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/MeasurementUnit.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ObjectType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/PlaceType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/ReportType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/Role.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/SectionType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/StorageType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/Technique.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/TextType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/types/WorkType.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/properties/object/index.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/BeginningOfExistence.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Birth.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Creation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Death.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Destruction.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Dissolution.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Formation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Joining.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Leaving.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Measurement.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Production.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/activities/Transformation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/images/DigitalImageObject.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/images/ImageCompare.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/ExternalLinkRenderer.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/FootnoteRenderer.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/LocaleBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/LocaleBlockReport.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/LocaleBlockSimple.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/LocaleSlug.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/LocaleString.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/blockContent.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/quoteBlock.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/reportText.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/sharedObjects/texts/simpleBlockContent.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/BigText.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/EventSection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/ExhibitionElement.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Grid.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Hero.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Iframe.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/PageHeader.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Quote.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SectionText.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SingleLevelChart.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SlideshowStrip.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Social.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SocialCollection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SubStory.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/SvgTitle.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Table.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/TextWithIllustration.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/TimelineSection.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/TwoColumn.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/Video.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/ActorCollection/SingleActor.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/ActorCollection/index.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/Gallery.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/Illustration.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/IllustrationWithCaption.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/ItemView.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/MiradorGallery.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/MiradorGalleryWindow.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/site/plugs/withIllustration/SingleObject.js"
+    }
+  ]
+}

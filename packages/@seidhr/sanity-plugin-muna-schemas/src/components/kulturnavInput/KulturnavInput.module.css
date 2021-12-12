@@ -1,0 +1,12 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item > :first-child {
+  font-weight: bold;
+}
+
+.item > :last-child {
+  font-size: 0.75rem;
+}
