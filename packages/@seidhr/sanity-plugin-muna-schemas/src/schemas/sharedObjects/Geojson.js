@@ -1,5 +1,5 @@
-import {label, referredToBy} from '../props'
-import {defaultFieldsets} from '../fieldsets'
+import { label, referredToBy } from '../..'
+import { defaultFieldsets } from '../..'
 
 export default {
   name: 'Geojson',
@@ -33,7 +33,7 @@ export default {
       type: 'type',
     },
     prepare(selection) {
-      const {type} = selection
+      const { type } = selection
       return {
         title: type,
       }

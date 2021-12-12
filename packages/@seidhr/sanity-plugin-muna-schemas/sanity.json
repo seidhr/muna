@@ -162,6 +162,54 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/BeginningOfExistence.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Birth.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Creation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Death.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Destruction.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Dissolution.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Formation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Joining.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Leaving.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Measurement.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Production.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/activities/Transformation.js"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/report/Report.js"
     },
     {
@@ -219,30 +267,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/site/TocSection.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/Background.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/Era.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/ExternalMediaObject.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/MediaObject.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/Timeline.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timeline/TimelineSlide.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -331,58 +355,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/types/WorkType.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/properties/object/index.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/BeginningOfExistence.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Birth.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Creation.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Death.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Destruction.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Dissolution.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Formation.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Joining.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Leaving.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Measurement.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Production.js"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/sharedObjects/activities/Transformation.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -518,11 +490,11 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/site/plugs/ActorCollection/SingleActor.js"
+      "path": "schemas/classes/site/plugs/ActorCollection/ActorCollection.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/site/plugs/ActorCollection/index.js"
+      "path": "schemas/classes/site/plugs/ActorCollection/SingleActor.js"
     },
     {
       "implements": "part:@sanity/base/schema-type",

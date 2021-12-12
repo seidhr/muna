@@ -1,4 +1,4 @@
-import { timespanAsString, coalesceLabel } from '../helpers'
+import { timespanAsString, coalesceLabel } from '../..'
 import { MdLocalActivity } from 'react-icons/md'
 import {
   timespan,
@@ -14,7 +14,7 @@ import {
   labelSingleton,
   accessState,
   editorialState,
-} from '../props'
+} from '../..'
 
 export default {
   name: 'Activity',

@@ -1,4 +1,4 @@
-import { labelSingleton } from "../props"
+import { labelSingleton } from "../../.."
 
 /* TODO Fix language
  */
@@ -19,12 +19,14 @@ export default {
       title: 'Before',
       type: 'array',
       of: [{
-        type: 'DigitalImageObject'}, 
-        {
-          type: 'reference', 
-          to: [{
-            type: 'HumanMadeObject'}
-          ]
+        type: 'DigitalImageObject'
+      },
+      {
+        type: 'reference',
+        to: [{
+          type: 'HumanMadeObject'
+        }
+        ]
       }],
       validation: (Rule) => Rule.required(),
     },
@@ -33,12 +35,14 @@ export default {
       title: 'After',
       type: 'array',
       of: [{
-        type: 'DigitalImageObject'}, 
-        {
-          type: 'reference', 
-          to: [{
-            type: 'HumanMadeObject'}
-          ]
+        type: 'DigitalImageObject'
+      },
+      {
+        type: 'reference',
+        to: [{
+          type: 'HumanMadeObject'
+        }
+        ]
       }],
       validation: (Rule) => Rule.required(),
     },
@@ -54,7 +58,7 @@ export default {
       title: 'label',
     },
     prepare(selection) {
-      const {title} = selection
+      const { title } = selection
       return {
         title: label,
       }

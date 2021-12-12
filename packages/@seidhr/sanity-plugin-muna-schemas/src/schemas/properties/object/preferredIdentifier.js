@@ -1,8 +1,6 @@
 import React from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { Link } from 'part:@sanity/base/router';
-import { client } from './index';
-
 
 export const preferredIdentifier = {
   name: 'preferredIdentifier',

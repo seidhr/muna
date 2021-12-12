@@ -1,10 +1,10 @@
-import { timespan, referredToBy, tookPlaceAt, carriedOutBy, featured } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { coalesceLabel } from '../../helpers'
+import { timespan, referredToBy, tookPlaceAt, carriedOutBy, featured } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { coalesceLabel } from '../../..'
 
 export default {
   name: 'Measurement',
-  type: 'object',
+  type: 'document',
   title: 'Måling',
   titleEN: 'Measurement',
   fieldsets: defaultFieldsets,

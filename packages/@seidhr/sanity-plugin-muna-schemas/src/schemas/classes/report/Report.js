@@ -12,8 +12,8 @@ import {
   motivated,
   carriedOutBy,
   timespan,
-} from '../../props'
-import { coalesceLabel } from '../../helpers'
+} from '../../..'
+import { coalesceLabel } from '../../..'
 
 /**
  * Report

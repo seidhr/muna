@@ -1,4 +1,4 @@
-import {supportedLanguages} from '../vocabularies/defaultVocabularies'
+import { supportedLanguages } from '../../..'
 
 export default {
   name: 'LocaleString',
@@ -13,7 +13,7 @@ export default {
     {
       title: 'Translations',
       name: 'translations',
-      options: {collapsible: true},
+      options: { collapsible: true },
     },
   ],
   fields: supportedLanguages.map((lang) => ({

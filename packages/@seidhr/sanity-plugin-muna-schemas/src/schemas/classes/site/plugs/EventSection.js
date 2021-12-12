@@ -1,5 +1,5 @@
-import { coalesceLabel } from "../../helpers"
-import { image } from "../../props"
+import { coalesceLabel } from "../../../.."
+import { image } from "../../../.."
 
 export default {
   name: 'EventSection',

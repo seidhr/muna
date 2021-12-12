@@ -1,6 +1,6 @@
-import { digitallyShownBy, label, represents, referredToBy } from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+import { digitallyShownBy, label, represents, referredToBy } from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'VisualObject',

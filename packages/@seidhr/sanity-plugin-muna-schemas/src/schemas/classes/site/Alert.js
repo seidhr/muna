@@ -1,4 +1,4 @@
-import { timespanAsString } from '../helpers'
+import { timespanAsString } from '../../..'
 
 export default {
   name: 'Alert',

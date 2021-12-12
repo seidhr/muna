@@ -6,9 +6,9 @@ import {
   referredToBy,
   identifiedBy,
   definedByGeoJSON,
-} from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+} from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 // import {KulturnavInput} from '../components/kulturnavInput/KulturnavInput'
 
 export default {

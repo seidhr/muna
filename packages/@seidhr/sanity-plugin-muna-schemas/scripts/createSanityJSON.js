@@ -8,7 +8,7 @@ const defaultConfig = {
     source: './src',
     compiled: './lib'
   },
-  parts: [...paths.map(path => {
+  parts: [...paths.filter(path => !path.includes('properties')).map(path => {
     return {
       implements: 'part:@sanity/base/schema-type',
       path: path.replace('src/', '')
@@ -22,5 +22,3 @@ try {
 } catch (err) {
   console.error(err)
 }
-
-// console.log(defaultConfig)

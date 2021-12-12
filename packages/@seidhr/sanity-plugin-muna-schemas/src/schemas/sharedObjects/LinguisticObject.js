@@ -1,6 +1,6 @@
-import { editorialState, accessState } from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+import { editorialState, accessState } from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'LinguisticObject',

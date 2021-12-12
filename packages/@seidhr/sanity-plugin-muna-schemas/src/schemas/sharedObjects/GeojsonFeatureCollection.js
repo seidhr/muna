@@ -1,5 +1,5 @@
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'GeojsonFeatureCollection',

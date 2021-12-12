@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'part:@sanity/base/router'
-import { timespanAsString, coalesceLabel } from '../helpers'
+import { timespanAsString, coalesceLabel } from '../..'
 import { FaCalendar } from 'react-icons/fa'
 import {
   timespan,
@@ -9,7 +9,7 @@ import {
   referredToBy,
   labelSingleton,
   tookPlaceAt,
-} from '../props'
+} from '../..'
 
 export default {
   name: 'Event',

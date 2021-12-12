@@ -1,4 +1,4 @@
-import {supportedLanguages} from '../vocabularies/defaultVocabularies'
+import { supportedLanguages } from '../../..'
 
 export default {
   name: 'LocaleBlockReport',
@@ -13,7 +13,7 @@ export default {
     {
       title: 'Translations',
       name: 'translations',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
   ],
   fields: supportedLanguages.map((lang) => ({
@@ -27,15 +27,15 @@ export default {
       blocks: 'nor',
     },
     prepare(selection) {
-      const {blocks} = selection
+      const { blocks } = selection
       const block = (blocks || []).find((block) => block._type === 'block')
 
       return {
         title: block
           ? block.children
-              .filter((child) => child._type === 'span')
-              .map((span) => span.text)
-              .join('')
+            .filter((child) => child._type === 'span')
+            .map((span) => span.text)
+            .join('')
           : 'No description',
       }
     },

@@ -1,7 +1,7 @@
 import { FaTag } from 'react-icons/fa'
-import { editorialState, accessState, label, altLabel, broader, domain } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { coalesceLabel } from '../../helpers'
+import { editorialState, accessState, label, altLabel, broader, domain } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { coalesceLabel } from '../../..'
 
 export default {
   name: 'DimensionType',

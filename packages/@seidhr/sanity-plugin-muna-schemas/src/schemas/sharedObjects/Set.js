@@ -1,4 +1,4 @@
-import {hasMember} from '../props'
+import { hasMember } from '../..'
 
 export default {
   name: 'Set',

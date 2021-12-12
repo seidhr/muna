@@ -1,11 +1,11 @@
-import { coalesceLabel, timespanAsString } from '../../helpers'
-import { timespan, referredToBy, tookPlaceAt, featured } from '../../props'
+import { coalesceLabel, timespanAsString } from '../../..'
+import { timespan, referredToBy, tookPlaceAt, featured } from '../../..'
 
 var capitalize = require('capitalize')
 
 export default {
   name: 'Joining',
-  type: 'object',
+  type: 'document',
   title: 'Innlemmelse',
   titleEN: 'Joining',
   fieldsets: [

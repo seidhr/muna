@@ -1,4 +1,4 @@
-import {label, license} from '../props'
+import { label, license } from '../..'
 
 export default {
   name: 'DigitalFile',

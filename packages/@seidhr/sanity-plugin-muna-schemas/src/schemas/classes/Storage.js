@@ -7,9 +7,9 @@ import {
   tookPlaceAt,
   preferredIdentifier,
   identifiedBy,
-} from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+} from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'Storage',

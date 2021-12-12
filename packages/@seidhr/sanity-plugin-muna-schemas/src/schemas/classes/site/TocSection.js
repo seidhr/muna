@@ -19,7 +19,7 @@ export default {
       description: 'Dersom denne brukes blir tittelen en lenke',
       descriptionEN: 'If used the title becomes a link',
       type: 'reference',
-      to: [{type: 'Route'}],
+      to: [{ type: 'Route' }],
       options: {
         semanticSanity: {
           '@type': '@id'
@@ -33,7 +33,7 @@ export default {
       description: 'Lenker gruppert i denne seksjonen',
       descriptionEN: 'Links grouped in this section',
       type: 'array',
-      of: [{type: 'TocLink'}],
+      of: [{ type: 'TocLink' }],
       options: {
         semanticSanity: {
           '@container': '@list',

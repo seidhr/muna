@@ -1,7 +1,7 @@
 import { FaClipboard } from 'react-icons/fa'
-import { editorialState, accessState, label, referredToBy, identifiedBy, image, digitallyShownBy } from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+import { editorialState, accessState, label, referredToBy, identifiedBy, image, digitallyShownBy } from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'DesignOrProcedure',

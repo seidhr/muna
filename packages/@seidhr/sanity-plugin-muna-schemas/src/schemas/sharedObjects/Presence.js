@@ -1,5 +1,5 @@
-import { coalesceLabel } from '../helpers'
-import { label, definedByGeoJSON } from '../props'
+import { coalesceLabel } from '../..'
+import { label, definedByGeoJSON } from '../..'
 
 export default {
   name: 'Presence',

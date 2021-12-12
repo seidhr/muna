@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'part:@sanity/base/router'
 import { BsFillQuestionCircleFill } from 'react-icons/bs'
-import { timespan, referredToBy, carriedOutBy, tookPlaceAt } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
+import { timespan, referredToBy, carriedOutBy, tookPlaceAt } from '../../..'
+import { defaultFieldsets } from '../../..'
 
 export default {
   name: 'TreatmentAssessment',

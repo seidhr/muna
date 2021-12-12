@@ -1,5 +1,5 @@
-import {FaCrown} from 'react-icons/fa'
-import {editorialState, accessState, labelSingleton, identifiedBy} from '../props'
+import { FaCrown } from 'react-icons/fa'
+import { editorialState, accessState, labelSingleton, identifiedBy } from '../..'
 
 export default {
   name: 'Work',
@@ -10,7 +10,7 @@ export default {
     {
       name: 'state',
       title: 'Status',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
   ],
   fields: [
@@ -26,7 +26,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'WorkType'}],
+          to: [{ type: 'WorkType' }],
         },
       ],
       validation: (Rule) => Rule.required(),
@@ -45,7 +45,7 @@ export default {
       titleEN: 'Activity stream',
       description: 'Events and activities connected to this object',
       type: 'array',
-      of: [{type: 'Creation'}],
+      of: [{ type: 'Creation' }],
       options: {
         semanticSanity: {
           '@container': '@list',
@@ -59,7 +59,7 @@ export default {
       title: 'label',
     },
     prepare(selection) {
-      const {title} = selection
+      const { title } = selection
 
       return {
         title: title,

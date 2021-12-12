@@ -6,15 +6,15 @@ import {
   usedGeneralTechnique,
   usedSpecificTechnique,
   featured,
-} from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { timespanAsString } from '../../helpers'
+} from '../../..'
+import { defaultFieldsets } from '../../..'
+import { timespanAsString } from '../../..'
 
 var capitalize = require('capitalize')
 
 export default {
   name: 'Production',
-  type: 'object',
+  type: 'document',
   title: 'Production',
   titleEN: 'Produksjon',
   fieldsets: defaultFieldsets,

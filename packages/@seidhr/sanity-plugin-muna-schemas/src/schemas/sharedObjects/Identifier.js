@@ -1,6 +1,6 @@
-import { referredToBy, timespan } from '../props'
-import { defaultFieldsets } from '../fieldsets'
-import { coalesceLabel } from '../helpers'
+import { referredToBy, timespan } from '../..'
+import { defaultFieldsets } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'Identifier',

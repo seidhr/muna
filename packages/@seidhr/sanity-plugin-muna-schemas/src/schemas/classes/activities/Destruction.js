@@ -1,12 +1,10 @@
-import {timespan, carriedOutBy, tookPlaceAt, referredToBy, featured} from '../../props'
-import {defaultFieldsets} from '../../fieldsets'
+import { timespan, carriedOutBy, tookPlaceAt, featured } from '../../..'
 
 export default {
-  name: 'Transformation',
-  type: 'object',
-  title: 'Transformasjon',
-  titleEN: 'Transformation',
-  fieldsets: defaultFieldsets,
+  name: 'Destruction',
+  type: 'document',
+  title: 'Ødeleggelse',
+  titleEN: 'Destruction',
   fields: [
     featured,
     {
@@ -17,7 +15,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'EventType'}],
+          to: [{ type: 'EventType' }],
         },
       ],
       options: {
@@ -30,16 +28,15 @@ export default {
     carriedOutBy,
     timespan,
     tookPlaceAt,
-    referredToBy,
   ],
   preview: {
     select: {
-      date: 'timespan',
+      date: 'productionDate',
     },
     prepare(selection) {
-      const {date} = selection
+      const { date } = selection
       return {
-        title: `Transformasjon${date ? ', datert ' + date : ''}`,
+        title: `Ending${date ? ', dated ' + date : ''}`,
       }
     },
   },

@@ -1,7 +1,7 @@
 import { GiExplosiveMaterials } from 'react-icons/gi'
-import { label, altLabel } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { coalesceLabel } from '../../helpers'
+import { label, altLabel } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { coalesceLabel } from '../../..'
 
 export default {
   name: 'Material',

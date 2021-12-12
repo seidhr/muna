@@ -1,4 +1,4 @@
-import {language} from '../props'
+import { language } from '../../..'
 
 export default {
   name: 'NavigationMenu',
@@ -18,7 +18,7 @@ export default {
       name: 'items',
       title: 'Menypunkt',
       titleEN: 'Items',
-      of: [{type: 'NavigationItem'}],
+      of: [{ type: 'NavigationItem' }],
       options: {
         semanticSanity: {
           '@container': '@list',

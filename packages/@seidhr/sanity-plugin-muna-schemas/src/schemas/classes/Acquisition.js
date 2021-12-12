@@ -1,5 +1,5 @@
 import { FaGifts } from 'react-icons/fa'
-import { coalesceLabel } from '../helpers'
+import { coalesceLabel } from '../../index'
 import {
   editorialState,
   accessState,
@@ -11,7 +11,7 @@ import {
   transferredTitleOf,
   transferredTitleFrom,
   transferredTitleTo,
-} from '../props'
+} from '../..'
 
 export default {
   name: 'Acquisition',

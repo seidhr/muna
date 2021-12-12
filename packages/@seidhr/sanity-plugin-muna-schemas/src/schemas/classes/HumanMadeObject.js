@@ -28,8 +28,8 @@ import {
   presentAt,
   homepage,
   wasOutputOf,
-} from '../props'
-import { coalesceLabel } from '../helpers'
+} from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'HumanMadeObject',

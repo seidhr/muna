@@ -1,4 +1,4 @@
-import { homepage, label, preferredIdentifier } from "../props";
+import { homepage, label, preferredIdentifier } from "../..";
 
 export default {
   name: 'Dataset',

@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from 'part:@sanity/base/router'
 import { BsFillQuestionCircleFill } from 'react-icons/bs'
-import { valueSlider } from '../props'
-import { coalesceLabel } from "../helpers"
+import { valueSlider } from '../..'
+import { coalesceLabel } from "../.."
 
 export default {
   name: 'ConditionState',

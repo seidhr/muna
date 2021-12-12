@@ -1,6 +1,6 @@
 import { FaProjectDiagram } from 'react-icons/fa'
-import { editorialState, accessState, label, timespan, referredToBy, identifiedBy } from '../props'
-import { coalesceLabel } from '../helpers'
+import { editorialState, accessState, label, timespan, referredToBy, identifiedBy } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'Project',

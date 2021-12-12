@@ -1,15 +1,11 @@
-import {timespan, tookPlaceAt, referredToBy, motivatedBy, featured} from '../../props'
-import {defaultFieldsets} from '../../fieldsets'
-
-var capitalize = require('capitalize')
-
-// Implisit 'wasFormedBy' to parent Actor
+import { timespan, carriedOutBy, tookPlaceAt, referredToBy, featured } from '../../..'
+import { defaultFieldsets } from '../../..'
 
 export default {
-  name: 'Dissolution',
-  type: 'object',
-  title: 'Oppløsing',
-  titleEN: 'Dissolution',
+  name: 'Transformation',
+  type: 'document',
+  title: 'Transformasjon',
+  titleEN: 'Transformation',
   fieldsets: defaultFieldsets,
   fields: [
     featured,
@@ -21,7 +17,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'EventType'}],
+          to: [{ type: 'EventType' }],
         },
       ],
       options: {
@@ -31,19 +27,19 @@ export default {
         }
       },
     },
+    carriedOutBy,
     timespan,
     tookPlaceAt,
-    motivatedBy,
     referredToBy,
   ],
   preview: {
     select: {
-      type: '_type',
+      date: 'timespan',
     },
     prepare(selection) {
-      const {type} = selection
+      const { date } = selection
       return {
-        title: `${capitalize(type)}`,
+        title: `Transformasjon${date ? ', datert ' + date : ''}`,
       }
     },
   },

@@ -1,7 +1,7 @@
 import { FaTag } from 'react-icons/fa'
-import { editorialState, accessState, label, altLabel } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { coalesceLabel } from '../../helpers'
+import { editorialState, accessState, label, altLabel } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { coalesceLabel } from '../../..'
 
 export default {
   name: 'WorkType',

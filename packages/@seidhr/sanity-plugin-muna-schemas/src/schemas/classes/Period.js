@@ -1,6 +1,6 @@
 import { FaEmpire } from 'react-icons/fa'
-import { timespan, editorialState, accessState, label, referredToBy, tookPlaceAt } from '../props'
-import { coalesceLabel } from '../helpers'
+import { timespan, editorialState, accessState, label, referredToBy, tookPlaceAt } from '../..'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'Period',

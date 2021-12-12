@@ -1,4 +1,4 @@
-import { TextPreview } from "../../components/preview/TextPreview"
+import { TextPreview } from "../../../.."
 
 export default {
   name: 'SectionText',
@@ -34,7 +34,7 @@ export default {
       content: 'content',
       disabled: 'disabled',
     },
-    prepare({title, content}) {
+    prepare({ title, content }) {
       return {
         title: title ? title : '',
         content: content ? content : '',

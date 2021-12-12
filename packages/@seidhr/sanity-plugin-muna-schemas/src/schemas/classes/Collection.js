@@ -1,4 +1,4 @@
-import {GiBookshelf} from 'react-icons/gi'
+import { GiBookshelf } from 'react-icons/gi'
 import {
   editorialState,
   accessState,
@@ -7,7 +7,7 @@ import {
   labelSingleton,
   identifiedBy,
   subjectOf,
-} from '../props'
+} from '../..'
 
 export default {
   title: 'Collection',
@@ -22,37 +22,37 @@ export default {
     {
       name: 'state',
       title: 'Status',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'minimum',
       title: 'Basic metadata',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'representation',
       title: 'Hovedbilde og IIIF manifest',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'relations',
       title: 'Relations to other stuff',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'partsAndContent',
       title: 'Felt relatert til deler eller innhold',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'physicalDescription',
       title: 'Felt relatert til fysisk beskrivelse',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
     {
       name: 'ownership',
       title: 'Felt relatert til eierskap',
-      options: {collapsible: true, collapsed: false},
+      options: { collapsible: true, collapsed: false },
     },
   ],
   fields: [
@@ -79,11 +79,11 @@ export default {
       description: 'Events and activities connected to this object',
       type: 'array',
       of: [
-        {type: 'Production'},
-        {type: 'Transformation'},
-        {type: 'Acquisition'},
-        {type: 'Move'},
-        {type: 'Destruction'},
+        { type: 'Production' },
+        { type: 'Transformation' },
+        { type: 'Acquisition' },
+        { type: 'Move' },
+        { type: 'Destruction' },
       ],
       options: {
         editModal: 'fullscreen',
@@ -102,10 +102,10 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'reference', 
+          type: 'reference',
           to: [
-            {type: 'Collection'},
-            {type: 'HumanMadeObject'}
+            { type: 'Collection' },
+            { type: 'HumanMadeObject' }
           ]
         }
       ],
@@ -123,7 +123,7 @@ export default {
       subtitle: 'preferredIdentifier',
     },
     prepare(selection) {
-      const {title, subtitle} = selection
+      const { title, subtitle } = selection
 
       return {
         title: title,

@@ -1,5 +1,5 @@
-import {timespan, tookPlaceAt, referredToBy, motivatedBy, featured} from '../../props'
-import {defaultFieldsets} from '../../fieldsets'
+import { timespan, tookPlaceAt, referredToBy, motivatedBy, featured } from '../../..'
+import { defaultFieldsets } from '../../..'
 
 var capitalize = require('capitalize')
 
@@ -7,7 +7,7 @@ var capitalize = require('capitalize')
 
 export default {
   name: 'Formation',
-  type: 'object',
+  type: 'document',
   title: 'Opprettelse',
   titleEN: 'Formation',
   fieldsets: defaultFieldsets,
@@ -21,7 +21,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'EventType'}],
+          to: [{ type: 'EventType' }],
         },
       ],
       options: {
@@ -38,13 +38,13 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'reference', 
+          type: 'reference',
           to: [
-            {type: 'Actor'}
+            { type: 'Actor' }
           ],
           options: {
             filter: '_type == "Actor" && references($id)',
-            filterParams: {id: 'd4ad3e47-1498-4b95-9b7f-c25be386691a'}
+            filterParams: { id: 'd4ad3e47-1498-4b95-9b7f-c25be386691a' }
           }
         }
       ],
@@ -65,7 +65,7 @@ export default {
       type: '_type',
     },
     prepare(selection) {
-      const {type} = selection
+      const { type } = selection
       return {
         title: `${capitalize(type)}`,
       }

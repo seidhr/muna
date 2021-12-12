@@ -1,7 +1,7 @@
 import { FaMarker } from 'react-icons/fa'
 import jsonata from 'jsonata'
-import { editorialState, accessState, label, language, labelSingleton, identifiedBy, image } from '../props'
-import { defaultFieldsets } from '../fieldsets'
+import { editorialState, accessState, label, language, labelSingleton, identifiedBy, image } from '../..'
+import { defaultFieldsets } from '../..'
 
 export default {
   name: 'LinguisticDocument',

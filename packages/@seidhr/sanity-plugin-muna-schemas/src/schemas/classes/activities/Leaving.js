@@ -1,12 +1,12 @@
-import { timespan, tookPlaceAt, referredToBy, featured } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { coalesceLabel, timespanAsString } from '../../helpers'
+import { timespan, tookPlaceAt, referredToBy, featured } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { coalesceLabel, timespanAsString } from '../../..'
 
 var capitalize = require('capitalize')
 
 export default {
   name: 'Leaving',
-  type: 'object',
+  type: 'document',
   title: 'Utmeldelse',
   titleEN: 'Leaving',
   fieldsets: defaultFieldsets,

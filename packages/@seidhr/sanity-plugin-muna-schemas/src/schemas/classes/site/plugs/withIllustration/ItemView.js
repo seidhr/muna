@@ -1,4 +1,4 @@
-import { image } from '../../../props'
+import { image } from '../../../../..'
 
 export default {
   type: 'object',

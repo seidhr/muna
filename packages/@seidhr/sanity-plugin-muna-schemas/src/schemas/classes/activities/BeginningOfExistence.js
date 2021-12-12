@@ -1,10 +1,10 @@
 import { now } from 'lodash'
-import { coalesceLabel, timespanAsString } from '../../helpers'
-import { timespan, tookPlaceAt, contributionAssignedBy, featured } from '../../props'
+import { coalesceLabel, timespanAsString } from '../../..'
+import { timespan, tookPlaceAt, contributionAssignedBy, featured } from '../../..'
 
 export default {
   name: 'BeginningOfExistence',
-  type: 'object',
+  type: 'document',
   title: 'Start på eksistens',
   titleEN: 'Beginning of existence',
   fields: [

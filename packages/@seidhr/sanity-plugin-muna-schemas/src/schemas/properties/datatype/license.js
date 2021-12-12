@@ -1,4 +1,4 @@
-import { licenseTypes } from '../vocabularies/defaultVocabularies';
+import { licenseTypes } from '../../..';
 
 /**
  * License

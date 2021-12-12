@@ -1,5 +1,5 @@
 import { FaImage } from 'react-icons/fa'
-import { coalesceLabel } from '../helpers'
+import { coalesceLabel } from '../..'
 
 export default {
   name: 'VisualItem',

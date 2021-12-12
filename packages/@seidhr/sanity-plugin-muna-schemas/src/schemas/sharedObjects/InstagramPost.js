@@ -1,4 +1,4 @@
-import InstagramPreview from '../previews/InstagramPreview'
+import InstagramPreview from '../..'
 
 /* TODO: move?
  */
@@ -19,7 +19,7 @@ export default {
     },
   ],
   preview: {
-    select: {url: 'url'},
+    select: { url: 'url' },
     component: InstagramPreview,
   },
 }

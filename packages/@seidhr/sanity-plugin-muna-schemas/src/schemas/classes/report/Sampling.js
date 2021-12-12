@@ -1,5 +1,5 @@
-import { timespan, carriedOutBy, referredToBy, tookPlaceAt, usedGeneralTechnique, usedSpecificTechnique, usedObjectOfType, usedSpecificObject } from '../../../../schemas/props'
-import { defaultFieldsets } from '../../../../fieldsets'
+import { timespan, carriedOutBy, referredToBy, tookPlaceAt, usedGeneralTechnique, usedSpecificTechnique, usedObjectOfType, usedSpecificObject } from '../../..'
+import { defaultFieldsets } from '../../..'
 
 // Se https://link.springer.com/article/10.1007/s00799-016-0199-x for eksempel på modellering
 

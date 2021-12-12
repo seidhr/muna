@@ -1,4 +1,4 @@
-import {FaTruckLoading} from 'react-icons/fa'
+import { FaTruckLoading } from 'react-icons/fa'
 import {
   timespan,
   editorialState,
@@ -8,8 +8,8 @@ import {
   tookPlaceAt,
   referredToBy,
   motivatedBy,
-} from '../props'
-import {defaultFieldsets} from '../fieldsets'
+} from '../..'
+import { defaultFieldsets } from '../..'
 
 var capitalize = require('capitalize')
 
@@ -40,9 +40,9 @@ export default {
         {
           type: 'reference',
           to: [
-            {type: 'HumanMadeObject'}, 
-            {type: 'Exhibition'}, 
-            {type: 'Actor'}
+            { type: 'HumanMadeObject' },
+            { type: 'Exhibition' },
+            { type: 'Actor' }
           ],
         },
       ],
@@ -59,8 +59,8 @@ export default {
       titleEN: 'Moved from',
       type: 'reference',
       to: [
-        {type: 'Place'}, 
-        {type: 'Storage'}
+        { type: 'Place' },
+        { type: 'Storage' }
       ],
       options: {
         semanticSanity: {
@@ -74,8 +74,8 @@ export default {
       titleEN: 'Moved to',
       type: 'reference',
       to: [
-        {type: 'Place'}, 
-        {type: 'Storage'}
+        { type: 'Place' },
+        { type: 'Storage' }
       ],
       options: {
         semanticSanity: {
@@ -91,7 +91,7 @@ export default {
       published: 'accessState',
     },
     prepare(selection) {
-      const {type, published} = selection
+      const { type, published } = selection
       const secret = published === 'secret' ? '🔒' : ''
 
       return {

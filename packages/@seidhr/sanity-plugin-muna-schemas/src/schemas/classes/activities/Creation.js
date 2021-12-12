@@ -1,13 +1,13 @@
-import {timespan, contributionAssignedBy, tookPlaceAt, featured} from '../../props'
+import { timespan, contributionAssignedBy, tookPlaceAt, featured } from '../../..'
 export default {
   name: 'Creation',
-  type: 'object',
+  type: 'document',
   title: 'Skapelse',
   titleEN: 'Creation',
   fields: [
     featured,
-    contributionAssignedBy, 
-    timespan, 
+    contributionAssignedBy,
+    timespan,
     tookPlaceAt
   ],
   preview: {
@@ -27,12 +27,12 @@ export default {
       dayjs.extend(localizedFormat)
       require('dayjs/locale/nb')
 
-      const {creator, bb, eb, date, be, ee} = selection
-      var dates = _.pickBy({bb: bb, eb: eb, date: date, be: be, ee: ee}, _.identity)
+      const { creator, bb, eb, date, be, ee } = selection
+      var dates = _.pickBy({ bb: bb, eb: eb, date: date, be: be, ee: ee }, _.identity)
 
       let d = Object.assign(
         {},
-        ...Object.keys(dates).map((k) => ({[k]: dayjs(dates[k]).locale('nb').format('LL')})),
+        ...Object.keys(dates).map((k) => ({ [k]: dayjs(dates[k]).locale('nb').format('LL') })),
       )
 
       return {

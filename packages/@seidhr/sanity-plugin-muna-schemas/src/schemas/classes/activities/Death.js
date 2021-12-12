@@ -1,12 +1,12 @@
-import { carriedOutBy, timespan, tookPlaceAt, referredToBy, featured } from '../../props'
-import { defaultFieldsets } from '../../fieldsets'
-import { timespanAsString } from '../../helpers'
+import { carriedOutBy, timespan, tookPlaceAt, referredToBy, featured } from '../../..'
+import { defaultFieldsets } from '../../..'
+import { timespanAsString } from '../../..'
 
 var capitalize = require('capitalize')
 
 export default {
   name: 'Death',
-  type: 'object',
+  type: 'document',
   title: 'Død',
   titleEN: 'Death',
   fieldsets: defaultFieldsets,

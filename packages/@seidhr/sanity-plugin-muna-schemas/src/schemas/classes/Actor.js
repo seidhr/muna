@@ -12,8 +12,8 @@ import {
   homepage,
   shortDescription,
   sortLabel,
-} from '../props'
-import { coalesceLabel, timespanAsString } from '../helpers'
+} from '../..'
+import { coalesceLabel, timespanAsString } from '../..'
 
 export default {
   name: 'Actor',

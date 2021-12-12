@@ -1,6 +1,6 @@
 import bcp47 from 'bcp47'
-import {FaCog} from 'react-icons/fa'
-import { license } from '../props'
+import { FaCog } from 'react-icons/fa'
+import { license } from '../../..'
 
 export default {
   name: 'SiteSettings',
@@ -22,7 +22,7 @@ export default {
       titleEN: 'Frontpage',
       type: 'reference',
       to: [
-        {type: 'Page'}
+        { type: 'Page' }
       ],
       options: {
         semanticSanity: {
@@ -74,7 +74,7 @@ export default {
       title: 'Main navigation',
       description: 'Select main navigation for the top menu',
       type: 'reference',
-      to: [{type: 'NavigationMenu'}],
+      to: [{ type: 'NavigationMenu' }],
       options: {
         semanticSanity: {
           '@type': '@id'
@@ -86,7 +86,7 @@ export default {
       title: 'Footer page',
       description: 'Select page for the footer',
       type: 'reference',
-      to: [{type: 'Page'}],
+      to: [{ type: 'Page' }],
       options: {
         semanticSanity: {
           '@type': '@id'
@@ -113,7 +113,7 @@ export default {
       description: 'Legg til nøkkelord som beskriver nettsiden',
       descriptionEN: 'Add keywords that describes your blog',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{ type: 'string' }],
       options: {
         layout: 'tags',
       },
@@ -131,7 +131,7 @@ export default {
         {
           type: 'reference',
           to: [
-            {type: 'Actor'},
+            { type: 'Actor' },
           ]
         }
       ],

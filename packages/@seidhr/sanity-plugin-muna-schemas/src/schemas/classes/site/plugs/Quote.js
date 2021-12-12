@@ -1,4 +1,4 @@
-import { QuotePreview } from '../../components/preview/QuotePreview'
+import { QuotePreview } from '../../../..'
 
 export default {
   name: 'Quote',
@@ -31,7 +31,7 @@ export default {
       credit: 'credit',
       disabled: 'disabled',
     },
-    prepare({content, credit}) {
+    prepare({ content, credit }) {
       return {
         content: content ? content : '',
         credit: credit ? credit : '',

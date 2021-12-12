@@ -4,10 +4,11 @@
   "private": true,
   "description": "",
   "main": "lib/index.js",
+  "type": "module",
   "scripts": {
     "build": "sanipack build",
     "prepublishOnly": "sanipack build && sanipack verify",
-    "create-index": "create-index ./src -r",
+    "create-index": "create-index -r ./src/schemas/properties",
     "create-sanity-json": "node ./scrips/createSanityJSON.mjs"
   },
   "repository": {
@@ -22,12 +23,24 @@
   "author": "Tarje Sælen Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "create-index": "^2.6.0",
-    "globby": "^12.0.2",
-    "prop-types": "15.7.2"
+    "@sanity/form-builder": "^2.23.0",
+    "@sanity/ui": "^0.36.17",
+    "bcp47": "^1.1.2",
+    "capitalize": "^2.0.4",
+    "dayjs": "^1.10.7",
+    "jsonata": "^1.8.5",
+    "katex": "^0.15.1",
+    "lodash": "^4.17.21",
+    "prop-types": "15.7.2",
+    "react-icons": "^4.3.1",
+    "react-instagram-embed": "^3.0.0",
+    "react-player": "^2.9.0",
+    "react-twitter-embed": "^3.0.3"
   },
   "devDependencies": {
     "eslint": "7.19.0",
+    "create-index": "^2.6.0",
+    "globby": "^12.0.2",
     "eslint-config-prettier": "7.2.0",
     "eslint-config-sanity": "5.0.0",
     "eslint-plugin-react": "7.22.0",

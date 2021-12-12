@@ -1,4 +1,4 @@
-import { labelSingleton } from "../../props"
+import { labelSingleton } from "../../../.."
 
 export default {
   name: 'SingleLevelChart',
@@ -23,7 +23,7 @@ export default {
       titleEN: 'Diagram type',
       options: {
         list: [
-          {title: 'Pai', value: 'pie'}
+          { title: 'Pai', value: 'pie' }
         ]
       },
       initialValue: 'pie',
@@ -51,7 +51,7 @@ export default {
       title: 'label',
       disabled: 'disabled',
     },
-    prepare({title, disabled}) {
+    prepare({ title, disabled }) {
       return {
         title: title ? title : 'Unnamed chart',
         subtitle: disabled ? disabled : '',

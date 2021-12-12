@@ -1,4 +1,4 @@
-import {definedByGeoJSON} from '../props'
+import { definedByGeoJSON } from '../..'
 
 export default {
   name: 'SpacetimeVolume',
@@ -26,7 +26,7 @@ export default {
       title: 'Tidsspenn',
       titleEN: 'Timespan',
       type: 'array',
-      of: [{type: 'Timespan'}],
+      of: [{ type: 'Timespan' }],
       options: {
         semanticSanity: {
           '@container': '@set',
@@ -39,7 +39,7 @@ export default {
       title: 'Fant sted ved',
       titleEN: 'Took place at',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'Place'}]}],
+      of: [{ type: 'reference', to: [{ type: 'Place' }] }],
       options: {
         semanticSanity: {
           '@container': '@set',
@@ -52,9 +52,9 @@ export default {
       title: 'Hadde tilstedeværelse',
       titleEN: 'Had presence',
       type: 'array',
-      of: [{type: 'Presence'}],
+      of: [{ type: 'Presence' }],
       options: {
-        semanticSanity: { 
+        semanticSanity: {
           '@container': '@set',
           '@type': '@id'
         }
@@ -67,7 +67,7 @@ export default {
       type: 'type',
     },
     prepare(selection) {
-      const {type} = selection
+      const { type } = selection
       return {
         title: type,
       }
