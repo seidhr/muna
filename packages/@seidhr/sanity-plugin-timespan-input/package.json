@@ -24,26 +24,14 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@reach/auto-id": "^0.16.0",
     "@sanity/form-builder": "^2.22.3",
-    "@sanity/ui": "^0.36.15",
-    "@visx/axis": "^2.4.0",
-    "@visx/curve": "^2.1.0",
-    "@visx/gradient": "^2.1.0",
-    "@visx/grid": "^2.4.0",
     "@visx/group": "^2.1.0",
     "@visx/hierarchy": "^2.1.2",
-    "@visx/mock-data": "^2.1.2",
-    "@visx/react-spring": "^2.4.0",
     "@visx/responsive": "^2.4.1",
-    "@visx/scale": "^2.2.2",
     "@visx/shape": "^2.4.0",
     "@visx/text": "^2.1.2",
     "date-fns": "^2.25.0",
-    "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js",
-    "react-dom": "^17",
-    "react-scripts-ts": "3.1.0",
-    "react-spring": "^9.2.0"
+    "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js"
   },
   "devDependencies": {
     "@sanity/base": "^2.22.3",
