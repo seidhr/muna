@@ -30,7 +30,8 @@
     "@visx/responsive": "^2.4.1",
     "@visx/shape": "^2.4.0",
     "@visx/text": "^2.1.2",
-    "date-fns": "^2.25.0",
+    "date-fns": "^2.28.0",
+    "date-fns-tz": "^1.2.2",
     "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js"
   },
   "devDependencies": {

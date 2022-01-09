@@ -1762,11 +1762,6 @@
     "@sanity/util" "2.23.0"
     loader-utils "1.1.0"
 
-"@seidhr/react-muna-logo@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.npmjs.org/@seidhr/react-muna-logo/-/react-muna-logo-1.1.4.tgz#17a7627bd9aa69c981aa4737246a9b3c2426a495"
-  integrity sha512-ZasS376qD5IrBGnGMrWLjfu69Mwrh45v47l+C1Y0uQgbtwlBE3TLaHsZ9hVlcsq8ElwlQSXVAU+lBJZ7IBqsdw==
-
 "@types/diff-match-patch@^1.0.32":
   version "1.0.32"
   resolved "https://registry.npmjs.org/@types/diff-match-patch/-/diff-match-patch-1.0.32.tgz#d9c3b8c914aa8229485351db4865328337a3d09f"

@@ -7,7 +7,8 @@ import { Text } from '@visx/text'
 import useForceUpdate from './useForceUpdate'
 import { Timespan } from '../../types';
 import { nb } from 'date-fns/locale'
-import { format } from 'date-fns'
+import { format, utcToZonedTime } from 'date-fns-tz'
+import { parseJSON } from 'date-fns'
 
 interface TreeNode {
   name: any;
@@ -22,6 +23,11 @@ export type LinkTypesProps = {
   height: number;
   margin?: { top: number; right: number; bottom: number; left: number };
 };
+
+const getFormatedDate = (date: string): string => {
+  const formattedDate: string = format(utcToZonedTime(parseJSON(date), 'UTC'), 'PPpp', { locale: nb })
+  return formattedDate
+}
 
 export default function TreeNode({
   data,
@@ -43,7 +49,7 @@ export default function TreeNode({
       let precise = {
         name: 'Date',
         children: [
-          { name: format(new Date(data.date), "PPpp", { locale: nb }) }
+          { name: getFormatedDate(data.date) }
         ],
       }
       return precise
@@ -57,12 +63,12 @@ export default function TreeNode({
 
       if (data.beginOfTheBegin) {
         start.children.push(
-          { name: format(new Date(data.beginOfTheBegin), "PPpp", { locale: nb }) }
+          { name: getFormatedDate(data.beginOfTheBegin) }
         )
       }
       if (data.endOfTheBegin) {
         start.children.push(
-          { name: format(new Date(data.endOfTheBegin), "PPpp", { locale: nb }) }
+          { name: getFormatedDate(data.endOfTheBegin) }
         )
       }
       treeData.children.push(start)
@@ -81,12 +87,12 @@ export default function TreeNode({
 
       if (data.beginOfTheEnd) {
         end.children.push(
-          { name: format(new Date(data.beginOfTheEnd), "PPpp", { locale: nb }) }
+          { name: getFormatedDate(data.beginOfTheEnd) }
         )
       }
       if (data.endOfTheEnd) {
         end.children.push(
-          { name: format(new Date(data.endOfTheEnd), "PPpp", { locale: nb }) }
+          { name: getFormatedDate(data.endOfTheEnd) }
         )
       }
       treeData.children.push(end)

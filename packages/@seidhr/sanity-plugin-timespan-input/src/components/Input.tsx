@@ -36,10 +36,27 @@ const EDTFinput = React.forwardRef((props: any, ref) => {
           edtfObj = edtf(fieldPatchEvent.patches[0].value, { types: ['Year', 'Date', 'Interval', 'Season'] })
           //console.log('edtf object: ', edtfObj)
           isValid = edtfObj.isEDTF
-        } catch (err) {
-        }
+        } catch (err) { }
+
 
         if (isValid && edtfObj) {
+          timespanPatch.patches.push({
+            type: 'unset',
+            path: ['beginOfTheBegin']
+          }, {
+            type: 'unset',
+            path: ['endOfTheBegin']
+          }, {
+            type: 'unset',
+            path: ['date']
+          }, {
+            type: 'unset',
+            path: ['beginOfTheEnd']
+          }, {
+            type: 'unset',
+            path: ['endOfTheEnd']
+          })
+
           Object.entries(mapEDTF(edtfObj)).forEach(([key, value]) => {
             timespanPatch.patches.push({
               type: 'set',
@@ -121,7 +138,7 @@ const EDTFinput = React.forwardRef((props: any, ref) => {
         )
       })}
       {/* <pre>{value && (JSON.stringify(value, null, 2))}</pre> */}
-      {value && (
+      {value && Object.keys(value).length > 1 && (
         <div style={{ height: '100px' }}>
           <TimespanWrapper data={value} />
         </div>

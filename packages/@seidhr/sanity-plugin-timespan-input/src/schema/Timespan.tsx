@@ -30,7 +30,7 @@ export default {
       name: 'edtf',
       title: 'EDTF',
       titleEN: 'EDTF',
-      description: (<span>Write Extended Date/Time Format (EDTF) and easily save timespans. Exact dates er easy too!. See documentation of <Link href="https://github.com/inukshuk/edtf.js">syntax</Link> and <Link href="https://www.loc.gov/standards/datetime/">specification</Link></span>),
+      description: (<span>Write Extended Date/Time Format (EDTF) and easily save timespans like <strong>1880/1900-01</strong>. Exact dates er easy too, e.g. <strong>2020-01-01T12:12:12</strong>. Read about the <Link href="https://github.com/inukshuk/edtf.js">syntax</Link> and <Link href="https://www.loc.gov/standards/datetime/">specification</Link> for details.</span>),
       type: 'string',
       options: {
         semanticSanity: {
