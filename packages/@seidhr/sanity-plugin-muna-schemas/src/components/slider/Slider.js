@@ -1,20 +1,28 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import FormField from 'part:@sanity/components/formfields/default'
-import PatchEvent, {set, unset} from '@sanity/form-builder/PatchEvent'
+import PatchEvent, { set, unset } from '@sanity/form-builder/PatchEvent'
 import styles from './slider.css'
 
 export default class Slider extends React.Component {
   static propTypes = {
     type: PropTypes.shape({
-      title: PropTypes.string
+      title: PropTypes.string,
+      description: PropTypes.string,
+      options: PropTypes.shape({
+        range: PropTypes.shape({
+          min: PropTypes.number,
+          max: PropTypes.number,
+          step: PropTypes.number,
+        })
+      })
     }).isRequired,
     level: PropTypes.number,
     value: PropTypes.number,
     onChange: PropTypes.func.isRequired
   }
 
-  focus () {
+  focus() {
     this._inputElement.focus()
   }
 
@@ -24,14 +32,15 @@ export default class Slider extends React.Component {
     this.props.onChange(PatchEvent.from(patch))
   }
 
-  render () {
-    const {type, value, level} = this.props
+  render() {
+    const { type, value, level } = this.props
     const title = `${type.title}: ${value}`
-    const {min, max, step} = type.options.range
+    const { min, max, step } = type.options.range
     return (
       <div>
         <FormField label={title} level={level} description={type.description}>
           <input
+            // eslint-disable-next-line react/jsx-no-bind, no-return-assign
             ref={element => this._inputElement = element}
             type='range'
             className={styles.slider}

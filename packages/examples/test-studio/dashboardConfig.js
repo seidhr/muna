@@ -7,7 +7,7 @@ export default {
       },
     },
     {
-      name: 'project-users', 
+      name: 'project-users',
       layout: {
         height: 'auto'
       }
@@ -18,7 +18,7 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/tarjelavik/sanity-exhibition-nansen',
+            value: 'https://github.com/seidhr/muna',
             category: 'Code',
           },
         ],

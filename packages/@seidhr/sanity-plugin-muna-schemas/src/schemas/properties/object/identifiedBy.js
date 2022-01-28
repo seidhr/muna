@@ -11,8 +11,6 @@ export const identifiedBy = {
   name: 'identifiedBy',
   title: 'Identifisert av',
   titleEN: 'Identified by',
-  description: 'Legg til titler, navn eller identifikatorer.',
-  descriptionEN: 'Add all known titles, name or identifiers.',
   description: (
     <span>
       Gjeldende, alternative, eksterne eller ugyldige identifikatorer.{' '}

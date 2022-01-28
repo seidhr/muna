@@ -3,8 +3,7 @@
     "./node_modules/@sanity/base/types/**/*.ts",
     "./node_modules/@sanity/base/types/**/*.tsx",
     "./**/*.ts",
-    "./**/*.tsx",
-    "src/schema/Timespan.tss"
+    "./**/*.tsx"
   ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,

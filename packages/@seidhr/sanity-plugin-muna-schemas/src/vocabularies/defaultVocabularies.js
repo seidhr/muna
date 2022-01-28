@@ -2,12 +2,12 @@
     http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry
  */
 export const supportedLanguages = [
-  {id: 'no', title: 'Norwegian', isDefault: true},
-  {id: 'en', title: 'English'},
-  {id: 'smi', title: 'Sami'}, // Sami languages, general
-  {id: 'sv', title: 'Swedish'},
-  {id: 'de', title: 'German'},
-  {id: 'none', title: 'No spesific language'},
+  { id: 'no', title: 'Norwegian', isDefault: true },
+  { id: 'en', title: 'English' },
+  { id: 'smi', title: 'Sami' }, // Sami languages, general
+  { id: 'sv', title: 'Swedish' },
+  { id: 'de', title: 'German' },
+  { id: 'none', title: 'No spesific language' },
 ]
 
 export const licenseTypes = [
@@ -40,8 +40,3 @@ export const licenseTypes = [
     value: 'https://rightsstatements.org/vocab/UND/1.0/',
   },
 ]
-
-export default {
-  supportedLanguages,
-  licenseTypes,
-}

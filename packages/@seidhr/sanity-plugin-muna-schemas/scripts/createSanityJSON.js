@@ -8,7 +8,7 @@ const defaultConfig = {
     source: './src',
     compiled: './lib'
   },
-  parts: [...paths.filter(path => !path.includes('properties')).map(path => {
+  parts: [...paths.filter(path => !path.includes('properties')).map(path => path.replace(/\..*/, '')).map(path => {
     return {
       implements: 'part:@sanity/base/schema-type',
       path: path.replace('src/', '')

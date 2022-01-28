@@ -6,7 +6,9 @@
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
+    "lint": "eslint ./src",
     "build": "sanipack build",
+    "watch": "sanipack build --watch",
     "prepublishOnly": "sanipack build && sanipack verify",
     "create-index": "create-index -r ./src/schemas/properties",
     "create-sanity-json": "node ./scrips/createSanityJSON.mjs"

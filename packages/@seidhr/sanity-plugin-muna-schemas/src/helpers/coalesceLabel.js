@@ -1,14 +1,17 @@
+/* eslint-disable array-callback-return */
 import { supportedLanguages } from '../vocabularies/defaultVocabularies';
 
 export const coalesceLabel = (label, lang) => {
   let langs = [lang || ''];
+
   supportedLanguages.map((x) => {
     langs.push(x.id);
   });
+
   langs = [...new Set(langs)];
 
   if (!label) {
-    return;
+    return '';
   }
 
   if (label && typeof label === 'string') {
@@ -19,7 +22,7 @@ export const coalesceLabel = (label, lang) => {
     return label[lang];
   }
 
-  let result = getLabelByLangs(label, langs);
+  const result = getLabelByLangs(label, langs);
   return result[0];
 };
 
@@ -27,7 +30,8 @@ function getLabelByLangs(label, arr) {
   if (!label || !arr) {
     return;
   }
-  let labels = [];
+
+  const labels = [];
 
   arr.map((element) => {
     Object.entries(label).map(([key, val]) => {
@@ -36,5 +40,7 @@ function getLabelByLangs(label, arr) {
       }
     });
   });
+
+  // eslint-disable-next-line consistent-return
   return labels || 'Untitled';
 }

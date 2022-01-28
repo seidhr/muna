@@ -6,7 +6,7 @@ import { Link } from 'part:@sanity/base/router';
 export const hasFormerOrCurrentOwner = {
   name: 'hasFormerOrCurrentOwner',
   title: 'Tidligere eller nåværende eier',
-  title: 'Former or current owner',
+  titleEN: 'Former or current owner',
   description: (
     <span>
       Tidligere eller nåværende eier av dette objektet. Brukes også for usikkert eierskap.{' '}
