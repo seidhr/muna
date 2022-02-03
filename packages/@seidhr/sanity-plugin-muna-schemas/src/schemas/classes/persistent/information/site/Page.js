@@ -45,7 +45,6 @@ export default {
         { type: 'IllustrationWithCaption' },
         { type: 'EventSection' },
         { type: 'Table' },
-        { type: 'TimelineSection' },
         /* {type: 'Illustration'}, */
         { type: 'TwoColumn' },
         { type: 'Grid' },

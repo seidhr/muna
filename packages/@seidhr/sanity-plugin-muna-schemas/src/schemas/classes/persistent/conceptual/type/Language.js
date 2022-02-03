@@ -1,6 +1,6 @@
 import { FaLanguage } from 'react-icons/fa'
+import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { defaultFieldsets } from '../../../../../vocabularies/defaultVocabularies'
 import { altLabel, label } from '../../../../properties/datatype'
 
 export default {

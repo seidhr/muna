@@ -1,9 +1,8 @@
 import { FaBox } from 'react-icons/fa'
-import { coalesceLabel, defaultFieldsets } from '../../../helpers'
+import { defaultFieldsets } from '../../../../lib/fieldsets/defaultFieldsets'
+import { coalesceLabel } from '../../../helpers'
 import { accessState, editorialState, preferredIdentifier } from '../../properties/datatype'
-import {
-  identifiedBy, referredToBy, timespan, tookPlaceAt
-} from '../../properties/object'
+import { identifiedBy, referredToBy, timespan, tookPlaceAt } from '../../properties/object'
 
 export default {
   name: 'Storage',

@@ -1,8 +1,7 @@
 import { MdLocalActivity } from 'react-icons/md'
 import { coalesceLabel, timespanAsString } from '../../../../helpers/coalesceLabel'
 import {
-  accessState, editorialState,
-  labelSingleton
+  accessState, editorialState, labelSingleton
 } from '../../../properties/datatype'
 import {
   carriedOutBy, hadParticipant, identifiedBy, referredToBy, timespan, tookPlaceAt, usedGeneralTechnique, usedObjectOfType, usedSpecificObject, usedSpecificTechnique

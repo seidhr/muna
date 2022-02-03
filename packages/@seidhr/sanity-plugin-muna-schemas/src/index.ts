@@ -89,7 +89,6 @@ export { default as SubStory } from "./schemas/classes/persistent/information/si
 export { default as SvgTitle } from "./schemas/classes/persistent/information/site/plugs/SvgTitle";
 export { default as Table } from "./schemas/classes/persistent/information/site/plugs/Table";
 export { default as TextWithIllustration } from "./schemas/classes/persistent/information/site/plugs/TextWithIllustration";
-export { default as TimelineSection } from "./schemas/classes/persistent/information/site/plugs/TimelineSection";
 export { default as TwoColumn } from "./schemas/classes/persistent/information/site/plugs/TwoColumn";
 export { default as Video } from "./schemas/classes/persistent/information/site/plugs/Video";
 export { default as Gallery } from "./schemas/classes/persistent/information/site/plugs/withIllustration/Gallery";
@@ -230,7 +229,6 @@ export {
 export { wasOutputOf } from "./schemas/properties/object/wasOutputOf";
 export { default as LocaleSlug } from "./schemas/strings/LocaleSlug";
 export { default as LocaleString } from "./schemas/strings/LocaleString";
-export {
-	licenseTypes, supportedLanguages
-} from "./vocabularies/defaultVocabularies";
+export { licenseTypes } from "./vocabularies/licenseTypes";
+export { supportedLanguages } from "./vocabularies/supportedLanguages";
 

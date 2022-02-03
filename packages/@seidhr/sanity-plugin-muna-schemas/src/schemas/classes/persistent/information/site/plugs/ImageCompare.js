@@ -16,7 +16,7 @@ export default {
       title: 'Before',
       type: 'array',
       of: [{
-        type: 'DigitalImageObject'
+        type: 'DigitalObjectImage'
       },
       {
         type: 'reference',
@@ -32,7 +32,7 @@ export default {
       title: 'After',
       type: 'array',
       of: [{
-        type: 'DigitalImageObject'
+        type: 'DigitalObjectImage'
       },
       {
         type: 'reference',

@@ -78,10 +78,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timespan/Timespan"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/appelation/Identifier"
     },
     {
@@ -467,10 +463,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/plugs/TextWithIllustration"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/TimelineSection"
     },
     {
       "implements": "part:@sanity/base/schema-type",

@@ -54,7 +54,7 @@ export default {
       name: 'media',
       title: 'Media',
       titleEN: 'Media',
-      type: 'MediaObject',
+      type: 'DigitalObjectImage',
       fieldset: 'timelineMedium',
     },
     {

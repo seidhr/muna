@@ -25,7 +25,7 @@ export default {
       titleEN: 'Image',
       description: 'Facebook anbefaler 1200x630 (størrelsen blir endret automatisk)',
       descriptionEN: 'Facebook recommends 1200x630 (will be auto resized)',
-      type: 'DigitalImageObject',
+      type: 'DigitalObjectImage',
       options: {
         semanticSanity: {
           '@type': '@json'

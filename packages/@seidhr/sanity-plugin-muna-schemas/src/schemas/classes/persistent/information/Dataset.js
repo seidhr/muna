@@ -1,5 +1,4 @@
-import { label } from "../../../properties/datatype"
-import { homepage, preferredIdentifier } from "../../../properties/object"
+import { homepage, label, preferredIdentifier } from "../../../properties/datatype"
 
 export default {
   name: 'Dataset',

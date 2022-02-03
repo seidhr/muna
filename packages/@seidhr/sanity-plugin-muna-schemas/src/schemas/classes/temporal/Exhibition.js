@@ -1,10 +1,8 @@
 import { FaGlasses } from 'react-icons/fa'
-import { coalesceLabel, defaultFieldsets } from '../../../helpers'
+import { defaultFieldsets } from '../../../../lib/fieldsets/defaultFieldsets'
+import { coalesceLabel } from '../../../helpers'
 import { accessState, editorialState, labelSingleton } from '../../properties/datatype'
-import {
-  identifiedBy,
-  language, referredToBy, tookPlaceAt
-} from '../../properties/object'
+import { identifiedBy, language, referredToBy, tookPlaceAt } from '../../properties/object'
 
 export default {
   name: 'Exhibition',

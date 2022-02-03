@@ -1,7 +1,8 @@
 import { FaMapMarker } from 'react-icons/fa'
-import { coalesceLabel, defaultFieldsets } from '../../../helpers'
-import { label } from '../../properties/datatype'
-import { accessState, definedByGeoJSON, editorialState, identifiedBy, referredToBy } from '../../properties/object'
+import { defaultFieldsets } from '../../../../lib/fieldsets/defaultFieldsets'
+import { coalesceLabel } from '../../../helpers'
+import { accessState, editorialState, label } from '../../properties/datatype'
+import { definedByGeoJSON, identifiedBy, referredToBy } from '../../properties/object'
 // import {KulturnavInput} from '../components/kulturnavInput/KulturnavInput'
 
 export default {

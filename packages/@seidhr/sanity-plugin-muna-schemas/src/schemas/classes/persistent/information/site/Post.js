@@ -54,7 +54,7 @@ export default {
       name: 'image',
       title: 'Hovedbilde',
       titleEN: 'Main image',
-      type: 'DigitalImageObject',
+      type: 'DigitalObjectImage',
       options: {
         semanticSanity: {
           '@type': '@json'
@@ -146,7 +146,7 @@ export default {
       slug: 'slug',
       media: 'image',
     },
-    prepare({title = 'No title', publishedAt, slug = {}, media}) {
+    prepare({ title = 'No title', publishedAt, slug = {}, media }) {
       const path = `/blog/${slug.current}`
       return {
         title,

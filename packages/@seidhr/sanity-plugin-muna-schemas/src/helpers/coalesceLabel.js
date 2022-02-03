@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import { supportedLanguages } from '../vocabularies/defaultVocabularies';
+import { supportedLanguages } from "../vocabularies/supportedLanguages";
 
 export const coalesceLabel = (label, lang) => {
   let langs = [lang || ''];

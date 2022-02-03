@@ -19,7 +19,9 @@
     "@seidhr/sanity-plugin-muna-data-importer",
     "@seidhr/sanity-plugin-timespan-input",
     "@seidhr/sanity-plugin-muna-schemas",
-    "seidhr-logo"
+    "seidhr-logo",
+    "@sanity/code-input",
+    "table"
   ],
   "env": {
     "development": {

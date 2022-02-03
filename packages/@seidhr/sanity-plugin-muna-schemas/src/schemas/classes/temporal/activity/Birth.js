@@ -10,7 +10,13 @@ export default {
   title: 'Fødsel',
   titleEN: 'Birth',
   fieldsets: defaultFieldsets,
-  fields: [featured, carriedOutBy, timespan, tookPlaceAt, referredToBy],
+  fields: [
+    featured,
+    carriedOutBy,
+    timespan,
+    tookPlaceAt,
+    referredToBy
+  ],
   preview: {
     select: {
       bb: 'timespan.0.beginOfTheBegin',

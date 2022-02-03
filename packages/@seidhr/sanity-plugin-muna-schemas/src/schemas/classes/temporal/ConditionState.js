@@ -68,7 +68,7 @@ export default {
         </span>
       ),
       type: 'array',
-      of: [{ type: 'DigitalImageObject' }],
+      of: [{ type: 'DigitalObjectImage' }],
       options: {
         layout: 'grid',
         semanticSanity: {

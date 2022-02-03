@@ -1,4 +1,4 @@
-const defaultFieldsets = [
+export const defaultFieldsets = [
   {
     name: 'state',
     title: 'Status',
@@ -65,6 +65,4 @@ const defaultFieldsets = [
     options: { collapsible: true, collapsed: false },
   },
 ]
-
-export { defaultFieldsets }
 

@@ -1,4 +1,4 @@
-import coalesceLabel from '../../../helpers/coalesceLabel'
+import { coalesceLabel } from '../../../helpers/coalesceLabel'
 
 export default {
   name: 'Dimension',

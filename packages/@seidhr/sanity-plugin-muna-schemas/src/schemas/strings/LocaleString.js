@@ -1,4 +1,3 @@
-import { supportedLanguages } from '../../vocabularies/defaultVocabularies'
 
 export default {
   name: 'LocaleString',
@@ -16,10 +15,18 @@ export default {
       options: { collapsible: true },
     },
   ],
-  fields: supportedLanguages.map((lang) => ({
+  fields: [
+    {
+      name: 'no',
+      title: 'Norsk',
+      type: 'string',
+      isDefault: true,
+    }
+  ]
+  /* fields: supportedLanguages.map((lang) => ({
     title: lang.title,
     name: lang.id,
     type: 'string',
     fieldset: lang.isDefault ? null : 'translations',
-  })),
+  })), */
 }

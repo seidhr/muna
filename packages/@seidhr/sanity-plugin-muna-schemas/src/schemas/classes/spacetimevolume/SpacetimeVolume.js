@@ -1,4 +1,4 @@
-import { definedByGeoJSON } from '../../properties/datatype'
+import { definedByGeoJSON } from '../../properties/object'
 
 export default {
   name: 'SpacetimeVolume',

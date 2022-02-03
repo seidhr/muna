@@ -1,6 +1,6 @@
 import { FaTag } from 'react-icons/fa'
+import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { defaultFieldsets } from '../../../../../vocabularies/defaultVocabularies'
 import { accessState, altLabel, editorialState, label } from '../../../../properties/datatype'
 import { identifiedBy, inDataset, sameAs, wasOutputOf } from '../../../../properties/object'
 

@@ -1,4 +1,3 @@
-import { licenseTypes } from '../../../vocabularies/defaultVocabularies';
 
 /**
  * License
@@ -12,8 +11,8 @@ export const license = {
   description: 'Velg den korrekt lisensen eller rettighetserklæringen.',
   descriptionEN: 'Choose the correct lisense or mark',
   type: 'string',
-  options: {
+  /* options: {
     list: licenseTypes,
-  },
+  }, */
   validation: (Rule) => Rule.required(),
 };

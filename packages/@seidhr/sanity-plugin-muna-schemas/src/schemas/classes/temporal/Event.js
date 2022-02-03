@@ -3,9 +3,7 @@ import React from 'react'
 import { FaCalendar } from 'react-icons/fa'
 import { coalesceLabel, timespanAsString } from '../../../helpers'
 import { accessState, editorialState, labelSingleton } from '../../properties/datatype'
-import {
-  referredToBy, timespan, tookPlaceAt
-} from '../../properties/object'
+import { referredToBy, timespan, tookPlaceAt } from '../../properties/object'
 
 export default {
   name: 'Event',
@@ -86,7 +84,7 @@ export default {
       name: 'media',
       title: 'Media',
       titleEN: 'Media',
-      type: 'MediaObject',
+      type: 'DigitalObjectImage',
       fieldset: 'timelineMedium',
       options: {
         semanticSanity: {

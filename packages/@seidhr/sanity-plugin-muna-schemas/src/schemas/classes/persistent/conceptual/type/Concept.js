@@ -1,6 +1,6 @@
 import { FaTag } from 'react-icons/fa'
+import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { defaultFieldsets } from '../../../../../vocabularies/defaultVocabularies'
 import { accessState, altLabel, editorialState, label } from '../../../../properties/datatype'
 import { identifiedBy, inDataset, sameAs, wasOutputOf } from '../../../../properties/object'
 
@@ -20,23 +20,6 @@ export default {
     label,
     altLabel,
     identifiedBy,
-    /* {
-      name: 'broader',
-      title: 'Overordnet term',
-      titleEN: 'Broader',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'Concept'}]}],
-    }, */
-    /* {
-      name: 'narrower',
-      title: 'Underordnet term',
-      titleEN: 'Narrower',
-      description: 'Trenger vi narrower? Blir mye å registrere...',
-      type: 'array',
-      of: [
-        {type: 'reference', to: [{type: 'typeClass'}]}
-      ]
-    }, */
     {
       name: 'activityStream',
       title: 'Aktivitetsstrøm',

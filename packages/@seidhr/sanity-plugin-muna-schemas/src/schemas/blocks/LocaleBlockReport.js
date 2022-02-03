@@ -1,4 +1,3 @@
-import { supportedLanguages } from '../../vocabularies/defaultVocabularies'
 
 export default {
   name: 'LocaleBlockReport',
@@ -16,12 +15,20 @@ export default {
       options: { collapsible: true, collapsed: true },
     },
   ],
-  fields: supportedLanguages.map((lang) => ({
+  fields: [
+    {
+      name: 'no',
+      title: 'Norsk',
+      type: 'string',
+      isDefault: true,
+    }
+  ],
+  /* fields: supportedLanguages.map((lang) => ({
     title: lang.title,
     name: lang.id,
     type: 'reportText',
     fieldset: lang.isDefault ? null : 'translations',
-  })),
+  })), */
   preview: {
     select: {
       blocks: 'nor',

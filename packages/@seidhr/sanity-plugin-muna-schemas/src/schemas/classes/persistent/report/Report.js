@@ -192,7 +192,7 @@ export default {
       ),
       fieldset: 'documentation',
       type: 'array',
-      of: [{ type: 'DigitalImageObject' }],
+      of: [{ type: 'DigitalObjectImage' }],
       options: {
         layout: 'grid',
         semanticSanity: {
