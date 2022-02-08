@@ -1,4 +1,5 @@
 /* eslint-disable prefer-template */
+import { FaRulerCombined } from 'react-icons/fa'
 import { coalesceLabel, defaultFieldsets } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -8,6 +9,7 @@ export default {
   type: 'document',
   title: 'Måling',
   titleEN: 'Measurement',
+  icon: FaRulerCombined,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

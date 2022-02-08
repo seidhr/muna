@@ -1,3 +1,4 @@
+import { GiShipWreck } from 'react-icons/gi'
 import { featured } from '../../../properties/datatype'
 import { carriedOutBy, timespan, tookPlaceAt } from '../../../properties/object'
 
@@ -6,6 +7,7 @@ export default {
   type: 'document',
   title: 'Ødeleggelse',
   titleEN: 'Destruction',
+  icon: GiShipWreck,
   fields: [
     featured,
     {

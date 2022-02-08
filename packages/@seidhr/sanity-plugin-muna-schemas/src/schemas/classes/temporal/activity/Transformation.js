@@ -1,3 +1,4 @@
+import { GiTransform } from 'react-icons/gi'
 import { defaultFieldsets } from '../../../../helpers'
 import { featured } from '../../../properties/datatype'
 import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -7,6 +8,7 @@ export default {
   type: 'document',
   title: 'Transformasjon',
   titleEN: 'Transformation',
+  icon: GiTransform,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

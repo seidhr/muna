@@ -5,7 +5,7 @@ export const defaultFieldsets = [
     options: { collapsible: true, collapsed: false, columns: 2 },
   },
   {
-    name: 'minimum',
+    name: 'core',
     title: 'Basic metadata',
     options: { collapsible: true, collapsed: false },
   },

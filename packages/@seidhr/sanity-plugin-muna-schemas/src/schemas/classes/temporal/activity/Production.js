@@ -1,3 +1,4 @@
+import { GiFactory } from 'react-icons/gi'
 import { defaultFieldsets } from '../../../../helpers/coalesceLabel'
 import { timespanAsString } from '../../../../helpers/timespanAsString'
 import {
@@ -14,6 +15,7 @@ export default {
   type: 'document',
   title: 'Production',
   titleEN: 'Produksjon',
+  icon: GiFactory,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

@@ -21,7 +21,7 @@ export default {
       options: { collapsible: true, collapsed: false },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -42,15 +42,15 @@ export default {
     labelSingleton,
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...timespan,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...tookPlaceAt,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       name: 'hasType',

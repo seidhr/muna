@@ -1,3 +1,4 @@
+import { GiExitDoor } from 'react-icons/gi'
 import { coalesceLabel, defaultFieldsets, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -9,6 +10,7 @@ export default {
   type: 'document',
   title: 'Utmeldelse',
   titleEN: 'Leaving',
+  icon: GiExitDoor,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

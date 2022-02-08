@@ -1,5 +1,5 @@
 import { MdLocalActivity } from 'react-icons/md'
-import { coalesceLabel, timespanAsString } from '../../../../helpers/coalesceLabel'
+import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import {
   accessState, editorialState, labelSingleton
 } from '../../../properties/datatype'
@@ -16,10 +16,10 @@ export default {
     {
       name: 'state',
       title: 'Status',
-      options: { collapsible: true, collapsed: false },
+      options: { collapsible: true, collapsed: false, columns: 2 },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -34,24 +34,22 @@ export default {
       options: { collapsible: true, collapsed: false },
     },
   ],
+  groups: [
+    {
+      name: 'technique',
+      title: 'Teknikk'
+    },
+    {
+      name: 'purpose',
+      title: 'Formål'
+    }
+  ],
   fields: [
-    editorialState,
-    accessState,
-    labelSingleton,
-    {
-      ...identifiedBy,
-      fieldset: 'minimum',
-    },
-    {
-      ...referredToBy,
-      fieldset: 'minimum',
-    },
     {
       name: 'hasType',
       title: 'Aktivitetstype',
       titleEN: 'Activity type',
       type: 'array',
-      fieldset: 'minimum',
       of: [
         {
           type: 'reference',
@@ -65,6 +63,11 @@ export default {
         }
       },
     },
+    labelSingleton,
+    editorialState,
+    accessState,
+    identifiedBy,
+    referredToBy,
     carriedOutBy,
     hadParticipant,
     {
@@ -151,18 +154,22 @@ export default {
     {
       ...usedGeneralTechnique,
       fieldset: 'technique',
+      group: 'technique',
     },
     {
       ...usedSpecificTechnique,
       fieldset: 'technique',
+      group: 'technique',
     },
     {
       ...usedObjectOfType,
       fieldset: 'technique',
+      group: 'technique',
     },
     {
       ...usedSpecificObject,
       fieldset: 'technique',
+      group: 'technique',
     },
     {
       name: 'generalPurpose',
@@ -170,6 +177,7 @@ export default {
       titleEN: 'General purpose',
       description: '',
       fieldset: 'purpose',
+      group: 'purpose',
       type: 'array',
       of: [
         {
@@ -190,6 +198,7 @@ export default {
       titleEN: 'Motivated by',
       description: '',
       fieldset: 'purpose',
+      group: 'purpose',
       type: 'array',
       of: [
         {
@@ -217,6 +226,7 @@ export default {
       titleEN: 'Intended use of',
       description: '',
       fieldset: 'purpose',
+      group: 'purpose',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'HumanMadeObject' }] }],
       options: {
@@ -230,20 +240,16 @@ export default {
   preview: {
     select: {
       title: 'label',
-      bb: 'timespan.0.beginOfTheBegin',
-      eb: 'timespan.0.endOfTheBegin',
-      date: 'timespan.0.date',
-      be: 'timespan.0.beginOfTheEnd',
-      ee: 'timespan.0.endOfTheEnd',
+      edtf: 'timespan.edtf',
       type: 'hasType.0.label',
     },
     prepare(selection) {
-      const { title, type, bb, eb, date, be, ee } = selection
-      const timespanString = timespanAsString(bb, eb, date, be, ee, 'nb')
+      const { title, type, edtf } = selection
+
 
       return {
         title: title,
-        subtitle: `${coalesceLabel(type)} ${timespanString}`,
+        subtitle: `${coalesceLabel(type)} ${edtf ?? ''}`,
       }
     },
   },

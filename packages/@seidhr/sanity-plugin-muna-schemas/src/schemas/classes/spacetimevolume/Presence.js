@@ -11,8 +11,8 @@ export default {
     'Used to define temporal snapshots at a particular time-span, such as the extent of the Roman Empire at 33 B.C.',
   fieldsets: [
     {
-      name: 'minimum',
-      title: 'Minimumsregistrering',
+      name: 'core',
+      title: 'coresregistrering',
       options: { collapsible: true, collapsed: false },
     },
   ],

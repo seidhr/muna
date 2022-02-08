@@ -20,7 +20,7 @@ export default {
       options: { collapsible: true, collapsed: false },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -57,15 +57,15 @@ export default {
     labelSingleton,
     {
       ...identifiedBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...subjectOf,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       name: 'activityStream',

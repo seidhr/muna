@@ -12,6 +12,6 @@ export const accessState = {
       { title: 'Open', value: 'open' },
     ],
     layout: 'radio',
-    direction: 'horizontal',
+    direction: 'vertical',
   },
 };

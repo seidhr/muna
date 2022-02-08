@@ -29,7 +29,7 @@ export default {
       options: { collapsible: true, collapsed: false, columns: 2 },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -72,11 +72,11 @@ export default {
     homepage,
     {
       ...identifiedBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       name: 'hasType',
@@ -92,7 +92,7 @@ export default {
         </span>
       ),
       descriptionEN: '',
-      fieldset: 'minimum',
+      fieldset: 'core',
       of: [
         {
           type: 'reference',
@@ -113,7 +113,7 @@ export default {
       titleEN: 'Activity stream',
       description: 'Hendelser og aktiviteter knyttet til dette objektet.',
       descriptionEN: 'Events and activities connected to this object',
-      fieldset: 'minimum',
+      fieldset: 'core',
       type: 'array',
       of: [
         { type: 'BeginningOfExistence' },
@@ -133,15 +133,15 @@ export default {
     },
     {
       ...subject,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...subjectOf,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...license,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...image,

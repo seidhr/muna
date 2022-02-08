@@ -1,3 +1,4 @@
+import { BiDoorOpen } from 'react-icons/bi'
 import { coalesceLabel, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -9,10 +10,11 @@ export default {
   type: 'document',
   title: 'Innlemmelse',
   titleEN: 'Joining',
+  icon: BiDoorOpen,
   fieldsets: [
     {
-      name: 'minimum',
-      title: 'Minimumsregistrering',
+      name: 'core',
+      title: 'coresregistrering',
       options: { collapsible: true, collapsed: false },
     },
   ],

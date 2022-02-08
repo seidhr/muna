@@ -1,3 +1,4 @@
+import { FaBirthdayCake } from 'react-icons/fa'
 import { defaultFieldsets, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -9,6 +10,7 @@ export default {
   type: 'document',
   title: 'Fødsel',
   titleEN: 'Birth',
+  icon: FaBirthdayCake,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

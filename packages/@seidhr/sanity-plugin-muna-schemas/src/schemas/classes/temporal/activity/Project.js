@@ -15,7 +15,7 @@ export default {
       options: { collapsible: true, collapsed: false, columns: 2 },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -34,7 +34,7 @@ export default {
       title: 'Pågående?',
       titleEN: 'Ongoing?',
       type: 'boolean',
-      fieldset: 'minimum',
+      fieldset: 'core',
       initialValue: true,
       options: {
         semanticSanity: {
@@ -44,15 +44,15 @@ export default {
     },
     {
       ...identifiedBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...timespan,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       name: 'isAbout',

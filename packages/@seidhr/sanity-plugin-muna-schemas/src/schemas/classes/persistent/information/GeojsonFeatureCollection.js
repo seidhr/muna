@@ -19,7 +19,7 @@ export default {
       titleEN: 'Title',
       description: '',
       descriptionEN: '',
-      fieldset: 'minimum',
+      fieldset: 'core',
       type: 'LocaleString',
     },
     {

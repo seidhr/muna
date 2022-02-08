@@ -31,7 +31,7 @@ export default {
       options: { collapsible: true, collapsed: false, columns: 2 },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -93,7 +93,7 @@ export default {
         </span>
       ),
       type: 'array',
-      fieldset: 'minimum',
+      fieldset: 'core',
       of: [
         {
           type: 'reference',
@@ -110,7 +110,7 @@ export default {
     },
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     carriedOutBy,
     timespan,

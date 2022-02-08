@@ -12,6 +12,6 @@ export const editorialState = {
       { title: 'Publisert', value: 'published' },
     ],
     layout: 'radio',
-    direction: 'horizontal',
+    direction: 'vertical',
   },
 };

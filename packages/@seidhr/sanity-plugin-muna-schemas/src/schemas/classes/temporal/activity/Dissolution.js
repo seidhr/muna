@@ -1,3 +1,4 @@
+import { GiLightningDissipation } from 'react-icons/gi'
 import { defaultFieldsets } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { motivatedBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -11,6 +12,7 @@ export default {
   type: 'document',
   title: 'Oppløsing',
   titleEN: 'Dissolution',
+  icon: GiLightningDissipation,
   fieldsets: defaultFieldsets,
   fields: [
     featured,

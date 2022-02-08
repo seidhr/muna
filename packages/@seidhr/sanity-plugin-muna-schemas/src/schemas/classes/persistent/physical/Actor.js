@@ -21,7 +21,7 @@ export default {
       options: { collapsible: true, collapsed: false, columns: 2 },
     },
     {
-      name: 'minimum',
+      name: 'core',
       title: 'Basic metadata',
       options: { collapsible: true, collapsed: false },
     },
@@ -45,18 +45,18 @@ export default {
     homepage,
     {
       ...identifiedBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       ...referredToBy,
-      fieldset: 'minimum',
+      fieldset: 'core',
     },
     {
       name: 'hasType',
       title: 'Klassifisert som',
       titleEN: 'Classified as',
       type: 'array',
-      fieldset: 'minimum',
+      fieldset: 'core',
       of: [
         {
           type: 'reference',

@@ -1,4 +1,5 @@
 import { now } from 'lodash'
+import { GiStarFormation } from 'react-icons/gi'
 import { coalesceLabel, timespanAsString } from '../../../../helpers/coalesceLabel'
 import { featured } from '../../../properties/datatype'
 import { contributionAssignedBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -8,6 +9,7 @@ export default {
   type: 'document',
   title: 'Start på eksistens',
   titleEN: 'Beginning of existence',
+  icon: GiStarFormation,
   fields: [
     featured,
     contributionAssignedBy,

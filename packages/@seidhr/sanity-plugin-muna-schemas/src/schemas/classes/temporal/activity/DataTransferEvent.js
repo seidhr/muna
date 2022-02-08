@@ -1,8 +1,11 @@
+import { BiTransfer } from 'react-icons/bi';
+
 export default {
   name: 'DataTransferEvent',
   type: 'object',
   title: 'Dataoverføringshendelse',
   titleEN: 'Data transfer event',
+  icon: BiTransfer,
   fields: [
     {
       name: 'transferred',

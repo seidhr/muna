@@ -1,3 +1,4 @@
+import { GiDeathSkull } from 'react-icons/gi'
 import { defaultFieldsets, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
 import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
@@ -9,6 +10,7 @@ export default {
   type: 'document',
   title: 'Død',
   titleEN: 'Death',
+  icon: GiDeathSkull,
   fieldsets: defaultFieldsets,
   fields: [featured, carriedOutBy, timespan, tookPlaceAt, referredToBy],
   preview: {

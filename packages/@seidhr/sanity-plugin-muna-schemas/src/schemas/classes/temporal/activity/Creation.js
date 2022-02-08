@@ -1,3 +1,4 @@
+import { IoMdCreate } from 'react-icons/io'
 import { featured } from '../../../properties/datatype'
 import { contributionAssignedBy, timespan, tookPlaceAt } from '../../../properties/object'
 
@@ -6,6 +7,7 @@ export default {
   type: 'document',
   title: 'Skapelse',
   titleEN: 'Creation',
+  icon: IoMdCreate,
   fields: [
     featured,
     contributionAssignedBy,
