@@ -21,7 +21,8 @@
     "@seidhr/sanity-plugin-muna-schemas",
     "seidhr-logo",
     "@sanity/code-input",
-    "table"
+    "table",
+    "iframe-pane"
   ],
   "env": {
     "development": {
@@ -38,6 +39,10 @@
     {
       "implements": "part:@sanity/dashboard/config",
       "path": "./dashboardConfig.js"
+    },
+    {
+      "implements": "part:@sanity/desk-tool/structure",
+      "path": "./src/deskStructure"
     }
   ]
 }
