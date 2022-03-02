@@ -4,7 +4,7 @@ title: Muna documents
 sidebar_label: Documents
 ---
 
-As mentioned **Muna** treats documents as classes. 
+As mentioned **Muna** treats documents as classes.
 
 ## Activity stream
 
@@ -14,9 +14,9 @@ As mentioned **Muna** treats documents as classes.
 
 ## Report
 
-Report is a subclass of E14_Condition_Assessment and E33_Linguistic_Object. The reasoning for this is that Sanity lets us create text with objects and structured data with Portable Text. We want quality data, but also the capability for users to write details reports. 
+Report is a subclass of E14_Condition_Assessment and E33_Linguistic_Object. The reasoning for this is that Sanity lets us create text with objects and structured data with Portable Text. We want quality data, but also the capability for users to write detailed reports.
 
-Treatment is a object connected to a report. This is because treatment should never be undertaken without documenting the Made Object before modification.
+Treatment is a object connected to a report. This is because treatment should never be undertaken without documenting the Made Object before modification or why a treatment is recommended.
 
 ## Timeline
 
