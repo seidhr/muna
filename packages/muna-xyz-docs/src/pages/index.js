@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import { SeidhrLogo } from '@seidhr/react-muna-logo'
 
 const features = [
   {
@@ -36,7 +37,7 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={classnames('col col--4', styles.feature)}>
@@ -53,13 +54,14 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
     <Layout
       title={`${siteConfig.title}`}
       description={`${siteConfig.tagline}`}>
       <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
+          <SeidhrLogo style={{ display: 'block', margin: 'auto' }} width="16em" height="16em" />
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
@@ -69,9 +71,14 @@ function Home() {
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>
-              Get Started
+              Get started
             </Link>
           </div>
+          <Link
+            style={{ marginTop: '1em', fontWeight: 'bolder' }}
+            to="https://create.sanity.io/?template=seidhr/sanity-template-muna">
+            Create your Muna Studio
+          </Link>
         </div>
       </header>
       <main>

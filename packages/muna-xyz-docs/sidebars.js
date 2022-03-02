@@ -1,22 +1,17 @@
 module.exports = {
   docs: [
-    {
-      type: 'category',
-      label: 'Introduction',
+    "introduction",
+    "installation",
+    "model/schemas",
+    /* {
+      type: "category",
+      label: "Model",
       items: [
-        'getting-started', 
-        'installation',
-        'work-in-progress',
+        "model/introduction",
+        "model/documents",
+        "model/objects",
+        "model/properties",
       ],
-    },
-    {
-      type: 'category',
-      label: 'Model',
-      items: [
-        'model/introduction',
-        'model/documents',
-        'model/objects',
-      ],
-    },
+    }, */
   ],
 };
