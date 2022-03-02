@@ -22,12 +22,6 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/model/introduction',
-          activeBasePath: 'docs/model',
-          label: 'Schemas',
-          position: 'left',
-        },
-        {
           href: 'https://create.sanity.io/?template=seidhr/sanity-template-muna',
           label: 'Create Muna Studio',
           position: 'right',
