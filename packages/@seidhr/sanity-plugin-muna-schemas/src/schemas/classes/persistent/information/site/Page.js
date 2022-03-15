@@ -1,8 +1,14 @@
+import config from 'config:@sanity/document-internationalization';
+
 export default {
   name: 'Page',
   type: 'document',
   title: 'Side',
-  titleEN: 'Page',
+  i18n: true,
+  initialValue: {
+    '__i18n_lang': config.base,
+    '__i18n_refs': [],
+  },
   fields: [
     {
       name: 'title',

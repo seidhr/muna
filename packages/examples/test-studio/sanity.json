@@ -22,7 +22,10 @@
     "seidhr-logo",
     "@sanity/code-input",
     "table",
-    "iframe-pane"
+    "iframe-pane",
+    "@sanity/document-internationalization",
+    "@sanity/language-filter",
+    "documents-pane"
   ],
   "env": {
     "development": {
@@ -38,11 +41,15 @@
     },
     {
       "implements": "part:@sanity/dashboard/config",
-      "path": "./dashboardConfig.js"
+      "path": "./src/dashboardConfig.js"
     },
     {
       "implements": "part:@sanity/desk-tool/structure",
       "path": "./src/deskStructure"
+    },
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./src/languageFilterConfig.js"
     }
   ]
 }

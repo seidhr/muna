@@ -1,10 +1,10 @@
 /* eslint-disable array-callback-return */
-import { supportedLanguages } from "../vocabularies/supportedLanguages";
+import config from 'config:@seidhr/sanity-plugin-muna-schemas';
 
 export const coalesceLabel = (label, lang) => {
   let langs = [lang || ''];
 
-  supportedLanguages.map((x) => {
+  config.i18n.languages.map((x) => {
     langs.push(x.id);
   });
 

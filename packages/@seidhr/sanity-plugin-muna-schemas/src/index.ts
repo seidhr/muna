@@ -63,7 +63,6 @@ export { default as LinguisticDocument } from "./schemas/classes/persistent/info
 export { default as LinguisticObject } from "./schemas/classes/persistent/information/LinguisticObject";
 export { default as Manifest } from "./schemas/classes/persistent/information/Manifest";
 export { default as Set } from "./schemas/classes/persistent/information/Set";
-export { default as Alert } from "./schemas/classes/persistent/information/site/Alert";
 export { default as NavigationItem } from "./schemas/classes/persistent/information/site/NavigationItem";
 export { default as NavigationMenu } from "./schemas/classes/persistent/information/site/NavigationMenu";
 export { default as OpenGraph } from "./schemas/classes/persistent/information/site/OpenGraph";
@@ -230,5 +229,4 @@ export { wasOutputOf } from "./schemas/properties/object/wasOutputOf";
 export { default as LocaleSlug } from "./schemas/strings/LocaleSlug";
 export { default as LocaleString } from "./schemas/strings/LocaleString";
 export { licenseTypes } from "./vocabularies/licenseTypes";
-export { supportedLanguages } from "./vocabularies/supportedLanguages";
 

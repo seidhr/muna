@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
-import {GiCrackedGlass} from 'react-icons/'
-import {FaGifts, FaGlasses, FaProjectDiagram} from 'react-icons/fa'
-import {ImLibrary} from 'react-icons/im'
+import { GiCrackedGlass } from 'react-icons/'
+import { FaGifts, FaGlasses, FaProjectDiagram } from 'react-icons/fa'
+import { ImLibrary } from 'react-icons/im'
 
 // import PreviewIFrame from '../../src/components/previewIFrame'
 
@@ -35,7 +35,7 @@ const management = S.listItem()
                           .schemaType('Acquisition')
                           .title('Akkvisisjoner')
                           .filter('_type == "Acquisition" && $catId in hasType[]._ref')
-                          .params({catId}),
+                          .params({ catId }),
                       ),
                   ),
                 S.listItem().title('Upubliserte akkvisisjoner').icon(FaGifts).child(
@@ -53,52 +53,54 @@ const management = S.listItem()
                 S.listItem()
                   .title('Alle akkvisisjoner')
                   .icon(FaGifts)
-                  .child(S.documentTypeList('Acquisition').title('Alle akkvisisjoner'))
+                  .child(S.documentTypeList('Acquisition').title('Alle akkvisisjoner')),
+                S.divider(),
+                S.documentTypeListItem('AcquisitionType').title('Akkvisisjonstype'),
               ]),
           ),
         S.listItem()
-        .title('Utstillinger')
-        .icon(FaGlasses)
-        .child(
-          S.list()
-            .title('Utstillinger')
-            .items([
-              S.listItem()
-                .title('Utstillinger etter type')
-                .icon(FaGlasses)
-                .child(
+          .title('Utstillinger')
+          .icon(FaGlasses)
+          .child(
+            S.list()
+              .title('Utstillinger')
+              .items([
+                S.listItem()
+                  .title('Utstillinger etter type')
+                  .icon(FaGlasses)
+                  .child(
+                    // List out all categories
+                    S.documentTypeList('ExhibitionType')
+                      .title('Utstillinger etter type')
+                      .filter('_type == "ExhibitionType"')
+                      .child((catId) =>
+                        // List out project documents where the _id for the selected
+                        // category appear as a _ref in the project’s categories array
+                        S.documentList()
+                          .schemaType('Exhibition')
+                          .title('Utstillinger')
+                          .filter('_type == "Exhibition" && $catId in hasType[]._ref')
+                          .params({ catId })
+                      ),
+                  ),
+                S.listItem().title('Upubliserte utstillinger').icon(FaGlasses).child(
                   // List out all categories
-                  S.documentTypeList('ExhibitionType')
-                    .title('Utstillinger etter type')
-                    .filter('_type == "ExhibitionType"')
-                    .child((catId) =>
-                      // List out project documents where the _id for the selected
-                      // category appear as a _ref in the project’s categories array
-                      S.documentList()
-                        .schemaType('Exhibition')
-                        .title('Utstillinger')
-                        .filter('_type == "Exhibition" && $catId in hasType[]._ref')
-                        .params({catId})
-                    ),
+                  S.documentTypeList('Exhibition')
+                    .title('Upubliserte utstillinger')
+                    .filter('_type == "Exhibition" && accessState == "secret"'),
                 ),
-              S.listItem().title('Upubliserte utstillinger').icon(FaGlasses).child(
-                // List out all categories
-                S.documentTypeList('Exhibition')
-                  .title('Upubliserte utstillinger')
-                  .filter('_type == "Exhibition" && accessState == "secret"'),
-              ),
-              S.listItem().title('Til gjennomgang').icon(FaGlasses).child(
-                // List out all categories
-                S.documentTypeList('Exhibition')
-                  .title('Til gjennomgang')
-                  .filter('_type == "Exhibition" && editorialState == "review"'),
-              ),
-              S.listItem()
-                .title('Alle utstillinger')
-                .icon(FaGlasses)
-                .child(S.documentTypeList('Exhibition').title('Alle utstillinger')),
+                S.listItem().title('Til gjennomgang').icon(FaGlasses).child(
+                  // List out all categories
+                  S.documentTypeList('Exhibition')
+                    .title('Til gjennomgang')
+                    .filter('_type == "Exhibition" && editorialState == "review"'),
+                ),
+                S.listItem()
+                  .title('Alle utstillinger')
+                  .icon(FaGlasses)
+                  .child(S.documentTypeList('Exhibition').title('Alle utstillinger')),
               ]),
-        ),
+          ),
         S.documentTypeListItem('DesignOrProcedure').title('Design eller prosedyre'),
         S.listItem()
           .title('Rapport')
@@ -122,7 +124,7 @@ const management = S.listItem()
                           .schemaType('Report')
                           .title('Rapport')
                           .filter('_type == "Report" && $catId in hasType[]._ref')
-                          .params({catId}),
+                          .params({ catId }),
                       ),
                   ),
                 S.listItem().title('Upubliserte rapporter').icon(GiCrackedGlass).child(
@@ -169,6 +171,12 @@ const management = S.listItem()
                   .child(S.documentTypeList('Project').title('Alle prosjekter'))
               ]),
           ),
+        S.divider(),
+        S.documentTypeListItem('AcquisitionType').title('Akkvisisjonstype'),
+        S.documentTypeListItem('ConditionType').title('Tilstandstype'),
+        S.documentTypeListItem('ExhibitionType').title('Utstillingstype'),
+        S.documentTypeListItem('StorageType').title('Lagringstype'),
+        S.documentTypeListItem('ReportType').title('Rapporttype'),
       ]),
   )
 
