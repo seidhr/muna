@@ -1,13 +1,21 @@
 import S from '@sanity/desk-tool/structure-builder'
-// import PreviewIFrame from '../../src/components/previewIFrame'
+//import * as Structure from '@sanity/document-internationalization/lib/structure'
 import { FaCog, FaSitemap, FaRoute } from 'react-icons/fa'
 import { MdMenu } from 'react-icons/md'
 import { FcHome, FcTemplate } from 'react-icons/fc'
 import { RiSideBarFill } from 'react-icons/ri'
-import { AiFillAlert } from 'react-icons/ai'
 import { FaGlasses } from 'react-icons/fa'
 import { BsFileRichtext } from 'react-icons/bs'
 import blog from './blog'
+import config from 'config:@sanity/document-internationalization';
+
+// Not working in latest 0.1.2
+/* const page = Structure.getFilteredDocumentTypeListItems().find(({ id }) => {
+  return id === 'Page';
+})
+const linguisticDocument = Structure.getFilteredDocumentTypeListItems().find(({ id }) => {
+  return id === 'LinguisticDocument';
+}) */
 
 export default S.listItem()
   .title('Sidebygger')
@@ -20,12 +28,13 @@ export default S.listItem()
           .title('Frontpage')
           .schemaType('Page')
           .icon(FcHome)
-          .child(S.document().schemaType('Page').documentId('frontpage')),
+          .child(S.document().schemaType('Page').documentId('home')),
         S.documentListItem()
           .title('Footer')
           .schemaType('Page')
           .icon(FcHome)
           .child(S.document().schemaType('Page').documentId('footer')),
+        // page,
         S.listItem()
           .title('Sider')
           .icon(FcTemplate)
@@ -33,8 +42,10 @@ export default S.listItem()
           .child(
             S.documentList('Page')
               .title('Sider')
+              .schemaType('Page')
+              .filter(`_type == "Page" && !(_id match "**home") && __i18n_lang == $baseLanguage`)
+              .params({ baseLanguage: config.base })
               .menuItems(S.documentTypeList('Page').getMenuItems())
-              .filter('_type == "Page" && !(_id match "**frontpage")'),
           ),
         S.listItem()
           .title('Tekster')
@@ -43,6 +54,11 @@ export default S.listItem()
             S.list()
               .title('Tekster')
               .items([
+                // linguisticDocument,
+                S.listItem()
+                  .title('Alle tekster')
+                  .icon(FaGlasses)
+                  .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
                 S.listItem()
                   .title('Tekster etter type')
                   .icon(FaGlasses)
@@ -73,23 +89,12 @@ export default S.listItem()
                     .title('Til gjennomgang')
                     .filter('_type == "LinguisticDocument" && editorialState == "review"'),
                 ),
-                S.listItem()
-                  .title('Alle tekster')
-                  .icon(FaGlasses)
-                  .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
+
+                S.divider(),
+                S.documentTypeListItem('TextType').title('Tekststype'),
               ]),
           ),
         blog,
-        S.listItem()
-          .title('Varsler')
-          .icon(AiFillAlert)
-          .schemaType('Alert')
-          .child(
-            S.documentList('Alert')
-              .title('Varsler')
-              .menuItems(S.documentTypeList('Alert').getMenuItems())
-              .filter('_type == "Alert"'),
-          ),
         S.divider(),
         S.listItem()
           .title('Stier')
@@ -98,10 +103,6 @@ export default S.listItem()
           .child(
             S.documentTypeList('Route')
               .title('Stier')
-            /*               .child(
-                            (documentId) => S.document().documentId(documentId).schemaType('Route'),
-                            // .views([S.view.form(), PreviewIFrame()])
-                          ), */
           ),
         S.divider(),
         S.listItem()
@@ -121,7 +122,6 @@ export default S.listItem()
               .title('Innholdsfortegnelser')
               .child(
                 (documentId) => S.document().documentId(documentId).schemaType('Toc'),
-                // .views([S.view.form(), PreviewIFrame()])
               ),
           ),
         S.divider(),

@@ -1,0 +1,27 @@
+{
+  "idStructure": "delimiter",
+  "referenceBehavior": "strong",
+  "base": "nb",
+  "languages": [
+    {
+      "id": "nb",
+      "title": "Bokmål"
+    },
+    {
+      "id": "nn",
+      "title": "Nynorsk"
+    },
+    {
+      "id": "en",
+      "title": "English"
+    },
+    {
+      "id": "smi",
+      "title": "Sami"
+    },
+    {
+      "id": "de",
+      "title": "German"
+    }
+  ]
+}

@@ -346,10 +346,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/Alert"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/NavigationItem"
     },
     {

@@ -1,4 +1,3 @@
-
 export default {
   name: 'LocaleBlockSimple',
   type: 'object',
@@ -20,7 +19,7 @@ export default {
       name: 'no',
       title: 'Norsk',
       type: 'string',
-      isDefault: true,
+
     }
   ],
   /* fields: supportedLanguages.map((lang) => ({

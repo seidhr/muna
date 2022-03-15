@@ -54,6 +54,10 @@ const activities = S.listItem()
         S.documentTypeListItem('Destruction').title('Ødeleggelse'),
         S.documentTypeListItem('Joining').title('Innlemmelse'),
         S.documentTypeListItem('Leaving').title('Utmelding'),
+        S.divider(),
+        S.documentTypeListItem('ActivityType').title('Aktivitetstype'),
+        S.documentTypeListItem('Technique').title('Teknikk'),
+
       ]),
   )
 

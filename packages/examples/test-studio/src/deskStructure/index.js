@@ -1,9 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { Box, Container, Spinner } from '@sanity/ui'
-import Preview from 'part:@sanity/base/preview'
-import QueryContainer from 'part:@sanity/base/query-container'
-import schema from 'part:@sanity/base/schema'
-import React from 'react'
+import * as Structure from '@sanity/document-internationalization/lib/structure'
 import { BsFileRichtext } from 'react-icons/bs'
 import { FaGlasses, FaMapMarkedAlt } from 'react-icons/fa'
 import { MdEvent } from 'react-icons/md'
@@ -13,6 +9,7 @@ import humanMadeObject from './humanMadeObject'
 import management from './management'
 import pageBuilder from './pageBuilder'
 import types from './types'
+import references from './references'
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -59,7 +56,6 @@ const hiddenDocTypes = (listItem) =>
     'Role',
     'NavigationMenu',
     'navigationItem',
-    'Alert',
     'Page',
     'Post',
     'Route',
@@ -81,59 +77,27 @@ const hiddenDocTypes = (listItem) =>
     'Destruction',
   ].includes(listItem.getId())
 
-
-
-const Incoming = ({ document }) => (
-  <Container>
-    <Box padding={[3, 3, 4, 5]}>
-      <QueryContainer
-        query="*[references($id)]"
-        params={{ id: document.displayed._id }}
-      >
-        {({ result, loading }) =>
-          loading ? (
-            <Spinner center message="Loading items…" />
-          ) : (
-            result && (
-              <div>
-                {result.documents.map(document => (
-                  <Box padding="2" key={document._id}>
-                    <Preview value={document} type={schema.get(document._type)} />
-                  </Box>
-                ))}
-              </div>
-            )
-          )
-        }
-      </QueryContainer>
-    </Box>
-  </Container>
-);
-
-export const getDefaultDocumentNode = ({ schemaType }) => {
-  // If frontend has pages for this schemaType. Can also take documentId as first arg.  
-  /* if (publicDocumentTypes.includes(schemaType)) {
-    return S.document().views([
-      S.view.form(),
-      S.view
-        .component(Iframe)
-        .options({
-          url: (doc) => resolveProductionUrl(doc),
-        })
-        .title('Preview'),
-      S.view.component(Incoming).title('Innkommende')
-    ])
-  } */
-  // Return default tabs
+/* export const getDefaultDocumentNode = () => {
   return S.document().views([
     S.view.form(),
-    S.view.component(Incoming).title('Innkommende')
+    references,
   ])
-}
+} */
 
+export const getDefaultDocumentNode = ({ schemaType }) => {
+  if (schemaType === 'Page') {
+    return S.document().views([
+      ...Structure.getDocumentNodeViewsForSchemaType(schemaType),
+      references
+    ])
+  }
+
+  return S.document()
+}
 
 export default () =>
   S.list()
+    .id('__root__')
     .title('Innhold')
     .items([
       pageBuilder,
@@ -148,6 +112,10 @@ export default () =>
           S.list()
             .title('Aktører')
             .items([
+              S.listItem()
+                .title('Alle Aktører')
+                .icon(TiUser)
+                .child(S.documentTypeList('Actor').title('Alle Aktører')),
               S.listItem()
                 .title('Aktører etter type')
                 .icon(TiUser)
@@ -169,10 +137,10 @@ export default () =>
                         ])
                     ),
                 ),
-              S.listItem().title('Upubliserte poster').icon(TiUser).child(
+              S.listItem().title('Upubliserte aktører').icon(TiUser).child(
                 // List out all categories
                 S.documentTypeList('Actor')
-                  .title('Upubliserte objekter')
+                  .title('Upubliserte aktører')
                   .filter('_type == "Actor" && accessState == "secret"'),
               ),
               S.listItem().title('Til gjennomgang').icon(TiUser).child(
@@ -181,10 +149,8 @@ export default () =>
                   .title('Til gjennomgang')
                   .filter('_type == "Actor" && editorialState == "review"'),
               ),
-              S.listItem()
-                .title('Alle Aktører')
-                .icon(TiUser)
-                .child(S.documentTypeList('Actor').title('Alle Aktører')),
+              S.divider(),
+              S.documentTypeListItem('ActorType').title('Aktørtype'),
             ]),
         ),
       // Much used types
@@ -201,6 +167,10 @@ export default () =>
           S.list()
             .title('Steder')
             .items([
+              S.listItem()
+                .title('Alle steder')
+                .icon(FaMapMarkedAlt)
+                .child(S.documentTypeList('Place').title('Alle steder')),
               S.listItem()
                 .title('Steder etter type')
                 .icon(FaMapMarkedAlt)
@@ -219,10 +189,8 @@ export default () =>
                         .params({ catId }),
                     ),
                 ),
-              S.listItem()
-                .title('Alle steder')
-                .icon(FaMapMarkedAlt)
-                .child(S.documentTypeList('Place').title('Alle steder')),
+              S.divider(),
+              S.documentTypeListItem('PlaceType').title('Stedstype'),
             ]),
         ),
       S.divider(),
@@ -235,6 +203,10 @@ export default () =>
           S.list()
             .title('Tekster')
             .items([
+              S.listItem()
+                .title('Alle tekster')
+                .icon(FaGlasses)
+                .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
               S.listItem()
                 .title('Tekster etter type')
                 .icon(FaGlasses)
@@ -265,10 +237,8 @@ export default () =>
                   .title('Til gjennomgang')
                   .filter('_type == "LinguisticDocument" && editorialState == "review"'),
               ),
-              S.listItem()
-                .title('Alle tekster')
-                .icon(FaGlasses)
-                .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
+              S.divider(),
+              S.documentTypeListItem('TextType').title('Tekststype'),
             ]),
         ),
       S.divider(),
@@ -280,6 +250,10 @@ export default () =>
           S.list()
             .title('Hendelser')
             .items([
+              S.listItem()
+                .title('Alle hendelser')
+                .icon(MdEvent)
+                .child(S.documentTypeList('Event').title('Alle hendelser')),
               S.listItem()
                 .title('Hendelser etter type')
                 .icon(MdEvent)
@@ -298,10 +272,8 @@ export default () =>
                         .params({ catId }),
                     ),
                 ),
-              S.listItem()
-                .title('Alle hendelser')
-                .icon(MdEvent)
-                .child(S.documentTypeList('Event').title('Alle hendelser')),
+              S.divider(),
+              S.documentTypeListItem('EventType').title('Hendelsestype'),
             ]),
         ),
       // ACTIVITY

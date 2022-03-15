@@ -1,5 +1,5 @@
 import S from '@sanity/desk-tool/structure-builder'
-import {FaBookOpen as SingleIcon, FaBookDead as AllIcon} from 'react-icons/fa'
+import { FaBookOpen as SingleIcon, FaBookDead as AllIcon } from 'react-icons/fa'
 
 // import PreviewIFrame from '../../src/components/previewIFrame'
 
@@ -35,9 +35,9 @@ const humanMadeObject = S.listItem()
                   .schemaType('HumanMadeObject')
                   .title('Objekt')
                   .filter('_type == "HumanMadeObject" && $objectTypeId in hasType[]._ref')
-                  .params({objectTypeId})
+                  .params({ objectTypeId })
                   .initialValueTemplates([
-                    S.initialValueTemplateItem('humanMadeObjectWithType', {objectTypeId})
+                    S.initialValueTemplateItem('humanMadeObjectWithType', { objectTypeId })
                   ])
               ),
           ),
@@ -72,6 +72,8 @@ const humanMadeObject = S.listItem()
             .title('Til gjennomgang')
             .filter('_type == "HumanMadeObject" && editorialState == "review"'),
         ),
+        S.divider(),
+        S.documentTypeListItem('ObjectType').title('Objekttype'),
       ]),
   )
 

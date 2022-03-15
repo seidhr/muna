@@ -1,3 +1,4 @@
+import config from 'config:@seidhr/sanity-plugin-muna-schemas';
 
 export default {
   name: 'LocaleString',
@@ -15,18 +16,10 @@ export default {
       options: { collapsible: true },
     },
   ],
-  fields: [
-    {
-      name: 'no',
-      title: 'Norsk',
-      type: 'string',
-      isDefault: true,
-    }
-  ]
-  /* fields: supportedLanguages.map((lang) => ({
+  fields: config.i18n.languages.map((lang) => ({
     title: lang.title,
     name: lang.id,
     type: 'string',
     fieldset: lang.isDefault ? null : 'translations',
-  })), */
+  })),
 }

@@ -1,3 +1,4 @@
+import config from 'config:@sanity/document-internationalization';
 import jsonata from 'jsonata'
 import { FaMarker } from 'react-icons/fa'
 import { defaultFieldsets } from '../../../../fieldsets/defaultFieldsets'
@@ -8,7 +9,10 @@ export default {
   name: 'LinguisticDocument',
   type: 'document',
   title: 'Text',
+  i18n: true,
   initialValue: {
+    '__i18n_lang': config.base,
+    '__i18n_refs': [],
     editorialState: 'review',
     accessState: 'secret',
   },
