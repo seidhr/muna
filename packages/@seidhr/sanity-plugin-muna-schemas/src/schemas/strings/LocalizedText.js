@@ -1,9 +1,9 @@
-import config from 'config:@seidhr/sanity-plugin-muna-schemas';
+import config from 'config:@sanity/document-internationalization';
 
 export default {
-  name: 'LocaleString',
+  name: 'LocalizedText',
   type: 'object',
-  title: 'Locale string',
+  title: 'Localized text',
   options: {
     semanticSanity: {
       exclude: true
@@ -13,13 +13,16 @@ export default {
     {
       title: 'Translations',
       name: 'translations',
-      options: { collapsible: true },
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
     },
   ],
-  fields: config.i18n.languages.map((lang) => ({
+  fields: config.languages.map((lang) => ({
     title: lang.title,
     name: lang.id,
-    type: 'string',
+    type: 'text',
     fieldset: lang.isDefault ? null : 'translations',
   })),
 }

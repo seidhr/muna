@@ -5,7 +5,8 @@
   "languages": [
     {
       "id": "nb",
-      "title": "Bokmål"
+      "title": "Bokmål",
+      "isDefault": true
     },
     {
       "id": "nn",

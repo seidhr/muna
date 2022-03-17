@@ -47,7 +47,7 @@ export default {
       name: 'caption',
       title: 'Bildetekst',
       titleEN: 'Caption',
-      type: 'LocaleString',
+      type: 'LocalizedString',
     },
   ],
   preview: {

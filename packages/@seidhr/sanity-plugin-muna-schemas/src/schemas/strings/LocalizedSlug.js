@@ -1,8 +1,8 @@
 
 export default {
-  name: 'LocaleSlug',
+  name: 'LocalizedSlug',
   type: 'object',
-  title: 'localeSlug',
+  title: 'Localized slug',
   options: {
     semanticSanity: {
       exclude: true

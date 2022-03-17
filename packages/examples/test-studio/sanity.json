@@ -25,7 +25,8 @@
     "iframe-pane",
     "@sanity/document-internationalization",
     "@sanity/language-filter",
-    "documents-pane"
+    "documents-pane",
+    "@sanity/hierarchical-document-list"
   ],
   "env": {
     "development": {

@@ -34,11 +34,19 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocaleSlug"
+      "path": "schemas/strings/LocalizedKeyword"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocaleString"
+      "path": "schemas/strings/LocalizedSlug"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedText"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedString"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -346,14 +354,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/NavigationItem"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/NavigationMenu"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/OpenGraph"
     },
     {
@@ -371,18 +371,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/SiteSettings"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/Toc"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/TocLink"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/TocSection"
     },
     {
       "implements": "part:@sanity/base/schema-type",

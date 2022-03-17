@@ -1,20 +1,33 @@
-import bcp47 from 'bcp47'
-import { FaCog } from 'react-icons/fa'
+import { GiSettingsKnobs } from 'react-icons/gi'
 import { license } from '../../../../properties/datatype'
+import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
+//import bcp47 from 'bcp47'
 
 export default {
   name: 'SiteSettings',
   type: 'document',
   title: 'Nettsideinnstillinger',
   titleEN: 'Site Settings',
-  icon: FaCog,
-  //__experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
+  icon: GiSettingsKnobs,
+  // '__experimental_actions': ['update', /* 'create', 'delete', */ 'publish'],
+  groups: [
+    {
+      name: 'media',
+      title: 'Media',
+    }
+  ],
   fields: [
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
-      type: 'string',
+      type: 'LocalizedString',
+    },
+    {
+      name: 'description',
+      title: 'Beskrivelse',
+      titleEN: 'Description',
+      type: 'LocalizedText',
     },
     {
       name: 'frontpage',
@@ -24,57 +37,6 @@ export default {
       to: [
         { type: 'Page' }
       ],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
-      },
-    },
-    {
-      name: 'language',
-      title: 'Hovedspråk',
-      titleEN: 'Site language',
-      description:
-        'Må være en gyldig bcp47 språkkode som en, en-US, no eller nb-NO',
-      descriptionEN:
-        'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
-      type: 'string',
-      validation: Rule =>
-        Rule.custom(lang =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
-        ),
-    },
-    {
-      name: 'logo',
-      title: 'Logo',
-      description:
-        'Bruk helst en SVG hvor fargen er satt med currentColor',
-      descriptionEN:
-        'Best choice is to use an SVG where the color are set with currentColor',
-      type: 'image',
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          description: 'Important for SEO and accessiblity.',
-          options: {
-            isHighlighted: true,
-          },
-        },
-      ],
-      options: {
-        semanticSanity: {
-          '@type': '@json'
-        }
-      },
-    },
-    {
-      name: 'mainNavigation',
-      title: 'Main navigation',
-      description: 'Select main navigation for the top menu',
-      type: 'reference',
-      to: [{ type: 'NavigationMenu' }],
       options: {
         semanticSanity: {
           '@type': '@id'
@@ -94,32 +56,12 @@ export default {
       },
     },
     {
-      name: 'openGraph',
-      title: 'Open graph',
-      titleEN: 'Open graph',
-      description: 'Disse vil bli brukt i "meta tags" på sider som ikke har egne verdier',
-      descriptionEN: 'These will be the default meta tags on all pages that have not set their own',
-      type: 'OpenGraph',
-      options: {
-        semanticSanity: {
-          '@type': '@json'
-        }
-      },
-    },
-    {
-      name: 'keywords',
+      name: 'keyword',
       title: 'Nøkkelord',
       titleEN: 'Keywords',
       description: 'Legg til nøkkelord som beskriver nettsiden',
       descriptionEN: 'Add keywords that describes your blog',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags',
-        semanticSanity: {
-          '@container': '@set',
-        }
-      },
+      type: 'LocalizedKeyword',
     },
     {
       name: 'publisher',
@@ -140,18 +82,56 @@ export default {
         }
       },
     },
-    license
-    /* {
-      type: 'color',
-      name: 'primaryColor',
-      title: 'Primary brand color',
-      description: 'Used to generate the primary accent color for websites, press materials, etc',
+    license,
+    {
+      name: 'logo',
+      title: 'Logo',
+      description:
+        'Bruk helst en SVG hvor fargen er satt med currentColor',
+      descriptionEN:
+        'Best choice is to use an SVG where the color are set with currentColor',
+      group: 'media',
+      type: 'image',
+      fields: [
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative text',
+          description: 'Important for SEO and accessiblity.',
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
+      options: {
+        semanticSanity: {
+          '@type': '@json'
+        }
+      },
     },
     {
-      type: 'color',
-      name: 'secondaryColor',
-      title: 'Secondary brand color',
-      description: 'Used to generate the secondary accent color for websites, press materials, etc',
-    }, */
+      name: 'image',
+      title: 'Bilde',
+      titleEN: 'Image',
+      description: 'Facebook anbefaler 1200x630 (størrelsen blir endret automatisk)',
+      descriptionEN: 'Facebook recommends 1200x630 (will be auto resized)',
+      group: 'media',
+      type: 'DigitalObjectImage',
+      options: {
+        semanticSanity: {
+          '@type': '@json'
+        }
+      },
+    },
   ],
+  preview: {
+    select: {
+      title: 'label',
+    },
+    prepare({ title }) {
+      return {
+        title: coalesceLabel(title),
+      }
+    },
+  },
 }

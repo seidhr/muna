@@ -1,13 +1,13 @@
 import S from '@sanity/desk-tool/structure-builder'
+import { createDeskHierarchy } from '@sanity/hierarchical-document-list'
 //import * as Structure from '@sanity/document-internationalization/lib/structure'
-import { FaCog, FaSitemap, FaRoute } from 'react-icons/fa'
-import { MdMenu } from 'react-icons/md'
-import { FcHome, FcTemplate } from 'react-icons/fc'
-import { RiSideBarFill } from 'react-icons/ri'
+import { FaSitemap, FaRoute } from 'react-icons/fa'
+import { CgTemplate } from 'react-icons/cg'
 import { FaGlasses } from 'react-icons/fa'
 import { BsFileRichtext } from 'react-icons/bs'
 import blog from './blog'
 import config from 'config:@sanity/document-internationalization';
+import { GiSettingsKnobs } from 'react-icons/gi'
 
 // Not working in latest 0.1.2
 /* const page = Structure.getFilteredDocumentTypeListItems().find(({ id }) => {
@@ -24,20 +24,15 @@ export default S.listItem()
     S.list()
       .title('Sidebygger')
       .items([
-        S.documentListItem()
-          .title('Frontpage')
-          .schemaType('Page')
-          .icon(FcHome)
-          .child(S.document().schemaType('Page').documentId('home')),
-        S.documentListItem()
-          .title('Footer')
-          .schemaType('Page')
-          .icon(FcHome)
-          .child(S.document().schemaType('Page').documentId('footer')),
+        // SETTINGS SINGLETON
+        S.listItem()
+          .title('Nettsideinnstillinger')
+          .icon(GiSettingsKnobs)
+          .child(S.editor().id('siteSettings').schemaType('SiteSettings').documentId('siteSettings')),
         // page,
         S.listItem()
           .title('Sider')
-          .icon(FcTemplate)
+          .icon(CgTemplate)
           .schemaType('Page')
           .child(
             S.documentList('Page')
@@ -105,30 +100,21 @@ export default S.listItem()
               .title('Stier')
           ),
         S.divider(),
-        S.listItem()
-          .title('Navigasjonsmenyer')
-          .icon(MdMenu)
-          .schemaType('NavigationMenu')
-          .child(
-            S.documentTypeList('NavigationMenu')
-              .title('Navigasjonsmenyer')
-          ),
-        S.listItem()
-          .title('Innholdsfortegnelser')
-          .icon(RiSideBarFill)
-          //.schemaType('Toc')
-          .child(
-            S.documentTypeList('Toc')
-              .title('Innholdsfortegnelser')
-              .child(
-                (documentId) => S.document().documentId(documentId).schemaType('Toc'),
-              ),
-          ),
-        S.divider(),
-        // SETTINGS SINGLETON
-        S.listItem()
-          .title('Nettsideinnstillinger')
-          .icon(FaCog)
-          .child(S.editor().id('siteSettings').schemaType('SiteSettings').documentId('site-settings')),
+        createDeskHierarchy({
+          title: 'Hovedmeny',
+          // The hierarchy will be stored in this document ID 👇
+          documentId: 'main-nav',
+          // Document types editors should be able to include in the hierarchy
+          referenceTo: ['Route'],
+          // ❓ Optional: provide filters and/or parameters for narrowing which documents can be added
+          /* referenceOptions: {
+            filter: 'status in $acceptedStatuses',
+            filterParams: {
+              acceptedStatuses: ['published', 'approved']
+            }
+          }, */
+          // ❓ Optional: limit the depth of your hierarachies
+          maxDept: 3
+        }),
       ]),
   )

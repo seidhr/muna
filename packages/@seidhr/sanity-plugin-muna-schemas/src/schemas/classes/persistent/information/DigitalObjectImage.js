@@ -18,14 +18,14 @@ export default {
       name: 'caption',
       title: 'Bildetekst',
       titleEN: 'Caption',
-      type: 'LocaleString',
+      type: 'LocalizedString',
     },
     {
       name: 'alt',
       title: 'Alternative tekst',
       titleEN: 'Alternative text',
       description: 'Important for SEO and accessiblity.',
-      type: 'LocaleString',
+      type: 'LocalizedString',
       validation: (Rule) => Rule.warning('You should to fill out the alternative text.'),
       options: {
         isHighlighted: true,

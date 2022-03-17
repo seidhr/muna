@@ -63,8 +63,6 @@ export { default as LinguisticDocument } from "./schemas/classes/persistent/info
 export { default as LinguisticObject } from "./schemas/classes/persistent/information/LinguisticObject";
 export { default as Manifest } from "./schemas/classes/persistent/information/Manifest";
 export { default as Set } from "./schemas/classes/persistent/information/Set";
-export { default as NavigationItem } from "./schemas/classes/persistent/information/site/NavigationItem";
-export { default as NavigationMenu } from "./schemas/classes/persistent/information/site/NavigationMenu";
 export { default as OpenGraph } from "./schemas/classes/persistent/information/site/OpenGraph";
 export { default as Page } from "./schemas/classes/persistent/information/site/Page";
 export { default as ActorCollection } from "./schemas/classes/persistent/information/site/plugs/ActorCollection/ActorCollection";
@@ -100,9 +98,6 @@ export { default as SingleObject } from "./schemas/classes/persistent/informatio
 export { default as Post } from "./schemas/classes/persistent/information/site/Post";
 export { default as Route } from "./schemas/classes/persistent/information/site/Route";
 export { default as SiteSettings } from "./schemas/classes/persistent/information/site/SiteSettings";
-export { default as Toc } from "./schemas/classes/persistent/information/site/Toc";
-export { default as TocLink } from "./schemas/classes/persistent/information/site/TocLink";
-export { default as TocSection } from "./schemas/classes/persistent/information/site/TocSection";
 export { default as Actor } from "./schemas/classes/persistent/physical/Actor";
 export { default as Collection } from "./schemas/classes/persistent/physical/Collection";
 export { default as DigitalDevice } from "./schemas/classes/persistent/physical/DigitalDevice";
@@ -226,7 +221,8 @@ export {
 	usedSpecificTechnique
 } from "./schemas/properties/object/usedSpecificTechnique";
 export { wasOutputOf } from "./schemas/properties/object/wasOutputOf";
-export { default as LocaleSlug } from "./schemas/strings/LocaleSlug";
-export { default as LocaleString } from "./schemas/strings/LocaleString";
-export { licenseTypes } from "./vocabularies/licenseTypes";
+export { default as LocalizedKeyword } from "./schemas/strings/LocalizedString";
+export { default as LocalizedSlug } from "./schemas/strings/LocalizedSlug";
+export { default as LocalizedString } from "./schemas/strings/LocalizedKeyword";
+export { default as LocalizedText } from "./schemas/strings/LocalizedText";
 

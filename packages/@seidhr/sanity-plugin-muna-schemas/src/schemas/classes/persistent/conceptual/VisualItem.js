@@ -12,7 +12,7 @@ export default {
       name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
-      type: 'LocaleString',
+      type: 'LocalizedString',
       validation: (Rule) => Rule.required(),
       options: {
         semanticSanity: {

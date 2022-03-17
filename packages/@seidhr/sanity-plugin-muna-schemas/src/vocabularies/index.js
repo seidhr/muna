@@ -1,1 +1,0 @@
-export { licenseTypes } from "./licenseTypes";

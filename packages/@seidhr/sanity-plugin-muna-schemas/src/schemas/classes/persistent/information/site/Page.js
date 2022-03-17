@@ -17,21 +17,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'navMenu',
-      title: 'Navigasjonsmeny',
-      titleEN: 'Navigation menu',
-      // weak: true, // Uncomment if you want to be able to delete navigation even though pages refer to it
-      description: 'Hvilken navigasjonsmeny skal vises, om noen',
-      descriptionEN: 'Which nav menu should be shown, if any',
-      type: 'reference',
-      to: [{ type: 'NavigationMenu' }],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
-      },
-    },
-    {
       name: 'content',
       title: 'Sideseksjoner',
       titleEN: 'Page sections',

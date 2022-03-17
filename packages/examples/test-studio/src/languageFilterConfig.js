@@ -6,8 +6,8 @@ export default {
   supportedLanguages,
   // Select Norwegian (Bokmål) by default
   defaultLanguages: [config.base],
-  // Only show language filter for document type `page` (schemaType.name)
-  documentTypes: ['Concept', 'TextType'],
+  // Only show language filter for document type e.g. `page` (schemaType.name)
+  // documentTypes: ['Concept', 'TextType'],
   filterField: (enclosingType, field, selectedLanguageIds) =>
-    !enclosingType.name.startsWith('Locale') || selectedLanguageIds.includes(field.name),
+    !enclosingType.name.startsWith('Localized') || selectedLanguageIds.includes(field.name),
 }

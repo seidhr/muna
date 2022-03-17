@@ -35,6 +35,40 @@ export default {
   ],
   fields: [
     {
+      name: 'page',
+      title: 'Side',
+      titleEN: 'Page',
+      description: 'Siden du vil at skal vises på denne adressen. Siden må være publisert.',
+      descriptionEN: 'The page you want to appear at this path. Remember it needs to be published.',
+      type: 'reference',
+      validation: (Rule) => Rule.required(),
+      to: [
+        { type: 'Page' },
+        { type: 'LinguisticDocument' },
+      ],
+      options: {
+        semanticSanity: {
+          '@type': '@id'
+        }
+      },
+    },
+    {
+      name: 'link',
+      title: 'Ekstern lenke',
+      titleEN: 'External link',
+      description: 'Example: https://www.uib.no/ub',
+      descriptionEN: 'Example: https://www.sanity.io',
+      type: 'url',
+    },
+    {
+      name: 'route',
+      title: 'Sti',
+      titleEN: 'Path',
+      description: 'Referense til en "path" i frontend, som ikke er i Studioet',
+      descriptionEN: 'Reference to a path in the frontend, not available in the Studio',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Sti',
       titleEN: 'Path',
@@ -52,38 +86,6 @@ export default {
         source: 'page',
         // Read more: https://www.sanity.io/docs/slug-type
         slugify: myAsyncSlugifier,
-      },
-    },
-    {
-      name: 'language',
-      title: 'Språk',
-      titleEN: 'Language',
-      type: 'reference',
-      to: [
-        { type: 'Language' }
-      ],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
-      },
-    },
-    {
-      name: 'page',
-      title: 'Side',
-      titleEN: 'Page',
-      description: 'Siden du vil at skal vises på denne adressen. Siden må være publisert.',
-      descriptionEN: 'The page you want to appear at this path. Remember it needs to be published.',
-      type: 'reference',
-      validation: (Rule) => Rule.required(),
-      to: [
-        { type: 'Page' },
-        { type: 'LinguisticDocument' },
-      ],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
       },
     },
     {
@@ -123,7 +125,7 @@ export default {
         }
       },
     },
-    {
+    /* {
       name: 'disallowRobots',
       title: 'Disallow in robots.txt',
       titleEN: '"Disallow" i robots.txt',
@@ -136,14 +138,13 @@ export default {
           "@type": "xsd:boolean"
         }
       },
-    },
+    }, */
   ],
   preview: {
     select: {
       title: 'slug.current',
       subtitle: 'page.title',
       label: 'page.label',
-      language: 'language.identifiedByISO6393'
     },
     prepare({ title, subtitle, label, language }) {
       const lang = language ? `${language}/` : ''

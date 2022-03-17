@@ -5,7 +5,7 @@ export const label = {
   titleEN: 'Title',
   // description: (<span>Tittel. <Link target='blank' href={'https://muna.xyz/docs/model/properties#label'}><BsFillQuestionCircleFill /></Link></span>),
   // descriptionEN: (<span>Title. <Link target='blank' href={'https://muna.xyz/docs/model/properties#label'}><BsFillQuestionCircleFill /></Link></span>),
-  type: 'LocaleString',
+  type: 'LocalizedString',
   validation: (Rule) => Rule.required(),
   options: {
     semanticSanity: {

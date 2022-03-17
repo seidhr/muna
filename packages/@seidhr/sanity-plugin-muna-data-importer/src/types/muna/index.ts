@@ -1,5 +1,5 @@
-type LocaleString = {
-  _type: 'LocaleString'
+type LocalizedString = {
+  _type: 'LocalizedString'
   no?: string
   en?: string
 }
@@ -14,12 +14,12 @@ type TimeSpan = {
 }
 
 type ActivityStream = {
-  label: LocaleString
+  label: LocalizedString
   timespan?: TimeSpan
 }
 
 interface SActor {
-  label: LocaleString
+  label: LocalizedString
   sortedLabel?: string
   activityStream: [ActivityStream]
 }

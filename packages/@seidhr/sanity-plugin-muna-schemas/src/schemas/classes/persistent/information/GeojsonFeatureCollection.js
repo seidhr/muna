@@ -20,7 +20,7 @@ export default {
       description: '',
       descriptionEN: '',
       fieldset: 'core',
-      type: 'LocaleString',
+      type: 'LocalizedString',
     },
     {
       name: 'features',
