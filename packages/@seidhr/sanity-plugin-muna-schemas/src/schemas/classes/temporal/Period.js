@@ -1,4 +1,4 @@
-import { FaEmpire } from 'react-icons/fa'
+import { RiMapPinTimeLine } from 'react-icons/ri'
 import { coalesceLabel } from '../../../helpers'
 import { accessState, editorialState, label } from '../../properties/datatype'
 import { referredToBy, timespan, tookPlaceAt } from '../../properties/object'
@@ -11,7 +11,7 @@ export default {
     editorialState: 'published',
     accessState: 'open',
   },
-  icon: FaEmpire,
+  icon: RiMapPinTimeLine,
   fieldsets: [
     {
       name: 'state',

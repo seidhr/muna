@@ -41,7 +41,6 @@ export { default as ObjectType } from "./schemas/classes/persistent/conceptual/t
 export { default as PlaceType } from "./schemas/classes/persistent/conceptual/type/PlaceType";
 export { default as ReportType } from "./schemas/classes/persistent/conceptual/type/ReportType";
 export { default as Role } from "./schemas/classes/persistent/conceptual/type/Role";
-export { default as SectionType } from "./schemas/classes/persistent/conceptual/type/SectionType";
 export { default as StorageType } from "./schemas/classes/persistent/conceptual/type/StorageType";
 export { default as Technique } from "./schemas/classes/persistent/conceptual/type/Technique";
 export { default as TextType } from "./schemas/classes/persistent/conceptual/type/TextType";
@@ -69,7 +68,6 @@ export { default as ActorCollection } from "./schemas/classes/persistent/informa
 export { default as SingleActor } from "./schemas/classes/persistent/information/site/plugs/ActorCollection/SingleActor";
 export { default as BigText } from "./schemas/classes/persistent/information/site/plugs/BigText";
 export { default as EventSection } from "./schemas/classes/persistent/information/site/plugs/EventSection";
-export { default as ExhibitionElement } from "./schemas/classes/persistent/information/site/plugs/ExhibitionElement";
 export { default as Grid } from "./schemas/classes/persistent/information/site/plugs/Grid";
 export { default as Hero } from "./schemas/classes/persistent/information/site/plugs/Hero";
 export { default as Iframe } from "./schemas/classes/persistent/information/site/plugs/Iframe";
@@ -78,12 +76,7 @@ export { default as InstagramPost } from "./schemas/classes/persistent/informati
 export { default as PageHeader } from "./schemas/classes/persistent/information/site/plugs/PageHeader";
 export { default as Quote } from "./schemas/classes/persistent/information/site/plugs/Quote";
 export { default as SectionText } from "./schemas/classes/persistent/information/site/plugs/SectionText";
-export { default as SingleLevelChart } from "./schemas/classes/persistent/information/site/plugs/SingleLevelChart";
 export { default as SlideshowStrip } from "./schemas/classes/persistent/information/site/plugs/SlideshowStrip";
-export { default as Social } from "./schemas/classes/persistent/information/site/plugs/Social";
-export { default as SocialCollection } from "./schemas/classes/persistent/information/site/plugs/SocialCollection";
-export { default as SubStory } from "./schemas/classes/persistent/information/site/plugs/SubStory";
-export { default as SvgTitle } from "./schemas/classes/persistent/information/site/plugs/SvgTitle";
 export { default as Table } from "./schemas/classes/persistent/information/site/plugs/Table";
 export { default as TextWithIllustration } from "./schemas/classes/persistent/information/site/plugs/TextWithIllustration";
 export { default as TwoColumn } from "./schemas/classes/persistent/information/site/plugs/TwoColumn";

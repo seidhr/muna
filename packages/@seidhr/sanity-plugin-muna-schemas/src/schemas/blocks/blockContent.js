@@ -131,9 +131,7 @@ export default {
     { type: 'Table' },
     { type: 'TwoColumn' },
     { type: 'Video' },
-    { type: 'Social' },
     { type: 'Iframe' },
-    { type: 'ExhibitionElement' },
   ],
   options: {
     semanticSanity: {

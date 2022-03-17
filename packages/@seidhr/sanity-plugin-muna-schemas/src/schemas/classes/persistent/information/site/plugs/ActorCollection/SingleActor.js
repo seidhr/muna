@@ -33,7 +33,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel eller navn',
       titleEN: 'Heading',
       description: 'Om feltet benyttes vil den overstyre aktørens navn',
@@ -51,7 +51,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       actorLabel: 'item.label',
       media: 'image',
       actorMedia: 'item.image',

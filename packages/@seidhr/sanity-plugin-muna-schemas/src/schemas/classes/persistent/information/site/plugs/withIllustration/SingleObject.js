@@ -33,7 +33,7 @@ export default {
       to: [{ type: 'HumanMadeObject' }],
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',

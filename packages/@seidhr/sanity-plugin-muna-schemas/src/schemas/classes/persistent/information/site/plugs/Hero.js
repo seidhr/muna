@@ -15,15 +15,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'label',
-      title: 'Merkelapp',
-      titleEN: 'Label',
-      description: 'Brukes over tittelen',
-      descriptionEN: 'Used above the title',
-      type: 'string',
-    },
-    {
-      name: 'title',
+      name: 'Label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -47,12 +39,11 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'label',
+      title: 'label',
       media: 'illustration',
       disabled: 'disabled',
     },
-    prepare({title, media, disabled}) {
+    prepare({ title, media, disabled }) {
       return {
         title: `${disabled ? 'Avslått' : title}`,
         subtitle: 'Hero',

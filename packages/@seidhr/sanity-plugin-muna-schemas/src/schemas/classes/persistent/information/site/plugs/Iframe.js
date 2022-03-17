@@ -15,7 +15,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -27,13 +27,13 @@ export default {
       type: 'url',
     },
   ],
-  
+
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       url: 'url',
     },
-    prepare({title, url}) {
+    prepare({ title, url }) {
       return {
         title: title ? title : url,
         subtitle: 'iFrame',

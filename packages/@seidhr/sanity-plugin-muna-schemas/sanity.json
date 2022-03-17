@@ -334,10 +334,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/conceptual/type/SectionType"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/conceptual/type/StorageType"
     },
     {
@@ -382,10 +378,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/ExhibitionElement"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/plugs/Grid"
     },
     {
@@ -418,27 +410,7 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SingleLevelChart"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/plugs/SlideshowStrip"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Social"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SocialCollection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SubStory"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SvgTitle"
     },
     {
       "implements": "part:@sanity/base/schema-type",

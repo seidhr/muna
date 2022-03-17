@@ -10,12 +10,7 @@ const types = S.listItem()
       .items([
         S.documentTypeListItem('IdentifierType').title('IdentifikatorType'),
         S.documentTypeListItem('AppelationType').title('Navnetype'),
-        S.documentTypeListItem('Role').title('Rolle'),
-        S.documentTypeListItem('SectionType').title('Seksjonstype'),
         S.documentTypeListItem('Language').title('Språk'),
-        S.documentTypeListItem('MeasurementUnit').title('Måleenhet'),
-        S.documentTypeListItem('DimensionType').title('Dimensjonstype'),
-        S.documentTypeListItem('WorkType').title('Verkstype'),
       ]),
   )
 

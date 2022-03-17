@@ -297,12 +297,12 @@ export default {
   orderings: [
     {
       title: 'Tittel, A-Å',
-      name: 'title',
+      name: 'label',
       by: [{ field: 'label', direction: 'desc' }],
     },
     {
       title: 'Tittel, Å-A',
-      name: 'title',
+      name: 'label',
       by: [{ field: 'label', direction: 'asc' }],
     },
   ],

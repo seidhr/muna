@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
-import { BsFileRichtext } from 'react-icons/bs'
+import { MdOutlineEmojiObjects } from 'react-icons/md'
 import { FaGlasses, FaMapMarkedAlt } from 'react-icons/fa'
 import { MdEvent } from 'react-icons/md'
 import { TiUser } from 'react-icons/ti'
@@ -10,6 +10,7 @@ import management from './management'
 import pageBuilder from './pageBuilder'
 import types from './types'
 import references from './references'
+import works from './works'
 
 const hiddenDocTypes = (listItem) =>
   ![
@@ -44,7 +45,6 @@ const hiddenDocTypes = (listItem) =>
     'WorkType',
     'Technique',
     'StorageType',
-    'SectionType',
     'ReportType',
     'MeasurementUnit',
     'IdentifierType',
@@ -75,6 +75,7 @@ const hiddenDocTypes = (listItem) =>
     'BeginningOfExistence',
     'Creation',
     'Destruction',
+    'hierarchy.tree'
   ].includes(listItem.getId())
 
 /* export const getDefaultDocumentNode = () => {
@@ -107,7 +108,6 @@ export default () =>
       management,
       S.divider(),
       humanMadeObject,
-      S.divider(),
       S.listItem()
         .title('Aktører')
         .icon(TiUser)
@@ -154,25 +154,19 @@ export default () =>
               ),
               S.divider(),
               S.documentTypeListItem('ActorType').title('Aktørtype'),
+              S.documentTypeListItem('Role').title('Rolle'),
             ]),
         ),
-      // Much used types
-      S.divider(),
-      S.documentTypeListItem('Concept').title('Emner'),
-      S.documentTypeListItem('Material').title('Material'),
-      // TYPE
-      types,
-      S.divider(),
       S.listItem()
         .title('Steder')
-        .icon(FaMapMarkedAlt)
+        .icon(MdOutlineEmojiObjects)
         .child(
           S.list()
             .title('Steder')
             .items([
               S.listItem()
                 .title('Alle steder')
-                .icon(FaMapMarkedAlt)
+                .icon(MdOutlineEmojiObjects)
                 .child(S.documentTypeList('Place').title('Alle steder')),
               S.listItem()
                 .title('Steder etter type')
@@ -196,55 +190,6 @@ export default () =>
               S.documentTypeListItem('PlaceType').title('Stedstype'),
             ]),
         ),
-      S.divider(),
-      S.documentTypeListItem('Work').title('Verk'),
-      S.documentTypeListItem('VisualItem').title('Visuell ting'),
-      S.listItem()
-        .title('Tekster')
-        .icon(BsFileRichtext)
-        .child(
-          S.list()
-            .title('Tekster')
-            .items([
-              S.listItem()
-                .title('Alle tekster')
-                .icon(FaGlasses)
-                .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
-              S.listItem()
-                .title('Tekster etter type')
-                .icon(FaGlasses)
-                .child(
-                  // List out all categories
-                  S.documentTypeList('TextType')
-                    .title('Tekster etter type')
-                    .filter('_type == "TextType"')
-                    .child((catId) =>
-                      // List out project documents where the _id for the selected
-                      // category appear as a _ref in the project’s categories array
-                      S.documentList()
-                        .schemaType('LinguisticDocument')
-                        .title('Tekster')
-                        .filter('_type == "LinguisticDocument" && $catId in hasType[]._ref')
-                        .params({ catId }),
-                    ),
-                ),
-              S.listItem().title('Upubliserte tekster').icon(FaGlasses).child(
-                // List out all categories
-                S.documentTypeList('LinguisticDocument')
-                  .title('Upubliserte tekster')
-                  .filter('_type == "LinguisticDocument" && accessState == "secret"'),
-              ),
-              S.listItem().title('Til gjennomgang').icon(FaGlasses).child(
-                // List out all categories
-                S.documentTypeList('LinguisticDocument')
-                  .title('Til gjennomgang')
-                  .filter('_type == "LinguisticDocument" && editorialState == "review"'),
-              ),
-              S.divider(),
-              S.documentTypeListItem('TextType').title('Tekststype'),
-            ]),
-        ),
-      S.divider(),
       S.documentTypeListItem('Period').title('Perioder'),
       S.listItem()
         .title('Hendelser')
@@ -281,6 +226,15 @@ export default () =>
         ),
       // ACTIVITY
       activities,
+      // Much used types
+      S.divider(),
+      S.documentTypeListItem('Concept').title('Emner'),
+      // TYPE
+      types,
+      S.divider(),
+      // WORKS
+      works,
+      S.divider(),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

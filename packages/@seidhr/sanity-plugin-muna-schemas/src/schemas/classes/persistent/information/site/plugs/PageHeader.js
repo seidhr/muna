@@ -12,7 +12,7 @@ export default {
     {
       name: 'subtitle',
       title: 'Undertittel',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
   ],
   fields: [
@@ -23,7 +23,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',
@@ -44,10 +44,10 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       media: 'illustration',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title: title,
         subtitle: 'Sideoverskrift',

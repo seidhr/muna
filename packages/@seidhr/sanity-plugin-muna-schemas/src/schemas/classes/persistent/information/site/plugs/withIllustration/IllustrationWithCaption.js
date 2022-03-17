@@ -30,7 +30,7 @@ export default {
       },
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',
@@ -57,8 +57,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'label',
+      title: 'label',
       media: 'illustration',
       disabled: 'disabled',
     },

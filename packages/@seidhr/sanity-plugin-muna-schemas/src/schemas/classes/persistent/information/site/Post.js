@@ -5,7 +5,7 @@ export default {
   titleEN: 'Blog Post',
   fields: [
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       description: 'Titles should be catchy, descriptive, and not too long',
@@ -19,7 +19,7 @@ export default {
       description: 'En "slug" bruks i sidens nettadresse. Basert på tittel',
       descriptionEN: 'Some frontends will require a slug to be set to be able to show the post',
       options: {
-        source: 'title',
+        source: 'label',
         maxLength: 96,
       },
     },
@@ -119,7 +119,7 @@ export default {
           direction: 'asc',
         },
         {
-          field: 'title',
+          field: 'label',
           direction: 'asc',
         },
       ],
@@ -133,7 +133,7 @@ export default {
           direction: 'desc',
         },
         {
-          field: 'title',
+          field: 'label',
           direction: 'asc',
         },
       ],
@@ -141,7 +141,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       publishedAt: 'publishedAt',
       slug: 'slug',
       media: 'image',

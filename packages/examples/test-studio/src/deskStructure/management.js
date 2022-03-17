@@ -6,11 +6,11 @@ import { ImLibrary } from 'react-icons/im'
 // import PreviewIFrame from '../../src/components/previewIFrame'
 
 const management = S.listItem()
-  .title('Samlingsadm.')
+  .title('Administrasjon')
   .icon(ImLibrary)
   .child(
     S.list()
-      .title('Samlingsadm.')
+      .title('Administrasjon')
       .items([
         S.documentTypeListItem('Collection').title('Samlinger'),
         S.listItem()
@@ -20,6 +20,10 @@ const management = S.listItem()
             S.list()
               .title('Akkvisisjoner')
               .items([
+                S.listItem()
+                  .title('Alle akkvisisjoner')
+                  .icon(FaGifts)
+                  .child(S.documentTypeList('Acquisition').title('Alle akkvisisjoner')),
                 S.listItem()
                   .title('Akkvisisjoner etter type')
                   .icon(FaGifts)
@@ -50,10 +54,6 @@ const management = S.listItem()
                     .title('Til gjennomgang')
                     .filter('_type == "Acquisition" && editorialState == "review"'),
                 ),
-                S.listItem()
-                  .title('Alle akkvisisjoner')
-                  .icon(FaGifts)
-                  .child(S.documentTypeList('Acquisition').title('Alle akkvisisjoner')),
                 S.divider(),
                 S.documentTypeListItem('AcquisitionType').title('Akkvisisjonstype'),
               ]),
@@ -65,6 +65,10 @@ const management = S.listItem()
             S.list()
               .title('Utstillinger')
               .items([
+                S.listItem()
+                  .title('Alle utstillinger')
+                  .icon(FaGlasses)
+                  .child(S.documentTypeList('Exhibition').title('Alle utstillinger')),
                 S.listItem()
                   .title('Utstillinger etter type')
                   .icon(FaGlasses)
@@ -95,10 +99,6 @@ const management = S.listItem()
                     .title('Til gjennomgang')
                     .filter('_type == "Exhibition" && editorialState == "review"'),
                 ),
-                S.listItem()
-                  .title('Alle utstillinger')
-                  .icon(FaGlasses)
-                  .child(S.documentTypeList('Exhibition').title('Alle utstillinger')),
               ]),
           ),
         S.documentTypeListItem('DesignOrProcedure').title('Design eller prosedyre'),
@@ -109,6 +109,10 @@ const management = S.listItem()
             S.list()
               .title('Rapport')
               .items([
+                S.listItem()
+                  .title('Alle rapporter')
+                  .icon(GiCrackedGlass)
+                  .child(S.documentTypeList('Report').title('Alle rapporter')),
                 S.listItem()
                   .title('Rapport etter type')
                   .icon(GiCrackedGlass)
@@ -139,10 +143,6 @@ const management = S.listItem()
                     .title('Til gjennomgang')
                     .filter('_type == "Report" && editorialState == "review"'),
                 ),
-                S.listItem()
-                  .title('Alle rapporter')
-                  .icon(GiCrackedGlass)
-                  .child(S.documentTypeList('Report').title('Alle rapporter'))
               ]),
           ),
         S.documentTypeListItem('Storage').title('Lagrinsenheter'),
@@ -153,6 +153,10 @@ const management = S.listItem()
             S.list()
               .title('Prosjekter')
               .items([
+                S.listItem()
+                  .title('Alle prosjekter')
+                  .icon(FaProjectDiagram)
+                  .child(S.documentTypeList('Project').title('Alle prosjekter')),
                 S.listItem().title('Active projects').icon(FaProjectDiagram).child(
                   // List out all categories
                   S.documentTypeList('Project')
@@ -165,18 +169,17 @@ const management = S.listItem()
                     .title('Completed projects')
                     .filter('_type == "Project" && !active'),
                 ),
-                S.listItem()
-                  .title('Alle prosjekter')
-                  .icon(FaProjectDiagram)
-                  .child(S.documentTypeList('Project').title('Alle prosjekter'))
               ]),
           ),
         S.divider(),
+        S.documentTypeListItem('Material').title('Material'),
         S.documentTypeListItem('AcquisitionType').title('Akkvisisjonstype'),
         S.documentTypeListItem('ConditionType').title('Tilstandstype'),
         S.documentTypeListItem('ExhibitionType').title('Utstillingstype'),
         S.documentTypeListItem('StorageType').title('Lagringstype'),
         S.documentTypeListItem('ReportType').title('Rapporttype'),
+        S.documentTypeListItem('MeasurementUnit').title('Måleenhet'),
+        S.documentTypeListItem('DimensionType').title('Dimensjonstype'),
       ]),
   )
 

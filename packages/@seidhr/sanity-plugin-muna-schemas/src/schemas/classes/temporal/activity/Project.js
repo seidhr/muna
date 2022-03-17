@@ -133,12 +133,12 @@ export default {
   orderings: [
     {
       title: 'Title, A-Å',
-      name: 'title',
+      name: 'label',
       by: [{ field: 'label', direction: 'desc' }],
     },
     {
       title: 'Title, Å-A',
-      name: 'title',
+      name: 'label',
       by: [{ field: 'label', direction: 'asc' }],
     },
   ],

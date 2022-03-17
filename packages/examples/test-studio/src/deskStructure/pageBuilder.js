@@ -18,11 +18,11 @@ const linguisticDocument = Structure.getFilteredDocumentTypeListItems().find(({ 
 }) */
 
 export default S.listItem()
-  .title('Sidebygger')
+  .title('Formidling')
   .icon(FaSitemap)
   .child(
     S.list()
-      .title('Sidebygger')
+      .title('Formidling')
       .items([
         // SETTINGS SINGLETON
         S.listItem()
@@ -91,15 +91,6 @@ export default S.listItem()
           ),
         blog,
         S.divider(),
-        S.listItem()
-          .title('Stier')
-          .icon(FaRoute)
-          .schemaType('Route')
-          .child(
-            S.documentTypeList('Route')
-              .title('Stier')
-          ),
-        S.divider(),
         createDeskHierarchy({
           title: 'Hovedmeny',
           // The hierarchy will be stored in this document ID 👇
@@ -116,5 +107,13 @@ export default S.listItem()
           // ❓ Optional: limit the depth of your hierarachies
           maxDept: 3
         }),
+        S.listItem()
+          .title('Stier')
+          .icon(FaRoute)
+          .schemaType('Route')
+          .child(
+            S.documentTypeList('Route')
+              .title('Stier')
+          ),
       ]),
   )

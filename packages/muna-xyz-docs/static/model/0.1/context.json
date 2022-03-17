@@ -2147,30 +2147,6 @@
         }
       }
     },
-    "SectionType": {
-      "@id": "muna:SectionType",
-      "@context": {
-        "editorialState": {
-          "@id": "muna:editorialState"
-        },
-        "accessState": {
-          "@id": "muna:accessState"
-        },
-        "label": {
-          "@id": "rdfs:label",
-          "@container": "@language"
-        },
-        "altLabel": {
-          "@id": "muna:altLabel",
-          "@container": "@language"
-        },
-        "activityStream": {
-          "@id": "muna:activityStream",
-          "@container": "@list",
-          "@type": "@id"
-        }
-      }
-    },
     "Set": {
       "@id": "muna:Set",
       "@context": {

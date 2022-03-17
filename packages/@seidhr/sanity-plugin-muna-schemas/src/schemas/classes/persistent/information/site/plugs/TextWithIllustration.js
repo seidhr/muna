@@ -16,7 +16,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',

@@ -17,7 +17,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -30,7 +30,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       content: 'content',
       disabled: 'disabled',
     },

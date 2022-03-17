@@ -25,7 +25,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -35,23 +35,23 @@ export default {
       title: 'url',
       type: 'url',
     },
-/*     {
-      name: 'service',
-      title: 'Tjeneste',
-      titleEN: 'Service',
-      type: 'string',
-      options: {
-        list: ['youtube'],
-      },
-    }, */
+    /*     {
+          name: 'service',
+          title: 'Tjeneste',
+          titleEN: 'Service',
+          type: 'string',
+          options: {
+            list: ['youtube'],
+          },
+        }, */
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       url: 'url',
     },
     /* component: Youtube, */
-     prepare({title, url}) {
+    prepare({ title, url }) {
       return {
         title: `Video: ${url}`,
       }

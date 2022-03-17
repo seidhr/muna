@@ -41,25 +41,6 @@ const humanMadeObject = S.listItem()
                   ])
               ),
           ),
-        /* Could be used for parts of a book
-        S.listItem()
-          .title('Objekt etter deltype')
-          .icon(SingleIcon)
-          .child(
-          // List out all categories
-            S.documentTypeList('sectionType')
-              .title('Objekt etter deltype')
-              .filter('_type == "SectionType"')
-              .child(catId =>
-              // List out project documents where the _id for the selected
-              // category appear as a _ref in the project’s categories array
-                S.documentList()
-                  .schemaType('HumanMadeObject')
-                  .title('Objekt')
-                  .filter('_type == "HumanMadeObject" && $catId in hasType[]._ref')
-                  .params({catId})
-              )
-          ), */
         S.listItem().title('Upubliserte objekter').icon(SingleIcon).child(
           // List out all categories
           S.documentTypeList('HumanMadeObject')

@@ -4,7 +4,7 @@ export default {
   title: 'Open Graph',
   fields: [
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       description: 'Advarsel! Dette vil overstyre sidens tittel.',
@@ -35,7 +35,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       route: 'route.slug.current',
       link: 'link',
     },

@@ -1,5 +1,7 @@
 import sanityClient from 'part:@sanity/base/client'
 import { MdLink } from 'react-icons/md'
+import config from 'config:@sanity/document-internationalization'
+import { coalesceLabel } from '../../../../../../lib'
 
 const client = sanityClient.withConfig({ apiVersion: '2021-03-25' })
 
@@ -28,45 +30,45 @@ export default {
   },
   fieldsets: [
     {
-      title: 'Visibility',
-      name: 'visibility',
-      options: { collapsible: true, collapsed: true }
+      title: 'Page',
+      name: 'page',
+      description: 'Slett sti eller ekstern lenke for å lenke til en side eller tekst.',
+      options: { collapsible: true, collapsed: false },
+    },
+    {
+      title: 'Link',
+      name: 'paths',
+      description: 'Slett referansen til siden for legge til en sti eller ekstern lenke.',
+      options: { collapsible: true, collapsed: false }
     },
   ],
   fields: [
+    {
+      name: 'label',
+      title: 'Tittel',
+      description: 'Lenkens tittel, om denne er tom brukes siden ellers tekstens tittel.',
+      type: 'LocalizedString'
+    },
     {
       name: 'page',
       title: 'Side',
       titleEN: 'Page',
       description: 'Siden du vil at skal vises på denne adressen. Siden må være publisert.',
       descriptionEN: 'The page you want to appear at this path. Remember it needs to be published.',
+      fieldset: 'page',
       type: 'reference',
-      validation: (Rule) => Rule.required(),
       to: [
         { type: 'Page' },
         { type: 'LinguisticDocument' },
       ],
+      hidden: ({ parent, value }) => !value && (parent?.route || parent?.link),
       options: {
+        filter: '__i18n_lang == $base',
+        filterParams: { base: config.base },
         semanticSanity: {
           '@type': '@id'
         }
       },
-    },
-    {
-      name: 'link',
-      title: 'Ekstern lenke',
-      titleEN: 'External link',
-      description: 'Example: https://www.uib.no/ub',
-      descriptionEN: 'Example: https://www.sanity.io',
-      type: 'url',
-    },
-    {
-      name: 'route',
-      title: 'Sti',
-      titleEN: 'Path',
-      description: 'Referense til en "path" i frontend, som ikke er i Studioet',
-      descriptionEN: 'Reference to a path in the frontend, not available in the Studio',
-      type: 'string',
     },
     {
       name: 'slug',
@@ -74,9 +76,11 @@ export default {
       titleEN: 'Path',
       description: 'Dette er adressen siden vil bli tilgjengelig på',
       descriptionEN: 'This is the website path the page will accessible on',
+      fieldset: 'page',
       type: 'slug',
+      hidden: ({ parent, value }) => !value && (parent?.route || parent?.link),
       validation: (Rule) =>
-        Rule.required().custom((slug) => {
+        Rule.custom((slug) => {
           if (slug && slug.current && slug.current === '/') {
             return 'Cannot be /'
           }
@@ -89,14 +93,24 @@ export default {
       },
     },
     {
-      name: 'useSiteTitle',
-      title: 'Bruk nettsidens tittel?',
-      titleEN: 'Use site title?',
-      description:
-        'Bruk nettsidens tittel som sidetittel istedenfor tittelen på siden på denne stien',
-      descriptionEN:
-        'Use the site settings title as page title instead of the title on the referenced page',
-      type: 'boolean',
+      name: 'link',
+      title: 'Ekstern lenke',
+      titleEN: 'External link',
+      description: 'Example: https://www.uib.no/ub',
+      descriptionEN: 'Example: https://www.sanity.io',
+      fieldset: 'paths',
+      type: 'url',
+      hidden: ({ parent, value }) => !value && (parent?.route || parent?.page)
+    },
+    {
+      name: 'route',
+      title: 'Sti til side i frontend',
+      titleEN: 'Path',
+      description: 'Referense til en "path" i frontend, som ikke er i Studioet. For eksempel "/abc".',
+      descriptionEN: 'Reference to a path in the frontend, not available in the Studio',
+      fieldset: 'paths',
+      type: 'string',
+      hidden: ({ parent, value }) => !value && (parent?.page || parent?.link)
     },
     {
       name: 'openGraph',
@@ -105,33 +119,32 @@ export default {
       description: 'Disse vil bli brukt i "meta tags"',
       descriptionEN: 'These values populate meta tags',
       type: 'OpenGraph',
+      hidden: ({ parent, value }) => !value && (parent?.page || parent?.link),
       options: {
         semanticSanity: {
           '@type': '@json'
         }
       },
     },
-    {
+    /* {
       name: 'includeInSitemap',
       title: 'Inkluder i sitemap',
       titleEN: 'Include in sitemap',
       description: 'For søkemotorer. Vil bli generert i /sitemap.xml',
       descriptionEN: 'For search engines. Will be generateed to /sitemap.xml',
-      fieldset: 'visibility',
       type: 'boolean',
       options: {
         semanticSanity: {
           "@type": "xsd:boolean"
         }
       },
-    },
+    }, */
     /* {
       name: 'disallowRobots',
       title: 'Disallow in robots.txt',
       titleEN: '"Disallow" i robots.txt',
       description: 'Skjul denne stien fra søkemoterer',
       descriptionEN: 'Hide this route for search engines like google',
-      fieldset: 'visibility',
       type: 'boolean',
       options: {
         semanticSanity: {
@@ -142,15 +155,15 @@ export default {
   ],
   preview: {
     select: {
-      title: 'slug.current',
-      subtitle: 'page.title',
-      label: 'page.label',
+      slug: 'slug.current',
+      label: 'label',
+      pageLabel: 'page.label',
+      link: 'link'
     },
-    prepare({ title, subtitle, label, language }) {
-      const lang = language ? `${language}/` : ''
+    prepare({ slug, label, pageLabel, link }) {
       return {
-        title: ['/', lang, title].join(''),
-        subtitle: subtitle ?? label
+        title: coalesceLabel(label) || pageLabel,
+        subtitle: link ?? ['/', slug].join(''),
       }
     },
   },

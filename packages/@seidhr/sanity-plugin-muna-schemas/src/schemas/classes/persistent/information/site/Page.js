@@ -11,7 +11,7 @@ export default {
   },
   fields: [
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',
@@ -24,13 +24,9 @@ export default {
       descriptionEN: 'Add, edit, and reorder sections',
       type: 'array',
       of: [
-        { type: 'PageHeader' },
-        { type: 'SvgTitle' },
         { type: 'Hero' },
         { type: 'SectionText' },
-        { type: 'BigText' },
         { type: 'Quote' },
-        { type: 'SubStory' },
         { type: 'SingleObject' },
         { type: 'MiradorGallery' },
         { type: 'IllustrationWithCaption' },
@@ -40,7 +36,6 @@ export default {
         { type: 'TwoColumn' },
         { type: 'Grid' },
         { type: 'Video' },
-        { type: 'Social' },
         { type: 'InstagramPost' },
         { type: 'Iframe' },
       ],

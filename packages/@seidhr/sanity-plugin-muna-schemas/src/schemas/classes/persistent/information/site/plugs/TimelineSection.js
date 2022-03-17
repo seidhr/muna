@@ -25,7 +25,7 @@ export default {
       to: [{ type: 'Timeline' }],
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',

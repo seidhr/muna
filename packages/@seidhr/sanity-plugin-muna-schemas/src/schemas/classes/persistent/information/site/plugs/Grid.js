@@ -27,7 +27,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Title',
       type: 'string',
@@ -81,7 +81,7 @@ export default {
           ],
           fields: [
             {
-              name: 'title',
+              name: 'label',
               type: 'string',
             },
             {
@@ -137,7 +137,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title'
+      title: 'label'
     },
     prepare({ title }) {
       return {

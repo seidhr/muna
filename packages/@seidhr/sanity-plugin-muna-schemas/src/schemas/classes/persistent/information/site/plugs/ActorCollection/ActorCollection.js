@@ -29,7 +29,7 @@ export default {
       },
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel eller navn',
       titleEN: 'Heading',
       type: 'string',
@@ -51,7 +51,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       items: 'items',
     },
     prepare: ({ items, title }) => ({

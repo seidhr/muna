@@ -25,7 +25,7 @@ export default {
       to: [{ type: 'Event' }],
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel eller navn',
       titleEN: 'Heading',
       description: 'Om feltet benyttes vil den overstyre hendelsens navn',
@@ -42,7 +42,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       eventTitle: 'item.label',
       media: 'image',
       eventMedia: 'item.image',

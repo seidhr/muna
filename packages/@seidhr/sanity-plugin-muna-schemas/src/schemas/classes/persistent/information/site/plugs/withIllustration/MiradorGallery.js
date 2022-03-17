@@ -23,7 +23,7 @@ export default {
       of: [{ type: 'MiradorGalleryWindow' }],
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -37,7 +37,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       media: 'items.0.manifestRef.image',
       items: 'items'
     },

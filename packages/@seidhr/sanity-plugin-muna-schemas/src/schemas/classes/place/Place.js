@@ -1,4 +1,4 @@
-import { FaMapMarker } from 'react-icons/fa'
+import { RiMapPinLine } from 'react-icons/ri'
 import { defaultFieldsets } from '../../../../lib/fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../helpers'
 import { accessState, editorialState, label } from '../../properties/datatype'
@@ -13,7 +13,7 @@ export default {
     editorialState: 'published',
     accessState: 'open',
   },
-  icon: FaMapMarker,
+  icon: RiMapPinLine,
   fieldsets: defaultFieldsets,
   fields: [
     editorialState,

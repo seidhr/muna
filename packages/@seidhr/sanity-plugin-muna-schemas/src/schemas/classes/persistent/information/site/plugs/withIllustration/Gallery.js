@@ -23,7 +23,7 @@ export default {
       of: [{ type: 'ItemView' }],
     },
     {
-      name: 'title',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -31,7 +31,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'label',
       media: 'items.0.image',
       items: 'items'
     },

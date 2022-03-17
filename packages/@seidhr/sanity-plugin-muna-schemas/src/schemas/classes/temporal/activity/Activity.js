@@ -1,4 +1,4 @@
-import { MdLocalActivity } from 'react-icons/md'
+import { FiActivity } from 'react-icons/fi'
 import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import {
   accessState, editorialState, labelSingleton
@@ -11,7 +11,7 @@ export default {
   name: 'Activity',
   title: 'Activity',
   type: 'document',
-  icon: MdLocalActivity,
+  icon: FiActivity,
   fieldsets: [
     {
       name: 'state',
