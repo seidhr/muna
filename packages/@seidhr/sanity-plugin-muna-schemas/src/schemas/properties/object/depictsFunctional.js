@@ -2,7 +2,7 @@ import React from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { Link } from 'part:@sanity/base/router';
 
-export const depicts = {
+export const depictsFunctional = {
   name: 'depicts',
   title: 'Avbilder',
   titleEN: 'Depicts',
@@ -22,20 +22,14 @@ export const depicts = {
       </Link>
     </span>
   ),
-  type: 'array',
-  of: [
-    {
-      type: 'reference',
-      to: [
-        { type: 'HumanMadeObject' },
-        { type: 'Actor' },
-        { type: 'Concept' }
-      ],
-    },
+  type: 'reference',
+  to: [
+    { type: 'HumanMadeObject' },
+    { type: 'Actor' },
+    { type: 'Concept' }
   ],
   options: {
     semanticSanity: {
-      '@container': '@set',
       '@type': '@id'
     }
   },

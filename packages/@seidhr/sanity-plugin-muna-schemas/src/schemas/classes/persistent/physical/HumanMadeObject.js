@@ -9,7 +9,9 @@ import {
   hasFormerOrCurrentOwner, identifiedBy, image, measuredBy, presentAt, referredToBy,
   relation, showsVisualObject, subject, subjectOf, subjectOfManifest, wasOutputOf
 } from '../../../properties/object'
-
+import HotspotArray from 'sanity-plugin-hotspot-array'
+import HotspotPreview from '../../../../previews/hotspotPreview'
+import { depictsFunctional } from '../../../properties/object/depictsFunctional'
 
 export default {
   name: 'HumanMadeObject',
@@ -63,6 +65,12 @@ export default {
       title: 'Felt relatert til eierskap',
       options: { collapsible: true, collapsed: false },
     },
+  ],
+  groups: [
+    {
+      name: 'images',
+      title: 'Images'
+    }
   ],
   fields: [
     editorialState,
@@ -146,14 +154,69 @@ export default {
     {
       ...image,
       fieldset: 'mainImage',
+      group: 'images'
+    },
+    {
+      name: `mainImageAnnotations`,
+      type: `array`,
+      fieldset: 'mainImage',
+      group: 'images',
+      inputComponent: HotspotArray,
+      of: [
+        {
+          name: 'point',
+          type: 'object',
+          fieldsets: [{ name: 'position', options: { columns: 2 } }],
+          fields: [
+            { name: 'label', type: 'text', rows: 2 },
+            depictsFunctional,
+            {
+              name: 'x',
+              type: 'number',
+              readOnly: true,
+              fieldset: 'position',
+              initialValue: 50,
+              validation: (Rule) => Rule.required().min(0).max(100),
+            },
+            {
+              name: 'y',
+              type: 'number',
+              readOnly: true,
+              fieldset: 'position',
+              initialValue: 50,
+              validation: (Rule) => Rule.required().min(0).max(100),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'label',
+              x: 'x',
+              y: 'y',
+            },
+            prepare({ title, x, y }) {
+              return {
+                title,
+                subtitle: x && y ? `${x}% x ${y}%` : `No position set`,
+              }
+            },
+          },
+        }
+      ],
+      options: {
+        hotspotImagePath: `image`,
+        hotspotDescriptionPath: `label`,
+        hotspotTooltip: HotspotPreview,
+      },
     },
     {
       ...digitallyShownBy,
       fieldset: 'representation',
+      group: 'images',
     },
     {
       ...subjectOfManifest,
       fieldset: 'representation',
+      group: 'images',
     },
     {
       ...relation,

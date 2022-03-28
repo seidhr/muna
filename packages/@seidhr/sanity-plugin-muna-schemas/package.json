@@ -20,7 +20,10 @@
   },
   "keywords": [
     "sanity",
-    "sanity-plugin"
+    "sanity-plugin",
+    "sanity-schema",
+    "cidoc-crm",
+    "cho"
   ],
   "author": "Tarje Sælen Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
@@ -37,15 +40,17 @@
     "react-icons": "^4.3.1",
     "react-instagram-embed": "^3.0.0",
     "react-player": "^2.9.0",
-    "react-twitter-embed": "^3.0.3"
+    "react-query": "^3.34.19",
+    "react-twitter-embed": "^3.0.3",
+    "sanity-plugin-hotspot-array": "^0.0.5"
   },
   "devDependencies": {
-    "eslint": "7.19.0",
     "create-index": "^2.6.0",
-    "globby": "^12.0.2",
+    "eslint": "7.19.0",
     "eslint-config-prettier": "7.2.0",
     "eslint-config-sanity": "5.0.0",
     "eslint-plugin-react": "7.22.0",
+    "globby": "^12.0.2",
     "prettier": "2.2.1",
     "sanipack": "1.0.7"
   },
