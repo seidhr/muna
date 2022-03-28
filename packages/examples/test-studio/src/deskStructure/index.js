@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import * as Structure from '@sanity/document-internationalization/lib/structure'
-import { MdOutlineEmojiObjects } from 'react-icons/md'
-import { FaGlasses, FaMapMarkedAlt } from 'react-icons/fa'
+import { RiMapPinLine } from 'react-icons/ri'
+import { FaMapMarkedAlt } from 'react-icons/fa'
 import { MdEvent } from 'react-icons/md'
 import { TiUser } from 'react-icons/ti'
 import activities from './activities'
@@ -159,14 +159,14 @@ export default () =>
         ),
       S.listItem()
         .title('Steder')
-        .icon(MdOutlineEmojiObjects)
+        .icon(RiMapPinLine)
         .child(
           S.list()
             .title('Steder')
             .items([
               S.listItem()
                 .title('Alle steder')
-                .icon(MdOutlineEmojiObjects)
+                .icon(RiMapPinLine)
                 .child(S.documentTypeList('Place').title('Alle steder')),
               S.listItem()
                 .title('Steder etter type')
