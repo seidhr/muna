@@ -10,7 +10,14 @@ Muna is inspired by CIDOC-CRM and linked.art. The goal is to enable anyone to de
 sanity install muna-schemas
 
 # Install necessary plugins
-sanity install @sanity/code-input table iframe-pane @sanity/document-internationalization @sanity/language-filter documents-pane @sanity/hierarchical-document-list
+sanity install 
+sanity install table 
+sanity install iframe-pane 
+sanity install documents-pane
+sanity install @sanity/code-input 
+sanity install @sanity/document-internationalization 
+sanity install @sanity/language-filter 
+sanity install @sanity/hierarchical-document-list
 ```
 
 This schema _depends_ on `config:@sanity/document-internationalization` so it is important to set up this plugin!
