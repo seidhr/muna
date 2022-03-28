@@ -13,6 +13,8 @@ sanity install muna-schemas
 sanity install @sanity/code-input table iframe-pane @sanity/document-internationalization @sanity/language-filter documents-pane @sanity/hierarchical-document-list
 ```
 
+This schema _depends_ on `config:@sanity/document-internationalization` so it is important to set up this plugin!
+
 TODO: More detailed installation instructions for `document-internalization` and `language-filter`.
 
 <!-- ## Configuration
