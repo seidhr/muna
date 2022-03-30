@@ -5,18 +5,6 @@
     "packages/examples/*"
   ],
   "version": "independent",
-  "command": {
-    "version": {
-      "ignore": [
-        "**/*.md"
-      ]
-    },
-    "changed": {
-      "ignore": [
-        "**/*.md"
-      ]
-    }
-  },
   "ignoreChanges": [
     "**/__fixtures__/**",
     "**/__tests__/**",
