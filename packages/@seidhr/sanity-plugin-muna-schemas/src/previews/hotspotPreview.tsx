@@ -3,11 +3,11 @@ import Preview from 'part:@sanity/base/preview'
 import schema from 'part:@sanity/base/schema'
 import { Box } from '@sanity/ui'
 
-const HotspotPreview = ({ point }) => {
+const HotspotPreview = ({ spot }) => {
   return (
     <Box padding={2} style={{ minWidth: 200 }}>
-      {point?.depicts?._ref ? (
-        <Preview value={{ _id: point.depicts._ref }} type={schema.get(`Actor`)} /> // Not working for different types?
+      {spot?.depicts?._ref ? (
+        <Preview value={{ _id: spot.depicts._ref }} type={schema.get(`Actor`)} /> // Not working for different types?
       ) : (
         `No Reference Selected`
       )}
