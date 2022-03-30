@@ -1,7 +1,7 @@
 {
   "name": "seidhr-test-studio",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "package.json",
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
