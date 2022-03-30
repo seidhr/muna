@@ -53,7 +53,14 @@ export default S.listItem()
                 S.listItem()
                   .title('Alle tekster')
                   .icon(FaGlasses)
-                  .child(S.documentTypeList('LinguisticDocument').title('Alle tekster')),
+                  .child(
+                    S.documentList('LinguisticDocument')
+                      .title('Alle tekster')
+                      .schemaType('LinguisticDocument')
+                      .filter(`_type == "LinguisticDocument" && __i18n_lang == $baseLanguage`)
+                      .params({ baseLanguage: config.base })
+                      .menuItems(S.documentTypeList('LinguisticDocument').getMenuItems())
+                  ),
                 S.listItem()
                   .title('Tekster etter type')
                   .icon(FaGlasses)
@@ -68,8 +75,8 @@ export default S.listItem()
                         S.documentList()
                           .schemaType('LinguisticDocument')
                           .title('Tekster')
-                          .filter('_type == "LinguisticDocument" && $catId in hasType[]._ref')
-                          .params({ catId }),
+                          .filter('_type == "LinguisticDocument" && $id in hasType[]._ref && __i18n_lang == $baseLanguage')
+                          .params({ id: catId, baseLanguage: config.base }),
                       ),
                   ),
                 S.listItem().title('Upubliserte tekster').icon(FaGlasses).child(
