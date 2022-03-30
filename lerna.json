@@ -4,5 +4,22 @@
     "packages/@seidhr/*",
     "packages/examples/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "version": {
+      "ignore": [
+        "**/*.md"
+      ]
+    },
+    "changed": {
+      "ignore": [
+        "**/*.md"
+      ]
+    }
+  },
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/*.md"
+  ]
 }

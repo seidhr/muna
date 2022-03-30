@@ -5,7 +5,7 @@ Make it easier to add timespan information with the help of Extended Date Time F
 ## Installation
 
 ```
-sanity install timespan-input
+sanity install @seidhr/sanity-plugin-timespan-input
 ```
 
 
