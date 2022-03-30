@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { Link } from 'part:@sanity/base/router';
-
+import config from 'config:@sanity/document-internationalization';
 
 export const subjectOf = {
   name: 'subjectOf',
@@ -32,6 +32,8 @@ export const subjectOf = {
     },
   ],
   options: {
+    filter: '__i18n_lang == $base',
+    filterParams: { base: config.base },
     semanticSanity: {
       '@container': '@list',
       '@type': '@id'

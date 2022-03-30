@@ -1,7 +1,7 @@
 import { GiSettingsKnobs } from 'react-icons/gi'
 import { license } from '../../../../properties/datatype'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-//import bcp47 from 'bcp47'
+import config from 'config:@sanity/document-internationalization';
 
 export default {
   name: 'SiteSettings',
@@ -38,6 +38,8 @@ export default {
         { type: 'Page' }
       ],
       options: {
+        filter: '__i18n_lang == $base',
+        filterParams: { base: config.base },
         semanticSanity: {
           '@type': '@id'
         }
