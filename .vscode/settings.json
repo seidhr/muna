@@ -9,6 +9,7 @@
     "muna-schemas",
     "muna-data-importer",
     "semantic-sanity",
-    "docs"
+    "docs",
+    "example-studio"
   ],
 }
