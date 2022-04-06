@@ -5,6 +5,19 @@ import { coalesceLabel } from '../../../../../../lib'
 
 const client = sanityClient.withConfig({ apiVersion: '2021-03-25' })
 
+const useSubtitle = (slug, link, route) => {
+  if (slug) {
+    return ['/', slug].join('')
+  }
+  if (link) {
+    return ['/', link].join('')
+  }
+  if (route) {
+    return ['/', route].join('')
+  }
+  return null
+}
+
 function myAsyncSlugifier(input) {
   const query = '*[_id == $id][0]'
   const params = { id: input._ref }
@@ -25,9 +38,6 @@ export default {
   title: 'Sti',
   titleEN: 'Landing page routes',
   icon: MdLink,
-  initialValue: {
-    useSiteTitle: false,
-  },
   fieldsets: [
     {
       title: 'Page',
@@ -158,12 +168,13 @@ export default {
       slug: 'slug.current',
       label: 'label',
       pageLabel: 'page.label',
-      link: 'link'
+      link: 'link',
+      route: 'route'
     },
-    prepare({ slug, label, pageLabel, link }) {
+    prepare({ slug, label, pageLabel, link, route }) {
       return {
         title: coalesceLabel(label) || pageLabel,
-        subtitle: link ?? ['/', slug].join(''),
+        subtitle: useSubtitle(slug, link, route),
       }
     },
   },

@@ -15,13 +15,30 @@ export default {
     '__i18n_refs': [],
     editorialState: 'review',
     accessState: 'secret',
+    hasType: [{
+      _ref: 'ff60b82d-e943-4328-bac5-b68675cf3cce'
+    }]
   },
   icon: FaMarker,
   fieldsets: defaultFieldsets,
+  groups: [
+    {
+      name: 'content',
+      title: 'Content',
+      default: true
+    },
+    {
+      name: 'core',
+      title: 'Metadata',
+    }
+  ],
   fields: [
     editorialState,
     accessState,
-    labelSingleton,
+    {
+      ...labelSingleton,
+      group: ['core', 'content']
+    },
     identifiedBy,
     /* {
       name: 'slug',
@@ -40,6 +57,7 @@ export default {
       titleEN: 'Author',
       description:
         'Registrer en eller flere aktører som har skapt dette dokumentet, gjerne med hvilken rolle de hadde.',
+      group: 'core',
       type: 'array',
       of: [
         {
@@ -58,6 +76,7 @@ export default {
       name: 'hasType',
       title: 'Klassifisert som',
       titleEN: 'Classified as',
+      group: 'core',
       type: 'array',
       of: [
         {
@@ -77,6 +96,7 @@ export default {
       name: 'categories',
       title: 'Kategorier',
       titleEN: 'Categories',
+      group: 'core',
       type: 'array',
       of: [
         {
@@ -108,6 +128,7 @@ export default {
       title: 'Publikasjonsdato',
       titleEN: 'Published at',
       description: 'This can be used to schedule post for publishing',
+      group: 'core',
       type: 'datetime',
       options: {
         semanticSanity: {
@@ -119,6 +140,7 @@ export default {
       name: 'body',
       title: 'Tekst',
       titleEN: 'Body',
+      group: 'content',
       type: 'blockContent',
       options: {
         semanticSanity: {
@@ -130,20 +152,26 @@ export default {
       name: 'excerpt',
       title: 'Sammendrag',
       titleEN: 'Excerpt',
+      group: 'content',
       description:
         'This ends up on summary pages, on Google, when people share your post in social media.',
-      type: 'blockContent',
+      type: 'text',
       options: {
         semanticSanity: {
           "@type": "@json"
         }
       },
+      validation: Rule => Rule.max(160).warning('Shorter descriptions are better!')
     },
-    image,
+    {
+      ...image,
+      group: 'core'
+    },
     {
       name: 'documentedIn',
       title: 'Documented in',
       titleEN: 'Dokumentert i',
+      group: 'core',
       type: 'array',
       of: [{ type: 'file' }],
       options: {

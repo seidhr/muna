@@ -1,7 +1,8 @@
 import { FaTag } from 'react-icons/fa'
 import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { accessState, altLabel, editorialState, label } from '../../../../properties/datatype'
+import { accessState, altLabel, editorialState, homepage, label } from '../../../../properties/datatype'
+import { identifiedBy, inDataset, sameAs, wasOutputOf } from '../../../../properties/object'
 
 export default {
   name: 'AppelationType',
@@ -19,6 +20,8 @@ export default {
     accessState,
     label,
     altLabel,
+    homepage,
+    identifiedBy,
     {
       name: 'activityStream',
       title: 'Aktivitetsstrøm',
@@ -33,15 +36,20 @@ export default {
         }
       },
     },
+    sameAs,
+    inDataset,
+    wasOutputOf
   ],
   preview: {
     select: {
       title: 'label',
+      imported: 'wasOutputOf'
     },
     prepare(selection) {
-      const { title } = selection
+      const { title, imported } = selection
       return {
         title: coalesceLabel(title),
+        subtitle: imported ? `Importert fra ${imported.hasSender.label}` : 'Lokal'
       }
     },
   },
