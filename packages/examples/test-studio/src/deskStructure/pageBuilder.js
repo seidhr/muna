@@ -5,9 +5,9 @@ import { FaSitemap, FaRoute } from 'react-icons/fa'
 import { CgTemplate } from 'react-icons/cg'
 import { FaGlasses } from 'react-icons/fa'
 import { BsFileRichtext } from 'react-icons/bs'
+import { GiSettingsKnobs } from 'react-icons/gi'
 import blog from './blog'
 import config from 'config:@sanity/document-internationalization';
-import { GiSettingsKnobs } from 'react-icons/gi'
 
 // Not working in latest 0.1.2
 /* const page = Structure.getFilteredDocumentTypeListItems().find(({ id }) => {
@@ -79,19 +79,6 @@ export default S.listItem()
                           .params({ id: catId, baseLanguage: config.base }),
                       ),
                   ),
-                S.listItem().title('Upubliserte tekster').icon(FaGlasses).child(
-                  // List out all categories
-                  S.documentTypeList('LinguisticDocument')
-                    .title('Upubliserte tekster')
-                    .filter('_type == "LinguisticDocument" && accessState == "secret"'),
-                ),
-                S.listItem().title('Til gjennomgang').icon(FaGlasses).child(
-                  // List out all categories
-                  S.documentTypeList('LinguisticDocument')
-                    .title('Til gjennomgang')
-                    .filter('_type == "LinguisticDocument" && editorialState == "review"'),
-                ),
-
                 S.divider(),
                 S.documentTypeListItem('TextType').title('Tekststype'),
               ]),
