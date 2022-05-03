@@ -68,23 +68,61 @@ export default {
   ],
   groups: [
     {
+      name: 'core',
+      title: 'Core',
+      default: true
+    },
+    {
+      name: 'relations',
+      title: 'Relations',
+    },
+    {
+      name: 'partsAndContent',
+      title: 'Parts',
+    },
+    {
       name: 'images',
       title: 'Images'
+    },
+    {
+      name: 'physical',
+      title: 'Physical'
+    },
+    {
+      name: 'ownership',
+      title: 'Ownership'
     }
   ],
   fields: [
-    editorialState,
-    accessState,
-    preferredIdentifier,
-    label,
-    homepage,
+    {
+      ...editorialState,
+      group: 'core'
+    },
+    {
+      ...accessState,
+      group: 'core'
+    },
+    {
+      ...preferredIdentifier,
+      group: 'core'
+    },
+    {
+      ...label,
+      group: 'core'
+    },
+    {
+      ...homepage,
+      group: 'core'
+    },
     {
       ...identifiedBy,
       fieldset: 'core',
+      group: 'core',
     },
     {
       ...referredToBy,
       fieldset: 'core',
+      group: 'core',
     },
     {
       name: 'hasType',
@@ -101,6 +139,7 @@ export default {
       ),
       descriptionEN: '',
       fieldset: 'core',
+      group: 'core',
       of: [
         {
           type: 'reference',
@@ -122,6 +161,7 @@ export default {
       description: 'Hendelser og aktiviteter knyttet til dette objektet.',
       descriptionEN: 'Events and activities connected to this object',
       fieldset: 'core',
+      group: 'core',
       type: 'array',
       of: [
         { type: 'BeginningOfExistence' },
@@ -142,14 +182,17 @@ export default {
     {
       ...subject,
       fieldset: 'core',
+      group: 'core',
     },
     {
       ...subjectOf,
       fieldset: 'core',
+      group: 'core',
     },
     {
       ...license,
       fieldset: 'core',
+      group: 'core',
     },
     {
       ...image,
@@ -221,42 +264,52 @@ export default {
     {
       ...relation,
       fieldset: 'relations',
+      group: 'relations',
     },
     {
       ...presentAt,
       fieldset: 'relations',
+      group: 'relations',
     },
     {
       ...depicts,
       fieldset: 'partsAndContent',
+      group: 'partsAndContent',
     },
     {
       ...showsVisualObject,
       fieldset: 'partsAndContent',
+      group: 'partsAndContent',
     },
     {
       ...carries,
       fieldset: 'partsAndContent',
+      group: 'partsAndContent',
     },
     {
       ...composedOf,
       fieldset: 'partsAndContent',
+      group: 'partsAndContent',
     },
     {
       ...measuredBy,
       fieldset: 'physicalDescription',
+      group: 'physical',
     },
     {
       ...consistsOf,
       fieldset: 'physicalDescription',
+      group: 'physical',
     },
     {
       ...hasCurrentOwner,
       fieldset: 'ownership',
+      group: 'ownership',
     },
     {
       ...hasFormerOrCurrentOwner,
       fieldset: 'ownership',
+      group: 'ownership',
     },
     wasOutputOf
   ],
