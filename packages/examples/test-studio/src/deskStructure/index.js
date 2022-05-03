@@ -107,6 +107,8 @@ export default () =>
       pageBuilder,
       management,
       S.divider(),
+      works,
+      S.divider(),
       humanMadeObject,
       S.listItem()
         .title('Aktører')
@@ -231,9 +233,6 @@ export default () =>
       S.documentTypeListItem('Concept').title('Emner'),
       // TYPE
       types,
-      S.divider(),
-      // WORKS
-      works,
       S.divider(),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
