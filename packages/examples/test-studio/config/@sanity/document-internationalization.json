@@ -1,12 +1,16 @@
 {
   "idStructure": "delimiter",
   "referenceBehavior": "strong",
-  "base": "nb",
+  "base": "no",
   "languages": [
     {
-      "id": "nb",
-      "title": "Bokmål",
+      "id": "no",
+      "title": "Norsk",
       "isDefault": true
+    },
+    {
+      "id": "nb",
+      "title": "Bokmål"
     },
     {
       "id": "nn",
