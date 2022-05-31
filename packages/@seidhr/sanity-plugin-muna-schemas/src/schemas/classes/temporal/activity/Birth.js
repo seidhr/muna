@@ -1,7 +1,7 @@
 import { FaBirthdayCake } from 'react-icons/fa'
 import { defaultFieldsets, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
-import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { carriedOutBy, referredToBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 const capitalize = require('capitalize')
 
@@ -15,17 +15,17 @@ export default {
   fields: [
     featured,
     carriedOutBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     referredToBy
   ],
   preview: {
     select: {
-      bb: 'timespan.0.beginOfTheBegin',
-      eb: 'timespan.0.endOfTheBegin',
-      date: 'timespan.0.date',
-      be: 'timespan.0.beginOfTheEnd',
-      ee: 'timespan.0.endOfTheEnd',
+      bb: 'timespan.beginOfTheBegin',
+      eb: 'timespan.endOfTheBegin',
+      date: 'timespan.date',
+      be: 'timespan.beginOfTheEnd',
+      ee: 'timespan.endOfTheEnd',
       blocks: 'description',
       type: '_type',
     },

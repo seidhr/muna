@@ -3,7 +3,7 @@ import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { Link } from 'part:@sanity/base/router';
 import sanityClient from 'part:@sanity/base/client'
 
-const client = sanityClient.withConfig({ apiVersion: '2021-03-25' })
+const client = sanityClient.withConfig({ apiVersion: '2021-03-25', useCdn: false })
 
 export const preferredIdentifier = {
   name: 'preferredIdentifier',

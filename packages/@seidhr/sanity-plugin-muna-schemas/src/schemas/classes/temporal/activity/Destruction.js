@@ -1,6 +1,6 @@
 import { GiShipWreck } from 'react-icons/gi'
 import { featured } from '../../../properties/datatype'
-import { carriedOutBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { carriedOutBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 export default {
   name: 'Destruction',
@@ -29,7 +29,7 @@ export default {
       },
     },
     carriedOutBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
   ],
   preview: {

@@ -2,7 +2,7 @@
 import { FaRulerCombined } from 'react-icons/fa'
 import { coalesceLabel, defaultFieldsets } from '../../../..'
 import { featured } from '../../../properties/datatype'
-import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { carriedOutBy, referredToBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 export default {
   name: 'Measurement',
@@ -27,7 +27,7 @@ export default {
         }
       },
     },
-    timespan,
+    timespanSingleton,
     carriedOutBy,
     referredToBy,
     tookPlaceAt,

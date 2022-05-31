@@ -1,7 +1,7 @@
 import { FaProjectDiagram } from 'react-icons/fa'
 import { coalesceLabel } from '../../../../helpers'
 import { accessState, editorialState, label } from '../../../properties/datatype'
-import { identifiedBy, referredToBy, timespan } from '../../../properties/object'
+import { identifiedBy, referredToBy, timespanSingleton } from '../../../properties/object'
 
 export default {
   name: 'Project',
@@ -51,7 +51,7 @@ export default {
       fieldset: 'core',
     },
     {
-      ...timespan,
+      ...timespanSingleton,
       fieldset: 'core',
     },
     {

@@ -1,4 +1,6 @@
 import { BiTransfer } from 'react-icons/bi';
+import { hasSender, transferred } from '../../../properties/object';
+import { timestamp } from '../../../properties/datatype';
 
 export default {
   name: 'DataTransferEvent',
@@ -7,35 +9,8 @@ export default {
   titleEN: 'Data transfer event',
   icon: BiTransfer,
   fields: [
-    {
-      name: 'transferred',
-      title: 'Transferred',
-      type: 'DigitalObject',
-      options: {
-        semanticSanity: {
-          "@type": "@json"
-        }
-      },
-    },
-    {
-      name: 'hasSender',
-      title: 'Has sender',
-      type: 'DigitalDevice',
-      options: {
-        semanticSanity: {
-          "@type": "@json"
-        }
-      },
-    },
-    {
-      name: 'timestamp',
-      title: 'Timestamp',
-      type: 'datetime',
-      options: {
-        semanticSanity: {
-          "@type": "xsd:dateTime"
-        }
-      },
-    },
+    transferred,
+    hasSender,
+    timestamp,
   ],
 }

@@ -2,7 +2,7 @@ import { FaGifts } from 'react-icons/fa'
 import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import { accessState, editorialState, labelSingleton } from '../../../properties/datatype'
 import {
-  identifiedBy, referredToBy, subjectOf, timespan, transferredTitleFrom, transferredTitleOf, transferredTitleTo
+  identifiedBy, referredToBy, subjectOf, timespanSingleton, transferredTitleFrom, transferredTitleOf, transferredTitleTo
 } from '../../../properties/object'
 
 export default {
@@ -66,7 +66,7 @@ export default {
         }
       },
     },
-    timespan,
+    timespanSingleton,
     {
       ...transferredTitleOf,
       fieldset: 'ownership',

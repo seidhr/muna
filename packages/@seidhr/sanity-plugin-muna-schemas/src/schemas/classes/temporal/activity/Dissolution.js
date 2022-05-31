@@ -1,7 +1,7 @@
 import { GiLightningDissipation } from 'react-icons/gi'
 import { defaultFieldsets } from '../../../..'
 import { featured } from '../../../properties/datatype'
-import { motivatedBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { motivatedBy, referredToBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 const capitalize = require('capitalize')
 
@@ -34,7 +34,7 @@ export default {
         }
       },
     },
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     motivatedBy,
     referredToBy,

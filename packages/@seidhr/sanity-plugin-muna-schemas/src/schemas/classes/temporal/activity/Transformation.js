@@ -1,7 +1,7 @@
 import { GiTransform } from 'react-icons/gi'
 import { defaultFieldsets } from '../../../../helpers'
 import { featured } from '../../../properties/datatype'
-import { carriedOutBy, referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { carriedOutBy, referredToBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 export default {
   name: 'Transformation',
@@ -31,7 +31,7 @@ export default {
       },
     },
     carriedOutBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     referredToBy,
   ],

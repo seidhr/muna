@@ -1,6 +1,6 @@
 import { IoMdCreate } from 'react-icons/io'
 import { featured } from '../../../properties/datatype'
-import { contributionAssignedBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { contributionAssignedBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 export default {
   name: 'Creation',
@@ -11,18 +11,18 @@ export default {
   fields: [
     featured,
     contributionAssignedBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt
   ],
   preview: {
     select: {
       contributor: 'contributionAssignedBy.0.asignedActor.label',
       contributorName: 'contributionAssignedBy.0.usedName.content',
-      bb: 'timespan.0.beginOfTheBegin',
-      eb: 'timespan.0.endOfTheBegin',
-      date: 'timespan.0.date',
-      be: 'timespan.0.beginOfTheEnd',
-      ee: 'timespan.0.endOfTheEnd',
+      bb: 'timespan.beginOfTheBegin',
+      eb: 'timespan.endOfTheBegin',
+      date: 'timespan.date',
+      be: 'timespan.beginOfTheEnd',
+      ee: 'timespan.endOfTheEnd',
     },
     prepare(selection) {
       const dayjs = require('dayjs')

@@ -4,7 +4,7 @@ import {
   accessState, editorialState, labelSingleton
 } from '../../../properties/datatype'
 import {
-  carriedOutBy, hadParticipant, identifiedBy, referredToBy, timespan, tookPlaceAt, usedGeneralTechnique, usedObjectOfType, usedSpecificObject, usedSpecificTechnique
+  carriedOutBy, hadParticipant, identifiedBy, referredToBy, timespanSingleton, tookPlaceAt, usedGeneralTechnique, usedObjectOfType, usedSpecificObject, usedSpecificTechnique
 } from '../../../properties/object'
 
 export default {
@@ -85,7 +85,7 @@ export default {
         }
       },
     },
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     {
       name: 'consistsOf',

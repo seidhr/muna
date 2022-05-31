@@ -3,7 +3,7 @@ import { MdLink } from 'react-icons/md'
 import config from 'config:@sanity/document-internationalization'
 import { coalesceLabel } from '../../../../../../lib'
 
-const client = sanityClient.withConfig({ apiVersion: '2021-03-25' })
+const client = sanityClient.withConfig({ apiVersion: '2021-03-25', useCdn: false })
 
 const useSubtitle = (slug, link, route) => {
   if (slug) {

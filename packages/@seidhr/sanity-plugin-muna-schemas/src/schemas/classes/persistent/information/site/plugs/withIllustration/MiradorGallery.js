@@ -41,11 +41,16 @@ export default {
       media: 'items.0.manifestRef.image',
       items: 'items'
     },
-    prepare: ({ title, media, items }) => ({
-      title: title,
-      subtitle: `Mirador galleri, ${items?.length ?? '??'} dokument`,
-      media: media ? media : ''
-    }),
+
+    prepare({ title, media, items }) {
+      const count = items.length
+      return {
+        title: title,
+        subtitle: `Mirador galleri, ${count ?? '0'} dokument`,
+        media: media ? media : ''
+      }
+    }
+
   },
 }
 

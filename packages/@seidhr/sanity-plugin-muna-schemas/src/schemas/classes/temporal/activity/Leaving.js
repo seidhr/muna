@@ -1,7 +1,7 @@
 import { GiExitDoor } from 'react-icons/gi'
 import { coalesceLabel, defaultFieldsets, timespanAsString } from '../../../..'
 import { featured } from '../../../properties/datatype'
-import { referredToBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { referredToBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 const capitalize = require('capitalize')
 
@@ -32,7 +32,7 @@ export default {
         }
       },
     },
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     {
       name: 'separatedFrom',
@@ -83,11 +83,11 @@ export default {
     select: {
       type: '_type',
       separatedFrom: 'separatedFrom.label',
-      bb: 'timespan.0.beginOfTheBegin',
-      eb: 'timespan.0.endOfTheBegin',
-      date: 'timespan.0.date',
-      be: 'timespan.0.beginOfTheEnd',
-      ee: 'timespan.0.endOfTheEnd',
+      bb: 'timespan.beginOfTheBegin',
+      eb: 'timespan.endOfTheBegin',
+      date: 'timespan.date',
+      be: 'timespan.beginOfTheEnd',
+      ee: 'timespan.endOfTheEnd',
     },
     prepare(selection) {
       const { type, separatedFrom, bb, eb, date, be, ee } = selection

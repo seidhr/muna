@@ -1,4 +1,5 @@
 import { coalesceLabel } from "../../../.."
+import { assignedRole, assignedActor, usedName } from '../../../properties/object'
 
 export default {
   name: 'ContributionAssignment',
@@ -6,46 +7,9 @@ export default {
   title: 'Bidragspåstand',
   titleEN: 'Contribution Assignment',
   fields: [
-    {
-      name: 'assignedActor',
-      title: 'Aktør',
-      titleEN: 'Actor',
-      type: 'reference',
-      to: [
-        { type: 'Actor' },
-      ],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
-      },
-    },
-    {
-      name: 'assignedRole',
-      title: 'Rolle',
-      titleEN: 'Role',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'Role' }],
-        },
-      ],
-      options: {
-        semanticSanity: {
-          '@container': '@set',
-          '@type': '@id'
-        }
-      },
-    },
-    {
-      name: 'usedName',
-      title: 'Navn',
-      titleEN: 'Name',
-      description: 'Brukes dersom objektet er signert under annet navn enn aktørens fulle navn.',
-      descriptionEN: 'Used if the object is signed with another than the preferred name of the actor.',
-      type: 'Name'
-    },
+    assignedActor,
+    assignedRole,
+    usedName,
   ],
   preview: {
     select: {

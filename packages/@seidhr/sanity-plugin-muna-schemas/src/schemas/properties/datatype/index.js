@@ -9,4 +9,5 @@ export { license } from "./license";
 export { preferredIdentifier } from "./preferredIdentifier";
 export { shortDescription } from "./shortDescription";
 export { sortLabel } from "./sortLabel";
+export { timestamp } from "./timestamp";
 export { valueSlider } from "./valueSlider";

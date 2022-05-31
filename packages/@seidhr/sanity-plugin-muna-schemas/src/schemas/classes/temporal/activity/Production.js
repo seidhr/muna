@@ -5,7 +5,7 @@ import {
   featured
 } from '../../../properties/datatype'
 import {
-  contributionAssignedBy, referredToBy, timespan, tookPlaceAt, usedGeneralTechnique, usedSpecificTechnique
+  contributionAssignedBy, referredToBy, timespanSingleton, tookPlaceAt, usedGeneralTechnique, usedSpecificTechnique
 } from '../../../properties/object'
 
 const capitalize = require('capitalize')
@@ -51,7 +51,7 @@ export default {
       },
     },
     contributionAssignedBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     referredToBy,
     {
@@ -89,11 +89,11 @@ export default {
     select: {
       contributor: 'contributionAssignedBy.0.assignedActor.label',
       contributorName: 'contributionAssignedBy.0.usedName.content',
-      bb: 'timespan.0.beginOfTheBegin',
-      eb: 'timespan.0.endOfTheBegin',
-      date: 'timespan.0.date',
-      be: 'timespan.0.beginOfTheEnd',
-      ee: 'timespan.0.endOfTheEnd',
+      bb: 'timespan.beginOfTheBegin',
+      eb: 'timespan.endOfTheBegin',
+      date: 'timespan.date',
+      be: 'timespan.beginOfTheEnd',
+      ee: 'timespan.endOfTheEnd',
       type: '_type',
     },
     prepare(selection) {

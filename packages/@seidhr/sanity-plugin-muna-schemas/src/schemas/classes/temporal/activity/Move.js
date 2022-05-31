@@ -2,7 +2,7 @@ import { FaTruckLoading } from 'react-icons/fa'
 import { defaultFieldsets } from '../../../../fieldsets/defaultFieldsets'
 import { accessState, editorialState, label } from '../../../properties/datatype'
 import {
-  carriedOutBy, motivatedBy, referredToBy, timespan, tookPlaceAt
+  carriedOutBy, motivatedBy, referredToBy, timespanSingleton, tookPlaceAt
 } from '../../../properties/object'
 
 const capitalize = require('capitalize')
@@ -22,7 +22,7 @@ export default {
     accessState,
     label,
     carriedOutBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt,
     referredToBy,
     {

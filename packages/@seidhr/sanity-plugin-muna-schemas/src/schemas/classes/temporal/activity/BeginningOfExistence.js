@@ -1,7 +1,7 @@
 import { GiStarFormation } from 'react-icons/gi'
 import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import { featured } from '../../../properties/datatype'
-import { contributionAssignedBy, timespan, tookPlaceAt } from '../../../properties/object'
+import { contributionAssignedBy, timespanSingleton, tookPlaceAt } from '../../../properties/object'
 
 export default {
   name: 'BeginningOfExistence',
@@ -12,14 +12,14 @@ export default {
   fields: [
     featured,
     contributionAssignedBy,
-    timespan,
+    timespanSingleton,
     tookPlaceAt
   ],
   preview: {
     select: {
       contributor: 'contributionAssignedBy.0.assignedActor.label',
       contributorName: 'contributionAssignedBy.0.usedName.content',
-      edtf: 'timespan.0.edtf',
+      edtf: 'timespan.edtf',
     },
     prepare(selection) {
       const { contributor, contributorName, edtf } = selection
