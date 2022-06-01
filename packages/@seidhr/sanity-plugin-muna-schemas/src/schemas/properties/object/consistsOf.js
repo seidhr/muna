@@ -9,10 +9,7 @@ export const consistsOf = {
   titleEn: 'Consists of',
   description: (
     <span>
-      Hvilket material objektet er laget av, for eksempel lær og/eller pergament. Legg til{' '}
-      <Link target="blank" href={'/desk/typer;material'}>
-        nytt material
-      </Link>
+      Hvilket material objektet er laget av, for eksempel lær og/eller pergament.
       .{' '}
       <Link target="blank" href={'https://muna.xyz/docs/model/properties#consists-of'}>
         <BsFillQuestionCircleFill />
@@ -21,11 +18,7 @@ export const consistsOf = {
   ),
   descriptionEN: (
     <span>
-      The material the item is produced with, eg. leather and-or parchment. Add{' '}
-      <Link target="blank" href={'/desk/typer;material'}>
-        new material
-      </Link>
-      .{' '}
+      The material the item is produced with, eg. leather and-or parchment.{' '}
       <Link target="blank" href={'https://muna.xyz/docs/model/properties#consists-of'}>
         <BsFillQuestionCircleFill />
       </Link>

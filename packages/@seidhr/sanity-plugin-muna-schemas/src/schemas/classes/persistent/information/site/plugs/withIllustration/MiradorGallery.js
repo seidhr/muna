@@ -43,10 +43,10 @@ export default {
     },
 
     prepare({ title, media, items }) {
-      const count = items.length
+      const count = items?.length ?? 'no'
       return {
-        title: title,
-        subtitle: `Mirador galleri, ${count ?? '0'} dokument`,
+        title: title ?? 'Missing title',
+        subtitle: `Mirador galleri, ${count} document(s)`,
         media: media ? media : ''
       }
     }

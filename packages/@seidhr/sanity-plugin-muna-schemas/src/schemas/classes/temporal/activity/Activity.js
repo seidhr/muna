@@ -1,7 +1,7 @@
 import { FiActivity } from 'react-icons/fi'
 import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import {
-  accessState, editorialState, labelSingleton
+  label, accessState, editorialState,
 } from '../../../properties/datatype'
 import {
   carriedOutBy, hadParticipant, identifiedBy, referredToBy, timespanSingleton, tookPlaceAt, usedGeneralTechnique, usedObjectOfType, usedSpecificObject, usedSpecificTechnique
@@ -33,8 +33,22 @@ export default {
       title: 'Formål med aktiviteten',
       options: { collapsible: true, collapsed: false },
     },
+    {
+      name: 'continuation',
+      title: 'Fortsatt av eller fortsetter...',
+      options: { collapsible: true, collapsed: false, columns: 2 },
+    },
   ],
   groups: [
+    {
+      name: 'core',
+      title: 'Kjernemetadata',
+      default: true
+    },
+    {
+      name: 'continuation',
+      title: 'Tid',
+    },
     {
       name: 'technique',
       title: 'Teknikk'
@@ -42,13 +56,26 @@ export default {
     {
       name: 'purpose',
       title: 'Formål'
-    }
+    },
   ],
   fields: [
+    {
+      ...editorialState,
+      group: 'core',
+    },
+    {
+      ...accessState,
+      group: 'core',
+    },
+    {
+      ...label,
+      group: 'core',
+    },
     {
       name: 'hasType',
       title: 'Aktivitetstype',
       titleEN: 'Activity type',
+      group: 'core',
       type: 'array',
       of: [
         {
@@ -63,13 +90,23 @@ export default {
         }
       },
     },
-    labelSingleton,
-    editorialState,
-    accessState,
     identifiedBy,
-    referredToBy,
-    carriedOutBy,
-    hadParticipant,
+    {
+      ...referredToBy,
+      group: 'core',
+    },
+    {
+      ...timespanSingleton,
+      group: ['core', 'continuation']
+    },
+    {
+      ...carriedOutBy,
+      group: 'core',
+    },
+    {
+      ...hadParticipant,
+      group: 'core',
+    },
     {
       name: 'target',
       title: 'Mål',
@@ -85,8 +122,10 @@ export default {
         }
       },
     },
-    timespanSingleton,
-    tookPlaceAt,
+    {
+      ...tookPlaceAt,
+      group: 'core'
+    },
     {
       name: 'consistsOf',
       title: 'Underaktiviteter',
@@ -104,6 +143,8 @@ export default {
       name: 'continued',
       title: 'Fortsatte',
       titleEN: 'Continued',
+      fieldset: 'continuation',
+      group: 'continuation',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'Activity' }] }],
       options: {
@@ -117,6 +158,8 @@ export default {
       name: 'wasContinuedBy',
       title: 'Ble fortsatt av',
       titleEN: 'Was continued by',
+      fieldset: 'continuation',
+      group: 'continuation',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'Activity' }] }],
       options: {
@@ -248,7 +291,7 @@ export default {
 
 
       return {
-        title: title,
+        title: coalesceLabel(title),
         subtitle: `${coalesceLabel(type)} ${edtf ?? ''}`,
       }
     },

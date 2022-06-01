@@ -8,6 +8,17 @@ export default {
   title: 'Tekst',
   titleEN: 'Text',
   fieldsets: defaultFieldsets,
+  groups: [
+    {
+      name: 'core',
+      title: 'Tekst',
+      default: true,
+    },
+    {
+      name: 'metadata',
+      title: 'Metadata',
+    }
+  ],
   initialValue: {
     editorialState: 'published',
     accessState: 'open',
@@ -18,12 +29,31 @@ export default {
     }
   },
   fields: [
-    editorialState,
-    accessState,
+    {
+      name: 'body',
+      title: 'Tekst',
+      titleEN: 'Body',
+      group: 'core',
+      type: 'blockContent',
+      options: {
+        semanticSanity: {
+          '@type': '@json'
+        }
+      },
+    },
+    {
+      ...editorialState,
+      group: 'core',
+    },
+    {
+      ...accessState,
+      group: 'core',
+    },
     {
       name: 'hasType',
       title: 'Klassifisert som',
       titleEN: 'Classified as',
+      group: 'core',
       type: 'array',
       of: [
         {
@@ -40,20 +70,10 @@ export default {
       },
     },
     {
-      name: 'body',
-      title: 'Tekst',
-      titleEN: 'Body',
-      type: 'blockContent',
-      options: {
-        semanticSanity: {
-          '@type': '@json'
-        }
-      },
-    },
-    {
       name: 'language',
       title: 'Språk',
       titleEN: 'Language',
+      group: 'core',
       type: 'reference',
       to: [{ type: 'Language' }],
       validation: (Rule) => Rule.required(),
@@ -67,6 +87,7 @@ export default {
       name: 'creator',
       title: 'Skaper',
       titleEN: 'Creator',
+      group: 'metadata',
       description:
         'Registrer en eller flere aktører som har skapt dette dokumentet, gjerne med hvilken rolle de hadde.',
       type: 'array',
@@ -86,6 +107,7 @@ export default {
       name: 'publishedAt',
       title: 'Publikasjonsdato',
       titleEN: 'Published at',
+      group: 'metadata',
       description: 'This can be used to schedule post for publishing',
       type: 'datetime',
     },
@@ -93,6 +115,7 @@ export default {
       name: 'documentedIn',
       title: 'Dokumentert i',
       titleEN: 'Documented in',
+      group: 'metadata',
       type: 'array',
       of: [{ type: 'file' }],
       options: {
