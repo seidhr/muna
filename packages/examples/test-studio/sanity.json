@@ -26,7 +26,8 @@
     "@sanity/document-internationalization",
     "@sanity/language-filter",
     "documents-pane",
-    "@sanity/hierarchical-document-list"
+    "@sanity/hierarchical-document-list",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {
