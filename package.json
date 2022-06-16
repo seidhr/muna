@@ -10,9 +10,8 @@
     "unlink-packages": "lerna exec --scope @seidhr/* yarn unlink",
     "link-plugins": "lerna exec --scope *-studio yarn link-plugins",
     "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins",
-    "watch-packages": "lerna exec --scope @seidhr/* --no-bail --parallel yarn watch"
+    "watch-packages": "lerna exec --scope @seidhr/* --no-bail --parallel yarn watch",
+    "dev": "lerna exec --scope *-studio yarn dev"
   },
-  "dependencies": {
-    "global": "^4.4.0"
-  }
+  "dependencies": {}
 }
