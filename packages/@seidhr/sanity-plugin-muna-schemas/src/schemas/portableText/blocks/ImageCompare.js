@@ -1,4 +1,4 @@
-import { labelSingleton } from "../../../../../properties/datatype"
+import { labelSingleton } from "../../properties/datatype"
 
 export default {
   name: 'ImageCompare',

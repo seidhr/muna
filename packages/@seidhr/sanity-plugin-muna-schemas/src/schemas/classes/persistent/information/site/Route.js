@@ -51,6 +51,18 @@ export default {
       description: 'Slett referansen til siden for legge til en sti eller ekstern lenke.',
       options: { collapsible: true, collapsed: false }
     },
+    {
+      title: 'Colors',
+      name: 'colors',
+      description: 'Slett referansen til siden for legge til en sti eller ekstern lenke.',
+      options: { columns: 2 }
+    },
+  ],
+  groups: [
+    {
+      title: 'Colors',
+      name: 'colors',
+    }
   ],
   fields: [
     {
@@ -136,6 +148,20 @@ export default {
         }
       },
     },
+    {
+      name: 'backgroundColor',
+      title: 'Bakgrunnsfarge',
+      type: 'color',
+      fieldset: 'colors',
+      group: 'colors',
+    },
+    {
+      name: 'foregroundColor',
+      title: 'Forgrunnsfarge',
+      type: 'color',
+      fieldset: 'colors',
+      group: 'colors',
+    }
     /* {
       name: 'includeInSitemap',
       title: 'Inkluder i sitemap',

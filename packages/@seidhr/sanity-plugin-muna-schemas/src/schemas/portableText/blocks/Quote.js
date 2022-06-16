@@ -1,9 +1,9 @@
-import { TextPreview } from "../../../../../.."
+import { QuotePreview } from '../../../previews/QuotePreview'
 
 export default {
-  name: 'SectionText',
-  title: 'Text',
+  name: 'Quote',
   type: 'object',
+  title: 'Quote',
   options: {
     semanticSanity: {
       exclude: true
@@ -17,30 +17,27 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'label',
-      title: 'Tittel',
-      titleEN: 'Heading',
-      type: 'string',
+      name: 'content',
+      type: 'simpleBlockContent',
     },
     {
-      name: 'content',
-      title: 'Content',
+      name: 'credit',
       type: 'simpleBlockContent',
     },
   ],
   preview: {
     select: {
-      title: 'label',
       content: 'content',
+      credit: 'credit',
       disabled: 'disabled',
     },
-    prepare({ title, content }) {
+    prepare({ content, credit }) {
       return {
-        title: title ? title : '',
         content: content ? content : '',
-        type: 'Text'
+        credit: credit ? credit : '',
+        type: 'Quote'
       }
     },
-    component: TextPreview,
+    component: QuotePreview,
   },
 }

@@ -119,7 +119,7 @@ export default {
     { type: 'PageHeader' },
     { type: 'Hero' },
     { type: 'BigText' },
-    { type: 'SingleObject' },
+    { type: 'ObjectsBlock' },
     { type: 'MiradorGallery' },
     { type: 'IllustrationWithCaption' },
     { type: 'Gallery' },

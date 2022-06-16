@@ -6,31 +6,27 @@
   "parts": [
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/LocaleBlock"
+      "path": "schemas/portableText/LocaleBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/LocaleBlockReport"
+      "path": "schemas/portableText/LocaleBlockReport"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/LocaleBlockSimple"
+      "path": "schemas/portableText/LocaleBlockSimple"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/blockContent"
+      "path": "schemas/portableText/blockContent"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/quoteBlock"
+      "path": "schemas/portableText/reportText"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/reportText"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/blocks/simpleBlockContent"
+      "path": "schemas/portableText/simpleBlockContent"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -42,11 +38,11 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedText"
+      "path": "schemas/strings/LocalizedString"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedString"
+      "path": "schemas/strings/LocalizedText"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -83,6 +79,70 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/temporal/Period"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/BigText"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/EventSection"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Grid"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Hero"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Iframe"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/ImageCompare"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/InstagramPost"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/ObjectsBlock"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/ObjectsBlockdd"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/PageHeader"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Quote"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/SlideshowStrip"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Table"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/TextBlock"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/TwoColumn"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/Video"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -266,6 +326,38 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/ActorCollection/ActorCollection"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/ActorCollection/SingleActor"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/Gallery"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/Illustration"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/IllustrationWithCaption"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/ItemView"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/MiradorGallery"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/withIllustration/MiradorGalleryWindow"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/conceptual/type/AcquisitionType"
     },
     {
@@ -367,102 +459,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/SiteSettings"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/BigText"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/EventSection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Grid"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Hero"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Iframe"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/ImageCompare"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/InstagramPost"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/PageHeader"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Quote"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SectionText"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/SlideshowStrip"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Table"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/TextWithIllustration"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/TwoColumn"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/Video"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/ActorCollection/ActorCollection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/ActorCollection/SingleActor"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/Gallery"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/Illustration"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/IllustrationWithCaption"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/ItemView"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/MiradorGallery"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/MiradorGalleryWindow"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/information/site/plugs/withIllustration/SingleObject"
     }
   ]
 }

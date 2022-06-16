@@ -1,7 +1,7 @@
-import { coalesceLabel } from "../../../../../../.."
+import { coalesceLabel } from "../../../helpers"
 
 export default {
-  name: 'SingleObject',
+  name: 'ObjectsBlock',
   type: 'object',
   title: 'Single object',
   options: {
@@ -29,8 +29,15 @@ export default {
       name: 'item',
       title: 'Objekt',
       titleEN: 'Item',
-      type: 'reference',
-      to: [{ type: 'HumanMadeObject' }],
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            { type: 'HumanMadeObject' }
+          ],
+        }
+      ]
     },
     {
       name: 'label',

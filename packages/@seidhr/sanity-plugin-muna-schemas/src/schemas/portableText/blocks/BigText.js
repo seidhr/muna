@@ -1,4 +1,4 @@
-import { TextPreview } from '../../../../../../'
+import { TextPreview } from '../../../../src/previews/TextPreview'
 
 export default {
   name: 'BigText',

@@ -1,5 +1,5 @@
-import { coalesceLabel } from "../../../../../../../helpers"
-import { file, image } from "../../../../../../properties/object"
+import { coalesceLabel } from "../../../../helpers"
+import { file, image } from "../../../properties/object"
 
 export default {
   name: 'SingleActor',

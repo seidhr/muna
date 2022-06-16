@@ -25,9 +25,9 @@ export default {
       type: 'array',
       of: [
         { type: 'Hero' },
-        { type: 'SectionText' },
+        { type: 'TextBlock' },
         { type: 'Quote' },
-        { type: 'SingleObject' },
+        { type: 'ObjectsBlock' },
         { type: 'MiradorGallery' },
         { type: 'IllustrationWithCaption' },
         { type: 'EventSection' },

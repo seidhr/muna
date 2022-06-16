@@ -76,7 +76,7 @@ export default {
       name: 'hasType',
       title: 'Klassifisert som',
       titleEN: 'Classified as',
-      group: 'core',
+      group: 'content',
       type: 'array',
       of: [
         {

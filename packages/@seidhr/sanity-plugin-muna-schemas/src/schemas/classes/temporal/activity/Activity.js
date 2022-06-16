@@ -108,21 +108,6 @@ export default {
       group: 'core',
     },
     {
-      name: 'target',
-      title: 'Mål',
-      titleEN: 'Target',
-      type: 'reference',
-      to: [
-        { type: 'Collection' },
-        { type: 'Actor' }
-      ],
-      options: {
-        semanticSanity: {
-          '@type': '@id'
-        }
-      },
-    },
-    {
       ...tookPlaceAt,
       group: 'core'
     },

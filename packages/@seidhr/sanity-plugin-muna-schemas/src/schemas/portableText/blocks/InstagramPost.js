@@ -1,4 +1,4 @@
-import InstagramPreview from '../../../../../../previews/InstagramPreview'
+import InstagramPreview from '../../../previews/InstagramPreview'
 
 export default {
   name: 'InstagramPost',

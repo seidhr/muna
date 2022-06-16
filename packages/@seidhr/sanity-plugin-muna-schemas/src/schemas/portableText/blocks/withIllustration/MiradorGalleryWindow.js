@@ -1,4 +1,4 @@
-import { coalesceLabel } from '../../../../../../..'
+import { coalesceLabel } from '../../../../helpers'
 
 export default {
   title: 'Gallery manifest',

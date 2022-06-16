@@ -1,4 +1,4 @@
-import { image } from '../../../../../../properties/object'
+import { image } from '../../../properties/object'
 
 export default {
   type: 'object',
