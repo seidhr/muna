@@ -30,6 +30,10 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/dimension/Dimension"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/strings/LocalizedKeyword"
     },
     {
@@ -46,7 +50,11 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/dimension/Dimension"
+      "path": "schemas/classes/spacetimevolume/Presence"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/spacetimevolume/SpacetimeVolume"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -55,14 +63,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/place/Storage"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/spacetimevolume/Presence"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/spacetimevolume/SpacetimeVolume"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -82,11 +82,15 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/BigText"
+      "path": "schemas/classes/timespan/Timespan"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/EventSection"
+      "path": "schemas/portableText/blocks/BigTextBlock"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/EventBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -94,43 +98,43 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Hero"
+      "path": "schemas/portableText/blocks/HeroBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Iframe"
+      "path": "schemas/portableText/blocks/IframeBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/ImageCompare"
+      "path": "schemas/portableText/blocks/InstagramBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/InstagramPost"
+      "path": "schemas/portableText/blocks/ObjectBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/ObjectsBlock"
+      "path": "schemas/portableText/blocks/ObjectBlockItem"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/ObjectsBlockdd"
+      "path": "schemas/portableText/blocks/ObjectCompareBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/PageHeader"
+      "path": "schemas/portableText/blocks/PageHeaderBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Quote"
+      "path": "schemas/portableText/blocks/QuoteBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/SlideshowStrip"
+      "path": "schemas/portableText/blocks/SlideshowStripBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Table"
+      "path": "schemas/portableText/blocks/TableBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -138,11 +142,11 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/TwoColumn"
+      "path": "schemas/portableText/blocks/TwoColumnBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Video"
+      "path": "schemas/portableText/blocks/VideoBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -163,6 +167,38 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/conceptual/Work"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/Actor"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/Collection"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/DigitalDevice"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/HumanMadeObject"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Report"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Sampling"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Treatment"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/TreatmentAssessment"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -219,38 +255,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/Set"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/Actor"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/Collection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/DigitalDevice"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/HumanMadeObject"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Report"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Sampling"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Treatment"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/TreatmentAssessment"
     },
     {
       "implements": "part:@sanity/base/schema-type",

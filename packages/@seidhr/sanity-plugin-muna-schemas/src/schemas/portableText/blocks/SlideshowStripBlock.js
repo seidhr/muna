@@ -1,7 +1,7 @@
 export default {
-  name: 'SlideshowStrip',
+  name: 'SlideshowStripBlock',
   type: 'object',
-  title: 'Slideshow-stripe',
+  title: 'Slideshow-strip',
   titleEN: 'Slideshow strip',
   options: {
     semanticSanity: {
@@ -20,7 +20,7 @@ export default {
       title: 'Vinduer',
       titleEN: 'Items',
       type: 'array',
-      of: [{type: 'HumanMadeObject'}],
+      of: [{ type: 'HumanMadeObject' }],
     },
     {
       name: 'heading',
@@ -39,7 +39,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare: ({title}) => ({
+    prepare: ({ title }) => ({
       title: title,
       subtitle: `Slideshow stripe`,
     }),

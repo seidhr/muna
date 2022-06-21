@@ -1,6 +1,6 @@
 export default {
+  name: 'TableBlock',
   type: 'object',
-  name: 'Table',
   title: 'Tabell',
   titleEN: 'Table',
   options: {

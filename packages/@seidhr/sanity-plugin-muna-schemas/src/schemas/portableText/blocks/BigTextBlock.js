@@ -1,7 +1,7 @@
-import { TextPreview } from '../../../../src/previews/TextPreview'
+import { TextPreview } from '../../../previews/TextPreview'
 
 export default {
-  name: 'BigText',
+  name: 'BigTextBlock',
   type: 'object',
   title: 'Stor tekst',
   titleEN: 'Big text',

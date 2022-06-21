@@ -1,7 +1,10 @@
+import { label } from '../../properties/datatype'
+
 export default {
-  name: 'Iframe',
+  name: 'VideoBlock',
   type: 'object',
-  title: 'iFrame',
+  title: 'Video',
+  description: 'Embed video',
   options: {
     semanticSanity: {
       exclude: true
@@ -14,20 +17,14 @@ export default {
       titleEN: 'Disabled',
       type: 'boolean',
     },
-    {
-      name: 'label',
-      title: 'Tittel',
-      titleEN: 'Heading',
-      type: 'string',
-    },
+    label,
     {
       name: 'url',
       title: 'url',
-      description: 'Bruk selve nettadressen fra en iFrame. NB! Bruk med måte.',
       type: 'url',
     },
-  ],
 
+  ],
   preview: {
     select: {
       title: 'label',
@@ -35,9 +32,9 @@ export default {
     },
     prepare({ title, url }) {
       return {
-        title: title ? title : url,
-        subtitle: 'iFrame',
+        title: title,
+        subtitle: `Video: ${url}`,
       }
-    },
+    }
   },
 }

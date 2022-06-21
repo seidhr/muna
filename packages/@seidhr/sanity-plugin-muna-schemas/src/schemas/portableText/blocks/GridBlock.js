@@ -1,7 +1,7 @@
 import { BiGrid } from 'react-icons/bi'
 
 export default {
-  name: 'Grid',
+  name: 'GridBlock',
   type: 'object',
   title: 'Rutenett',
   titleEN: 'Grid',

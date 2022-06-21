@@ -1,7 +1,7 @@
 import { coalesceLabel } from "../../../helpers"
 
 export default {
-  name: 'ObjectsBlock',
+  name: 'ObjectBlock',
   type: 'object',
   title: 'Single object',
   options: {
@@ -11,7 +11,7 @@ export default {
   },
   fields: [
     {
-      name: 'view',
+      name: 'useViewer',
       title: 'Visningsvalg',
       titleEN: 'View choice',
       description: 'Velg enkeltside-visning eller galleri med alle objektets bilder. Bokvisning er standard.',
@@ -19,9 +19,10 @@ export default {
       initialValue: 'book',
       options: {
         list: [
-          { title: 'Book', value: 'book' },
-          { title: 'Single', value: 'single' },
-          { title: 'Gallery', value: 'gallery' },
+          { title: 'Mirador', value: 'mirador' },
+          { title: 'Simple', value: 'yith' },
+          { title: 'Advanced', value: 'clover' },
+          { title: 'Static image', value: 'static' },
         ],
       },
     },
@@ -34,7 +35,7 @@ export default {
         {
           type: 'reference',
           to: [
-            { type: 'HumanMadeObject' }
+            { type: 'ObjectBlockItem' }
           ],
         }
       ]
@@ -50,12 +51,6 @@ export default {
       title: 'Beskrivelse',
       titleEN: 'Description',
       type: 'simpleBlockContent',
-    },
-    {
-      name: 'canvasUrl',
-      title: 'Canvas URL',
-      titleEN: 'Canvas URL',
-      type: 'url',
     },
   ],
   preview: {

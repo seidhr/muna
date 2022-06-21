@@ -1,5 +1,5 @@
 export default {
-  name: 'TwoColumn',
+  name: 'TwoColumnBlock',
   type: 'object',
   title: 'To kolonner',
   titleEN: 'Two column',

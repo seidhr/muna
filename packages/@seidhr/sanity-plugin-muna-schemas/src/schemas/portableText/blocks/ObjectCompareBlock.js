@@ -1,7 +1,7 @@
-import { labelSingleton } from "../../properties/datatype"
+import { label } from "../../properties/datatype"
 
 export default {
-  name: 'ImageCompare',
+  name: 'ObjectCompareBlock',
   type: 'object',
   title: 'Compare images',
   options: {
@@ -10,21 +10,29 @@ export default {
     }
   },
   fields: [
-    labelSingleton,
+    label,
+    {
+      name: 'caption',
+      title: 'Bildetekst',
+      titleEN: 'Caption',
+      type: 'LocalizedString',
+    },
     {
       name: 'before',
       title: 'Before',
       type: 'array',
-      of: [{
-        type: 'DigitalObjectImage'
-      },
-      {
-        type: 'reference',
-        to: [{
-          type: 'HumanMadeObject'
+      of: [
+        {
+          type: 'DigitalObjectImage'
+        },
+        {
+          type: 'reference',
+          to: [{
+            type: 'HumanMadeObject'
+          }
+          ]
         }
-        ]
-      }],
+      ],
       validation: (Rule) => Rule.required(),
     },
     {
@@ -42,12 +50,6 @@ export default {
         ]
       }],
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'caption',
-      title: 'Bildetekst',
-      titleEN: 'Caption',
-      type: 'LocalizedString',
     },
   ],
   preview: {

@@ -1,7 +1,7 @@
 import InstagramPreview from '../../../previews/InstagramPreview'
 
 export default {
-  name: 'InstagramPost',
+  name: 'InstagramBlock',
   type: 'object',
   title: 'Instagram innlegg',
   titleEN: 'Instagram Post',

@@ -1,7 +1,7 @@
 import { QuotePreview } from '../../../previews/QuotePreview'
 
 export default {
-  name: 'Quote',
+  name: 'QuoteBlock',
   type: 'object',
   title: 'Quote',
   options: {

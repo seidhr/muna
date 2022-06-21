@@ -2,7 +2,7 @@ import { coalesceLabel } from "../../../helpers"
 import { image } from "../../properties/object"
 
 export default {
-  name: 'EventSection',
+  name: 'EventBlock',
   type: 'object',
   title: 'Hendelse',
   options: {

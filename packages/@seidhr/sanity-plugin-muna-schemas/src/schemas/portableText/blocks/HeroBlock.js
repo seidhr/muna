@@ -1,5 +1,5 @@
 export default {
-  name: 'Hero',
+  name: 'HeroBlock',
   type: 'object',
   title: 'Hero',
   options: {

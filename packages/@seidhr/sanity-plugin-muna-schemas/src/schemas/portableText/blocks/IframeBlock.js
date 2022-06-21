@@ -1,17 +1,7 @@
-/* import React from 'react'
-import ReactPlayer from 'react-player'
-
-const Youtube = ({value: {url}}) => {
-  return (
-    <ReactPlayer url={url} />
-  )
-} */
-
 export default {
-  name: 'Video',
+  name: 'IframeBlock',
   type: 'object',
-  title: 'Video',
-  description: 'Embed video',
+  title: 'iFrame',
   options: {
     semanticSanity: {
       exclude: true
@@ -33,28 +23,21 @@ export default {
     {
       name: 'url',
       title: 'url',
+      description: 'Bruk selve nettadressen fra en iFrame. NB! Bruk med måte.',
       type: 'url',
     },
-    /*     {
-          name: 'service',
-          title: 'Tjeneste',
-          titleEN: 'Service',
-          type: 'string',
-          options: {
-            list: ['youtube'],
-          },
-        }, */
   ],
+
   preview: {
     select: {
       title: 'label',
       url: 'url',
     },
-    /* component: Youtube, */
     prepare({ title, url }) {
       return {
-        title: `Video: ${url}`,
+        title: title ? title : url,
+        subtitle: 'iFrame',
       }
-    }
+    },
   },
 }

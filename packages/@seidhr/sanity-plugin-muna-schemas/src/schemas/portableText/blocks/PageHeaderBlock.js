@@ -1,5 +1,5 @@
 export default {
-  name: 'PageHeader',
+  name: 'PageHeaderBlock',
   type: 'object',
   title: 'Sideoverskrift',
   titleEN: 'Page Header',
