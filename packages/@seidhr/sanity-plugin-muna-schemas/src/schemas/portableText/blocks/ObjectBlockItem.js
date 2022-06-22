@@ -1,4 +1,5 @@
 import { coalesceLabel } from "../../../helpers"
+import { labelSingleton } from '../../properties/datatype'
 import { image } from '../../properties/object'
 
 export default {
@@ -10,20 +11,6 @@ export default {
       exclude: true
     }
   },
-  fieldsets: [
-    {
-      name: 'internal',
-      title: 'Internt objekt',
-      titleEN: 'Internal object',
-      options: { collapsible: true, collapsed: false },
-    },
-    {
-      name: 'external',
-      title: 'Eksternt objekt',
-      titleEN: 'External object',
-      options: { collapsible: true, collapsed: true },
-    },
-  ],
   initialValue: {
     view: 'single'
   },
@@ -34,12 +21,7 @@ export default {
       titleEN: 'Disabled',
       type: 'boolean',
     },
-    {
-      name: 'label',
-      title: 'Tittel',
-      titleEN: 'Heading',
-      type: 'string',
-    },
+    labelSingleton,
     {
       name: 'description',
       title: 'Beskrivelse',
@@ -50,7 +32,7 @@ export default {
       name: 'view',
       title: 'Visningsvalg',
       titleEN: 'View choice',
-      description: 'Velg enkeltside-visning eller galleri med alle objektets bilder.',
+      description: 'Velg enkeltside-visning eller oppslagsvisning (oppslag bare mulig med Mirador).',
       type: 'string',
       options: {
         list: [
@@ -60,30 +42,33 @@ export default {
       },
     },
     {
-      name: 'manifestRef',
+      name: 'internalRef',
       title: 'Manifest',
       titleEN: 'Manifest',
       type: 'reference',
       to: [{ type: 'HumanMadeObject' }],
-      fieldset: 'internal',
+      /* fieldset: 'internal', */
+      hidden: ({ value, parent }) => !value && parent?.image || parent?.manifestUrl,
     },
     {
       ...image,
-      fieldset: 'internal',
+      /* fieldset: 'illustration', */
+      hidden: ({ value, parent }) => !value && parent?.internalRef || parent?.manifestUrl,
     },
     {
       name: 'manifestUrl',
       title: 'Manifest adresse',
       titleEN: 'Manifest URL',
       type: 'url',
-      fieldset: 'external',
+      /* fieldset: 'external', */
+      hidden: ({ value, parent }) => !value && parent?.image || parent?.internalRef,
     },
     {
       name: 'canvasUrl',
       title: 'Canvas URL',
       titleEN: 'Canvas URL',
       type: 'url',
-      hidden: ({ parent, value }) => !value && !parent?.canvasIndex
+      hidden: ({ parent, value }) => !value && parent?.canvasIndex || parent?.image
     },
     {
       name: 'canvasIndex',
@@ -91,7 +76,7 @@ export default {
       titleEN: 'Canvas number',
       type: 'number',
       validation: Rule => Rule.integer(),
-      hidden: ({ parent, value }) => !value && !parent?.canvasUrl
+      hidden: ({ parent, value }) => !value && parent?.canvasUrl || parent?.image
     },
     {
       name: 'source',
@@ -103,14 +88,16 @@ export default {
   ],
   preview: {
     select: {
+      title: 'label',
       internalManifest: 'manifestRef.label',
       manifestUrl: 'manifestUrl',
       media: 'manifestRef.image',
     },
-    prepare({ internalManifest, manifestUrl, media }) {
+    prepare({ title, internalManifest, manifestUrl, media }) {
       return {
+        title: title,
         // eslint-disable-next-line no-nested-ternary
-        title: internalManifest
+        subtitle: internalManifest
           ? coalesceLabel(internalManifest)
           : manifestUrl
             ? manifestUrl

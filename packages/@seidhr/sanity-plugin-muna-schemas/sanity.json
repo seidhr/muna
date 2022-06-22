@@ -82,10 +82,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/timespan/Timespan"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/blocks/BigTextBlock"
     },
     {
@@ -94,7 +90,7 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/Grid"
+      "path": "schemas/portableText/blocks/GridBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
