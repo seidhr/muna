@@ -116,6 +116,7 @@ export default {
       ],
     },
     { type: 'HeroBlock' },
+    { type: 'BigTextBlock' },
     { type: 'ObjectBlock' },
     { type: 'ObjectCompareBlock' },
     { type: 'VideoBlock' },
