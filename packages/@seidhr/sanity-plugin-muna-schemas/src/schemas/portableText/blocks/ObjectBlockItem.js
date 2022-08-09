@@ -21,7 +21,10 @@ export default {
       titleEN: 'Disabled',
       type: 'boolean',
     },
-    labelSingleton,
+    {
+      ...labelSingleton,
+      validation: null,
+    },
     {
       name: 'description',
       title: 'Beskrivelse',
@@ -89,13 +92,13 @@ export default {
   preview: {
     select: {
       title: 'label',
-      internalManifest: 'manifestRef.label',
+      internalManifest: 'internalRef.label',
       manifestUrl: 'manifestUrl',
-      media: 'manifestRef.image',
+      media: 'internalRef.image',
     },
     prepare({ title, internalManifest, manifestUrl, media }) {
       return {
-        title: title,
+        title: title ?? coalesceLabel(internalManifest),
         // eslint-disable-next-line no-nested-ternary
         subtitle: internalManifest
           ? coalesceLabel(internalManifest)

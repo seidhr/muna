@@ -4,7 +4,7 @@ import { labelSingleton } from '../../properties/datatype'
 export default {
   name: 'ObjectBlock',
   type: 'object',
-  title: 'Single object',
+  title: 'Object(s) block',
   /* validation: Rule => Rule.custom((fields) => {
     const isMultiItem = fields?.item && fields.item.length > 1
     if (isMultiItem && ['clover', 'yith-1-col', 'mirador'].includes(fields?.variant)) {

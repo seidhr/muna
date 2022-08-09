@@ -74,6 +74,7 @@ export { default as ObjectCompareBlock } from "./schemas/portableText/blocks/Obj
 export { default as InstagramBlock } from "./schemas/portableText/blocks/InstagramBlock";
 export { default as PageHeaderBlock } from "./schemas/portableText/blocks/PageHeaderBlock";
 export { default as QuoteBlock } from "./schemas/portableText/blocks/QuoteBlock";
+export { default as CardBlock } from "./schemas/portableText/blocks/CardBlock";
 export { default as TextBlock } from "./schemas/portableText/blocks/TextBlock";
 export { default as SlideshowStripBlock } from "./schemas/portableText/blocks/SlideshowStripBlock";
 export { default as TableBlock } from "./schemas/portableText/blocks/TableBlock";
@@ -124,7 +125,6 @@ export { default as ConditionState } from "./schemas/classes/temporal/ConditionS
 export { default as Event } from "./schemas/classes/temporal/Event";
 export { default as Exhibition } from "./schemas/classes/temporal/Exhibition";
 export { default as Period } from "./schemas/classes/temporal/Period";
-export { default as Timespan } from "./schemas/classes/timespan/Timespan";
 export { accessState } from "./schemas/properties/datatype/accessState";
 export { altLabel } from "./schemas/properties/datatype/altLabel";
 export { editorialState } from "./schemas/properties/datatype/editorialState";

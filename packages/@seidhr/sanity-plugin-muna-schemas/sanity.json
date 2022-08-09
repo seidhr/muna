@@ -6,6 +6,22 @@
   "parts": [
     {
       "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedKeyword"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedSlug"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedString"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/strings/LocalizedText"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/LocaleBlock"
     },
     {
@@ -34,19 +50,11 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedKeyword"
+      "path": "schemas/classes/place/Place"
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedSlug"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedString"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/strings/LocalizedText"
+      "path": "schemas/classes/place/Storage"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -55,14 +63,6 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/spacetimevolume/SpacetimeVolume"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/place/Place"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/place/Storage"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -83,6 +83,10 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/blocks/BigTextBlock"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/portableText/blocks/CardBlock"
     },
     {
       "implements": "part:@sanity/base/schema-type",
@@ -166,38 +170,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/Actor"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/Collection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/DigitalDevice"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/physical/HumanMadeObject"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Report"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Sampling"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/Treatment"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/persistent/report/TreatmentAssessment"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/Dataset"
     },
     {
@@ -251,6 +223,38 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/Set"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/Actor"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/Collection"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/DigitalDevice"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/physical/HumanMadeObject"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Report"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Sampling"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/Treatment"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/persistent/report/TreatmentAssessment"
     },
     {
       "implements": "part:@sanity/base/schema-type",

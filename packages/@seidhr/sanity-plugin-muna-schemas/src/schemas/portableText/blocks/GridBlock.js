@@ -37,29 +37,7 @@ export default {
       title: 'Undertittel',
       titleEN: 'Subtitle',
       fieldset: 'subtitle',
-      type: 'simpleBlockContent',
-    },
-    {
-      name: 'columns',
-      title: 'Kolonner',
-      titleEN: 'Columns',
       type: 'string',
-      options: {
-        list: [
-          {
-            title: '1 kolonne',
-            value: 'max1',
-          },
-          {
-            title: '2 kolonner',
-            value: 'max2',
-          },
-          {
-            title: '3 kolonner',
-            value: 'max3',
-          },
-        ],
-      },
     },
     {
       name: 'items',
@@ -67,63 +45,7 @@ export default {
       titleEN: 'Items',
       type: 'array',
       of: [
-        {
-          name: 'item',
-          type: 'object',
-          fieldsets: [
-            {
-              title: 'Lenke',
-              titleEN: 'Link',
-              name: 'link',
-              description: 'Bare den første av disse tre verdiene vil bli brukt',
-              descriptionEN: 'Only the first value of these will be used',
-            },
-          ],
-          fields: [
-            {
-              name: 'label',
-              type: 'string',
-            },
-            {
-              name: 'content',
-              type: 'blockContent',
-            },
-            {
-              name: 'illustration',
-              title: 'Illustrasjonsbilde',
-              titleEN: 'Illustration',
-              type: 'Illustration',
-            },
-            {
-              name: 'landingPageRoute',
-              title: 'Nettside',
-              titleEN: 'Landing page',
-              description: 'Referanse til en "route" i datasettet',
-              descriptionEN: 'Rerefence to a route in the dataset',
-              fieldset: 'link',
-              type: 'reference',
-              to: [{ type: 'Route' }],
-            },
-            {
-              name: 'route',
-              title: 'Sti',
-              titleEN: 'Path',
-              description: 'Referense til en "path" i frontend, som ikke er i Studioet',
-              descriptionEN: 'Reference to a path in the frontend, not available in the Studio',
-              fieldset: 'link',
-              type: 'string',
-            },
-            {
-              name: 'link',
-              title: 'Ekstern lenke',
-              titleEN: 'External link',
-              description: 'Example: https://www.uib.no/ub',
-              descriptionEN: 'Example: https://www.sanity.io',
-              fieldset: 'link',
-              type: 'string',
-            },
-          ],
-        },
+        { type: 'CardBlock' },
       ],
     },
     {
