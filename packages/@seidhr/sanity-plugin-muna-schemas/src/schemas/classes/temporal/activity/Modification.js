@@ -1,5 +1,6 @@
 import { GiFactory } from 'react-icons/gi'
-import { coalesceLabel, defaultFieldsets } from '../../../../helpers/coalesceLabel'
+import { defaultFieldsets } from '../../../../helpers/coalesceLabel'
+import { timespanAsString } from '../../../../helpers/timespanAsString'
 import {
   featured
 } from '../../../properties/datatype'
@@ -7,11 +8,12 @@ import {
   contributionAssignedBy, referredToBy, timespanSingleton, tookPlaceAt, usedGeneralTechnique, usedSpecificTechnique
 } from '../../../properties/object'
 
+const capitalize = require('capitalize')
 
 export default {
-  name: 'Production',
+  name: 'Modification',
   type: 'document',
-  title: 'Production',
+  title: 'Modification',
   titleEN: 'Produksjon',
   icon: GiFactory,
   fieldsets: defaultFieldsets,
@@ -21,16 +23,14 @@ export default {
       name: 'consistsOf',
       title: 'Underaktiviteter',
       titleEN: 'Sub activities',
-      description: 'OBS! Det er mulig å nøste flere produksjoner under hverandre per i dag, men bare bruk ett nivå!',
       type: 'array',
-      of: [{ type: 'Production' }],
+      of: [{ type: 'Modification' }],
       options: {
         semanticSanity: {
           '@container': '@set',
           '@type': '@id'
         }
       },
-      validation: Rule => Rule.min(2).warning('Prodcution with multiple actors must have at least 2 actors. If there is only one actor do not use "sub-activities"')
     },
     {
       name: 'hasType',
@@ -50,19 +50,10 @@ export default {
         }
       },
     },
-    {
-      ...contributionAssignedBy,
-      hidden: ({ value, parent }) => !value && parent?.consistsOf,
-    },
-    {
-      ...timespanSingleton,
-    },
-    {
-      ...tookPlaceAt,
-    },
-    {
-      ...referredToBy,
-    },
+    contributionAssignedBy,
+    timespanSingleton,
+    tookPlaceAt,
+    referredToBy,
     {
       name: 'hasModified',
       title: 'Har modifisert',
@@ -77,31 +68,41 @@ export default {
         }
       },
     },
+    usedGeneralTechnique,
+    usedSpecificTechnique,
     {
-      ...usedGeneralTechnique,
-      hidden: ({ value, parent }) => !value && parent?.consistsOf,
+      name: 'employed',
+      title: 'Benyttet',
+      titleEN: 'Employed',
+      description: 'WIP, could be a API call to some source of authorities',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'Material' }] }],
+      options: {
+        semanticSanity: {
+          '@container': '@set',
+          '@type': '@id'
+        }
+      },
     },
-    {
-      ...usedSpecificTechnique,
-      hidden: ({ value, parent }) => !value && parent?.consistsOf,
-    }
   ],
   preview: {
     select: {
       contributor: 'contributionAssignedBy.0.assignedActor.label',
       contributorName: 'contributionAssignedBy.0.usedName.content',
-      mainRole: 'contributionAssignedBy.0.assignedRole.0.label',
-      consistsOf: 'consistsOf',
-      edtf: 'timespan.edtf',
+      bb: 'timespan.beginOfTheBegin',
+      eb: 'timespan.endOfTheBegin',
+      date: 'timespan.date',
+      be: 'timespan.beginOfTheEnd',
+      ee: 'timespan.endOfTheEnd',
+      type: '_type',
     },
     prepare(selection) {
-      const { contributor, contributorName, mainRole, consistsOf, edtf } = selection
-      const title = `Production, by ${coalesceLabel(contributor) || contributorName || 'unknown'} ${mainRole ? `(${coalesceLabel(mainRole)})` : ''}`
-      const multiPartProduction = consistsOf ? `${consistsOf.length} participants in the production` : null
+      const { type, contributor, contributorName, bb, eb, date, be, ee } = selection
+      const timespanString = timespanAsString(bb, eb, date, be, ee, 'nb')
 
       return {
-        title: multiPartProduction ?? title,
-        subtitle: edtf
+        title: `${capitalize(type)}, by ${contributor || contributorName || 'unknown'}`,
+        subtitle: timespanString,
       }
     },
   },

@@ -44,6 +44,7 @@ export default {
           { title: 'Static image grid', value: 'static-grid' },
         ],
       },
+      validation: Rule => Rule.required()
     },
     {
       name: 'item',
@@ -59,14 +60,15 @@ export default {
     select: {
       title: 'label',
       itemTitle: 'item.0.label',
-      media: 'item.0.image',
+      object: 'item.0.internalRef.image',
+      item: 'item.0.image',
       variant: 'variant'
     },
-    prepare({ title, itemTitle, media, variant }) {
+    prepare({ title, itemTitle, object, item, variant }) {
       return {
         title: title ?? coalesceLabel(itemTitle),
         subtitle: `Object block [${variant}]`,
-        media: media,
+        media: object ?? item,
       }
     },
   },

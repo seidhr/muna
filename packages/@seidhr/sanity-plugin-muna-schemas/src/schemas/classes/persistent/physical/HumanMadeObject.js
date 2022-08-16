@@ -1,6 +1,4 @@
 import jsonata from 'jsonata'
-import { Link } from 'part:@sanity/base/router'
-import React from 'react'
 import { FaBookDead } from 'react-icons/fa'
 import { coalesceLabel } from '../../../../helpers/coalesceLabel'
 import { accessState, editorialState, homepage, label, license, preferredIdentifier } from '../../../properties/datatype'
@@ -115,29 +113,10 @@ export default {
       group: 'core'
     },
     {
-      ...identifiedBy,
-      fieldset: 'core',
-      group: 'core',
-    },
-    {
-      ...referredToBy,
-      fieldset: 'core',
-      group: 'core',
-    },
-    {
       name: 'hasType',
       type: 'array',
       title: 'Klassifisert som',
       titleEN: 'Classified as',
-      description: (
-        <span>
-          If the correct type is not available, create it here{' '}
-          <Link target="blank" href={'/desk/typer;objectType'}>
-            Object type list
-          </Link>
-        </span>
-      ),
-      descriptionEN: '',
       fieldset: 'core',
       group: 'core',
       of: [
@@ -153,6 +132,16 @@ export default {
           '@type': '@id'
         }
       },
+    },
+    {
+      ...identifiedBy,
+      fieldset: 'core',
+      group: 'core',
+    },
+    {
+      ...referredToBy,
+      fieldset: 'core',
+      group: 'core',
     },
     {
       name: 'activityStream',

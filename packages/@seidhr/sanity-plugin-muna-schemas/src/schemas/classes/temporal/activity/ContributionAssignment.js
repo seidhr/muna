@@ -15,7 +15,7 @@ export default {
     select: {
       actor: 'assignedActor.label',
       name: 'usedName.content',
-      role: 'role.0.label',
+      role: 'assignedRole.0.label',
     },
     prepare(selection) {
       const { actor, name, role } = selection

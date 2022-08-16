@@ -15,7 +15,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'Label',
+      name: 'label',
       title: 'Tittel',
       titleEN: 'Heading',
       type: 'string',
@@ -29,11 +29,19 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'item',
+      title: 'Objekt',
+      titleEN: 'Item',
+      type: 'reference',
+      to: [
+        { type: 'HumanMadeObject' }
+      ],
+    },
+    {
       name: 'illustration',
       title: 'Illustrasjonsbilde',
       titleEN: 'Illustration',
-      description: 'Bakgrunnsbilde under teksten',
-      descriptionEN: 'Illustration below the text',
+      description: 'Illustrasjon som overkjører objektvsiningen, brukes for å kunne tilpasse utsnitt.',
       type: 'Illustration',
     },
   ],
@@ -41,13 +49,14 @@ export default {
     select: {
       title: 'label',
       media: 'illustration',
+      object: 'item.image',
       disabled: 'disabled',
     },
-    prepare({ title, media, disabled }) {
+    prepare({ title, media, object, disabled }) {
       return {
-        title: `${disabled ? 'Avslått' : title}`,
-        subtitle: 'Hero',
-        media: media?.image,
+        title: `${title}`,
+        subtitle: `Hero. ${disabled ? 'Avslått' : ''}`,
+        media: media?.image ?? object,
       }
     },
   },

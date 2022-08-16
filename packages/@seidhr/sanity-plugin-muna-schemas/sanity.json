@@ -50,38 +50,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/place/Place"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/place/Storage"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/spacetimevolume/Presence"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/spacetimevolume/SpacetimeVolume"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/ConditionState"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/Event"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/Exhibition"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/Period"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/blocks/BigTextBlock"
     },
     {
@@ -258,78 +226,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Acquisition"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Activity"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/BeginningOfExistence"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Birth"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/ContributionAssignment"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Creation"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/DataTransferEvent"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Death"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Destruction"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Dissolution"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Formation"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Joining"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Leaving"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Measurement"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Move"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Production"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Project"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/classes/temporal/activity/Transformation"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/blocks/ActorCollection/ActorCollection"
     },
     {
@@ -463,6 +359,114 @@
     {
       "implements": "part:@sanity/base/schema-type",
       "path": "schemas/classes/persistent/information/site/SiteSettings"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/place/Place"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/place/Storage"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/spacetimevolume/Presence"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/spacetimevolume/SpacetimeVolume"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/ConditionState"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/Event"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/Exhibition"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/Period"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Acquisition"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Activity"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/BeginningOfExistence"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Birth"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/ContributionAssignment"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Creation"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/DataTransferEvent"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Death"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Destruction"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Dissolution"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Formation"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Joining"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Leaving"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Measurement"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Modification"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Move"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Production"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Project"
+    },
+    {
+      "implements": "part:@sanity/base/schema-type",
+      "path": "schemas/classes/temporal/activity/Transformation"
     }
   ]
 }

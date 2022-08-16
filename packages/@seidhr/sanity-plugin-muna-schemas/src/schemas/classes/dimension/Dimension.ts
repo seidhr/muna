@@ -38,6 +38,9 @@ export default {
       type: 'reference',
       to: [{ type: 'MeasurementUnit' }],
       validation: (Rule) => Rule.required(),
+      initialValue: {
+        _ref: '8bc9bc96-75d8-444e-80d6-b5b70b990104' // cm
+      }
     },
   ],
   preview: {

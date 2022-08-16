@@ -46,7 +46,7 @@ export default {
     },
     {
       name: 'internalRef',
-      title: 'Manifest',
+      title: 'Object in the studio',
       titleEN: 'Manifest',
       type: 'reference',
       to: [{ type: 'HumanMadeObject' }],
@@ -94,18 +94,25 @@ export default {
       title: 'label',
       internalManifest: 'internalRef.label',
       manifestUrl: 'manifestUrl',
-      media: 'internalRef.image',
+      object: 'internalRef.image',
+      illustration: 'image.asset',
+      source: 'source',
     },
-    prepare({ title, internalManifest, manifestUrl, media }) {
+    prepare({ title, internalManifest, manifestUrl, object, illustration, source }) {
+      const objectLabel = coalesceLabel(internalManifest)
+      const hasIllustration = illustration ? null : 'Illustration'
+      const sourceBlock = (source || []).find(block => block._type === 'block')
+
+      const getSubtitle = objectLabel || manifestUrl || (sourceBlock
+        ? sourceBlock.children
+          .filter(child => child._type === 'span')
+          .map(span => span.text)
+          .join('') : null)
+
       return {
-        title: title ?? coalesceLabel(internalManifest),
-        // eslint-disable-next-line no-nested-ternary
-        subtitle: internalManifest
-          ? coalesceLabel(internalManifest)
-          : manifestUrl
-            ? manifestUrl
-            : '',
-        media: media,
+        title: (title || objectLabel || hasIllustration) ?? 'No label',
+        subtitle: getSubtitle,
+        media: object ?? illustration,
       }
     },
   },

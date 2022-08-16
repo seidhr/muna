@@ -117,6 +117,7 @@ export { default as Formation } from "./schemas/classes/temporal/activity/Format
 export { default as Joining } from "./schemas/classes/temporal/activity/Joining";
 export { default as Leaving } from "./schemas/classes/temporal/activity/Leaving";
 export { default as Measurement } from "./schemas/classes/temporal/activity/Measurement";
+export { default as Modification } from "./schemas/classes/temporal/activity/Measurement";
 export { default as Move } from "./schemas/classes/temporal/activity/Move";
 export { default as Production } from "./schemas/classes/temporal/activity/Production";
 export { default as Project } from "./schemas/classes/temporal/activity/Project";

@@ -1,10 +1,12 @@
-import { label } from '../../properties/datatype'
+import { MdOutlineLocalMovies } from 'react-icons/md'
+import { labelSingleton } from '../../properties/datatype'
 
 export default {
   name: 'VideoBlock',
   type: 'object',
   title: 'Video',
   description: 'Embed video',
+  icon: MdOutlineLocalMovies,
   options: {
     semanticSanity: {
       exclude: true
@@ -17,7 +19,7 @@ export default {
       titleEN: 'Disabled',
       type: 'boolean',
     },
-    label,
+    labelSingleton,
     {
       name: 'url',
       title: 'url',
