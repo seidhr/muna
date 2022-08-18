@@ -34,14 +34,11 @@ export default {
       options: {
         list: [
           { title: 'Mirador', value: 'mirador' },
-          { title: 'Mirador galleri', value: 'mirador-gallery' },
-          { title: 'Big single icon', value: 'yith-1-col' },
-          { title: 'Icon (2 column)', value: 'yith-2-col' },
-          { title: 'Icon (3 column)', value: 'yith-3-col' },
+          { title: 'Icon with modal', value: 'yith' },
           { title: 'Icon banner', value: 'yith-interstitual' },
           { title: 'Single object zoom', value: 'clover' },
           { title: 'Static image', value: 'static' },
-          { title: 'Static image grid', value: 'static-grid' },
+          { title: 'Static image, individual image captions', value: 'static-individual-captions' },
         ],
       },
       validation: Rule => Rule.required()
@@ -55,20 +52,28 @@ export default {
         { type: 'ObjectBlockItem' }
       ],
     },
+    {
+      name: 'source',
+      title: 'Kilde',
+      description: 'Legg til kilde eller kreditering',
+      titleEN: 'Source',
+      type: 'simpleBlockContent',
+    },
   ],
   preview: {
     select: {
       title: 'label',
       itemTitle: 'item.0.label',
-      object: 'item.0.internalRef.image',
-      item: 'item.0.image',
+      objectPreview: 'item.0.internalRef.image',
+      blockPreview: 'item.0.image',
       variant: 'variant'
     },
-    prepare({ title, itemTitle, object, item, variant }) {
+    prepare({ title, itemTitle, objectPreview, blockPreview, variant }) {
+
       return {
         title: title ?? coalesceLabel(itemTitle),
-        subtitle: `Object block [${variant}]`,
-        media: object ?? item,
+        subtitle: `Object block [${variant}]. `,
+        media: objectPreview ?? blockPreview,
       }
     },
   },

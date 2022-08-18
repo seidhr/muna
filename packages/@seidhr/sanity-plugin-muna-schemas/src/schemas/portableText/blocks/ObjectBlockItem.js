@@ -22,16 +22,6 @@ export default {
       type: 'boolean',
     },
     {
-      ...labelSingleton,
-      validation: null,
-    },
-    {
-      name: 'description',
-      title: 'Beskrivelse',
-      titleEN: 'Description',
-      type: 'simpleBlockContent',
-    },
-    {
       name: 'view',
       title: 'Visningsvalg',
       titleEN: 'View choice',
@@ -45,6 +35,16 @@ export default {
       },
     },
     {
+      ...labelSingleton,
+      validation: null,
+    },
+    {
+      name: 'description',
+      title: 'Beskrivelse',
+      titleEN: 'Description',
+      type: 'simpleBlockContent',
+    },
+    {
       name: 'internalRef',
       title: 'Object in the studio',
       titleEN: 'Manifest',
@@ -56,7 +56,7 @@ export default {
     {
       ...image,
       /* fieldset: 'illustration', */
-      hidden: ({ value, parent }) => !value && parent?.internalRef || parent?.manifestUrl,
+      hidden: ({ value, parent }) => !value && parent?.manifestUrl,
     },
     {
       name: 'manifestUrl',
