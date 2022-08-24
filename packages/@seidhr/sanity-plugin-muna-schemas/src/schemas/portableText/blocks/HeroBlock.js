@@ -32,17 +32,7 @@ export default {
       name: 'item',
       title: 'Objekt',
       titleEN: 'Item',
-      type: 'reference',
-      to: [
-        { type: 'HumanMadeObject' }
-      ],
-    },
-    {
-      name: 'illustration',
-      title: 'Illustrasjonsbilde',
-      titleEN: 'Illustration',
-      description: 'Illustrasjon som overkjører objektvsiningen, brukes for å kunne tilpasse utsnitt.',
-      type: 'Illustration',
+      type: 'ObjectBlockItem',
     },
   ],
   preview: {

@@ -71,15 +71,7 @@ export default {
       title: 'Canvas URL',
       titleEN: 'Canvas URL',
       type: 'url',
-      hidden: ({ parent, value }) => !value && parent?.canvasIndex || parent?.image
-    },
-    {
-      name: 'canvasIndex',
-      title: 'Canvas number',
-      titleEN: 'Canvas number',
-      type: 'number',
-      validation: Rule => Rule.integer(),
-      hidden: ({ parent, value }) => !value && parent?.canvasUrl || parent?.image
+      hidden: ({ parent, value }) => !value && parent?.internalRef || parent?.image
     },
     {
       name: 'source',
