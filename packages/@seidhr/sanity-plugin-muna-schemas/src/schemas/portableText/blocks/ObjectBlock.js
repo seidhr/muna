@@ -34,11 +34,12 @@ export default {
       options: {
         list: [
           { title: 'Mirador', value: 'mirador' },
-          { title: 'Icon with modal', value: 'yith' },
+          /* { title: 'Icon with modal', value: 'yith' },
           { title: 'Icon banner', value: 'yith-interstitual' },
-          { title: 'Single object zoom', value: 'clover' },
+          { title: 'Single object zoom', value: 'clover' }, */
           { title: 'Static image', value: 'static' },
           { title: 'Static image, individual image captions', value: 'static-individual-captions' },
+          { title: 'Juxtaposition', value: 'static-compare' },
         ],
       },
       validation: Rule => Rule.required()
