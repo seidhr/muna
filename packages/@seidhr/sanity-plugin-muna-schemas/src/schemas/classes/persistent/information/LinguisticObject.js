@@ -61,7 +61,7 @@ export default {
           to: [{ type: 'TextType' }],
         },
       ],
-      /* validation: (Rule) => Rule.required(), */
+      validation: (Rule) => Rule.required(),
       options: {
         semanticSanity: {
           '@container': '@set',

@@ -111,18 +111,6 @@ export default {
         }
       },
     },
-    /* {
-      name: 'hasTranslation',
-      title: 'Oversettelser',
-      titleEN: 'Has translation',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'LinguisticDocument'}],
-        },
-      ],
-    }, */
     {
       name: 'publishedAt',
       title: 'Publikasjonsdato',
@@ -186,14 +174,15 @@ export default {
       title: 'label',
       blocks: 'excerpt',
       media: 'mainImage',
+      lang: '__i18n_lang',
     },
     prepare(selection) {
-      const { title, blocks, media } = selection
+      const { title, blocks, media, lang } = selection
       const expression = jsonata('nor[0]')
       const block = expression.evaluate(blocks)
 
       return {
-        title: title,
+        title: `${lang} | ${title}`,
         description: block
           ? block.children
             .filter((child) => child._type === 'span')
