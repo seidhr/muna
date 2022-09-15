@@ -1,7 +1,7 @@
 import { FaTag } from 'react-icons/fa'
 import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { altLabel, label } from '../../../../properties/datatype'
+import { altLabel, definition, label } from '../../../../properties/datatype'
 
 export default {
   name: 'Role',
@@ -16,6 +16,7 @@ export default {
   fields: [
     label,
     altLabel,
+    definition,
     {
       name: 'activityStream',
       title: 'Aktivitetsstrøm',
