@@ -1,6 +1,7 @@
 export { accessState } from "./accessState";
 export { altLabel } from "./altLabel";
 export { editorialState } from "./editorialState";
+export { definition } from "./definition";
 export { featured } from "./featured";
 export { homepage } from "./homepage";
 export { label } from "./label";

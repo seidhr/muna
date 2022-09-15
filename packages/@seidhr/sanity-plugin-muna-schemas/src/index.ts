@@ -129,6 +129,7 @@ export { default as Period } from "./schemas/classes/temporal/Period";
 export { accessState } from "./schemas/properties/datatype/accessState";
 export { altLabel } from "./schemas/properties/datatype/altLabel";
 export { editorialState } from "./schemas/properties/datatype/editorialState";
+export { definition } from "./schemas/properties/datatype/definition";
 export { featured } from "./schemas/properties/datatype/featured";
 export { homepage } from "./schemas/properties/datatype/homepage";
 export { label } from "./schemas/properties/datatype/label";

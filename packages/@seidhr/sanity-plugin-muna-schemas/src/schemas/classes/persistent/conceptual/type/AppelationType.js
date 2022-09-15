@@ -1,7 +1,7 @@
 import { FaTag } from 'react-icons/fa'
 import { defaultFieldsets } from '../../../../../fieldsets/defaultFieldsets'
 import { coalesceLabel } from '../../../../../helpers/coalesceLabel'
-import { accessState, altLabel, editorialState, homepage, label } from '../../../../properties/datatype'
+import { accessState, altLabel, definition, editorialState, homepage, label } from '../../../../properties/datatype'
 import { identifiedBy, inDataset, sameAs, wasOutputOf } from '../../../../properties/object'
 
 export default {
@@ -22,6 +22,7 @@ export default {
     altLabel,
     homepage,
     identifiedBy,
+    definition,
     {
       name: 'activityStream',
       title: 'Aktivitetsstrøm',
