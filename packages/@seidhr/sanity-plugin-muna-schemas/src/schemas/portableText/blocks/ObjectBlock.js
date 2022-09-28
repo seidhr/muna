@@ -45,7 +45,7 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'item',
+      name: 'items',
       title: 'Objekt',
       titleEN: 'Item',
       type: 'array',

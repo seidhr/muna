@@ -18,7 +18,7 @@ export default {
       type: 'boolean',
     },
     {
-      name: 'item',
+      name: 'items',
       title: 'Objekt',
       titleEN: 'Item',
       type: 'reference',

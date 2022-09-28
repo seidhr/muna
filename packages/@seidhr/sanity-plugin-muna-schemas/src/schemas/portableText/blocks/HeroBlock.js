@@ -29,7 +29,7 @@ export default {
       type: 'blockContent',
     },
     {
-      name: 'item',
+      name: 'items',
       title: 'Objekt',
       titleEN: 'Item',
       type: 'ObjectBlockItem',
