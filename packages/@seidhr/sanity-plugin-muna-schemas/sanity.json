@@ -226,14 +226,6 @@
     },
     {
       "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/ActorCollection/ActorCollection"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
-      "path": "schemas/portableText/blocks/ActorCollection/SingleActor"
-    },
-    {
-      "implements": "part:@sanity/base/schema-type",
       "path": "schemas/portableText/blocks/withIllustration/Gallery"
     },
     {

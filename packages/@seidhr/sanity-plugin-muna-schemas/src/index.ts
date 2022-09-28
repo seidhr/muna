@@ -63,8 +63,6 @@ export { default as Manifest } from "./schemas/classes/persistent/information/Ma
 export { default as Set } from "./schemas/classes/persistent/information/Set";
 export { default as OpenGraph } from "./schemas/classes/persistent/information/site/OpenGraph";
 export { default as Page } from "./schemas/classes/persistent/information/site/Page";
-export { default as ActorCollection } from "./schemas/portableText/blocks/ActorCollection/ActorCollection";
-export { default as SingleActor } from "./schemas/portableText/blocks/ActorCollection/SingleActor";
 export { default as BigTextBlock } from "./schemas/portableText/blocks/BigTextBlock";
 export { default as EventBlock } from "./schemas/portableText/blocks/EventBlock";
 export { default as GridBlock } from "./schemas/portableText/blocks/GridBlock";
