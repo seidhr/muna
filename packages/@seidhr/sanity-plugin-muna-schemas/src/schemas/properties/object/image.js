@@ -1,6 +1,6 @@
+import { Link } from 'part:@sanity/base/router';
 import React from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
-import { Link } from 'part:@sanity/base/router';
 
 
 export const image = {
@@ -23,7 +23,7 @@ export const image = {
       </Link>
     </span>
   ),
-  type: 'DigitalImageObject',
+  type: 'DigitalObjectImage',
   options: {
     hotspot: true,
     semanticSanity: {

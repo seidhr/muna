@@ -1,6 +1,6 @@
 {
   "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Just links to Muna documentation",
   "main": "./lib/index.js",
   "scripts": {
@@ -20,6 +20,7 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@sanity/ui": "^0.37.5",
     "@seidhr/react-muna-logo": "latest"
   },
   "devDependencies": {

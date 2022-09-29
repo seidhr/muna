@@ -4,5 +4,10 @@
     "packages/@seidhr/*",
     "packages/examples/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "ignoreChanges": [
+    "**/__fixtures__/**",
+    "**/__tests__/**",
+    "**/*.md"
+  ]
 }

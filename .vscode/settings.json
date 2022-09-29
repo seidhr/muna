@@ -1,0 +1,15 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "conventionalCommits.scopes": [
+    "timespan-input",
+    "muna-schemas",
+    "muna-data-importer",
+    "semantic-sanity",
+    "docs",
+    "example-studio"
+  ],
+}

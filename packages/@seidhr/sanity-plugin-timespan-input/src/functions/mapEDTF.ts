@@ -1,6 +1,6 @@
 import { Timespan } from '../types'
-import { toDate, utcToZonedTime, format } from 'date-fns-tz'
-import { fromUnixTime, getUnixTime } from 'date-fns'
+import { utcToZonedTime, format } from 'date-fns-tz'
+import { fromUnixTime } from 'date-fns'
 
 const getDateFromDateTime = (unix: number) => {
   const date = format(utcToZonedTime(fromUnixTime(unix / 1000), 'UTC'), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", { timeZone: 'UTC' })
@@ -14,7 +14,7 @@ const getDateFromDate = (unix: number) => {
 
 /**
  * Remember to handle errors
- * @param {object} edtf edtf object
+ * @param {object} edtf edtf object
  * @returns Timespan object
  */
 export const mapEDTF = (edtf: any): Timespan => {
@@ -41,5 +41,4 @@ export const mapEDTF = (edtf: any): Timespan => {
   }
   // console.log('returning', timespan)
   return timespan
-
 }

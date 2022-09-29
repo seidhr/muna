@@ -6,7 +6,7 @@ export const altLabel = {
   name: 'altLabel',
   title: 'Alternativt navn',
   titleEN: 'Alternative label',
-  type: 'LocaleString',
+  type: 'LocalizedString',
   options: {
     semanticSanity: {
       '@container': '@language',

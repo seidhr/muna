@@ -2,7 +2,6 @@ import React from 'react';
 import { BsFillQuestionCircleFill } from 'react-icons/bs';
 import { Link } from 'part:@sanity/base/router';
 
-
 export const depicts = {
   name: 'depicts',
   title: 'Avbilder',

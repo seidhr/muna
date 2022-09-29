@@ -20,6 +20,12 @@ export const AppSettings = {
         type: "elasticsearch",
         url: "https://jambo.uib.no/elasticsearch",
       }
+    },
+    skeivtarkiv: {
+      latest: {
+        type: "elasticsearch",
+        url: "https://jambo.uib.no/elasticsearch",
+      }
     }
   }
 } as const

@@ -1,4 +1,3 @@
-
 export const timespanSingleton = {
   name: 'timespan',
   title: 'Tidsspenn',
@@ -6,8 +5,6 @@ export const timespanSingleton = {
   type: 'Timespan',
   options: {
     editModal: 'fullscreen',
-  },
-  options: {
     semanticSanity: {
       '@type': '@id'
     }

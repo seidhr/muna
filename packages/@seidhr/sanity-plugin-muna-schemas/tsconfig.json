@@ -4,7 +4,6 @@
     "./node_modules/@sanity/base/types/**/*.tsx",
     "./**/*.ts",
     "./**/*.tsx",
-    "src/schema/Timespan.tss"
   ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -14,5 +13,5 @@
       "dom",
       "ES2017"
     ]
-  }
+  },
 }

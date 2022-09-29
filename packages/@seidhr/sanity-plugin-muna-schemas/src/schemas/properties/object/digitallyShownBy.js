@@ -8,7 +8,7 @@ export const digitallyShownBy = {
   fieldset: 'representation',
   type: 'array',
   of: [
-    { type: 'DigitalImageObject' },
+    { type: 'image' },
   ],
   options: {
     hotspot: true,
