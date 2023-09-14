@@ -1,4 +1,3 @@
-import React from 'react'
 import Widget from './Widget'
 import { DashboardWidget, LayoutConfig } from '@sanity/dashboard'
 

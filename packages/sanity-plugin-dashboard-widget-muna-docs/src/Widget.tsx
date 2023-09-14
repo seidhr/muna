@@ -1,8 +1,9 @@
 import { Card, Heading, Text } from '@sanity/ui'
 import { DashboardWidgetContainer } from '@sanity/dashboard'
 import { SeidhrLogo } from '@seidhr/react-muna-logo'
+import { MunaDocsWidgetConfig } from './plugin'
 
-const Widget = () => {
+const Widget = (props: MunaDocsWidgetConfig) => {
   return (
     <DashboardWidgetContainer header="Muna Documentation">
       <Card padding={[2, 2, 3, 3]}>
