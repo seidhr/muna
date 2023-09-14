@@ -69,3 +69,6 @@ yalc.lock
 
 # Compiled plugin
 dist
+
+# Sanity studio
+.sanity
