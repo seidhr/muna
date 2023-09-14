@@ -4,6 +4,7 @@ import { dashboardTool } from "@sanity/dashboard";
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
 import { myPlugin } from '@seidhr/sanity-plugin-muna-kulturnav-api'
+import { munaDocsWidget } from '@seidhr/sanity-plugin-dashboard-widget-muna-docs'
 
 export default defineConfig({
   name: 'default',
@@ -15,7 +16,12 @@ export default defineConfig({
   plugins: [
     deskTool(),
     visionTool(),
-    dashboardTool({ widgets: [] })
+    dashboardTool({
+      widgets: [
+        munaDocsWidget({ layout: { width: 'small' } }),
+      ]
+    }),
+    myPlugin({})
   ],
 
   schema: {

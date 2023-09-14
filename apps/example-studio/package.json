@@ -17,7 +17,8 @@
   "dependencies": {
     "@sanity/dashboard": "^3.1.5",
     "@sanity/vision": "^3.16.4",
-    "@seidhr/sanity-plugin-muna-kulturnav-api": "^1.0.0",
+    "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "*",
+    "@seidhr/sanity-plugin-muna-kulturnav-api": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -31,6 +32,9 @@
     "eslint": "^8.6.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "@sanity/dashboard": "^3.1.5"
   },
   "prettier": {
     "semi": false,
