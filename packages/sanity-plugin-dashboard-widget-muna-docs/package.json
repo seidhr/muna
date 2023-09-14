@@ -2,46 +2,92 @@
   "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
   "version": "1.1.0",
   "description": "Just links to Muna documentation",
-  "main": "./lib/index.js",
-  "scripts": {
-    "build": "sanipack build",
-    "watch": "sanipack build --watch",
-    "prepublishOnly": "sanipack build && sanipack verify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/seidhr/muna.git",
-    "directory": "packages/@seidhr/sanity-plugin-dashboard-widget-muna-docs"
-  },
   "keywords": [
     "sanity",
     "sanity-plugin"
   ],
-  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@sanity/ui": "^0.37.5",
-    "@seidhr/react-muna-logo": "latest"
-  },
-  "devDependencies": {
-    "eslint": "7.20.0",
-    "eslint-config-prettier": "7.2.0",
-    "eslint-config-sanity": "5.0.0",
-    "eslint-plugin-react": "7.22.0",
-    "prettier": "2.4.1",
-    "sanipack": "2.1.0"
-  },
-  "peerDependencies": {
-    "react": "^17.0.0"
-  },
+  "homepage": "https://github.com/seidhr/muna#readme",
   "bugs": {
     "url": "https://github.com/seidhr/muna/issues"
   },
-  "homepage": "https://github.com/seidhr/muna#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:seidhr/muna.git"
+  },
+  "license": "MIT",
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "source": "./src/index.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
+  "scripts": {
+    "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
+    "dev": "npm run link-watch",
+    "watch": "pkg-utils watch --strict",
+    "prepublishOnly": "run-s build",
+    "clean": "rimraf dist",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@sanity/incompatible-plugin": "^1.0.4",
+    "@sanity/ui": "^1.8.2",
+    "@seidhr/react-muna-logo": "*"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^2.4.8",
+    "@sanity/plugin-kit": "^3.1.10",
+    "@types/react": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-sanity": "^6.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "sanipack": "2.1.0",
+    "styled-components": "^5.3.11",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@sanity/dashboard": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3",
+    "styled-components": "^5.3.11"
+  },
+  "engines": {
+    "node": ">=14"
+  },
   "prettier": {
     "semi": false,
     "printWidth": 100,
-    "bracketSpacing": false,
+    "bracketSpacing": true,
     "singleQuote": true
   },
   "eslintConfig": {
