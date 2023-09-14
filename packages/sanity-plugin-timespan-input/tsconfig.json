@@ -1,0 +1,17 @@
+{
+  "include": [
+    "./node_modules/@sanity/base/types/**/*.ts",
+    "./node_modules/@sanity/base/types/**/*.tsx",
+    "./**/*.ts",
+    "./**/*.tsx"
+  ],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "ES2017"
+    ]
+  }
+}
