@@ -6,10 +6,3 @@ NPM packages are all scoped to `@seidhr`.
 
 ## Development
 
-```bash
-# Install
-lerna bootstrap
-
-# Build and Link all packages in packages/@seidhr and link plugins in studios
-yarn quick-start
-```

@@ -1,17 +1,11 @@
 {
   "name": "@seidhr/muna",
   "private": true,
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build-packages": "lerna exec --scope @seidhr/* yarn build",
-    "link-packages": "lerna exec --scope @seidhr/* yarn link",
-    "unlink-packages": "lerna exec --scope @seidhr/* yarn unlink",
-    "link-plugins": "lerna exec --scope *-studio yarn link-plugins",
-    "quick-start": "yarn build-packages && yarn link-packages && yarn link-plugins",
-    "watch-packages": "lerna exec --scope @seidhr/* --no-bail --parallel yarn watch",
-    "dev": "lerna exec --scope *-studio yarn dev"
-  },
-  "dependencies": {}
+    "dev": "turbo run dev"
+  }
 }
