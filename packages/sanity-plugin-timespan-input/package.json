@@ -2,18 +2,6 @@
   "name": "@seidhr/sanity-plugin-timespan-input",
   "version": "2.0.2",
   "description": "Make it easier to add timespan information with the help of Extended Date Time Format (EDTF).",
-  "main": "lib/index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "build": "sanipack build",
-    "watch": "sanipack build --watch",
-    "prepublishOnly": "sanipack build && sanipack verify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/seidhr/muna.git",
-    "directory": "packages/@seidhr/sanity-plugin-timespan-input"
-  },
   "keywords": [
     "sanity",
     "sanity-plugin",
@@ -21,45 +9,88 @@
     "cidoc-crm",
     "timespan"
   ],
-  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@sanity/form-builder": "^2.22.3",
-    "@visx/group": "^2.1.0",
-    "@visx/hierarchy": "^2.1.2",
-    "@visx/responsive": "^2.4.1",
-    "@visx/shape": "^2.4.0",
-    "@visx/text": "^2.1.2",
-    "date-fns": "^2.28.0",
-    "date-fns-tz": "^1.2.2",
-    "edtf": "https://github.com/SylvainBigonneau/browser-edtf.js"
-  },
-  "devDependencies": {
-    "@sanity/base": "^2.22.3",
-    "@sanity/client": "^2.22.3",
-    "@sanity/types": "^2.22.3",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-sanity": "^5.1.0",
-    "eslint-plugin-react": "^7.26.1",
-    "prettier": "^2.4.1",
-    "sanipack": "^2.1.0",
-    "typescript": "^4.4.4"
-  },
-  "peerDependencies": {
-    "@sanity/base": "^2.23.0",
-    "@types/react": "^17",
-    "react": "^17"
-  },
+  "homepage": "https://github.com/seidhr/muna#readme",
   "bugs": {
     "url": "https://github.com/seidhr/muna/issues"
   },
-  "homepage": "https://github.com/seidhr/muna#readme",
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:seidhr/muna.git"
+  },
+  "license": "MIT",
+  "author": "Tarje Lavik <tarje.lavik@gmail.com>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "source": "./src/index.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
+    "dev": "npm run link-watch",
+    "watch": "pkg-utils watch --strict",
+    "prepublishOnly": "run-s build",
+    "clean": "rimraf dist",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch"
+  },
+  "dependencies": {
+    "@sanity/incompatible-plugin": "^1.0.4",
+    "@sanity/ui": "^1.8.2",
+    "@visx/group": "^3.3.0",
+    "@visx/hierarchy": "^3.3.0",
+    "@visx/responsive": "^3.3.0",
+    "@visx/shape": "^3.3.0",
+    "@visx/text": "^3.3.0",
+    "date-fns": "^2.28.0",
+    "date-fns-tz": "^1.2.2",
+    "edtf": "https://github.com/tarjelavik/edtf.js#unassert"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^2.4.8",
+    "@sanity/plugin-kit": "^3.1.10",
+    "@types/react": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-sanity": "^6.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "sanity": "^3.16.4",
+    "styled-components": "^5.3.11",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^18",
+    "react": "^18",
+    "sanity": "^3"
+  },
+  "engines": {
+    "node": ">=14"
   },
   "eslintConfig": {
     "parser": "sanipack/babel/eslint-parser",

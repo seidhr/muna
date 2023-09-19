@@ -1,8 +1,11 @@
-import React from 'react'
-import EDTFInput from './components/Input';
+import { definePlugin } from 'sanity'
+import { timespan } from './schemas/Timespan'
 
-export default {
-  title: 'EDTF Input test',
-  name: 'edtf-Input',
-  component: EDTFInput,
-};
+export const timespanInput = definePlugin({
+  name: '@seidhr/sanity-plugin-timespan-input',
+  schema: {
+    types: [timespan],
+  },
+})
+
+export { timespan }
