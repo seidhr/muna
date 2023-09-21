@@ -1,16 +1,18 @@
 /* eslint-disable prettier/prettier */
 import { useCallback, useEffect } from 'react'
-import { FieldMember, ObjectInputMember, ObjectInputProps, InputProps, set, unset } from 'sanity'
+import { FieldMember, MemberField, ObjectInputProps, InputProps, set, unset } from 'sanity'
 import { Card, Stack } from '@sanity/ui'
 import { mapEDTF } from './mapEDTF'
 import edtf from 'edtf'
 import { Patch, Timespan } from './types'
 import { TimespanPreview } from './components/timespan'
 
+export type TimespanInputCallbackProps = Omit<InputProps, 'renderDefault'>
+
 // Extend the `ObjectInputProps` type
 export type TimespanInputProps = ObjectInputProps<Timespan>
 
-export function TimespanInput(props: TimespanInputProps) {
+export function TimespanInput(props: ObjectInputProps) {
   const { value, members, onChange, renderField, renderInput, renderItem, renderPreview } = props
 
   const edtfMember = members.find(
@@ -63,7 +65,7 @@ export function TimespanInput(props: TimespanInputProps) {
   }, [value])
 
   const customRenderInput = useCallback(
-    (renderInputCallbackProps: InputProps) => {
+    (renderInputCallbackProps: TimespanInputCallbackProps) => {
       // Add TimespanPreview to the renderInput function
       return (
         <Stack>
@@ -79,7 +81,7 @@ export function TimespanInput(props: TimespanInputProps) {
   return (
     <Stack space={2}>
       {edtfMember && (
-        <ObjectInputMember
+        <MemberField
           member={edtfMember}
           renderInput={customRenderInput}
           renderField={renderField}
