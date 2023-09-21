@@ -5,7 +5,7 @@ import { Card, Stack } from '@sanity/ui'
 import { mapEDTF } from './mapEDTF'
 import edtf from 'edtf'
 import { Patch, Timespan } from './types'
-import { TimespanPreview } from './components/timespan'
+import { Preview } from './components'
 
 export type TimespanInputCallbackProps = Omit<InputProps, 'renderDefault'>
 
@@ -71,7 +71,7 @@ export function TimespanInput(props: ObjectInputProps) {
         <Stack>
           {/* Call the original renderInput function, passing along input props */}
           <Card>{renderInput(renderInputCallbackProps)}</Card>
-          {value && <TimespanPreview value={value} />}
+          {value && <Preview value={value} />}
         </Stack>
       )
     },

@@ -3,11 +3,11 @@ import { ReactNode } from 'react'
 import { Box, Flex } from '@sanity/ui'
 import { Period } from './period'
 
-export function TimespanPreview({ value }: any): ReactNode {
-  const { beginOfTheBegin, endOfTheBegin, beginOfTheEnd, endOfTheEnd } = value
+export function Preview({ value }: any): ReactNode {
+  const { beginOfTheBegin, endOfTheBegin, beginOfTheEnd, endOfTheEnd, date } = value
   return (
     <>
-      {beginOfTheBegin || endOfTheBegin || beginOfTheEnd || endOfTheEnd ? (
+      {beginOfTheBegin || endOfTheBegin || beginOfTheEnd || endOfTheEnd || date ? (
         <Flex
           direction={'row'}
           justify={'center'}
@@ -16,6 +16,7 @@ export function TimespanPreview({ value }: any): ReactNode {
           width={'100%'}
           style={{ fontSize: '12px' }}
         >
+          {date && !beginOfTheBegin && !endOfTheBegin && !endOfTheEnd && !beginOfTheEnd && <></>}
           {!beginOfTheBegin && !endOfTheBegin && endOfTheEnd && beginOfTheEnd && (
             <Period name={'Unknown start'} variant="unknown" />
           )}
