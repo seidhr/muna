@@ -30,7 +30,10 @@ export const Period = ({
       break
     case 'certain':
       bg = {
-        backgroundColor: '#444',
+        backgroundImage:
+          'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
+        backgroundSize: '5px 5px',
+        backgroundColor: '#ffffff',
         borderBlockEnd: '1px solid #444',
       }
       break

@@ -18,7 +18,6 @@ export interface EDTF {
 }
 
 export type Timespan = {
-  _type?: 'Timespan'
   edtf?: string
   beginOfTheBegin?: string
   endOfTheBegin?: string
