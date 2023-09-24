@@ -13,7 +13,6 @@ module.exports = {
   ref: true,
   memo: true,
   dimentions: true,
-  svgo: true,
   svgoConfig: {
     plugins: [
       { // Include default optimisations
