@@ -24,7 +24,6 @@ export function TimespanInput(props: ObjectInputProps) {
       let edtfValue
       try {
         edtfValue = edtf(value?.edtf)
-
         const edtfMapped = mapEDTF(edtfValue)
         const timespanPatches = edtfMapped?.map((e: Patch) => set(e.value, e.path))
         const patches =
@@ -53,6 +52,7 @@ export function TimespanInput(props: ObjectInputProps) {
         ])
       }
     }
+    // Adding onChange as a dependency will cause an infinite loop
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.value?._type, value?.edtf])
 
@@ -61,6 +61,7 @@ export function TimespanInput(props: ObjectInputProps) {
     if (!value?.edtf) {
       onChange([unset()])
     }
+    // Adding onChange as a dependency will cause an infinite loop
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
