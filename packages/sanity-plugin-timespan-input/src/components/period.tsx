@@ -25,6 +25,7 @@ export const Period = ({
           'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
         backgroundSize: '5px 5px',
         backgroundColor: '#ffffff',
+        borderBlockStart: '1px solid #444',
         borderBlockEnd: '1px solid #444',
       }
       break
@@ -34,16 +35,19 @@ export const Period = ({
           'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
         backgroundSize: '5px 5px',
         backgroundColor: '#ffffff',
+        borderBlockStart: '1px solid #444',
         borderBlockEnd: '1px solid #444',
       }
       break
     case 'unknown':
       bg = {
+        borderBlockStart: '1px solid #444',
         borderBlockEnd: '1px solid #444',
       }
       break
     case 'infinity':
       bg = {
+        borderBlockStart: '1px solid #444',
         borderBlockEnd: '1px solid #444',
       }
       break

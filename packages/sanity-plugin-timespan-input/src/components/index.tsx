@@ -16,6 +16,15 @@ export function Preview({ value }: any): ReactNode {
           width={'100%'}
           style={{ fontSize: '12px' }}
         >
+          <Box
+            flex={0}
+            style={{
+              position: 'relative',
+              height: '31px',
+              minWidth: '25px',
+              borderBlockEnd: '1px dashed #aaa',
+            }}
+          />
           {date && !beginOfTheBegin && !endOfTheBegin && !endOfTheEnd && !beginOfTheEnd && <></>}
           {!beginOfTheBegin && !endOfTheBegin && endOfTheEnd && beginOfTheEnd && (
             <Period name={'Unknown start'} variant="unknown" />
@@ -33,6 +42,15 @@ export function Preview({ value }: any): ReactNode {
           {beginOfTheBegin && endOfTheBegin && !endOfTheEnd && !beginOfTheEnd && (
             <Period name={'Unknown end'} variant="unknown" />
           )}
+          <Box
+            flex={0}
+            style={{
+              position: 'relative',
+              height: '31px',
+              minWidth: '25px',
+              borderBlockEnd: '1px dashed #aaa',
+            }}
+          />
         </Flex>
       ) : (
         <Flex
