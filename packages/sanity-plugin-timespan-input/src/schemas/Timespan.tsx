@@ -33,7 +33,7 @@ export const timespan = defineType({
       description: (
         <span>
           Write Extended Date/Time Format (EDTF) and easily save timespans like{' '}
-          <strong>1880/1900-01</strong>. Exact dates er easy too, e.g.{' '}
+          <strong>1880/1900-01</strong>. Exact dates are easy too, e.g.{' '}
           <strong>2020-01-01T12:12:12</strong>. Read about the{' '}
           <a href="https://github.com/inukshuk/edtf.js">syntax</a> and{' '}
           <a href="https://www.loc.gov/standards/datetime/">specification</a> for details.
