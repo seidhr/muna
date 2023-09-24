@@ -1,7 +1,8 @@
 {
-  "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-  "version": "3.0.0",
-  "description": "Just links to Muna documentation, for now",
+  "name": "@seidhr/sanity-plugin-muna-kulturnav-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
   "keywords": [
     "sanity",
     "sanity-plugin"
@@ -12,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:seidhr/muna.git"
+    "url": "git+ssh://git@github.com/seidhr/muna.git"
   },
   "license": "MIT",
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
@@ -20,8 +21,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
-      "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
+      "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
     },
     "./package.json": "./package.json"
@@ -38,25 +39,25 @@
   ],
   "scripts": {
     "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
-    "dev": "npm run link-watch",
-    "watch": "pkg-utils watch --strict",
-    "prepublishOnly": "run-s build",
     "clean": "rimraf dist",
+    "dev": "npm run link-watch",
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "plugin-kit link-watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepublishOnly": "run-s build",
+    "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
+    "@pnpm/npm-conf": "^2.2.2",
     "@sanity/incompatible-plugin": "^1.0.4",
-    "@sanity/ui": "^1.8.2",
-    "@seidhr/react-muna-logo": "*"
+    "prettier-linter-helpers": "^1.0.0"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^2.4.8",
     "@sanity/plugin-kit": "^3.1.10",
     "@types/react": "^18.2.21",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-sanity": "^6.0.0",
@@ -70,28 +71,15 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rimraf": "^5.0.1",
+    "sanity": "^3.16.4",
     "styled-components": "^5.3.11",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@sanity/dashboard": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sanity": "^3",
-    "styled-components": "^5.3.11"
+    "react": "^18",
+    "sanity": "^3"
   },
   "engines": {
     "node": ">=14"
-  },
-  "eslintConfig": {
-    "parser": "sanipack/babel/eslint-parser",
-    "extends": [
-      "sanity",
-      "sanity/react",
-      "prettier"
-    ],
-    "ignorePatterns": [
-      "lib/**/"
-    ]
   }
 }
