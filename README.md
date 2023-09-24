@@ -1,6 +1,6 @@
 # MUNA
 
-Muna monorepo for NPM packages and Sanity test-studio. Uses Lerna and Yarn. 
+Muna monorepo for NPM packages and Sanity test-studio. It uses Turborepo and NPM. 
 
 NPM packages are all scoped to `@seidhr`.
 
