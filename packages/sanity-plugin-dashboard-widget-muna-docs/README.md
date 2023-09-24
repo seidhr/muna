@@ -1,22 +1,31 @@
 # sanity-plugin-dashboard-widget-muna-docs
 
-Just links to Muna documentation
+Just links to Muna documentation, for now.
 
 ## Installation
 
 ```
-sanity install dashboard-widget-muna-docs
+npm install @seidhr/sanity-plugin-dashboard-widget-muna-docs
 ```
 
-Add this code to your dashboardConfig.js:
+Add this code to your `sanity.condig.ts`:
 
 ```js
-    {
-      name: 'muna-docs-widget',
-      layout: {
-        width: 'small'
-      },
-    },
+import { munaDocsWidget } from '@seidhr/sanity-plugin-dashboard-widget-muna-docs'
+
+export default defineConfig({
+  name: 'default',
+  title: 'example-studio',
+  //...
+  plugins: [
+    dashboardTool({
+      widgets: [
+        munaDocsWidget({ layout: { width: 'small' } }),
+      ]
+    }),
+  ],
+  //...
+})
 ```
 
 Example sanity.json:
@@ -48,5 +57,4 @@ Example sanity.json:
 
 ## License
 
-MIT © Tarje Lavik
-See LICENSE
+MIT © Tarje Lavik. See LICENSE

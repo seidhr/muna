@@ -18,7 +18,7 @@ const Widget = (props: MunaDocsWidgetConfig) => {
             descriptions of cultural heritage objects and knowledge about their contexts.
           </p>
           <p>
-            <a href="https://muna.xyz/docs/model/introduction" target="_blank" rel="noreferrer">
+            <a href="https://muna.xyz" target="_blank" rel="noreferrer">
               Muna documentation
             </a>
           </p>

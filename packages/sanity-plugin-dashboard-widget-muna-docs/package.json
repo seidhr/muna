@@ -1,7 +1,7 @@
 {
   "name": "@seidhr/sanity-plugin-dashboard-widget-muna-docs",
-  "version": "1.1.0",
-  "description": "Just links to Muna documentation",
+  "version": "2.0.0",
+  "description": "Just links to Muna documentation, for now",
   "keywords": [
     "sanity",
     "sanity-plugin"
@@ -20,8 +20,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
-      "require": "./dist/index.js",
       "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
       "default": "./dist/index.esm.js"
     },
     "./package.json": "./package.json"
@@ -70,7 +70,6 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rimraf": "^5.0.1",
-    "sanipack": "2.1.0",
     "styled-components": "^5.3.11",
     "typescript": "^5.2.2"
   },
@@ -83,12 +82,6 @@
   },
   "engines": {
     "node": ">=14"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": true,
-    "singleQuote": true
   },
   "eslintConfig": {
     "parser": "sanipack/babel/eslint-parser",
