@@ -25,7 +25,7 @@ const getDateFromDate = (unix: number) => {
  * @returns Timespan object
  */
 export const mapEDTF = (edtf: EDTF): Patch[] => {
-  if (edtf.type == '_Interval') {
+  if (['_Interval', 'KY'].includes(edtf.type)) {
     const intervalBeginOfTheBegin = edtf.lower?.min
       ? {
         value: getDateFromDateTime(edtf.lower?.min),
