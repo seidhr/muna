@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 3.0.2
+
+### Patch Changes
+
+- c2ac519: add ugly hacky fix to Interval check
+
 ## 3.0.1
 
 ### Patch Changes
