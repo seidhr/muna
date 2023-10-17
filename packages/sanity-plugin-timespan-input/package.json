@@ -52,14 +52,9 @@
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.4",
     "@sanity/ui": "^1.8.2",
-    "@visx/group": "^3.3.0",
-    "@visx/hierarchy": "^3.3.0",
-    "@visx/responsive": "^3.3.0",
-    "@visx/shape": "^3.3.0",
-    "@visx/text": "^3.3.0",
     "date-fns": "^2.28.0",
     "date-fns-tz": "^1.2.2",
-    "edtf": "github:tarjelavik/edtf.js#5d22d70"
+    "edtf": "^4.5.1"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^2.4.8",
