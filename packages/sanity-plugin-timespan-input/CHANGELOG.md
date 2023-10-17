@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 3.0.1
+
+### Patch Changes
+
+- d7b7745: Use original edtf.js library, instead of our fork.
+
 ## 3.0.0
 
 ### Major Changes
