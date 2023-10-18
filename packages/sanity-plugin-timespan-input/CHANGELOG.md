@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 3.0.3
+
+### Patch Changes
+
+- 9502cae: remove type check
+
 ## 3.0.2
 
 ### Patch Changes
