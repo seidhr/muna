@@ -52,6 +52,7 @@
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.4",
     "@sanity/ui": "^1.8.2",
+    "@types/styled-components": "^5.1.28",
     "date-fns": "^2.28.0",
     "date-fns-tz": "^1.2.2",
     "edtf": "^4.5.1"

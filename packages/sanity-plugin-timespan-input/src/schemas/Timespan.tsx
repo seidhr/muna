@@ -1,6 +1,7 @@
 import { ObjectDefinition, defineField, defineType } from 'sanity'
 import { TimespanInput } from '../TimespanInput'
 import edtf from 'edtf'
+import { StyledDescription } from './styles'
 
 const timespanTypeName = 'Timespan' as const
 
@@ -12,7 +13,6 @@ export interface TimespanDefinition extends Omit<ObjectDefinition, 'type' | 'fie
 }
 
 declare module '@sanity/types' {
-  // makes type: 'color' narrow correctly when using defineTyp/defineField/defineArrayMember
   export interface IntrinsicDefinitions {
     timespan: TimespanDefinition
   }
@@ -31,13 +31,46 @@ export const timespan = defineType({
       title: 'EDTF',
       type: 'string',
       description: (
-        <span>
-          Write Extended Date/Time Format (EDTF) and easily save timespans like{' '}
-          <strong>1880/1900-01</strong>. Exact dates are easy too, e.g.{' '}
-          <strong>2020-01-01T12:12:12</strong>. Read about the{' '}
-          <a href="https://github.com/inukshuk/edtf.js">syntax</a> and{' '}
-          <a href="https://www.loc.gov/standards/datetime/">specification</a> for details.
-        </span>
+        <StyledDescription>
+          <summary>Write EDTF dates, for example "0900/1200?". Click for explanation.</summary>
+          <div>
+            <div>
+              Extended Date/Time Format (EDTF) is a way to write dates and times in a way that can
+              express{' '}
+              <a href="https://www.loc.gov/standards/datetime/background.html">
+                uncertainty and approximations
+              </a>
+              .
+            </div>
+            <div>
+              <ul>
+                <li>
+                  Intervals: <kbd>1880/1900-01</kbd>.
+                </li>
+                <li>
+                  Unknown start: <kbd>/1900-01</kbd>.
+                </li>
+                <li>
+                  Unknown end: <kbd>2021/</kbd>.
+                </li>
+                <li>
+                  Uncertainty: <kbd>1900-01-12?</kbd>.
+                </li>
+                <li>
+                  Approximation: <kbd>~1900</kbd>.
+                </li>
+                <li>
+                  Exact dates: <kbd>2020-01-01T12:12:12</kbd>.
+                </li>
+              </ul>
+              <div>
+                Read about the <a href="https://github.com/inukshuk/edtf.js">syntax</a> and{' '}
+                <a href="https://www.loc.gov/standards/datetime/">specification</a> for more
+                details.
+              </div>
+            </div>
+          </div>
+        </StyledDescription>
       ),
       // Custom validation
       validation: (Rule) =>
