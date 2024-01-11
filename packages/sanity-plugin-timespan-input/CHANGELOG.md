@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 3.0.4
+
+### Patch Changes
+
+- 7685fa7: Update date-fns to v3.2.0
+
 ## 3.0.3
 
 ### Patch Changes

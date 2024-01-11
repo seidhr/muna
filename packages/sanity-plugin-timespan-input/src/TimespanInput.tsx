@@ -12,7 +12,7 @@ export type TimespanInputCallbackProps = Omit<InputProps, 'renderDefault'>
 // Extend the `ObjectInputProps` type
 export type TimespanInputProps = ObjectInputProps<Timespan>
 
-export function TimespanInput(props: ObjectInputProps) {
+export function TimespanInput(props: Readonly<ObjectInputProps>) {
   const { value, members, onChange, renderField, renderInput, renderItem, renderPreview } = props
 
   const edtfMember = members.find(
