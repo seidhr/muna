@@ -50,11 +50,12 @@
     "link-watch": "plugin-kit link-watch"
   },
   "dependencies": {
+    "@date-fns/tz": "1.2.0",
+    "@date-fns/utc": "^2.1.0",
     "@sanity/incompatible-plugin": "^1.0.4",
     "@sanity/ui": "^1.8.2",
     "@types/styled-components": "^5.1.28",
-    "date-fns": "^3.2.0",
-    "date-fns-tz": "^1.2.2",
+    "date-fns": "4.1.0",
     "edtf": "^4.5.1"
   },
   "devDependencies": {

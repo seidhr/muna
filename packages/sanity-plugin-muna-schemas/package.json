@@ -21,15 +21,14 @@
   "author": "Tarje Sælen Lavik <tarje.lavik@gmail.com>",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "default": "./dist/index.esm.js"
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
