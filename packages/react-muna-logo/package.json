@@ -1,0 +1,50 @@
+{
+  "name": "@seidhr/react-muna-logo",
+  "version": "1.2.0",
+  "description": "React icons for Muna",
+  "author": "Tarje Sælen Lavik <tarje.lavik@gmail.com>",
+  "contributors": [
+    "Tarje Sælen Lavik <tarje.lavik@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/seidhr/muna.git",
+    "directory": "packages/react-muna-logo"
+  },
+  "bugs": {
+    "url": "https://github.com/seidhr/muna/issues"
+  },
+  "homepage": "https://github.com/seidhr/muna#readme",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build-assets": "npx @svgr/cli -- src/svg",
+    "dev": "npm run build -- --watch",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@svgr/babel-plugin-remove-jsx-attribute": "^5.4.0",
+    "@svgr/cli": "^8.0.1",
+    "@swc/core": "^1.3.84",
+    "svgo": "^3.0.2",
+    "svgo-autocrop": "^1.1.2",
+    "tsup": "^7.2.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

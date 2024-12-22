@@ -1,15 +1,16 @@
 # MUNA
 
-Muna monorepo for NPM packages and Sanity test-studio. Uses Lerna and Yarn. 
+Muna monorepo for NPM packages and Sanity test-studio. It uses Turborepo and NPM. 
 
 NPM packages are all scoped to `@seidhr`.
 
 ## Development
 
-```bash
-# Install
-lerna bootstrap
+## Changesets
 
-# Build and Link all packages in packages/@seidhr and link plugins in studios
-yarn quick-start
+```bash
+npx changeset status --verbose
+npx changeset add
+npx changeset version
+npx changeset publish
 ```

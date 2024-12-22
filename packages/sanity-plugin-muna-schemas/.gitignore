@@ -1,14 +1,3 @@
-# Mac files
-.DS_Store
-
-# Dependency directories
-node_modules
-
-.turbo
-.next
-build/**
-dist/**
-
 # Logs
 logs
 *.log
@@ -69,6 +58,3 @@ yalc.lock
 
 # Compiled plugin
 dist
-
-# Sanity studio
-.sanity
