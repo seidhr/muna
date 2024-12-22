@@ -6,9 +6,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "watch": "turbo run watch"
   },
   "dependencies": {
-    "@changesets/cli": "^2.26.2"
+    "@changesets/cli": "^2.26.2",
+    "turbo": "^1.11.3"
   }
 }
