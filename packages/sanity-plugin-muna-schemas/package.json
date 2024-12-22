@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.4",
-    "@sanity/ui": "^1.8.2",
+    "@sanity/ui": "^2.10.12",
     "capitalize": "^2.0.4",
     "dayjs": "^1.10.7",
     "jsonata": "^1.8.5",
@@ -61,11 +61,11 @@
     "prop-types": "15.7.2",
     "react-icons": "^4.11.0",
     "react-player": "^2.13.0",
-    "sanity-plugin-hotspot-array": "^1.0.1"
+    "sanity-plugin-hotspot-array": "^2.1.2"
   },
   "devDependencies": {
-    "@sanity/pkg-utils": "^2.4.9",
-    "@sanity/plugin-kit": "^3.1.10",
+    "@sanity/pkg-utils": "^6.12.2",
+    "@sanity/plugin-kit": "^4.0.19",
     "@types/react": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
@@ -84,8 +84,8 @@
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rimraf": "^5.0.1",
-    "sanity": "^3.16.7",
-    "styled-components": "^5.3.11",
+    "sanity": "^3.68.3",
+    "styled-components": "^6.1.13",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
@@ -93,7 +93,7 @@
     "sanity": "^3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "type": "module",
   "eslintConfig": {
