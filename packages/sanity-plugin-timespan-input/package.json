@@ -21,17 +21,15 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
-      "import": "./dist/index.esm.js",
+      "import": "./dist/index.mjs",
       "require": "./dist/index.js",
-      "default": "./dist/index.esm.js"
+      "default": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
-  "source": "./src/index.ts",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
@@ -41,10 +39,10 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
     "dev": "npm run link-watch",
+    "prepublishOnly": "npm run build",
     "watch": "pkg-utils watch --strict",
-    "prepublishOnly": "run-s build",
     "clean": "rimraf dist",
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "plugin-kit link-watch"
@@ -52,15 +50,16 @@
   "dependencies": {
     "@date-fns/tz": "1.2.0",
     "@date-fns/utc": "^2.1.0",
-    "@sanity/incompatible-plugin": "^1.0.4",
+    "@sanity/incompatible-plugin": "^1.0.5",
+    "@sanity/icons": "^3.5.6",
     "@sanity/ui": "^1.8.2",
     "@types/styled-components": "^5.1.28",
     "date-fns": "4.1.0",
     "edtf": "^4.5.1"
   },
   "devDependencies": {
-    "@sanity/pkg-utils": "^2.4.10",
-    "@sanity/plugin-kit": "^3.1.10",
+    "@sanity/pkg-utils": "^6.12.2",
+    "@sanity/plugin-kit": "^4.0.19",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
@@ -78,7 +77,7 @@
     "react-is": "^18.2.0",
     "rimraf": "^5.0.1",
     "sanity": "^3.16.4",
-    "styled-components": "^5.3.11",
+    "styled-components": "^6.1.13",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
@@ -87,7 +86,7 @@
     "sanity": "^3"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
   "eslintConfig": {
     "parser": "sanipack/babel/eslint-parser",
@@ -109,5 +108,7 @@
     "ignorePatterns": [
       "lib/**/"
     ]
-  }
+  },
+  "browserslist": "extends @sanity/browserslist-config",
+  "sideEffects": false
 }
