@@ -3,7 +3,7 @@ import { TimespanInput } from '../TimespanInput'
 import edtf from 'edtf'
 import { StyledDescription } from './styles'
 
-const timespanTypeName = 'Timespan' as const
+const timespanTypeName = 'Timespan'
 
 /* *
  * @public
@@ -38,9 +38,8 @@ export const timespan = defineType({
               Extended Date/Time Format (EDTF) is a way to write dates and times in a way that can
               express{' '}
               <a href="https://www.loc.gov/standards/datetime/background.html">
-                uncertainty and approximations
+                uncertainty and approximations.
               </a>
-              .
             </div>
             <div>
               <ul>

@@ -5,6 +5,7 @@ import { Period } from './period'
 
 export function Preview({ value }: any): ReactNode {
   const { beginOfTheBegin, endOfTheBegin, beginOfTheEnd, endOfTheEnd, date } = value
+
   return (
     <>
       {beginOfTheBegin || endOfTheBegin || beginOfTheEnd || endOfTheEnd || date ? (

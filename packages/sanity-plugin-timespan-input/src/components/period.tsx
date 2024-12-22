@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
 // eslint-disable-next-line no-unused-vars
 import React, { CSSProperties, ReactNode } from 'react'
-import { Box, Flex, Stack } from '@sanity/ui'
+import { Box, Flex, Stack, useTheme } from '@sanity/ui'
 import { ArrowLeftIcon, ArrowRightIcon } from '@sanity/icons'
 import { format } from 'date-fns'
 
@@ -16,43 +16,90 @@ export const Period = ({
   end?: string
   variant?: 'fuzzy' | 'certain' | 'unknown' | 'infinity'
 }): ReactNode => {
-  let bg: CSSProperties | undefined
+  let bg: { light: CSSProperties; dark: CSSProperties } | undefined
+
+  const theme = useTheme()
+
+  const mode = theme.sanity.color.dark ? 'dark' : 'light'
 
   switch (variant) {
     case 'fuzzy':
       bg = {
-        backgroundImage:
-          'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
-        backgroundSize: '5px 5px',
-        backgroundColor: '#ffffff',
-        borderBlockStart: '1px solid #444',
-        borderBlockEnd: '1px solid #444',
+        light: {
+          backgroundImage:
+            'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
+          backgroundSize: '5px 5px',
+          backgroundColor: '#ffffff',
+          borderBlockStart: '1px solid #444',
+          borderBlockEnd: '1px solid #444',
+          color: '#000000',
+        },
+        dark: {
+          backgroundImage:
+            'repeating-linear-gradient(45deg, #dddddd 0, #dddddd 0.5px, transparent 0, transparent 50%)',
+          backgroundSize: '5px 5px',
+          backgroundColor: '#000000',
+          borderBlockStart: '1px solid #ccc',
+          borderBlockEnd: '1px solid #ccc',
+          color: '#000000',
+        },
       }
       break
     case 'certain':
       bg = {
-        backgroundImage:
-          'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
-        backgroundSize: '5px 5px',
-        backgroundColor: '#ffffff',
-        borderBlockStart: '1px solid #444',
-        borderBlockEnd: '1px solid #444',
+        light: {
+          backgroundImage:
+            'repeating-linear-gradient(45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
+          backgroundSize: '5px 5px',
+          backgroundColor: '#ffffff',
+          borderBlockStart: '1px solid #444',
+          borderBlockEnd: '1px solid #444',
+          color: '#000000',
+        },
+        dark: {
+          backgroundImage:
+            'repeating-linear-gradient(45deg, #dddddd 0, #dddddd 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
+          backgroundSize: '5px 5px',
+          backgroundColor: '#000000',
+          borderBlockStart: '1px solid #ccc',
+          borderBlockEnd: '1px solid #ccc',
+          color: '#000000',
+        },
       }
       break
     case 'unknown':
       bg = {
-        borderBlockStart: '1px solid #444',
-        borderBlockEnd: '1px solid #444',
+        light: {
+          borderBlockStart: '1px solid #444',
+          borderBlockEnd: '1px solid #444',
+          color: '#000000',
+        },
+        dark: {
+          borderBlockStart: '1px solid #ccc',
+          borderBlockEnd: '1px solid #ccc',
+          color: '#000000',
+        },
       }
       break
     case 'infinity':
       bg = {
-        borderBlockStart: '1px solid #444',
-        borderBlockEnd: '1px solid #444',
+        light: {
+          borderBlockStart: '1px solid #444',
+          borderBlockEnd: '1px solid #444',
+          color: '#000000',
+        },
+        dark: {
+          borderBlockStart: '1px solid #ccc',
+          borderBlockEnd: '1px solid #ccc',
+          color: '#000000',
+        },
       }
       break
     default:
-      bg = {}
+      bg = {
+        light: {},
+        dark: {},
+      }
       break
   }
 
@@ -84,7 +131,7 @@ export const Period = ({
           </>
         )}
       </Box>
-      <Flex flex={1} justify={'center'} paddingY={1} style={bg}>
+      <Flex flex={1} justify={'center'} paddingY={1} style={bg[mode]}>
         <Box padding={1} style={{ backgroundColor: 'white', borderRadius: '5px' }}>
           {name}
         </Box>

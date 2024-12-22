@@ -1,21 +1,18 @@
 /* eslint-disable prettier/prettier */
-import { utcToZonedTime, format } from 'date-fns-tz'
-import { fromUnixTime } from 'date-fns'
+import { TZDate } from '@date-fns/tz'
+import { format, fromUnixTime } from 'date-fns'
 import { EDTF, Patch } from './types'
 
 const getDateFromDateTime = (unix: number) => {
   const date = format(
-    utcToZonedTime(fromUnixTime(unix / 1000), 'UTC'),
-    "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-    { timeZone: 'UTC' },
+    new TZDate(fromUnixTime(unix / 1000), 'UTC'),
+    "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
   )
   return date
 }
 
 const getDateFromDate = (unix: number) => {
-  const date = format(fromUnixTime(unix / 1000), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", {
-    timeZone: 'UTC',
-  })
+  const date = format(fromUnixTime(unix / 1000), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
   return date
 }
 

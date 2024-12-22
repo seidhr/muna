@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.26.2",
-    "turbo": "^1.11.3"
-  }
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "npm@10.8.2"
 }
