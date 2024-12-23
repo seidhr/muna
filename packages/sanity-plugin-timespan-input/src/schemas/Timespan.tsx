@@ -1,6 +1,7 @@
-import { ObjectDefinition, defineField, defineType } from 'sanity'
-import { TimespanInput } from '../TimespanInput'
 import edtf from 'edtf'
+import { defineField, defineType, ObjectDefinition } from 'sanity'
+
+import { TimespanInput } from '../TimespanInput'
 import { StyledDescription } from './styles'
 
 const timespanTypeName = 'Timespan'
@@ -32,7 +33,9 @@ export const timespan = defineType({
       type: 'string',
       description: (
         <StyledDescription>
-          <summary>Write EDTF dates, for example "0900/1200?". Click for explanation.</summary>
+          <summary>
+            Write EDTF dates, for example &ldquo;0900/1200?&rdquo;. Click for explanation.
+          </summary>
           <div>
             <div>
               Extended Date/Time Format (EDTF) is a way to write dates and times in a way that can
