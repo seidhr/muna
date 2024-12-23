@@ -56,7 +56,7 @@
     "@sanity/ui": "^1.8.2",
     "@types/styled-components": "^5.1.28",
     "date-fns": "4.1.0",
-    "edtf": "^4.5.1"
+    "edtf": "^4.6.0"
   },
   "devDependencies": {
     "@sanity/pkg-utils": "^6.12.2",

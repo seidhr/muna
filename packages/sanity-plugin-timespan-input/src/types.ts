@@ -25,3 +25,28 @@ export type Timespan = {
   beginOfTheEnd?: string
   endOfTheEnd?: string
 }
+
+/* prettier-ignore */
+export type EDTFDate =
+  | {
+    uncertain?: boolean | number
+    approximate?: number
+    type: 'Date'
+  }
+  | 'Infinity'
+
+export interface EDTFInterval {
+  type: 'Interval'
+  values: [EDTFDate | null, EDTFDate | null]
+}
+
+export type EDTFValue = EDTFDate | EDTFInterval
+
+export interface TimespanValue {
+  beginOfTheBegin?: string
+  endOfTheBegin?: string
+  beginOfTheEnd?: string
+  endOfTheEnd?: string
+  date?: string
+  edtf?: string
+}
