@@ -1,5 +1,14 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 4.0.0
+
+### Major Changes
+
+- Update date-fns and other dependencies
+
+  - Update date-fns to 4.1.0. This should fix issues with the data-fns/tz package.
+  - Improve dark mode support.
+
 ## 3.0.4
 
 ### Patch Changes
