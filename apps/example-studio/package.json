@@ -16,11 +16,12 @@
   ],
   "dependencies": {
     "@sanity/color-input": "^4.0.3",
-    "@sanity/dashboard": "^4.1.2",
+    "@sanity/dashboard": "^4.0.3",
     "@sanity/vision": "^3.68.3",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "*",
     "@seidhr/sanity-plugin-muna-kulturnav-api": "*",
     "@seidhr/sanity-plugin-timespan-input": "*",
+    "eslint-config-sanity": "^7.1.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
