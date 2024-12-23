@@ -1,9 +1,7 @@
-/* eslint-disable react/require-default-props */
-// eslint-disable-next-line no-unused-vars
-import React, { CSSProperties, ReactNode } from 'react'
-import { Box, Flex, Stack, useTheme } from '@sanity/ui'
 import { ArrowLeftIcon, ArrowRightIcon } from '@sanity/icons'
+import { Box, Flex, Stack, useTheme } from '@sanity/ui'
 import { format } from 'date-fns'
+import { CSSProperties, ReactNode } from 'react'
 
 export const Period = ({
   start,
@@ -21,6 +19,11 @@ export const Period = ({
   const theme = useTheme()
 
   const mode = theme.sanity.color.dark ? 'dark' : 'light'
+
+  const boxColorScheme =
+    mode === 'light'
+      ? { backgroundColor: '#ffffff', color: '#000000' }
+      : { backgroundColor: '#000000', color: '#ffffff' }
 
   switch (variant) {
     case 'fuzzy':
@@ -41,7 +44,7 @@ export const Period = ({
           backgroundColor: '#000000',
           borderBlockStart: '1px solid #ccc',
           borderBlockEnd: '1px solid #ccc',
-          color: '#000000',
+          color: '#ffffff',
         },
       }
       break
@@ -58,12 +61,12 @@ export const Period = ({
         },
         dark: {
           backgroundImage:
-            'repeating-linear-gradient(45deg, #dddddd 0, #dddddd 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #000000 0, #000000 0.5px, transparent 0, transparent 50%)',
+            'repeating-linear-gradient(45deg, #dddddd 0, #dddddd 0.5px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #dddddd 0, #dddddd 0.5px, transparent 0, transparent 50%)',
           backgroundSize: '5px 5px',
           backgroundColor: '#000000',
           borderBlockStart: '1px solid #ccc',
           borderBlockEnd: '1px solid #ccc',
-          color: '#000000',
+          color: '#ffffff',
         },
       }
       break
@@ -77,7 +80,7 @@ export const Period = ({
         dark: {
           borderBlockStart: '1px solid #ccc',
           borderBlockEnd: '1px solid #ccc',
-          color: '#000000',
+          color: '#ffffff',
         },
       }
       break
@@ -91,7 +94,7 @@ export const Period = ({
         dark: {
           borderBlockStart: '1px solid #ccc',
           borderBlockEnd: '1px solid #ccc',
-          color: '#000000',
+          color: '#ffffff',
         },
       }
       break
@@ -132,7 +135,7 @@ export const Period = ({
         )}
       </Box>
       <Flex flex={1} justify={'center'} paddingY={1} style={bg[mode]}>
-        <Box padding={1} style={{ backgroundColor: 'white', borderRadius: '5px' }}>
+        <Box padding={1} style={{ ...boxColorScheme, borderRadius: '5px' }}>
           {name}
         </Box>
       </Flex>

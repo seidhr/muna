@@ -1,4 +1,5 @@
 import { definePlugin } from 'sanity'
+
 import { timespan } from './schemas/Timespan'
 
 export const timespanInput = definePlugin({

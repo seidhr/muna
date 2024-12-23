@@ -1,26 +1,29 @@
 /* eslint-disable prettier/prettier */
-import { useCallback, useEffect } from 'react'
-import { FieldMember, MemberField, ObjectInputProps, InputProps, set, unset } from 'sanity'
 import { Card, Stack } from '@sanity/ui'
-import { mapEDTF } from './mapEDTF'
 import edtf from 'edtf'
-import { Patch, Timespan } from './types'
+import { useCallback, useEffect, useRef } from 'react'
+import React from 'react'
+import { FieldMember, InputProps, MemberField, ObjectInputProps, set, unset } from 'sanity'
+
 import { Preview } from './components'
+import { mapEDTF } from './mapEDTF'
+import { Patch, Timespan } from './types'
 
 export type TimespanInputCallbackProps = Omit<InputProps, 'renderDefault'>
 
 // Extend the `ObjectInputProps` type
 export type TimespanInputProps = ObjectInputProps<Timespan>
 
-export function TimespanInput(props: Readonly<ObjectInputProps>) {
+export function TimespanInput(props: Readonly<ObjectInputProps>): React.JSX.Element {
   const { value, members, onChange, renderField, renderInput, renderItem, renderPreview } = props
+  const previousEdtf = useRef<string | undefined>(value?.edtf)
 
   const edtfMember = members.find(
     (member): member is FieldMember => member.kind === 'field' && member.name === 'edtf',
   )
 
   useEffect(() => {
-    if (value?.edtf) {
+    if (value?.edtf && value.edtf !== previousEdtf.current) {
       let edtfValue
       try {
         edtfValue = edtf(value?.edtf)
@@ -52,7 +55,7 @@ export function TimespanInput(props: Readonly<ObjectInputProps>) {
         ])
       }
     }
-    // Adding onChange as a dependency will cause an infinite loop
+    previousEdtf.current = value?.edtf
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.value?._type, value?.edtf])
 
@@ -66,11 +69,9 @@ export function TimespanInput(props: Readonly<ObjectInputProps>) {
   }, [value])
 
   const customRenderInput = useCallback(
-    (renderInputCallbackProps: TimespanInputCallbackProps) => {
-      // Add TimespanPreview to the renderInput function
+    (renderInputCallbackProps: TimespanInputCallbackProps): React.JSX.Element => {
       return (
         <Stack>
-          {/* Call the original renderInput function, passing along input props */}
           <Card>{renderInput(renderInputCallbackProps)}</Card>
           {value && <Preview value={value} />}
         </Stack>

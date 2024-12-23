@@ -1,10 +1,29 @@
 /* eslint-disable react/prop-types */
+import { Box, Flex, useTheme } from '@sanity/ui'
 import { ReactNode } from 'react'
-import { Box, Flex } from '@sanity/ui'
+
 import { Period } from './period'
 
-export function Preview({ value }: any): ReactNode {
+interface PreviewProps {
+  value: {
+    beginOfTheBegin?: string
+    endOfTheBegin?: string
+    beginOfTheEnd?: string
+    endOfTheEnd?: string
+    date?: string
+  }
+}
+
+export function Preview({ value }: PreviewProps): ReactNode {
   const { beginOfTheBegin, endOfTheBegin, beginOfTheEnd, endOfTheEnd, date } = value
+
+  const theme = useTheme()
+
+  const mode = theme.sanity.color.dark ? 'dark' : 'light'
+  const boxColorScheme =
+    mode === 'light'
+      ? { backgroundColor: '#ffffff', color: '#000000' }
+      : { backgroundColor: '#000000', color: '#ffffff' }
 
   return (
     <>
@@ -70,7 +89,7 @@ export function Preview({ value }: any): ReactNode {
           <Box
             padding={2}
             style={{
-              backgroundColor: 'white',
+              ...boxColorScheme,
               borderRadius: '5px',
               position: 'absolute',
               top: '-1px',
