@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from 'react'
 import React from 'react'
 import { FieldMember, InputProps, MemberField, ObjectInputProps, set, unset } from 'sanity'
 
-import { Preview } from './components'
+import { Preview } from './components/Preview'
 import { mapEDTF } from './mapEDTF'
 import { Patch, Timespan } from './types'
 
@@ -23,50 +23,63 @@ export function TimespanInput(props: Readonly<ObjectInputProps>): React.JSX.Elem
   )
 
   useEffect(() => {
-    if (value?.edtf && value.edtf !== previousEdtf.current) {
+    // Skip if we're creating a new document and no edtf value exists yet
+    if (!value?.edtf) {
+      return
+    }
+
+    if (value.edtf !== previousEdtf.current) {
       let edtfValue
       try {
-        edtfValue = edtf(value?.edtf)
+        edtfValue = edtf(value.edtf)
         const edtfMapped = mapEDTF(edtfValue)
         const timespanPatches = edtfMapped?.map((e: Patch) => set(e.value, e.path))
-        const patches =
-          props.value?._type === 'Timespan'
-            ? [
-              unset(['beginOfTheBegin']),
-              unset(['endOfTheBegin']),
-              unset(['beginOfTheEnd']),
-              unset(['endOfTheEnd']),
-              unset(['date']),
-              set(value.edtf, ['edtf']),
-              ...timespanPatches,
-            ]
-            : [set('Timespan', ['_type'])]
 
+        // Only apply patches if we have a valid EDTF value
         if (edtfValue.isEDTF) {
+          const patches = [
+            unset(['beginOfTheBegin']),
+            unset(['endOfTheBegin']),
+            unset(['beginOfTheEnd']),
+            unset(['endOfTheEnd']),
+            unset(['date']),
+            set(value.edtf, ['edtf']),
+            ...timespanPatches,
+          ]
+
+          // Only set _type if it's not already set
+          if (!value._type) {
+            patches.unshift(set('Timespan', ['_type']))
+          }
+
           onChange(patches)
         }
       } catch (error) {
-        onChange([
-          unset(['beginOfTheBegin']),
-          unset(['endOfTheBegin']),
-          unset(['beginOfTheEnd']),
-          unset(['endOfTheEnd']),
-          unset(['date']),
-        ])
+        // Only apply unset patches if we have a value to work with
+        if (value._type) {
+          onChange([
+            unset(['beginOfTheBegin']),
+            unset(['endOfTheBegin']),
+            unset(['beginOfTheEnd']),
+            unset(['endOfTheEnd']),
+            unset(['date']),
+          ])
+        }
       }
     }
     previousEdtf.current = value?.edtf
+  },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.value?._type, value?.edtf])
+    [value?._type, value?.edtf])
 
   useEffect(() => {
-    // delete all Timespan fields if the edtf field is empty
-    if (!value?.edtf) {
+    // Only unset if we have an existing document with empty edtf
+    if (value?._type && !value?.edtf) {
       onChange([unset()])
     }
-    // Adding onChange as a dependency will cause an infinite loop
+  },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value])
+    [value])
 
   const customRenderInput = useCallback(
     (renderInputCallbackProps: TimespanInputCallbackProps): React.JSX.Element => {
