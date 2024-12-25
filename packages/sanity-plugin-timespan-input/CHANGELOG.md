@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 4.0.1
+
+### Patch Changes
+
+- 8967b9f: fix error when creating new document
+
 ## 4.0.0
 
 ### Major Changes

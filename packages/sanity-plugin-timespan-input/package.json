@@ -1,6 +1,6 @@
 {
   "name": "@seidhr/sanity-plugin-timespan-input",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Make it easier to add timespan information with the help of Extended Date Time Format (EDTF).",
   "keywords": [
     "sanity",
