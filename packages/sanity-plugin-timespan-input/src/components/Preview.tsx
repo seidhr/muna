@@ -4,7 +4,7 @@ import { parse } from 'edtf'
 import { ReactNode } from 'react'
 
 import { EDTFDate, EDTFInterval, TimespanValue } from '../types'
-import { Period } from './period'
+import { Period } from './Period'
 
 interface PreviewProps {
   value: TimespanValue
@@ -76,15 +76,6 @@ export function Preview({ value }: PreviewProps): ReactNode {
           width={'100%'}
           style={{ fontSize: '12px' }}
         >
-          <Box
-            flex={0}
-            style={{
-              position: 'relative',
-              height: '31px',
-              minWidth: '25px',
-              borderBlockEnd: '1px dashed #aaa',
-            }}
-          />
           {date && !beginOfTheBegin && !endOfTheBegin && !endOfTheEnd && !beginOfTheEnd && <></>}
           {!beginOfTheBegin && !endOfTheBegin && endOfTheEnd && beginOfTheEnd && (
             <Period name={intervalLabel[0]} variant="unknown" />
@@ -113,15 +104,6 @@ export function Preview({ value }: PreviewProps): ReactNode {
           {beginOfTheBegin && endOfTheBegin && !endOfTheEnd && !beginOfTheEnd && (
             <Period name={intervalLabel[1]} variant="unknown" />
           )}
-          <Box
-            flex={0}
-            style={{
-              position: 'relative',
-              height: '31px',
-              minWidth: '25px',
-              borderBlockEnd: '1px dashed #aaa',
-            }}
-          />
         </Flex>
       ) : (
         <Flex
