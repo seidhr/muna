@@ -1,5 +1,11 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 4.0.2
+
+### Patch Changes
+
+- Add react v19 to peerdep
+
 ## 4.0.1
 
 ### Patch Changes
