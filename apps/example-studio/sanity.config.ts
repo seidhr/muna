@@ -1,5 +1,5 @@
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
+import { structureTool } from 'sanity/structure'
 import { dashboardTool } from "@sanity/dashboard";
 import { visionTool } from '@sanity/vision'
 import { colorInput } from '@sanity/color-input'
@@ -16,11 +16,11 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    deskTool(),
+    structureTool(),
     visionTool(),
     dashboardTool({
       widgets: [
-        munaDocsWidget({ layout: { width: 'small' } }),
+        munaDocsWidget({ layout: { width: 'auto' } }),
       ]
     }),
     myPlugin({}),
