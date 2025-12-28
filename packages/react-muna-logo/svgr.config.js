@@ -38,7 +38,7 @@ module.exports = {
       //'removeStyleElement', // https://github.com/svg/svgo/blob/master/plugins/removeStyleElement.js
 
       // Remove <script> if present in svg
-      'removeScriptElement', // https://github.com/svg/svgo/blob/master/plugins/removeScriptElement.js
+      'removeScripts', // https://github.com/svg/svgo/blob/master/plugins/removeScripts.js (renamed from removeScriptElement in v4)
       { // Run autocrop last (you'll get less issues if autocrop runs after the svgo's default 'convertTransform' and 'convertShapeToPath' plugins)
         ...autocrop,
         params: {
