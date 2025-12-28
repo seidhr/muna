@@ -1,5 +1,4 @@
 import { defineField, defineType } from 'sanity'
-/* import { APISearchInput } from '@seidhr/sanity-plugin-muna-kulturnav-api' */
 
 export default defineType({
   name: 'Post',
@@ -16,12 +15,6 @@ export default defineType({
       title: 'Timespan',
       type: 'Timespan',
     }),
-    /* defineField({
-      name: 'classified_as',
-      title: 'Classified as',
-      type: 'string',
-      inputComponent: APISearchInput,
-    }), */
   ],
 
   preview: {

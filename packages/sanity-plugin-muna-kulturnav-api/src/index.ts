@@ -9,13 +9,15 @@ interface MyPluginConfig {
  *
  * ```ts
  * import {defineConfig} from 'sanity'
- * import {myPlugin} from 'sanity-plugin-muna-kulturnav-api'
- *
+ * import {APISearchInput} from 'sanity-plugin-muna-kulturnav-api'
+*
  * export default defineConfig({
  *   // ...
- *   plugins: [myPlugin()],
+ *   plugins: [APISearchInput()],
  * })
  * ```
+ *
+ * @public
  */
 export const APISearchInput = definePlugin<MyPluginConfig | void>((config = {}) => {
   // eslint-disable-next-line no-console
