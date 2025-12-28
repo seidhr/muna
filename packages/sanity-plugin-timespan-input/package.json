@@ -57,7 +57,6 @@
     "edtf": "^4.9.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
     "@sanity/pkg-utils": "^6.12.2",
     "@sanity/plugin-kit": "^4.0.19",
     "@types/styled-components": "^5.1.28",

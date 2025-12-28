@@ -18,18 +18,16 @@
   "author": "Tarje Lavik <tarje.lavik@gmail.com>",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.esm.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
-  "source": "./src/index.ts",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist",
     "sanity.json",
@@ -52,7 +50,6 @@
     "@seidhr/react-muna-logo": "*"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
     "@sanity/pkg-utils": "^10.2.3",
     "@sanity/plugin-kit": "^4.0.20",
     "@types/react": "^19.2.7",
@@ -89,5 +86,7 @@
       "eslintImports": false
     }
   },
-  "type": "module"
+  "type": "module",
+  "browserslist": "extends @sanity/browserslist-config",
+  "sideEffects": false
 }
