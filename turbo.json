@@ -11,22 +11,19 @@
         "dist/**"
       ]
     },
-    "deploy": {
-      "dependsOn": [
-        "build",
-        "test",
-        "lint"
-      ]
-    },
-    "test": {
+    "watch": {
       "dependsOn": [
         "build"
       ],
       "inputs": [
         "src/**/*.tsx",
-        "src/**/*.ts",
-        "test/**/*.ts",
-        "test/**/*.tsx"
+        "src/**/*.ts"
+      ]
+    },
+    "deploy": {
+      "dependsOn": [
+        "build",
+        "lint"
       ]
     },
     "lint": {},
