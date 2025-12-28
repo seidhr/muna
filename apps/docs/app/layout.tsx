@@ -2,7 +2,7 @@ import { RootProvider } from 'fumadocs-ui/provider/next';
 import type { ReactNode } from 'react';
 import { Noto_Sans_Runic } from 'next/font/google';
 import type { Metadata } from 'next';
-import '../styles.css';
+import './globals.css';
 
 const notoSansRunic = Noto_Sans_Runic({
   subsets: ['runic', 'latin'],

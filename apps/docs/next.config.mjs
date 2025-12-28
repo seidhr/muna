@@ -6,7 +6,7 @@ const config = {
 };
 
 const withMDX = createMDX({
-  // configPath: "source.config.ts"
+  configPath: "source.config.ts"
 });
 
 export default withMDX(config);
