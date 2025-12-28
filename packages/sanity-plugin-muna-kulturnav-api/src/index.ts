@@ -88,5 +88,8 @@ export const APISearchInput = kulturnavInput
 export { kulturnavReference }
 export { KulturnavInput }
 export { KulturnavArrayInput }
-export type { KulturnavPluginConfig } from './types'
+export { PreviewAvatar } from './components/PreviewAvatar'
+export { PreviewBadge } from './components/PreviewBadge'
+export { DetailsPopup } from './components/DetailsPopup'
+export type { KulturnavPluginConfig, PreviewStyle, PreviewComponentProps } from './types'
 export type { KulturnavReference } from './types'

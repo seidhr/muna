@@ -4,7 +4,7 @@ import { ObjectInputProps, set, unset } from 'sanity'
 
 import type { KulturnavAutocompleteItem, KulturnavReference } from '../types'
 import { transformKulturnavResponse } from '../lib/kulturnavClient'
-import { getPluginConfig } from '../lib/config'
+import { getClientConfig } from '../lib/config'
 import { SearchInput } from './SearchInput'
 import { SelectedBadges } from './SelectedBadges'
 
@@ -27,8 +27,8 @@ interface KulturnavInputProps extends ObjectInputProps {
 export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
   const { value, onChange, schemaType } = props
 
-  // Get plugin config
-  const config = useMemo(() => getPluginConfig(), [])
+  // Get client config for API calls
+  const config = useMemo(() => getClientConfig(), [])
 
   // Get field options
   const fieldOptions = schemaType.options as KulturnavInputProps['options'] | undefined
