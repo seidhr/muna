@@ -10,8 +10,8 @@
     "watch": "turbo run watch"
   },
   "dependencies": {
-    "@changesets/cli": "^2.27.11",
-    "turbo": "^2.3.3"
+    "@changesets/cli": "^2.29.8",
+    "turbo": "^2.7.2"
   },
   "packageManager": "npm@10.8.2"
 }

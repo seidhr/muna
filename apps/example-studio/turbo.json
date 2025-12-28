@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "//"
+  ],
+  "tasks": {
+    "dev": {
+      "persistent": true,
+      "cache": false,
+      "dependsOn": [
+        "build"
+      ],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts",
+        "test/**/*.ts",
+        "test/**/*.tsx"
+      ],
+      "with": [
+        "@seidhr/sanity-plugin-dashboard-widget-muna-docs#watch",
+        "@seidhr/sanity-plugin-timespan-input#watch",
+        "@seidhr/sanity-plugin-muna-kulturnav-api#watch"
+      ]
+    }
+  }
+}

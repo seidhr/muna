@@ -15,29 +15,26 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/color-input": "^4.0.3",
-    "@sanity/dashboard": "^4.0.3",
-    "@sanity/vision": "^3.99.0",
+    "@sanity/color-input": "^6.0.2",
+    "@sanity/dashboard": "^5.0.1",
+    "@sanity/vision": "^5.1.0",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "*",
     "@seidhr/sanity-plugin-muna-kulturnav-api": "*",
     "@seidhr/sanity-plugin-timespan-input": "*",
-    "eslint-config-sanity": "^7.1.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-is": "^19.2.0",
-    "sanity": "^3.99.0",
-    "styled-components": "^6.1.13"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-is": "^19.2.3",
+    "sanity": "^5.1.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^3.0.1",
-    "@types/react": "^19.2.2",
-    "@types/styled-components": "^5.1.26",
-    "eslint": "^8.6.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
-  },
-  "peerDependencies": {
-    "@sanity/dashboard": "^4.0.3"
+    "@sanity/eslint-config-studio": "^5.0.2",
+    "@types/react": "^19.2.7",
+    "@types/styled-components": "^5.1.36",
+    "eslint": "^9",
+    "eslint-config-sanity": "^7.1.4",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
   },
   "prettier": {
     "semi": false,
