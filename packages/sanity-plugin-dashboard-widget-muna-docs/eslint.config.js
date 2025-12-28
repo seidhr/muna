@@ -1,13 +1,9 @@
-import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import prettier from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
 
-export default tseslint.config(
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
+export default [
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -32,7 +28,6 @@ export default tseslint.config(
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      ...prettierConfig.rules,
       '@typescript-eslint/no-unnecessary-type-constraint': 'off',
       'prettier/prettier': 'error',
     },
@@ -48,6 +43,5 @@ export default tseslint.config(
       'package.config.ts',
       'eslint.config.js',
     ],
-  }
-);
-
+  },
+];
