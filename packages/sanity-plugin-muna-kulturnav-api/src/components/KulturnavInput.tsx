@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react'
 import React from 'react'
 import { ObjectInputProps, set, unset } from 'sanity'
+import { Stack } from '@sanity/ui'
 
 import type { KulturnavAutocompleteItem, KulturnavReference } from '../types'
 import { transformKulturnavResponse } from '../lib/kulturnavClient'
@@ -61,7 +62,7 @@ export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
   }, [onChange])
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <Stack space={3}>
       <SearchInput
         value=""
         onChange={() => {
@@ -75,7 +76,7 @@ export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
       {currentValue && (
         <SelectedBadges items={[currentValue]} onRemove={() => handleRemove()} />
       )}
-    </div>
+    </Stack>
   )
 }
 

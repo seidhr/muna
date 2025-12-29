@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react'
+import { Stack } from '@sanity/ui'
 
 import type { KulturnavReference, PreviewComponentProps, PreviewStyle } from '../types'
 import { getPluginConfig, getClientConfig } from '../lib/config'
@@ -137,23 +138,25 @@ export function SelectedBadges({
 
   return (
     <>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '8px' }}>
-        {items.map((item, index) => {
-          const style = getPreviewStyle(item, defaultPreviewStyle)
-          const PreviewComponent = getPreviewComponent(item, style, defaultPreviewComponent)
+      <Stack space={2} style={{ marginTop: '8px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          {items.map((item, index) => {
+            const style = getPreviewStyle(item, defaultPreviewStyle)
+            const PreviewComponent = getPreviewComponent(item, style, defaultPreviewComponent)
 
-          return (
-            <PreviewComponent
-              key={item.id || index}
-              item={item}
-              onRemove={() => onRemove(index)}
-              onShowDetails={() => handleShowDetails(item)}
-              details={details[item.id] || null}
-              isLoadingDetails={loadingDetails[item.id] || false}
-            />
-          )
-        })}
-      </div>
+            return (
+              <PreviewComponent
+                key={item.id || index}
+                item={item}
+                onRemove={() => onRemove(index)}
+                onShowDetails={() => handleShowDetails(item)}
+                details={details[item.id] || null}
+                isLoadingDetails={loadingDetails[item.id] || false}
+              />
+            )
+          })}
+        </div>
+      </Stack>
 
       {selectedItem && (
         <DetailsPopup

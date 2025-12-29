@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { Portal, Card, Stack, Text, Button, Heading, Box, Flex, Spinner, Badge, Code } from '@sanity/ui'
+import { CloseIcon, LaunchIcon } from '@sanity/icons'
 
 import type { KulturnavDetails, KulturnavReference } from '../types'
 
@@ -7,6 +9,20 @@ interface DetailsPopupProps {
   details: KulturnavDetails | null
   isLoading: boolean
   onClose: () => void
+}
+
+/**
+ * Extract value from JSON-LD object or return the value itself
+ */
+function extractJsonLdValue(value: any): string {
+  if (value == null) return ''
+  if (typeof value === 'string') return value
+  if (typeof value === 'object' && value['@value']) return value['@value']
+  if (typeof value === 'object' && Array.isArray(value)) {
+    // If it's an array, get the first value
+    return value.map(extractJsonLdValue).filter(Boolean).join(', ') || ''
+  }
+  return String(value)
 }
 
 /**
@@ -33,58 +49,6 @@ function parseCaption(caption: string): {
   }
 }
 
-/**
- * Detect if dark mode is active
- */
-function useDarkMode(): boolean {
-  const [isDark, setIsDark] = useState(() => {
-    // Check if body has dark background or if prefers-color-scheme is dark
-    if (typeof window === 'undefined') return false
-
-    // Check Sanity's theme by looking at body background
-    const bodyBg = window.getComputedStyle(document.body).backgroundColor
-    const rgb = bodyBg.match(/\d+/g)
-    if (rgb) {
-      const [r, g, b] = rgb.map(Number)
-      // If background is dark (average < 128), it's dark mode
-      const avg = (r + g + b) / 3
-      if (avg < 128) return true
-    }
-
-    // Fallback to prefers-color-scheme
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
-
-  useEffect(() => {
-    // Watch for changes in body background
-    const observer = new MutationObserver(() => {
-      const bodyBg = window.getComputedStyle(document.body).backgroundColor
-      const rgb = bodyBg.match(/\d+/g)
-      if (rgb) {
-        const [r, g, b] = rgb.map(Number)
-        const avg = (r + g + b) / 3
-        setIsDark(avg < 128)
-      }
-    })
-
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['style', 'class'],
-    })
-
-    // Also watch for media query changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleChange = (e: MediaQueryListEvent) => setIsDark(e.matches)
-    mediaQuery.addEventListener('change', handleChange)
-
-    return () => {
-      observer.disconnect()
-      mediaQuery.removeEventListener('change', handleChange)
-    }
-  }, [])
-
-  return isDark
-}
 
 /**
  * Popup component to show detailed information about a kulturnav reference
@@ -98,7 +62,6 @@ export function DetailsPopup({
   onClose,
 }: DetailsPopupProps): React.JSX.Element {
   const popupRef = useRef<HTMLDivElement>(null)
-  const isDark = useDarkMode()
 
   const parsedCaption = useMemo(() => {
     // Try to get caption from details first, then from item
@@ -169,391 +132,190 @@ export function DetailsPopup({
 
   const externalUrl = uuid ? `https://kulturnav.org/${uuid}` : null
 
-  // Dark mode colors
-  const bgColor = isDark ? '#1a1a1a' : '#fff'
-  const textColor = isDark ? '#e5e5e5' : '#1a1a1a'
-  const textColorMuted = isDark ? '#999' : '#666'
-  const textColorLight = isDark ? '#666' : '#999'
-  const borderColor = isDark ? '#333' : '#e5e5e5'
-  const bgColorSecondary = isDark ? '#252525' : '#f9f9f9'
-  const bgColorTertiary = isDark ? '#2a2a2a' : '#f5f5f5'
-  const hoverBg = isDark ? '#333' : '#f0f0f0'
-  const overlayBg = isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(0, 0, 0, 0.6)'
-
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: overlayBg,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 999999, // Very high z-index to appear above all panels
-        padding: '20px',
-      }}
-    >
-      <div
-        ref={popupRef}
+    <Portal>
+      <Box
         style={{
-          backgroundColor: bgColor,
-          borderRadius: '12px',
-          padding: '0',
-          width: '100%',
-          maxWidth: '640px',
-          maxHeight: '90vh',
-          overflow: 'hidden',
-          boxShadow: isDark
-            ? '0 8px 32px rgba(0, 0, 0, 0.5)'
-            : '0 8px 32px rgba(0, 0, 0, 0.2)',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
           display: 'flex',
-          flexDirection: 'column',
-          color: textColor,
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 999999,
+          padding: 5,
         }}
+        onClick={onClose}
       >
-        {/* Header */}
-        <div
+        <Card
+          ref={popupRef}
+          radius={3}
+          shadow={3}
           style={{
-            padding: '24px 24px 20px 24px',
-            borderBottom: `1px solid ${borderColor}`,
-            position: 'relative',
+            width: '100%',
+            maxWidth: '640px',
+            maxHeight: '90vh',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
           }}
+          onClick={(e) => e.stopPropagation()}
         >
-          <button
-            onClick={onClose}
-            style={{
-              position: 'absolute',
-              top: '16px',
-              right: '16px',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '24px',
-              color: textColorMuted,
-              padding: '8px',
-              lineHeight: '1',
-              borderRadius: '6px',
-              width: '32px',
-              height: '32px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = hoverBg
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent'
-            }}
-            aria-label="Close"
-            type="button"
-          >
-            ×
-          </button>
-
-          {isLoading ? (
-            <div style={{ padding: '40px 20px', textAlign: 'center', color: textColorMuted }}>
-              <div style={{ marginBottom: '8px' }}>Loading details...</div>
-              <div
-                style={{
-                  width: '40px',
-                  height: '40px',
-                  border: `3px solid ${borderColor}`,
-                  borderTopColor: '#2276fc',
-                  borderRadius: '50%',
-                  margin: '0 auto',
-                  animation: 'spin 0.6s linear infinite',
-                }}
-              >
-                <style>
-                  {`
-                    @keyframes spin {
-                      to { transform: rotate(360deg); }
-                    }
-                  `}
-                </style>
-              </div>
-            </div>
-          ) : details ? (
-            <div>
-              <h2
-                style={{
-                  margin: '0 0 8px 0',
-                  fontSize: '24px',
-                  fontWeight: '600',
-                  lineHeight: '1.3',
-                  color: textColor,
-                  paddingRight: '40px',
-                }}
-              >
-                {parsedCaption.name}
-              </h2>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: '12px' }}>
-                {parsedCaption.dates && (
-                  <div
-                    style={{
-                      fontSize: '14px',
-                      color: textColorMuted,
-                      padding: '4px 12px',
-                      backgroundColor: bgColorTertiary,
-                      borderRadius: '16px',
-                    }}
-                  >
-                    {parsedCaption.dates}
-                  </div>
+          {/* Header */}
+          <Card padding={[4, 4, 3, 4]} borderBottom>
+            <Flex align="flex-start" justify="space-between" gap={3}>
+              <Box flex={1} style={{ paddingRight: 5 }}>
+                {isLoading ? (
+                  <Flex direction="column" align="center" gap={3} paddingY={5}>
+                    <Text size={1} muted>
+                      Loading details...
+                    </Text>
+                    <Spinner />
+                  </Flex>
+                ) : details ? (
+                  <Stack space={3}>
+                    <Heading size={2}>{parsedCaption.name}</Heading>
+                    <Flex gap={2} wrap="wrap">
+                      {parsedCaption.dates && (
+                        <Badge tone="default" padding={[1, 2]} radius={2}>
+                          {parsedCaption.dates}
+                        </Badge>
+                      )}
+                      {parsedCaption.language && (
+                        <Badge tone="default" padding={[1, 2]} radius={2}>
+                          {parsedCaption.language}
+                        </Badge>
+                      )}
+                      {parsedCaption.profession && (
+                        <Badge tone="primary" padding={[1, 2]} radius={2}>
+                          {parsedCaption.profession}
+                        </Badge>
+                      )}
+                    </Flex>
+                  </Stack>
+                ) : (
+                  <Heading size={2}>{item.label || 'Untitled'}</Heading>
                 )}
-                {parsedCaption.language && (
-                  <div
-                    style={{
-                      fontSize: '14px',
-                      color: textColorMuted,
-                      padding: '4px 12px',
-                      backgroundColor: bgColorTertiary,
-                      borderRadius: '16px',
-                    }}
-                  >
-                    {parsedCaption.language}
-                  </div>
-                )}
-                {parsedCaption.profession && (
-                  <div
-                    style={{
-                      fontSize: '14px',
-                      color: '#2276fc',
-                      padding: '4px 12px',
-                      backgroundColor: isDark ? '#1a2a3a' : '#f0f7ff',
-                      borderRadius: '16px',
-                      fontWeight: '500',
-                    }}
-                  >
-                    {parsedCaption.profession}
-                  </div>
-                )}
-              </div>
-            </div>
-          ) : (
-            <div>
-              <h2
-                style={{
-                  margin: '0 0 8px 0',
-                  fontSize: '24px',
-                  fontWeight: '600',
-                  lineHeight: '1.3',
-                  color: textColor,
-                  paddingRight: '40px',
-                }}
-              >
-                {item.label || 'Untitled'}
-              </h2>
-            </div>
-          )}
-        </div>
+              </Box>
+              <Button
+                icon={CloseIcon}
+                mode="bleed"
+                onClick={onClose}
+                tone="default"
+                padding={2}
+                aria-label="Close"
+              />
+            </Flex>
+          </Card>
 
-        {/* Content */}
-        {!isLoading && (
-          <div
-            style={{
-              padding: '24px',
-              overflowY: 'auto',
-              flex: 1,
-            }}
-          >
-            {details ? (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                {/* Description */}
-                {(details.description || details.definition) && (
-                  <div>
-                    <p
-                      style={{
-                        margin: '0',
-                        color: textColorMuted,
-                        fontSize: '15px',
-                        lineHeight: '1.6',
-                      }}
-                    >
-                      {details.description || details.definition}
-                    </p>
-                  </div>
-                )}
-
-                {/* Metadata Grid */}
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: '16px',
-                    padding: '16px',
-                    backgroundColor: bgColorSecondary,
-                    borderRadius: '8px',
-                  }}
-                >
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '11px',
-                        color: textColorLight,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        fontWeight: '600',
-                        marginBottom: '6px',
-                      }}
-                    >
-                      Type
-                    </div>
-                    <div style={{ fontSize: '14px', color: textColor, fontWeight: '500' }}>
-                      {details.entityType || item.type}
-                    </div>
-                  </div>
-
-                  {details.datasetCaption && (
-                    <div>
-                      <div
-                        style={{
-                          fontSize: '11px',
-                          color: textColorLight,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.5px',
-                          fontWeight: '600',
-                          marginBottom: '6px',
-                        }}
-                      >
-                        Dataset
-                      </div>
-                      <div style={{ fontSize: '14px', color: textColor }}>
-                        {details.datasetCaption}
-                      </div>
-                    </div>
+          {/* Content */}
+          {!isLoading && (
+            <Box padding={4} style={{ overflowY: 'auto', flex: 1 }}>
+              {details ? (
+                <Stack space={4}>
+                  {/* Description */}
+                  {(extractJsonLdValue(details.description) || extractJsonLdValue(details.definition)) && (
+                    <Text size={1} muted>
+                      {extractJsonLdValue(details.description || details.definition)}
+                    </Text>
                   )}
 
-                  {details.uuid && (
-                    <div>
-                      <div
-                        style={{
-                          fontSize: '11px',
-                          color: textColorLight,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.5px',
-                          fontWeight: '600',
-                          marginBottom: '6px',
-                        }}
-                      >
-                        UUID
-                      </div>
-                      <div
-                        style={{
-                          fontSize: '12px',
-                          fontFamily: 'monospace',
-                          color: textColorMuted,
-                          wordBreak: 'break-all',
-                        }}
-                      >
-                        {details.uuid}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  {/* Metadata Grid */}
+                  <Card padding={3} radius={2} tone="default">
+                    <Stack space={3}>
+                      <Stack space={1}>
+                        <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                          Type
+                        </Text>
+                        <Text size={1} weight="medium">
+                          {extractJsonLdValue(details.entityType) ||
+                            (details['@type'] && Array.isArray(details['@type'])
+                              ? details['@type'].join(', ')
+                              : extractJsonLdValue(details['@type'])) ||
+                            item.type}
+                        </Text>
+                      </Stack>
 
-                {/* External Link */}
-                {externalUrl && (
-                  <div>
-                    <a
-                      href={externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '14px',
-                        color: '#2276fc',
-                        textDecoration: 'none',
-                        padding: '8px 16px',
-                        border: '1px solid #2276fc',
-                        borderRadius: '6px',
-                        transition: 'all 0.2s',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = isDark ? '#1a2a3a' : '#f0f7ff'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent'
-                      }}
-                    >
-                      <span>View on Kulturnav</span>
-                      <span style={{ fontSize: '12px' }}>↗</span>
-                    </a>
-                  </div>
-                )}
+                      {extractJsonLdValue(details.datasetCaption) && (
+                        <Stack space={1}>
+                          <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                            Dataset
+                          </Text>
+                          <Text size={1}>
+                            {extractJsonLdValue(details.datasetCaption)}
+                          </Text>
+                        </Stack>
+                      )}
 
-                {/* Full Details (Expandable) */}
-                {Object.keys(details).length > 0 && (
-                  <details style={{ marginTop: '8px' }}>
-                    <summary
-                      style={{
-                        cursor: 'pointer',
-                        fontSize: '13px',
-                        color: textColorMuted,
-                        padding: '8px 12px',
-                        backgroundColor: bgColorTertiary,
-                        borderRadius: '6px',
-                        listStyle: 'none',
-                        userSelect: 'none',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = hoverBg
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = bgColorTertiary
-                      }}
-                    >
-                      <span style={{ marginRight: '8px' }}>▼</span>
-                      Show all details
-                    </summary>
-                    <pre
-                      style={{
-                        fontSize: '12px',
-                        padding: '16px',
-                        backgroundColor: bgColorSecondary,
-                        borderRadius: '6px',
-                        overflow: 'auto',
-                        maxHeight: '400px',
-                        marginTop: '8px',
-                        border: `1px solid ${borderColor}`,
-                        fontFamily: 'monospace',
-                        lineHeight: '1.5',
-                        color: textColorMuted,
-                      }}
-                    >
-                      {JSON.stringify(details, null, 2)}
-                    </pre>
-                  </details>
-                )}
-              </div>
-            ) : (
-              <div style={{ padding: '40px 20px', textAlign: 'center', color: textColorMuted }}>
-                <div style={{ fontSize: '16px', marginBottom: '8px' }}>
-                  No additional details available
-                </div>
-                <div style={{ fontSize: '14px', color: textColorLight }}>
+                      {details.uuid && (
+                        <Stack space={1}>
+                          <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                            UUID
+                          </Text>
+                          <Code size={0} style={{ wordBreak: 'break-all' }}>
+                            {details.uuid}
+                          </Code>
+                        </Stack>
+                      )}
+                    </Stack>
+                  </Card>
+
+                  {/* External Link */}
                   {externalUrl && (
-                    <a
+                    <Button
+                      as="a"
                       href={externalUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: '#2276fc', textDecoration: 'none' }}
-                    >
-                      View on Kulturnav →
-                    </a>
+                      text="View on Kulturnav"
+                      icon={LaunchIcon}
+                      tone="primary"
+                      mode="ghost"
+                    />
                   )}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    </div>
+
+                  {/* Full Details (Expandable) */}
+                  {Object.keys(details).length > 0 && (
+                    <details>
+                      <summary style={{ cursor: 'pointer', listStyle: 'none' }}>
+                        <Button mode="bleed" tone="default" text="Show all details" />
+                      </summary>
+                      <Box marginTop={2}>
+                        <Card padding={3} radius={2} tone="default">
+                          <Code size={0} style={{ maxHeight: '400px', overflow: 'auto', display: 'block' }}>
+                            {JSON.stringify(details, null, 2)}
+                          </Code>
+                        </Card>
+                      </Box>
+                    </details>
+                  )}
+                </Stack>
+              ) : (
+                <Flex direction="column" align="center" gap={3} paddingY={5}>
+                  <Text size={1} muted>
+                    No additional details available
+                  </Text>
+                  {externalUrl && (
+                    <Button
+                      as="a"
+                      href={externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      text="View on Kulturnav"
+                      icon={LaunchIcon}
+                      tone="primary"
+                      mode="ghost"
+                    />
+                  )}
+                </Flex>
+              )}
+            </Box>
+          )}
+        </Card>
+      </Box>
+    </Portal>
   )
 }

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import React from 'react'
+import { TextInput, Flex, Spinner, Stack, Text, Card } from '@sanity/ui'
 
 import type { KulturnavAutocompleteItem, SearchFilters } from '../types'
 import { searchKulturnav } from '../lib/kulturnavClient'
@@ -95,80 +96,46 @@ export function SearchInput({
   )
 
   return (
-    <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <div style={{ flex: 1, position: 'relative' }}>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.currentTarget.value)
-              onChange(e.currentTarget.value)
-            }}
-            placeholder={placeholder}
-            disabled={disabled}
-            style={{
-              width: '100%',
-              padding: '8px 12px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              fontSize: '14px',
-              fontFamily: 'inherit',
-            }}
-          />
-        </div>
-        {isLoading && (
+    <Stack space={2}>
+      <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
+        <Flex align="center" gap={2}>
+          <div style={{ flex: 1, position: 'relative' }}>
+            <TextInput
+              type="text"
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.currentTarget.value)
+                onChange(e.currentTarget.value)
+              }}
+              placeholder={placeholder}
+              disabled={disabled}
+            />
+          </div>
+          {isLoading && <Spinner />}
+        </Flex>
+
+        {error && (
+          <Card padding={2} radius={2} tone="critical" marginTop={1}>
+            <Text size={1}>{error}</Text>
+          </Card>
+        )}
+
+        {showResults && results.length > 0 && (
           <div
             style={{
-              width: '16px',
-              height: '16px',
-              border: '2px solid #ccc',
-              borderTopColor: '#000',
-              borderRadius: '50%',
-              animation: 'spin 0.6s linear infinite',
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              zIndex: 1000,
+              marginTop: '4px',
             }}
           >
-            <style>
-              {`
-                @keyframes spin {
-                  to { transform: rotate(360deg); }
-                }
-              `}
-            </style>
+            <SearchResults results={results} onSelect={handleSelect} isLoading={isLoading} />
           </div>
         )}
       </div>
-
-      {error && (
-        <div
-          style={{
-            padding: '8px',
-            borderRadius: '4px',
-            marginTop: '4px',
-            backgroundColor: '#fee',
-            color: '#c00',
-            fontSize: '13px',
-          }}
-        >
-          {error}
-        </div>
-      )}
-
-      {showResults && results.length > 0 && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            zIndex: 1000,
-            marginTop: '4px',
-          }}
-        >
-          <SearchResults results={results} onSelect={handleSelect} isLoading={isLoading} />
-        </div>
-      )}
-    </div>
+    </Stack>
   )
 }
 

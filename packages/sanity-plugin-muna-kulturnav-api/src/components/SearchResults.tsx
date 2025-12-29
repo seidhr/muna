@@ -1,4 +1,5 @@
 import React from 'react'
+import { Card, Stack, Text, Box } from '@sanity/ui'
 
 import type { KulturnavAutocompleteItem } from '../types'
 
@@ -15,89 +16,54 @@ export function SearchResults({
 }: SearchResultsProps): React.JSX.Element | null {
   if (isLoading) {
     return (
-      <div
-        style={{
-          padding: '12px',
-          borderRadius: '4px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-          backgroundColor: '#fff',
-          color: '#666',
-          fontSize: '13px',
-        }}
-      >
-        Searching...
-      </div>
+      <Card padding={3} radius={2} shadow={1}>
+        <Text size={1} muted>
+          Searching...
+        </Text>
+      </Card>
     )
   }
 
   if (results.length === 0) {
     return (
-      <div
-        style={{
-          padding: '12px',
-          borderRadius: '4px',
-          boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-          backgroundColor: '#fff',
-          color: '#666',
-          fontSize: '13px',
-        }}
-      >
-        No results found
-      </div>
+      <Card padding={3} radius={2} shadow={1}>
+        <Text size={1} muted>
+          No results found
+        </Text>
+      </Card>
     )
   }
 
   return (
-    <div
-      style={{
-        borderRadius: '4px',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.15)',
-        maxHeight: '300px',
-        overflowY: 'auto',
-        backgroundColor: '#fff',
-      }}
-    >
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+    <Card radius={2} shadow={2} style={{ maxHeight: '300px', overflowY: 'auto' }}>
+      <Stack space={1} padding={1}>
         {results.map((item) => (
-          <div
+          <Box
             key={item.uuid}
-            style={{
-              padding: '12px',
-              cursor: 'pointer',
-            }}
+            padding={3}
+            style={{ cursor: 'pointer' }}
             onClick={() => onSelect(item)}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#e5e5e5'
+              e.currentTarget.style.backgroundColor = 'var(--card-hovered-bg-color)'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = 'transparent'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <div
-                style={{
-                  fontSize: '13px',
-                  fontWeight: '500',
-                  color: '#000',
-                }}
-              >
+            <Stack space={1}>
+              <Text size={1} weight="medium">
                 {item.caption}
-              </div>
+              </Text>
               {item.datasetCaption && (
-                <div
-                  style={{
-                    fontSize: '12px',
-                    color: '#666',
-                  }}
-                >
+                <Text size={0} muted>
                   {item.datasetCaption}
-                </div>
+                </Text>
               )}
-            </div>
-          </div>
+            </Stack>
+          </Box>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Card>
   )
 }
 
