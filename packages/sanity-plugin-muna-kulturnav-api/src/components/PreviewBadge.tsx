@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge, Flex, Text, Button } from '@sanity/ui'
+import { Badge, Flex, Button } from '@sanity/ui'
 import { CloseIcon } from '@sanity/icons'
 
 import type { PreviewComponentProps } from '../types'
@@ -19,24 +19,14 @@ export function PreviewBadge({
       tone="primary"
       padding={[1, 2]}
       radius={2}
-      style={{ cursor: 'pointer', maxWidth: '100%' }}
+      style={{ cursor: 'pointer', display: 'inline-flex' }}
       onClick={(e) => {
         e.stopPropagation()
         onShowDetails()
       }}
     >
-      <Flex align="center" gap={2}>
-        <Text
-          size={1}
-          style={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
-            maxWidth: '200px',
-          }}
-        >
-          {item.label || item.id}
-        </Text>
+      <Flex align="center" gap={1}>
+        <span>{item.label || item.id}</span>
         <Button
           mode="bleed"
           icon={CloseIcon}
@@ -46,12 +36,10 @@ export function PreviewBadge({
             onRemove()
           }}
           padding={0}
-          tone="default"
-          style={{ flexShrink: 0 }}
+          tone="primary"
           aria-label="Remove"
         />
       </Flex>
     </Badge>
   )
 }
-

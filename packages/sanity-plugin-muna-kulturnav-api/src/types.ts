@@ -7,11 +7,10 @@ import type React from 'react'
  * @public
  */
 export interface KulturnavReference {
-  _type?: 'kulturnavReference'
+  _type: 'ExternalReference'
   id: string // Required: dereferenceable URI
   type: string // Required: entity type (e.g., "Person", "Concept", "Place")
   label?: string // Recommended: human-readable label (maps to _label in Linked Art)
-  uuid?: string // Optional: UUID for fetching full details from core API
   notation?: string[] // Optional: additional identifiers (e.g., language tags)
   complete?: boolean // Optional: if true, stores full embedded data (maps to _complete in Linked Art)
 }

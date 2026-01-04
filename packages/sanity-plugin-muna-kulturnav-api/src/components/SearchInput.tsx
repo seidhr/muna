@@ -1,11 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import React from 'react'
-import { TextInput, Flex, Spinner, Stack, Text, Card } from '@sanity/ui'
+import { Autocomplete, Stack, Text, Card, Box } from '@sanity/ui'
 
 import type { KulturnavAutocompleteItem, SearchFilters } from '../types'
 import { searchKulturnav } from '../lib/kulturnavClient'
 import type { KulturnavClientConfig } from '../lib/kulturnavClient'
-import { SearchResults } from './SearchResults'
 
 interface SearchInputProps {
   value: string
@@ -26,13 +25,12 @@ export function SearchInput({
   placeholder = 'Search kulturnav...',
   disabled = false,
 }: SearchInputProps): React.JSX.Element {
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState<string | null>(null)
   const [results, setResults] = useState<KulturnavAutocompleteItem[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [showResults, setShowResults] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const resultsMapRef = useRef<Map<string, KulturnavAutocompleteItem>>(new Map())
 
   // Debounced search
   useEffect(() => {
@@ -40,10 +38,10 @@ export function SearchInput({
       clearTimeout(debounceTimerRef.current)
     }
 
-    if (searchQuery.trim().length === 0) {
+    if (!searchQuery || searchQuery.trim().length === 0) {
       setResults([])
-      setShowResults(false)
       setIsLoading(false)
+      resultsMapRef.current.clear()
       return
     }
 
@@ -54,11 +52,15 @@ export function SearchInput({
       try {
         const searchResults = await searchKulturnav(searchQuery, filters, config)
         setResults(searchResults)
-        setShowResults(true)
+        // Create a map for quick lookup when option is selected
+        resultsMapRef.current.clear()
+        searchResults.forEach((item) => {
+          resultsMapRef.current.set(item.uuid, item)
+        })
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to search')
         setResults([])
-        setShowResults(false)
+        resultsMapRef.current.clear()
       } finally {
         setIsLoading(false)
       }
@@ -71,71 +73,81 @@ export function SearchInput({
     }
   }, [searchQuery, filters, config])
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setShowResults(false)
-      }
-    }
+  // Transform results to Autocomplete options format
+  const options = useMemo(
+    () =>
+      results.map((item) => ({
+        value: item.uuid,
+      })),
+    [results],
+  )
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+  const handleQueryChange = useCallback(
+    (query: string | null) => {
+      setSearchQuery(query)
+      onChange(query || '')
+    },
+    [onChange],
+  )
 
   const handleSelect = useCallback(
-    (item: KulturnavAutocompleteItem) => {
-      onSelect(item)
-      setSearchQuery('')
-      setShowResults(false)
-      setResults([])
+    (selectedValue: string) => {
+      const item = resultsMapRef.current.get(selectedValue)
+      if (item) {
+        onSelect(item)
+        // Clear the search query and results immediately
+        setSearchQuery('') // Set to empty string to clear input
+        setResults([])
+        resultsMapRef.current.clear()
+        // Clear the onChange callback to reset parent state
+        onChange('')
+      }
     },
-    [onSelect],
+    [onSelect, onChange],
   )
+
+  const renderOption = useCallback((option: { value: string }) => {
+    const item = resultsMapRef.current.get(option.value)
+    if (!item) {
+      return <Box padding={3} />
+    }
+
+    return (
+      <Box padding={3}>
+        <Stack space={1}>
+          <Text size={1} weight="medium">
+            {item.caption}
+          </Text>
+          {item.datasetCaption && (
+            <Text size={0} muted>
+              {item.datasetCaption}
+            </Text>
+          )}
+        </Stack>
+      </Box>
+    )
+  }, [])
 
   return (
     <Stack space={2}>
-      <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
-        <Flex align="center" gap={2}>
-          <div style={{ flex: 1, position: 'relative' }}>
-            <TextInput
-              type="text"
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.currentTarget.value)
-                onChange(e.currentTarget.value)
-              }}
-              placeholder={placeholder}
-              disabled={disabled}
-            />
-          </div>
-          {isLoading && <Spinner />}
-        </Flex>
+      <Autocomplete
+        id="kulturnav-search"
+        options={options}
+        onQueryChange={handleQueryChange}
+        onSelect={handleSelect}
+        renderOption={renderOption}
+        renderValue={() => searchQuery || ''} // Always render the query string, never the UUID
+        loading={isLoading}
+        placeholder={placeholder}
+        disabled={disabled}
+        filterOption={() => true} // We handle filtering via API, so always show all options
+      />
 
-        {error && (
-          <Card padding={2} radius={2} tone="critical" marginTop={1}>
-            <Text size={1}>{error}</Text>
-          </Card>
-        )}
-
-        {showResults && results.length > 0 && (
-          <div
-            style={{
-              position: 'absolute',
-              top: '100%',
-              left: 0,
-              right: 0,
-              zIndex: 1000,
-              marginTop: '4px',
-            }}
-          >
-            <SearchResults results={results} onSelect={handleSelect} isLoading={isLoading} />
-          </div>
-        )}
-      </div>
+      {error && (
+        <Card padding={2} radius={2} tone="critical" marginTop={1}>
+          <Text size={1}>{error}</Text>
+        </Card>
+      )}
     </Stack>
   )
 }
-

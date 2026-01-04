@@ -50,7 +50,7 @@ export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
     (item: KulturnavAutocompleteItem) => {
       const reference: KulturnavReference = {
         ...transformKulturnavResponse(item, filters.entityType, config.apiBaseUrl),
-        _type: 'kulturnavReference',
+        _type: 'ExternalReference',
       }
       onChange([set(reference)])
     },

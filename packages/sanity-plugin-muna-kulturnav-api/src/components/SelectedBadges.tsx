@@ -89,8 +89,8 @@ export function SelectedBadges({
     async (item: KulturnavReference) => {
       setSelectedItem(item)
 
-      // Use UUID directly from item, or extract from ID as fallback
-      const uuid = item.uuid || extractUuidFromId(item.id)
+      // Extract UUID from ID
+      const uuid = extractUuidFromId(item.id)
       if (!uuid) {
         console.warn('No UUID found for item:', item)
         return

@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react'
 import React from 'react'
-import { ArrayInputProps, insert, setIfMissing, unset } from 'sanity'
+import { insert, setIfMissing, unset, ArraySchemaType } from 'sanity'
+import { Stack } from '@sanity/ui'
 
 import type { KulturnavAutocompleteItem, KulturnavReference } from '../types'
 import { transformKulturnavResponse } from '../lib/kulturnavClient'
@@ -8,7 +9,10 @@ import { getClientConfig } from '../lib/config'
 import { SearchInput } from './SearchInput'
 import { SelectedBadges } from './SelectedBadges'
 
-interface KulturnavArrayInputProps extends ArrayInputProps {
+interface KulturnavArrayInputProps {
+  value?: KulturnavReference[]
+  onChange: (patches: any[]) => void
+  schemaType: ArraySchemaType
   // Field options from schema
   options?: {
     entityType?: string
@@ -16,6 +20,11 @@ interface KulturnavArrayInputProps extends ArrayInputProps {
     lang?: string
     propertyType?: string
   }
+}
+
+// Type for array items with _key (required by Sanity arrays)
+type KulturnavReferenceWithKey = KulturnavReference & {
+  _key: string
 }
 
 /**
@@ -44,14 +53,14 @@ export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.
 
   // Current value is an array of reference objects (or undefined)
   // Sanity arrays can be undefined initially
-  const currentValues: KulturnavReference[] = Array.isArray(value) ? value : []
+  const currentValues: KulturnavReferenceWithKey[] = Array.isArray(value) ? (value as KulturnavReferenceWithKey[]) : []
 
   const handleSelect = useCallback(
     (item: KulturnavAutocompleteItem) => {
-      const reference: KulturnavReference = {
+      const reference: KulturnavReferenceWithKey = {
+        _key: Date.now().toString(36) + Math.random().toString(36).substring(2, 9), // Short unique key for ordering
         ...transformKulturnavResponse(item, filters.entityType, config.apiBaseUrl),
-        _type: 'kulturnavReference',
-        _key: `kulturnav-${item.uuid}-${Date.now()}`, // Generate unique key
+        _type: 'ExternalReference',
       }
 
       // Check if this item is already in the array (by id)
@@ -75,7 +84,7 @@ export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.
   )
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <Stack space={3}>
       <SearchInput
         value=""
         onChange={() => {
@@ -89,7 +98,7 @@ export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.
       {currentValues.length > 0 && (
         <SelectedBadges items={currentValues} onRemove={handleRemove} />
       )}
-    </div>
+    </Stack>
   )
 }
 

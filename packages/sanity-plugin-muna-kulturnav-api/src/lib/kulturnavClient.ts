@@ -24,10 +24,10 @@ export function transformKulturnavResponse(
   apiBaseUrl: string = 'https://kulturnav.org',
 ): KulturnavReference {
   return {
+    _type: 'ExternalReference',
     id: `${apiBaseUrl}/${item.uuid}`,
     type: entityType || 'Concept', // Default to Concept if not provided
     label: item.caption,
-    uuid: item.uuid, // Store UUID for direct lookup
   }
 }
 
@@ -191,7 +191,10 @@ export async function fetchKulturnavDetails(
     let caption = ''
     if (entityData['entity.fullCaption']) {
       // Can be { "@language": "sv", "@value": "..." } or string
-      if (typeof entityData['entity.fullCaption'] === 'object' && entityData['entity.fullCaption']['@value']) {
+      if (
+        typeof entityData['entity.fullCaption'] === 'object' &&
+        entityData['entity.fullCaption']['@value']
+      ) {
         caption = entityData['entity.fullCaption']['@value']
       } else if (typeof entityData['entity.fullCaption'] === 'string') {
         caption = entityData['entity.fullCaption']
@@ -246,4 +249,3 @@ export function extractUuidFromId(id: string): string | null {
   const match = id.match(/\/([a-f0-9-]+)$/i)
   return match ? match[1] : null
 }
-
