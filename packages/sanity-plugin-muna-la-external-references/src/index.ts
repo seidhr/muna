@@ -11,7 +11,7 @@ import type { KulturnavPluginConfig } from './types'
  *
  * ```ts
  * import {defineConfig} from 'sanity'
- * import {kulturnavInput} from '@seidhr/sanity-plugin-muna-kulturnav-api'
+ * import {kulturnavInput} from '@seidhr/sanity-plugin-muna-la-external-references'
  *
  * export default defineConfig({
  *   // ...
@@ -48,7 +48,7 @@ export const kulturnavInput = definePlugin<KulturnavPluginConfig | void>((config
   setPluginConfig(config)
 
   return {
-    name: '@seidhr/sanity-plugin-muna-kulturnav-api',
+    name: '@seidhr/sanity-plugin-muna-la-external-references',
     schema: {
       types: [kulturnavReference],
     },

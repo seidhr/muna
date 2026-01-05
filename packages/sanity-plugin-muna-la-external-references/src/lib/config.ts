@@ -41,4 +41,3 @@ export function getClientConfig(): KulturnavClientConfig {
     customSearchUrl: cfg.customSearchUrl,
   }
 }
-

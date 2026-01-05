@@ -79,7 +79,7 @@ export interface KulturnavPluginConfig {
   defaultDataset?: string
   defaultLanguage?: string
   storageMode?: 'reference' | 'embed' // Default: 'reference'
-  searchEndpoint?: 'autocomplete' | 'search' | 'core' // Default: 'autocomplete'
+  searchEndpoint?: 'autocomplete' | 'search' | 'core' | 'summary' // Default: 'summary'
   transformResponse?: (data: KulturnavAutocompleteItem) => KulturnavReference
   // Generic API support
   customSearchUrl?: (query: string, filters: SearchFilters) => string

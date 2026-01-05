@@ -1,5 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { Portal, Card, Stack, Text, Button, Heading, Box, Flex, Spinner, Badge, Code } from '@sanity/ui'
+import {
+  Portal,
+  Card,
+  Stack,
+  Text,
+  Button,
+  Heading,
+  Box,
+  Flex,
+  Spinner,
+  Badge,
+  Code,
+} from '@sanity/ui'
 import { CloseIcon, LaunchIcon } from '@sanity/icons'
 
 import type { KulturnavDetails, KulturnavReference } from '../types'
@@ -48,7 +60,6 @@ function parseCaption(caption: string): {
     profession: profession?.trim(),
   }
 }
-
 
 /**
  * Popup component to show detailed information about a kulturnav reference
@@ -217,17 +228,23 @@ export function DetailsPopup({
               {details ? (
                 <Stack space={4}>
                   {/* Description */}
-                  {(extractJsonLdValue(details.description) || extractJsonLdValue(details.definition)) && (
-                    <Text size={1} muted>
-                      {extractJsonLdValue(details.description || details.definition)}
-                    </Text>
-                  )}
+                  {(extractJsonLdValue(details.description) ||
+                    extractJsonLdValue(details.definition)) && (
+                      <Text size={1} muted>
+                        {extractJsonLdValue(details.description || details.definition)}
+                      </Text>
+                    )}
 
                   {/* Metadata Grid */}
                   <Card padding={3} radius={2} tone="default">
                     <Stack space={3}>
                       <Stack space={1}>
-                        <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                        <Text
+                          size={0}
+                          weight="semibold"
+                          style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }}
+                          muted
+                        >
                           Type
                         </Text>
                         <Text size={1} weight="medium">
@@ -241,18 +258,26 @@ export function DetailsPopup({
 
                       {extractJsonLdValue(details.datasetCaption) && (
                         <Stack space={1}>
-                          <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                          <Text
+                            size={0}
+                            weight="semibold"
+                            style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }}
+                            muted
+                          >
                             Dataset
                           </Text>
-                          <Text size={1}>
-                            {extractJsonLdValue(details.datasetCaption)}
-                          </Text>
+                          <Text size={1}>{extractJsonLdValue(details.datasetCaption)}</Text>
                         </Stack>
                       )}
 
                       {details.uuid && (
                         <Stack space={1}>
-                          <Text size={0} weight="semibold" style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }} muted>
+                          <Text
+                            size={0}
+                            weight="semibold"
+                            style={{ textTransform: 'uppercase', letterSpacing: '0.5px' }}
+                            muted
+                          >
                             UUID
                           </Text>
                           <Code size={0} style={{ wordBreak: 'break-all' }}>
@@ -285,7 +310,10 @@ export function DetailsPopup({
                       </summary>
                       <Box marginTop={2}>
                         <Card padding={3} radius={2} tone="default">
-                          <Code size={0} style={{ maxHeight: '400px', overflow: 'auto', display: 'block' }}>
+                          <Code
+                            size={0}
+                            style={{ maxHeight: '400px', overflow: 'auto', display: 'block' }}
+                          >
                             {JSON.stringify(details, null, 2)}
                           </Code>
                         </Card>

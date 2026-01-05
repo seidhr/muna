@@ -8,8 +8,10 @@ const kulturnavReferenceTypeName = 'kulturnavReference'
 /**
  * @public
  */
-export interface KulturnavReferenceDefinition
-  extends Omit<ObjectDefinition, 'type' | 'fields' | 'options'> {
+export interface KulturnavReferenceDefinition extends Omit<
+  ObjectDefinition,
+  'type' | 'fields' | 'options'
+> {
   type: typeof kulturnavReferenceTypeName
   options?: KulturnavFieldOptions
 }
@@ -53,7 +55,8 @@ export const kulturnavReference = defineType({
       name: 'label',
       type: 'string',
       title: 'Label',
-      description: 'Human-readable label for the referenced resource (maps to _label in Linked Art)',
+      description:
+        'Human-readable label for the referenced resource (maps to _label in Linked Art)',
     }),
     defineField({
       name: 'notation',
@@ -66,7 +69,8 @@ export const kulturnavReference = defineType({
       name: 'complete',
       type: 'boolean',
       title: 'Complete',
-      description: 'If true, stores full embedded data instead of reference (maps to _complete in Linked Art)',
+      description:
+        'If true, stores full embedded data instead of reference (maps to _complete in Linked Art)',
       initialValue: false,
     }),
   ],
@@ -84,4 +88,3 @@ export const kulturnavReference = defineType({
     },
   },
 })
-

@@ -11,7 +11,7 @@ export interface KulturnavClientConfig {
   defaultEntityType?: string
   defaultDataset?: string
   defaultLanguage?: string
-  searchEndpoint?: 'autocomplete' | 'search' | 'core'
+  searchEndpoint?: 'autocomplete' | 'search' | 'core' | 'summary'
   customSearchUrl?: (query: string, filters: SearchFilters) => string
 }
 
@@ -32,7 +32,7 @@ export function transformKulturnavResponse(
 }
 
 /**
- * Build kulturnav autocomplete URL
+ * Build kulturnav search URL using summary endpoint with custom search string format
  */
 export function buildAutocompleteUrl(
   query: string,
@@ -44,36 +44,51 @@ export function buildAutocompleteUrl(
   }
 
   const baseUrl = config.apiBaseUrl.replace(/\/$/, '')
-  const version = config.apiVersion || 'v1.5'
-  const endpoint = config.searchEndpoint || 'autocomplete'
-
-  const params = new URLSearchParams()
-  params.set('query', query)
+  // Use summary endpoint which supports custom search string format
+  // Note: summary endpoint doesn't use version in path, format is: /api/summary/searchString
 
   // Use filters or defaults from config
-  const entityType = filters.entityType || config.defaultEntityType
-  const dataset = filters.dataset || config.defaultDataset
-  const lang = filters.lang || config.defaultLanguage
+  const entityType = filters.entityType || config.defaultEntityType || 'Concept'
   const propertyType = filters.propertyType || 'compoundName'
 
-  if (entityType) {
-    params.set('entityType', entityType)
-  }
-  if (propertyType) {
-    params.set('propertyType', propertyType)
-  }
-  if (dataset) {
-    params.set('dataset', dataset)
-  }
-  if (lang) {
-    params.set('lang', lang)
+  // Build custom search string in format: field:value,field:value
+  // Example: actualEntityType:Concept,concept.isCollection:false,compoundName:fisk*
+  const searchParts: string[] = []
+
+  // Add entity type filter
+  searchParts.push(`actualEntityType:${entityType}`)
+
+  // Add concept collection filter (exclude collections and guide terms)
+  if (entityType === 'Concept') {
+    searchParts.push('concept.isCollection:false')
   }
 
-  return `${baseUrl}/api/${version}/${endpoint}?${params.toString()}`
+  // Add search query with wildcard
+  // propertyType is typically 'compoundName' for name searches
+  const searchQuery = query.trim()
+  if (searchQuery) {
+    searchParts.push(`${propertyType}:${searchQuery}*`)
+  }
+
+  // Build URL: /api/summary/searchString
+  const searchString = searchParts.join(',')
+  return `${baseUrl}/api/summary/${searchString}`
 }
 
 /**
- * Search kulturnav API
+ * Extract text value from language-keyed object or string
+ */
+function extractTextValue(value: any, lang: string): string {
+  if (!value) return ''
+  if (typeof value === 'string') return value
+  if (typeof value === 'object') {
+    return value[lang] || value.no || value.en || (Object.values(value)[0] as string) || ''
+  }
+  return ''
+}
+
+/**
+ * Search kulturnav API using summary endpoint
  */
 export async function searchKulturnav(
   query: string,
@@ -99,27 +114,22 @@ export async function searchKulturnav(
 
     const data = await response.json()
 
-    // Kulturnav autocomplete returns { fullMatch: [], startMatch: [] }
-    // We combine both arrays and remove duplicates
-    if (data.fullMatch || data.startMatch) {
-      const fullMatch = data.fullMatch || []
-      const startMatch = data.startMatch || []
-      const combined = [...fullMatch, ...startMatch]
-
-      // Remove duplicates by uuid
-      const seen = new Set<string>()
-      return combined.filter((item: KulturnavAutocompleteItem) => {
-        if (seen.has(item.uuid)) {
-          return false
-        }
-        seen.add(item.uuid)
-        return true
-      })
-    }
-
-    // If it's already an array, return it
+    // Summary endpoint returns a direct array of entities
     if (Array.isArray(data)) {
-      return data
+      // Map summary response to KulturnavAutocompleteItem format
+      const lang = filters.lang || config.defaultLanguage || 'no'
+
+      return data.map((item: any): KulturnavAutocompleteItem => {
+        // Extract caption from name or caption object (can be language-keyed object or string)
+        const caption = extractTextValue(item.caption, lang) || extractTextValue(item.name, lang)
+
+        return {
+          uuid: item.uuid,
+          caption: caption || '',
+          datasetUuid: item.dataset?.uuid,
+          datasetCaption: extractTextValue(item.dataset?.displayValue, lang),
+        }
+      })
     }
 
     return []

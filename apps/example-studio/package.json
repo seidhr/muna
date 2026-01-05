@@ -19,7 +19,7 @@
     "@sanity/dashboard": "^5.0.1",
     "@sanity/vision": "^5.1.0",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "*",
-    "@seidhr/sanity-plugin-muna-kulturnav-api": "*",
+    "@seidhr/sanity-plugin-muna-la-external-references": "*",
     "@seidhr/sanity-plugin-timespan-input": "*",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

@@ -3,7 +3,7 @@ import { structureTool } from 'sanity/structure'
 import { dashboardTool } from "@sanity/dashboard";
 import { visionTool } from '@sanity/vision'
 import { colorInput } from '@sanity/color-input'
-import { kulturnavInput } from '@seidhr/sanity-plugin-muna-kulturnav-api'
+import { kulturnavInput } from '@seidhr/sanity-plugin-muna-la-external-references'
 import { munaDocsWidget } from '@seidhr/sanity-plugin-dashboard-widget-muna-docs'
 import { timespanInput } from '@seidhr/sanity-plugin-timespan-input'
 import { schemaTypes } from './schemas'
