@@ -105,7 +105,7 @@ export function DetailsPopup({
     }
 
     return parseCaption(caption)
-  }, [details?.caption, details?.['entity.fullCaption'], details?.name, details?.title, item.label])
+  }, [details, item.label])
 
   // Close on escape key
   useEffect(() => {

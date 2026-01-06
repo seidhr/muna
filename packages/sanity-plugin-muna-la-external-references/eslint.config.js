@@ -1,7 +1,6 @@
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import prettier from 'eslint-plugin-prettier';
 
 export default [
   {
@@ -17,7 +16,6 @@ export default [
     plugins: {
       react,
       'react-hooks': reactHooks,
-      prettier,
     },
     settings: {
       react: {
@@ -29,7 +27,6 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       '@typescript-eslint/no-unnecessary-type-constraint': 'off',
-      'prettier/prettier': 'error',
     },
   },
   {
