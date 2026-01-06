@@ -17,6 +17,7 @@
   "dependencies": {
     "@sanity/color-input": "^6.0.2",
     "@sanity/dashboard": "^5.0.1",
+    "@sanity/sanity-plugin-async-list": "1.3.3",
     "@sanity/vision": "^5.1.0",
     "@seidhr/sanity-plugin-dashboard-widget-muna-docs": "*",
     "@seidhr/sanity-plugin-muna-la-external-references": "*",

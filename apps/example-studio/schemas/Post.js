@@ -45,6 +45,28 @@ export default defineType({
         lang: 'no',
       },
     }),
+    defineField({
+      name: 'related_posts',
+      title: 'Related Posts',
+      type: 'array',
+      description: 'References to other posts',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'Post' }],
+        },
+      ],
+    }),
+    defineField({
+      name: 'disney',
+      type: 'array',
+      description: 'References to disney characters',
+      of: [
+        {
+          type: 'disneyCharacter',
+        },
+      ],
+    }),
   ],
 
   preview: {
