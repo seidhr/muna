@@ -3,9 +3,8 @@ import React from 'react'
 import { insert, setIfMissing, unset, ArraySchemaType } from 'sanity'
 import { Stack } from '@sanity/ui'
 
-import type { KulturnavAutocompleteItem, KulturnavReference } from '../types'
-import { transformKulturnavResponse } from '../lib/kulturnavClient'
-import { getClientConfig } from '../lib/config'
+import type { KulturnavReference, LoaderResult } from '../types'
+import { createKulturnavLoader } from '../lib/kulturnavClient'
 import { SearchInput } from './SearchInput'
 import { SelectedBadges } from './SelectedBadges'
 
@@ -36,31 +35,33 @@ type KulturnavReferenceWithKey = KulturnavReference & {
 export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.Element {
   const { value, onChange, schemaType } = props
 
-  // Get client config for API calls
-  const config = useMemo(() => getClientConfig(), [])
-
   // Get field options from the array field's options
   const fieldOptions = schemaType.options as KulturnavArrayInputProps['options'] | undefined
-  const filters = useMemo(
-    () => ({
-      entityType: fieldOptions?.entityType || props.options?.entityType,
-      dataset: fieldOptions?.dataset || props.options?.dataset,
-      lang: fieldOptions?.lang || props.options?.lang,
-      propertyType: fieldOptions?.propertyType || props.options?.propertyType || 'compoundName',
-    }),
-    [fieldOptions, props.options],
-  )
+  const entityType = fieldOptions?.entityType || props.options?.entityType
+  const dataset = fieldOptions?.dataset || props.options?.dataset
+
+  // Create loader with appropriate options
+  const loader = useMemo(() => {
+    return createKulturnavLoader({
+      entityTypes: entityType ? [entityType] : undefined,
+      datasetUuids: dataset ? [dataset] : undefined,
+    })
+  }, [entityType, dataset])
 
   // Current value is an array of reference objects (or undefined)
   // Sanity arrays can be undefined initially
   const currentValues: KulturnavReferenceWithKey[] = Array.isArray(value) ? (value as KulturnavReferenceWithKey[]) : []
 
   const handleSelect = useCallback(
-    (item: KulturnavAutocompleteItem) => {
+    (result: LoaderResult) => {
       const reference: KulturnavReferenceWithKey = {
         _key: Date.now().toString(36) + Math.random().toString(36).substring(2, 9), // Short unique key for ordering
-        ...transformKulturnavResponse(item, filters.entityType, config.apiBaseUrl),
         _type: 'ExternalReference',
+        id: result.id,
+        type: result.type,
+        label: result.label,
+        notation: result.notation,
+        complete: result.complete,
       }
 
       // Check if this item is already in the array (by id)
@@ -73,7 +74,7 @@ export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.
       const patches = [setIfMissing([]), insert([reference], 'after', [-1])]
       onChange(patches)
     },
-    [onChange, filters.entityType, config.apiBaseUrl, currentValues],
+    [onChange, currentValues],
   )
 
   const handleRemove = useCallback(
@@ -86,14 +87,11 @@ export function KulturnavArrayInput(props: KulturnavArrayInputProps): React.JSX.
   return (
     <Stack space={3}>
       <SearchInput
-        value=""
-        onChange={() => {
-          // Search is handled internally
-        }}
+        loader={loader}
         onSelect={handleSelect}
-        filters={filters}
-        config={config}
-        placeholder="Search kulturnav..."
+        autocompleteProps={{
+          placeholder: 'Search kulturnav...',
+        }}
       />
       {currentValues.length > 0 && (
         <SelectedBadges items={currentValues} onRemove={handleRemove} />

@@ -3,6 +3,9 @@ import type {
   KulturnavDetails,
   KulturnavReference,
   SearchFilters,
+  Loader,
+  LoaderResult,
+  KulturnavLoaderOptions,
 } from '../types'
 
 export interface KulturnavClientConfig {
@@ -258,4 +261,105 @@ export function extractUuidFromId(id: string): string | null {
   // ID format: https://kulturnav.org/{uuid}
   const match = id.match(/\/([a-f0-9-]+)$/i)
   return match ? match[1] : null
+}
+
+/**
+ * Create a kulturnav loader function
+ * @public
+ */
+export function createKulturnavLoader(
+  options: KulturnavLoaderOptions = {},
+): Loader {
+  // Hardcoded API settings
+  const apiBaseUrl = 'https://kulturnav.org'
+  const apiVersion = 'v1.5'
+  const defaultLanguage = 'no'
+  const searchEndpoint: 'summary' = 'summary'
+
+  const config: KulturnavClientConfig = {
+    apiBaseUrl,
+    apiVersion,
+    defaultLanguage,
+    searchEndpoint,
+  }
+
+  return async (query: string): Promise<LoaderResult[]> => {
+    if (!query || query.trim().length === 0) {
+      return []
+    }
+
+    // Build filters from options
+    const filters: SearchFilters = {
+      propertyType: 'compoundName',
+    }
+
+    // Apply entityTypes filter - if multiple, we'll need to handle OR logic
+    // For now, if multiple entityTypes, we'll search each separately and combine
+    const entityTypes = options.entityTypes || []
+    const datasetUuids = options.datasetUuids || []
+
+    // Store results with their entity types
+    type ResultWithType = KulturnavAutocompleteItem & { entityType: string }
+    let allResults: ResultWithType[] = []
+
+    console.debug('[kulturnav] search', { query, entityTypes, datasetUuids, filters, config })
+
+    if (entityTypes.length > 0) {
+      // Search for each entity type separately and track which type each result came from
+      for (const entityType of entityTypes) {
+        const typeFilters: SearchFilters = {
+          ...filters,
+          entityType,
+        }
+
+        try {
+          const results = await searchKulturnav(query, typeFilters, config)
+          // Tag each result with its entity type
+          const typedResults: ResultWithType[] = results.map((item) => ({
+            ...item,
+            entityType,
+          }))
+          allResults = [...allResults, ...typedResults]
+        } catch (error) {
+          console.error(`Error searching for entity type ${entityType}:`, error)
+        }
+      }
+    } else {
+      // No entity type filter - search all (default to Concept)
+      try {
+        const results = await searchKulturnav(query, filters, config)
+        // Tag with default entity type
+        allResults = results.map((item) => ({
+          ...item,
+          entityType: 'Concept',
+        }))
+      } catch (error) {
+        console.error('Error searching kulturnav:', error)
+        throw error
+      }
+    }
+
+    // Filter by datasetUuids if provided
+    if (datasetUuids.length > 0) {
+      allResults = allResults.filter(
+        (item) => item.datasetUuid && datasetUuids.includes(item.datasetUuid),
+      )
+    }
+
+    // Remove duplicates (by UUID), keeping the first occurrence
+    const uniqueResults = Array.from(
+      new Map(allResults.map((item) => [item.uuid, item])).values(),
+    )
+
+    // Transform to LoaderResult format
+    return uniqueResults.map((item): LoaderResult => {
+      return {
+        value: item.caption, // For autocomplete display
+        id: `${apiBaseUrl}/${item.uuid}`, // Dereferenceable URI
+        type: item.entityType, // Entity type from the search
+        label: item.caption, // Human-readable label
+        // notation and complete are optional and not available from autocomplete
+      }
+    })
+  }
 }

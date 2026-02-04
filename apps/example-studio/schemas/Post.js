@@ -23,12 +23,18 @@ export default defineType({
       of: [
         {
           type: 'kulturnavReference',
+          // Field-level options override plugin defaults
+          // This field will search for Person entities instead of Concept
+          options: {
+            loaderOptions: {
+              entityTypes: ['Person'],
+            },
+            autocompleteProps: {
+              placeholder: 'Search for a person...',
+            },
+          },
         },
       ],
-      options: {
-        entityType: 'Person',
-        lang: 'no',
-      },
     }),
     defineField({
       name: 'subjects',
@@ -38,12 +44,11 @@ export default defineType({
       of: [
         {
           type: 'kulturnavReference',
+          // This field uses the plugin default (Concept) from sanity.config.ts
+          // but you could override it here if needed:
+          // options: { loaderOptions: { entityTypes: ['Concept'] } }
         },
       ],
-      options: {
-        entityType: 'Concept',
-        lang: 'no',
-      },
     }),
     defineField({
       name: 'related_posts',

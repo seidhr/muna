@@ -3,9 +3,8 @@ import React from 'react'
 import { ObjectInputProps, set, unset } from 'sanity'
 import { Stack } from '@sanity/ui'
 
-import type { KulturnavAutocompleteItem, KulturnavReference } from '../types'
-import { transformKulturnavResponse } from '../lib/kulturnavClient'
-import { getClientConfig } from '../lib/config'
+import type { KulturnavReference, LoaderResult } from '../types'
+import { createKulturnavLoader } from '../lib/kulturnavClient'
 import { SearchInput } from './SearchInput'
 import { SelectedBadges } from './SelectedBadges'
 
@@ -28,33 +27,35 @@ interface KulturnavInputProps extends ObjectInputProps {
 export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
   const { value, onChange, schemaType } = props
 
-  // Get client config for API calls
-  const config = useMemo(() => getClientConfig(), [])
-
   // Get field options
   const fieldOptions = schemaType.options as KulturnavInputProps['options'] | undefined
-  const filters = useMemo(
-    () => ({
-      entityType: fieldOptions?.entityType || props.options?.entityType,
-      dataset: fieldOptions?.dataset || props.options?.dataset,
-      lang: fieldOptions?.lang || props.options?.lang,
-      propertyType: fieldOptions?.propertyType || props.options?.propertyType || 'compoundName',
-    }),
-    [fieldOptions, props.options],
-  )
+  const entityType = fieldOptions?.entityType || props.options?.entityType
+  const dataset = fieldOptions?.dataset || props.options?.dataset
+
+  // Create loader with appropriate options
+  const loader = useMemo(() => {
+    return createKulturnavLoader({
+      entityTypes: entityType ? [entityType] : undefined,
+      datasetUuids: dataset ? [dataset] : undefined,
+    })
+  }, [entityType, dataset])
 
   // Current value is a single reference object (or null)
   const currentValue: KulturnavReference | null = value as KulturnavReference | null
 
   const handleSelect = useCallback(
-    (item: KulturnavAutocompleteItem) => {
+    (result: LoaderResult) => {
       const reference: KulturnavReference = {
-        ...transformKulturnavResponse(item, filters.entityType, config.apiBaseUrl),
         _type: 'ExternalReference',
+        id: result.id,
+        type: result.type,
+        label: result.label,
+        notation: result.notation,
+        complete: result.complete,
       }
       onChange([set(reference)])
     },
-    [onChange, filters.entityType, config.apiBaseUrl],
+    [onChange],
   )
 
   const handleRemove = useCallback(() => {
@@ -64,14 +65,11 @@ export function KulturnavInput(props: KulturnavInputProps): React.JSX.Element {
   return (
     <Stack space={3}>
       <SearchInput
-        value=""
-        onChange={() => {
-          // Search is handled internally
-        }}
+        loader={loader}
         onSelect={handleSelect}
-        filters={filters}
-        config={config}
-        placeholder="Search kulturnav..."
+        autocompleteProps={{
+          placeholder: 'Search kulturnav...',
+        }}
       />
       {currentValue && (
         <SelectedBadges items={[currentValue]} onRemove={() => handleRemove()} />

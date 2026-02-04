@@ -1,38 +1,36 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import React from 'react'
-import { Autocomplete, Stack, Text, Card, Box } from '@sanity/ui'
+import { Autocomplete, Stack, Text, Card } from '@sanity/ui'
 
-import type { KulturnavAutocompleteItem, SearchFilters } from '../types'
-import { searchKulturnav } from '../lib/kulturnavClient'
-import type { KulturnavClientConfig } from '../lib/kulturnavClient'
+import type { Loader, LoaderResult } from '../types'
 
 interface SearchInputProps {
-  value: string
-  onChange: (value: string) => void
-  onSelect: (item: KulturnavAutocompleteItem) => void
-  filters: SearchFilters
-  config: KulturnavClientConfig
-  placeholder?: string
+  loader: Loader
+  onSelect: (result: LoaderResult) => void
+  autocompleteProps?: {
+    placeholder?: string
+    [key: string]: any
+  }
   disabled?: boolean
 }
 
 export function SearchInput({
-  value,
-  onChange,
+  loader,
   onSelect,
-  filters,
-  config,
-  placeholder = 'Search kulturnav...',
+  autocompleteProps = {},
   disabled = false,
 }: SearchInputProps): React.JSX.Element {
   const [searchQuery, setSearchQuery] = useState<string | null>(null)
-  const [results, setResults] = useState<KulturnavAutocompleteItem[]>([])
+  const [results, setResults] = useState<LoaderResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const resultsMapRef = useRef<Map<string, KulturnavAutocompleteItem>>(new Map())
+  const resultsMapRef = useRef<Map<string, LoaderResult>>(new Map())
 
-  // Debounced search
+  // Generate a unique ID for this Autocomplete instance
+  const autocompleteId = useMemo(() => `search-input-${Math.random().toString(36).substring(2, 9)}`, [])
+
+  // Debounced search when query changes
   useEffect(() => {
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current)
@@ -50,12 +48,15 @@ export function SearchInput({
 
     debounceTimerRef.current = setTimeout(async () => {
       try {
-        const searchResults = await searchKulturnav(searchQuery, filters, config)
+        const searchResults = await loader(searchQuery)
         setResults(searchResults)
-        // Create a map for quick lookup when option is selected
+        // Build a map from option key to full LoaderResult for quick lookup
         resultsMapRef.current.clear()
-        searchResults.forEach((item) => {
-          resultsMapRef.current.set(item.uuid, item)
+        searchResults.forEach((result) => {
+          const key = result.value || result.label || result.id
+          if (key) {
+            resultsMapRef.current.set(key, result)
+          }
         })
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to search')
@@ -71,80 +72,91 @@ export function SearchInput({
         clearTimeout(debounceTimerRef.current)
       }
     }
-  }, [searchQuery, filters, config])
+  }, [searchQuery, loader])
 
-  // Transform results to Autocomplete options format
-  const options = useMemo(
-    () =>
-      results.map((item) => ({
-        value: item.uuid,
-      })),
-    [results],
-  )
+  // Transform LoaderResult[] to {value: string}[] format for Autocomplete
+  const autocompleteOptions = useMemo(() => {
+    return results
+      .map((result) => {
+        const key = result.value || result.label || result.id
+        return key ? { value: key } : null
+      })
+      .filter((opt): opt is { value: string } => opt !== null)
+  }, [results])
 
-  const handleQueryChange = useCallback(
-    (query: string | null) => {
-      setSearchQuery(query)
-      onChange(query || '')
-    },
-    [onChange],
-  )
+  // Handle query change - this is called by Autocomplete when user types
+  const handleQueryChange = useCallback((query: string | null) => {
+    setSearchQuery(query)
+  }, [])
 
+  // Handle option selection - map the value string back to full LoaderResult
   const handleSelect = useCallback(
-    (selectedValue: string) => {
-      const item = resultsMapRef.current.get(selectedValue)
-      if (item) {
-        onSelect(item)
-        // Clear the search query and results immediately
-        setSearchQuery('') // Set to empty string to clear input
+    (value: string) => {
+      const selectedResult = resultsMapRef.current.get(value)
+      if (selectedResult) {
+        onSelect(selectedResult)
+        // Clear the search query and results
+        setSearchQuery(null)
         setResults([])
         resultsMapRef.current.clear()
-        // Clear the onChange callback to reset parent state
-        onChange('')
       }
     },
-    [onSelect, onChange],
+    [onSelect],
   )
 
-  const renderOption = useCallback((option: { value: string }) => {
-    const item = resultsMapRef.current.get(option.value)
-    if (!item) {
-      return <Box padding={3} />
-    }
+  // Render each option in the dropdown
+  const renderOption = useCallback(
+    (option: { value: string }) => {
+      const result = resultsMapRef.current.get(option.value)
+      if (!result) {
+        return <Text>{option.value}</Text>
+      }
 
-    return (
-      <Box padding={3}>
-        <Stack space={1}>
+      return (
+        <Stack space={1} padding={2}>
           <Text size={1} weight="medium">
-            {item.caption}
+            {result.value || result.label || result.id}
           </Text>
-          {item.datasetCaption && (
+          {result.label && result.label !== result.value && (
             <Text size={0} muted>
-              {item.datasetCaption}
+              {result.label}
+            </Text>
+          )}
+          {result.type && (
+            <Text size={0} muted>
+              Type: {result.type}
             </Text>
           )}
         </Stack>
-      </Box>
-    )
-  }, [])
+      )
+    },
+    [],
+  )
 
   return (
     <Stack space={2}>
       <Autocomplete
-        id="kulturnav-search"
-        options={options}
+        id={autocompleteId}
+        options={autocompleteOptions}
         onQueryChange={handleQueryChange}
         onSelect={handleSelect}
         renderOption={renderOption}
-        renderValue={() => searchQuery || ''} // Always render the query string, never the UUID
         loading={isLoading}
-        placeholder={placeholder}
+        placeholder={autocompleteProps.placeholder || 'Search...'}
         disabled={disabled}
-        filterOption={() => true} // We handle filtering via API, so always show all options
+        {...autocompleteProps}
       />
-
+      {!isLoading &&
+        !error &&
+        searchQuery &&
+        searchQuery.trim().length > 0 &&
+        results.length === 0 && (
+          <Card padding={2} radius={2} tone="transparent">
+            <Text size={1}>No results for “{searchQuery.trim()}”.</Text>
+          </Card>
+        )}
       {error && (
-        <Card padding={2} radius={2} tone="critical" marginTop={1}>
+        <Card padding={2} radius={2} tone="critical">
           <Text size={1}>{error}</Text>
         </Card>
       )}

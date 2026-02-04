@@ -33,9 +33,6 @@ export const kulturnavReference = defineType({
   type: 'object',
   title: 'Kulturnav Reference',
   description: 'Reference to an entity from kulturnav.org or similar API',
-  components: {
-    input: KulturnavInput,
-  },
   fields: [
     defineField({
       name: 'id',
