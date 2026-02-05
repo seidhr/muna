@@ -1,5 +1,12 @@
 # @seidhr/sanity-plugin-timespan-input
 
+## 4.0.4
+
+### Patch Changes
+
+- 2b17699: Add Sanity v5 to peerDep
+- Update peer dependencies
+
 ## 4.0.3
 
 ### Patch Changes
