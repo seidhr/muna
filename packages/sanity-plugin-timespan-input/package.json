@@ -85,7 +85,7 @@
     "sanity": "^3 || ^4 || ^5"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "sanityPlugin": {
     "verifyPackage": {
