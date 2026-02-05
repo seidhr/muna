@@ -18,7 +18,7 @@
       "with": [
         "@seidhr/sanity-plugin-dashboard-widget-muna-docs#watch",
         "@seidhr/sanity-plugin-timespan-input#watch",
-        "@seidhr/sanity-plugin-muna-kulturnav-api#watch"
+        "@seidhr/sanity-plugin-muna-la-external-references#watch"
       ]
     }
   }

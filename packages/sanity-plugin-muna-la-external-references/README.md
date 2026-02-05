@@ -1,11 +1,11 @@
-# sanity-plugin-muna-kulturnav-api
+# sanity-plugin-muna-la-external-references
 
 > This is a **Sanity Studio v3** plugin.
 
 ## Installation
 
 ```sh
-npm install sanity-plugin-muna-kulturnav-api
+npm install sanity-plugin-muna-la-external-references
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
 import {defineConfig} from 'sanity'
-import {myPlugin} from 'sanity-plugin-muna-kulturnav-api'
+import {myPlugin} from 'sanity-plugin-muna-la-external-references'
 
 export default defineConfig({
   //...
